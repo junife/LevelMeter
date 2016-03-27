@@ -1,0 +1,5 @@
+void funx(void)
+{
+	
+	
+}
