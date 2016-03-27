@@ -33,12 +33,12 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
-../LevelMeterMainboard_src/
+../LMMB_main/
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../LevelMeterMainboard_src/main.c
+../LMMB_main/main.c
 
 
 PREPROCESSING_SRCS += 
@@ -48,16 +48,16 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-LevelMeterMainboard_src/main.o
+LMMB_main/main.o
 
 OBJS_AS_ARGS +=  \
-LevelMeterMainboard_src/main.o
+LMMB_main/main.o
 
 C_DEPS +=  \
-LevelMeterMainboard_src/main.d
+LMMB_main/main.d
 
 C_DEPS_AS_ARGS +=  \
-LevelMeterMainboard_src/main.d
+LMMB_main/main.d
 
 OUTPUT_FILE_PATH +=LevelMeterMainboard.elf
 
@@ -76,7 +76,7 @@ LINKER_SCRIPT_DEP+=
 
 
 
-LevelMeterMainboard_src/%.o: ../LevelMeterMainboard_src/%.c
+LMMB_main/%.o: ../LMMB_main/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega16 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega16" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
