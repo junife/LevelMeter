@@ -2,6 +2,12 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+common_avr-liberty-master_src\buffer.c
+
+common_avr-liberty-master_src\rprintf.c
+
+common_avr-liberty-master_src\uart.c
+
 common_src\fun.c
 
 LMRfR_button\button.c
