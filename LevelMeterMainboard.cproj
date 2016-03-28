@@ -181,9 +181,13 @@
     <OutputPath>bin\LMMB_Debug\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="common_src\" />
     <Folder Include="LMMB_main\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="common_src\fun.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LMMB_main\main.c">
       <SubType>compile</SubType>
     </Compile>
