@@ -41,7 +41,6 @@ SUBDIRS :=  \
 ../LevelMeterRfRemote_src/ \
 ../LevelMeterRfRemote_src/ \
 ../LevelMeterRfRemote_src/ \
-../LevelMeterRfRemote_src/ \
 ../LMRfR_button/ \
 ../LMRfR_lcd_ks0108lib/ \
 ../LMRfR_main/
@@ -51,6 +50,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../common_avr-liberty-master_src/buffer.c \
 ../common_avr-liberty-master_src/rprintf.c \
+../common_avr-liberty-master_src/timerx8.c \
 ../common_avr-liberty-master_src/uart.c \
 ../common_src/fun.c \
 ../LMRfR_button/button.c \
@@ -69,6 +69,7 @@ ASM_SRCS +=
 OBJS +=  \
 common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/rprintf.o \
+common_avr-liberty-master_src/timerx8.o \
 common_avr-liberty-master_src/uart.o \
 common_src/fun.o \
 LMRfR_button/button.o \
@@ -80,6 +81,7 @@ LMRfR_main/main.o
 OBJS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/rprintf.o \
+common_avr-liberty-master_src/timerx8.o \
 common_avr-liberty-master_src/uart.o \
 common_src/fun.o \
 LMRfR_button/button.o \
@@ -91,6 +93,7 @@ LMRfR_main/main.o
 C_DEPS +=  \
 common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/rprintf.d \
+common_avr-liberty-master_src/timerx8.d \
 common_avr-liberty-master_src/uart.d \
 common_src/fun.d \
 LMRfR_button/button.d \
@@ -102,6 +105,7 @@ LMRfR_main/main.d
 C_DEPS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/rprintf.d \
+common_avr-liberty-master_src/timerx8.d \
 common_avr-liberty-master_src/uart.d \
 common_src/fun.d \
 LMRfR_button/button.d \
@@ -124,6 +128,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
