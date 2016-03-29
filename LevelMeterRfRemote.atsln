@@ -13,8 +13,8 @@ Global
 		Release|AVR = Release|AVR
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = LMRfR_Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = LMRfR_Debug|AVR
 		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.LevelMeterRfRemote_Debug|AVR.ActiveCfg = LevelMeterRfRemote_Debug|AVR
 		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.LevelMeterRfRemote_Debug|AVR.Build.0 = LevelMeterRfRemote_Debug|AVR
 		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.LMRfR_Debug|AVR.ActiveCfg = LMRfR_Debug|AVR
