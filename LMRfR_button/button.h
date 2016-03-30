@@ -41,16 +41,40 @@
 
 /*
 *********************************************************************************************************
+*                                          BUTTON DATA TYPE DEFINE
+* Choose uint8_t/uint16_t/uint32_t will support 8/16/32 buttons. 
+*********************************************************************************************************
+*/
+#define ButtonDataType uint32_t
+/*
+*********************************************************************************************************
 *                                          DEFINE BUTTON BITs STRUCT
 *********************************************************************************************************
 */
 typedef struct button_t{
 	union {
-		uint8_t bVal;						/* whole buttons value */
+		ButtonDataType bVal;						/* whole buttons value */
 		struct {
-			uint8_t  Down:1;				/* flag single button */
-			uint8_t  Up:1;					/* flag single button */
-			uint8_t  unused2_7:6;
+			ButtonDataType  PBtn13:1;					/* flag single button */
+			ButtonDataType  PBtn9:1;					/* flag single button */
+			ButtonDataType  PBtn5:1;					/* flag single button */
+			ButtonDataType  PBtn1:1;					/* flag single button */
+			ButtonDataType  PBtn14:1;					/* flag single button */
+			ButtonDataType  PBtn10:1;					/* flag single button */
+			ButtonDataType  PBtn6:1;					/* flag single button */
+			ButtonDataType  PBtn2:1;					/* flag single button */
+			ButtonDataType  PBtn15:1;					/* flag single button */
+			ButtonDataType  PBtn11:1;					/* flag single button */
+			ButtonDataType  PBtn7:1;					/* flag single button */
+			ButtonDataType  PBtn3:1;					/* flag single button */
+			ButtonDataType  PBtn16:1;					/* flag single button */
+			ButtonDataType  PBtn12:1;					/* flag single button */
+			ButtonDataType  PBtn8:1;					/* flag single button */
+			ButtonDataType  PBtn4:1;					/* flag single button */
+			ButtonDataType  PBtn20:1;					/* flag single button */
+			ButtonDataType  PBtn19:1;					/* flag single button */
+			ButtonDataType  PBtn18:1;					/* flag single button */
+			ButtonDataType  PBtn17:1;					/* flag single button */						
 		};
 	};
 } BUTTON_T;
@@ -68,7 +92,6 @@ typedef struct button_data {
 	BUTTON_T	buttonsReleasedHistory; /* Just judge button double release during 2 second */
 	BUTTON_T	buttonsTwiceReleased;	/* The buttons just twice released during 2 seconds, for the UI of this channel */
 	uint16_t    buttonHoldTime;         /* If buttonsHeld != 0, the hold time, in cycles, of the present button pattern */
-	uint8_t		dip9;					/* for DCx3 DIP9 combine with two push buttons, need to pick up from button ADC result */
 } BUTTON_DATA;
 
 /*
@@ -92,9 +115,9 @@ typedef struct button_data {
 BUTTON_EXT  void     ButtonInit             (void);
 BUTTON_EXT  void     ButtonCycleUpdate      (void);
 BUTTON_EXT  uint16_t ButtonGetHoldTime      (void);
-BUTTON_EXT  uint8_t  ButtonGetReleased      (void);
-BUTTON_EXT  uint8_t  ButtonGetHeld          (void);
-BUTTON_EXT  uint8_t  ButtonGetTwiceTapEvent (void);
+BUTTON_EXT  ButtonDataType  ButtonGetReleased      (void);
+BUTTON_EXT  ButtonDataType  ButtonGetHeld          (void);
+BUTTON_EXT  ButtonDataType  ButtonGetTwiceTapEvent (void);
 BUTTON_EXT  bool	 ButtonDownTapEvent     (void);
 BUTTON_EXT  bool  	 ButtonB1TwiceTapEvent  (void);
 BUTTON_EXT  bool  	 ButtonB1HeldEvent      (void);
