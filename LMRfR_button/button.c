@@ -32,34 +32,23 @@ all button APIs called by core.
 #define   BUTTON_GLOBALS
 #endif
 
-#include  <stdint.h>
-#include  <stdbool.h>
-#include  <avr/pgmspace.h>
-#include  "button.h"
-#include  "io_cfg.h"
-#include  "adc.h"
-
-#include  "global_x.h"
-#include  "avr_lib.h"
+#include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
+#include "button.h"
 
 /*
 *********************************************************************************************************
 *                                       VARIABLE DEFINITION
 *********************************************************************************************************
 */
-
 BUTTON_DATA button;
-static uint16_t ButtonData[BUTTON_BUFFER_SIZE];
-cBuffer ButtonDataBuffer;
 
 /*
 *********************************************************************************************************
 *                                       FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
+static ButtonDataType ButtonGetIO_State(void);
 
-static  uint8_t  ButtonGetIO_State (void);
-static  uint8_t  MapKeyboard(uint16_t keyboardADC);	
 /*
 *********************************************************************************************************
 *                                         BUTTON INITIALIZATION
@@ -74,9 +63,17 @@ static  uint8_t  MapKeyboard(uint16_t keyboardADC);
 *********************************************************************************************************
 */
 
-void  ButtonInit (void)
+void ButtonInit(void)
 {
-	bufferInit(&ButtonDataBuffer, (uint16_t *)ButtonData, BUTTON_BUFFER_SIZE); /* Initial queue */
+	DDRD  &= ~((1<<DDD6) | (1<<DDD5) | (1<<DDD4) | (1<<DDD3));	/* Set PD6-PD3 as input */
+	PORTD |= (1<<PD6) | (1<<PD5) | (1<<PD4) | (1<<PD3);			/* Set PD6-PD3 as internal pull up */
+	
+	/* 
+	Set PC7-PC4 as input as internal pull up
+	Set PC3-PC0 as Tri-state (Hi-Z) 
+	*/
+	DDRC   = (0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
+	PORTC  = (1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (0<<PC3) | (0<<PC2) | (0<<PC1) | (0<<PC0);
 }
 
 
@@ -99,11 +96,10 @@ void  ButtonInit (void)
 *********************************************************************************************************
 */
 
-void  ButtonCycleUpdate (void)
+void ButtonCycleUpdate(void)
 {
-	uint8_t  b;											/* store last power cycle button value */
-	uint8_t  buttons;
-	uint8_t  dip9;
+	ButtonDataType b;											/* store last power cycle button value */
+	ButtonDataType buttons;
 	uint16_t holdTime;
 	
 	buttons = ButtonGetIO_State();
@@ -128,7 +124,7 @@ void  ButtonCycleUpdate (void)
   
 	if (buttons == b) {									/* If the button situation has not changed in this past cycle */ 
 		button.buttonsHeld.bVal = 0;					/* Assume no buttons held */
-		if ( ++holdTime >= BTN_MIN_HOLD_60) {
+		if ( ++holdTime > BTN_MIN_HOLD_60) {
 			button.buttonsHeld.bVal = buttons;
 		}	
 		button.buttonHoldTime = holdTime;
@@ -141,7 +137,7 @@ void  ButtonCycleUpdate (void)
 		if ((buttons & button.buttonsHeld.bVal) == 0){													
 			button.buttonHoldTime = 0;					/* Ignore the release of any buttons that were previously marked as held down */
 		
-			if ((holdTime < BTN_MIN_HOLD_60) && (holdTime >= BTN_MIN_PRESS_60)){
+			if ((holdTime < BTN_MIN_HOLD_60) && (holdTime > BTN_MIN_PRESS_60)){
 				button.buttonsReleased.bVal = buttons;	
 														/* Calculate twice release button value */
 				button.buttonsTwiceReleased.bVal =	button.buttonsReleased.bVal &   
@@ -171,21 +167,39 @@ void  ButtonCycleUpdate (void)
 *
 *********************************************************************************************************
 */
-uint8_t  ButtonGetIO_State (void)
+ButtonDataType ButtonGetIO_State(void)
 {
-	uint8_t  io_state;
-	uint16_t  tempchar;
+	ButtonDataType io_state = 0;
+	ButtonDataType tempValue;
+	ButtonDataType MatrixButtonValue;
+	uint8_t Col;
 	
-	tempchar 	= ReadADC10Bit(BTN_ADC_CH);		
-	io_state 	= MapKeyboard(tempchar);
-	
-	/* buttonHoldTime is reset as 0 when any button state was changed */
-	if(ButtonGetHoldTime()%35 == 0){	/* press up or down button cause middle state cause DIP9 change, add that if remove the error value */
-		button.dip9 = io_state & 0x01;	/* mask tow button olny get dip9 value */
+	tempValue = (~PIND) & ((1<<PIND6) | (1<<PIND5) | (1<<PIND4) | (1<<PIND3));	/* Get PD6-PD3 IO state */
+	tempValue >>= 3;
+	/* 
+	Set PC7-PC4 as input as internal pull up
+	Set PC3-PC0 as Tri-state (Hi-Z) 
+	*/
+	DDRC   = (0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
+	PORTC  = (1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (0<<PC3) | (0<<PC2) | (0<<PC1) | (0<<PC0);
+	for(Col = 0, MatrixButtonValue = 0; Col < 4; Col++)
+	{
+		/* Set one Column as output low */
+		DDRC  |= 0x08>>Col;			/* Set the column as output */
+		PORTC &= ~(0x08>>Col);		/* Set the column as low */
+		
+		/* Save button state after the column which active as low */
+		MatrixButtonValue = ((~PORTC) & 0xf0) << 4*(3-Col);
+		
+		/* 
+		Set PC7-PC4 as input as internal pull up,
+		Set PC3-PC0 as Tri-state (Hi-Z), prepare next column read.
+		*/
+		DDRC   = (0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
+		PORTC  = (1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (0<<PC3) | (0<<PC2) | (0<<PC1) | (0<<PC0);
 	}
 	
-	io_state >>= 1;						/* Get two buttons from ADC result */
-	
+	io_state = MatrixButtonValue | (tempValue << 16);
 	return  io_state;
 }
 
@@ -205,7 +219,7 @@ uint8_t  ButtonGetIO_State (void)
 *********************************************************************************************************
 */
 
-uint16_t  ButtonGetHoldTime (void)
+uint16_t ButtonGetHoldTime(void)
 {
 	return button.buttonHoldTime;
 }
@@ -227,7 +241,7 @@ uint16_t  ButtonGetHoldTime (void)
 *********************************************************************************************************
 */
 
-uint8_t  ButtonGetReleased (void)
+ButtonDataType ButtonGetReleased(void)
 {
 	return button.buttonsReleased.bVal;
 }
@@ -249,7 +263,7 @@ uint8_t  ButtonGetReleased (void)
 *********************************************************************************************************
 */
 
-uint8_t  ButtonGetHeld (void)
+ButtonDataType ButtonGetHeld (void)
 {
 	return button.buttonsHeld.bVal;
 }
@@ -270,11 +284,12 @@ uint8_t  ButtonGetHeld (void)
 *********************************************************************************************************
 */
 
-uint8_t  ButtonGetTwiceTapEvent(void)
+ButtonDataType ButtonGetTwiceTapEvent(void)
 {
 	return button.buttonsTwiceReleased.bVal;
 }
 
+#if 0
 /*
 *********************************************************************************************************
 *                                         ButtonDownTapEvent
@@ -288,9 +303,9 @@ uint8_t  ButtonGetTwiceTapEvent(void)
 *********************************************************************************************************
 */
 
-bool  ButtonDownTapEvent (void)
+bool ButtonDownTapEvent (void)
 {
-	if (button.buttonsReleased.Down) {
+	if (button.buttonsReleased.PB13) {
 		return true;
 	}
     
@@ -310,9 +325,9 @@ bool  ButtonDownTapEvent (void)
 *********************************************************************************************************
 */
 
-bool  ButtonDownTwiceTapEvent (void)
+bool ButtonDownTwiceTapEvent (void)
 {
-	if (button.buttonsTwiceReleased.Down) {
+	if (button.buttonsTwiceReleased.PB13) {
 		return true;
 	}
     
@@ -332,9 +347,9 @@ bool  ButtonDownTwiceTapEvent (void)
 *********************************************************************************************************
 */
 
-bool  ButtonDownHeldEvent (void)
+bool ButtonDownHeldEvent (void)
 {
-	if (button.buttonsHeld.Down) {
+	if (button.buttonsHeld.PB13) {
 		return true;
 	}
     
@@ -354,9 +369,9 @@ bool  ButtonDownHeldEvent (void)
 *********************************************************************************************************
 */
 
-bool  ButtonUpTapEvent (void)
+bool ButtonUpTapEvent (void)
 {
-	if (button.buttonsReleased.Up) {
+	if (button.buttonsReleased.PB13) {
 		return true;
 	}
     
@@ -376,9 +391,9 @@ bool  ButtonUpTapEvent (void)
 *********************************************************************************************************
 */
 
-bool  ButtonUpTwiceTapEvent (void)
+bool ButtonUpTwiceTapEvent(void)
 {
-	if (button.buttonsTwiceReleased.Up) {
+	if (button.buttonsTwiceReleased.PB13) {
 		return true;
 	}
     
@@ -398,71 +413,12 @@ bool  ButtonUpTwiceTapEvent (void)
 *********************************************************************************************************
 */
 
-bool  ButtonUpHeldEvent (void)
+bool ButtonUpHeldEvent(void)
 {
-	if (button.buttonsHeld.Up) {
+	if (button.buttonsHeld.PB13) {
 		return true;
 	}
     
     return false;
 }
-
-/*
-*********************************************************************************************************
-*                                         MapKeyboard
-*
-* Description : Convert ADC value to get button state
-*
-* Arguments   : buuton ADC value
-*
-* Returns    :  1 means button is pressed or DIP9 is on postion
-*				value	SW1(Up)	SW2(Dwon)	DIP9(bit0)
-					7	1		1			1
-					6	1		1			0
-					5	1		0			1
-					4	1		0			0
-					3	0		1			1
-					2	0		1			0
-					1	0		0			1
-					0	0		0			0
-
-*********************************************************************************************************
-*/
-
-uint8_t MapKeyboard(uint16_t keyboardADC)
-{
-	uint8_t i;
-	uint16_t ADCTemp;
-	uint16_t sum;
-	uint16_t average;
-	
-	static const uint16_t keyboardMap[] PROGMEM = 
-	{
-		0X24E,
-		0X278,
-		0X2A9,
-		0X2DF,
-		0X31E,
-		0X36E,
-		0X3CE,
-		0X3FF
-	};
-	
-	ADCTemp = bufferGetFromFront(&ButtonDataBuffer);		/* pop oldest data from buffer */
-	bufferAddToEnd(&ButtonDataBuffer, keyboardADC);			/* push new data to buffer */
-
-	for(i=0,sum=0; i<BUTTON_BUFFER_SIZE; i++){
-		sum += bufferGetAtIndex(&ButtonDataBuffer, i);		/* get data before or after index  */
-	}
-
-	average = sum/BUTTON_BUFFER_SIZE;
-		
-	i = 0;
-    while ((pgm_read_word(&keyboardMap[i])+BTN_ADC_OFFSET) < average )
-    {
-		i++;
-    }
-	
-	return i;
-}
-
+#endif

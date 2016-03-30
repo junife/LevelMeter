@@ -22,6 +22,7 @@
 #include "uart.h"		// include uart function library
 #include "rprintf.h"	// include printf function library
 #include "timerx8.h"		// include timer function library (timing, PWM, etc)
+#include "button.h"
 
 void timerTest(void);
 
@@ -38,7 +39,16 @@ int main(void)
 	
 	// run the test
 	timerTest();
-
+	
+	/*
+	Calll all initial function
+	*/
+	ButtonInit();
+	
+	while(1)
+	{
+		ButtonCycleUpdate();
+	}
 	return 0;
 }
 
