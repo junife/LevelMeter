@@ -228,7 +228,25 @@
     <Compile Include="common_avr-liberty-master_src\buffer.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="common_avr-liberty-master_src\font5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="common_avr-liberty-master_src\fontgr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="common_avr-liberty-master_src\glcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="common_avr-liberty-master_src\glcd.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="common_avr-liberty-master_src\global.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="common_avr-liberty-master_src\ks0108.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="common_avr-liberty-master_src\ks0108.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="common_avr-liberty-master_src\rprintf.c">
@@ -279,6 +297,11 @@
     <Compile Include="LMRfR_main\main.c">
       <SubType>compile</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="common_avr-liberty-master_src\note.txt">
+      <SubType>compile</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

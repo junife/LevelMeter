@@ -49,6 +49,8 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../common_avr-liberty-master_src/buffer.c \
+../common_avr-liberty-master_src/glcd.c \
+../common_avr-liberty-master_src/ks0108.c \
 ../common_avr-liberty-master_src/rprintf.c \
 ../common_avr-liberty-master_src/timerx8.c \
 ../common_avr-liberty-master_src/uart.c \
@@ -68,6 +70,8 @@ ASM_SRCS +=
 
 OBJS +=  \
 common_avr-liberty-master_src/buffer.o \
+common_avr-liberty-master_src/glcd.o \
+common_avr-liberty-master_src/ks0108.o \
 common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/timerx8.o \
 common_avr-liberty-master_src/uart.o \
@@ -80,6 +84,8 @@ LMRfR_main/main.o
 
 OBJS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.o \
+common_avr-liberty-master_src/glcd.o \
+common_avr-liberty-master_src/ks0108.o \
 common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/timerx8.o \
 common_avr-liberty-master_src/uart.o \
@@ -92,6 +98,8 @@ LMRfR_main/main.o
 
 C_DEPS +=  \
 common_avr-liberty-master_src/buffer.d \
+common_avr-liberty-master_src/glcd.d \
+common_avr-liberty-master_src/ks0108.d \
 common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/timerx8.d \
 common_avr-liberty-master_src/uart.d \
@@ -104,6 +112,8 @@ LMRfR_main/main.d
 
 C_DEPS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.d \
+common_avr-liberty-master_src/glcd.d \
+common_avr-liberty-master_src/ks0108.d \
 common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/timerx8.d \
 common_avr-liberty-master_src/uart.d \
@@ -128,6 +138,10 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 
