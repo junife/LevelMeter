@@ -4,6 +4,10 @@
 
 common_avr-liberty-master_src\buffer.c
 
+common_avr-liberty-master_src\glcd.c
+
+common_avr-liberty-master_src\ks0108.c
+
 common_avr-liberty-master_src\rprintf.c
 
 common_avr-liberty-master_src\timerx8.c

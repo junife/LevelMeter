@@ -52,8 +52,8 @@ int main(void)
 		ButtonCycleUpdate();
 		
 		//rprintf("t=%x\n", button.buttonHoldTime);
-		if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
-		if(button.buttonsReleased.bVal) rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
+		//if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
+		//if(button.buttonsReleased.bVal) rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
 	}
 	return 0;
 }
