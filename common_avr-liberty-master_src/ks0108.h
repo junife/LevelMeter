@@ -19,16 +19,16 @@
 /// \code #include "ks0108.h" \endcode
 /// \par Overview
 ///		This display driver performs the basic functions necessary to access
-/// any graphic LCD based on the KS0108 or HD61202 controller chip.  For more
+/// any graphic LCD based on the KS0108 or HD61202 controller chip.?For more
 /// advanced functions, use this driver in conjunction with glcd.c.
 /// KS0108/HD61202 displays typically range in size from 64x32 pixels to
-/// 128x128 pixels and up to 3" square.  To determine whether a display is
+/// 128x128 pixels and up to 3" square.?To determine whether a display is
 /// compatible, you should look for the above controller chips to be mounted
-/// on the PC board attached to the display glass.  The controller chips are
+/// on the PC board attached to the display glass.?The controller chips are
 /// about 1/2" x 3/4" and have 80+ pins. On larger displays, you may also see
-/// slave LCD driver chips with the numbers KS0107 or HD61203.  The display
-/// will likely have an 18 or 20-pin interface.  The interface from the LCD
-/// to an AVR processor does not require any additional hardware.  If you can
+/// slave LCD driver chips with the numbers KS0107 or HD61203.?The display
+/// will likely have an 18 or 20-pin interface.?The interface from the LCD
+/// to an AVR processor does not require any additional hardware.?If you can
 /// locate a datasheet for your display, that plus the information in the
 /// ks0108conf.h file should be all you need to get hooked up.
 //

@@ -24,6 +24,7 @@
 #include "rprintf.h"	// include printf function library
 #include "timerx8.h"		// include timer function library (timing, PWM, etc)
 #include "button.h"
+#include "ks0108.h"
 
 void timerTest(void);
 
@@ -45,7 +46,7 @@ int main(void)
 	Calll all initial function
 	*/
 	ButtonInit();
-
+	glcdInitHW();
 	while(1)
 	{
 		_delay_ms(20);
