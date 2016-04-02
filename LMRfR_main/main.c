@@ -46,7 +46,7 @@ int main(void)
 	Calll all initial function
 	*/
 	ButtonInit();
-	glcdInitHW();
+	glcdInit();
 	while(1)
 	{
 		_delay_ms(20);
