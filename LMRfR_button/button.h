@@ -49,28 +49,33 @@
 /*
 *********************************************************************************************************
 *                                          DEFINE BUTTON BITs STRUCT
+* Button Maps 32 bits for RF remote, more details see hardware schematic.
+*	19		18		17		16
+*	PBtn17	PBtn18	PBtn19	PBtn20
+*	15		14		13		12		11		10		9		8		7		6		5		4		3		2		1		0
+*	PBtn1	PBtn5	PBtn9	PBtn13	PBtn2	PBtn6	PBtn10	PBtn14	PBtn3	PBtn7	PBtn11	PBtn15	PBtn4	PBtn8	PBtn12	PBtn16
 *********************************************************************************************************
 */
 typedef struct button_t{
 	union {
 		ButtonDataType bVal;						/* whole buttons value */
 		struct {
-			ButtonDataType  PBtn13:1;					/* flag single button */
-			ButtonDataType  PBtn9:1;					/* flag single button */
-			ButtonDataType  PBtn5:1;					/* flag single button */
-			ButtonDataType  PBtn1:1;					/* flag single button */
-			ButtonDataType  PBtn14:1;					/* flag single button */
-			ButtonDataType  PBtn10:1;					/* flag single button */
-			ButtonDataType  PBtn6:1;					/* flag single button */
-			ButtonDataType  PBtn2:1;					/* flag single button */
-			ButtonDataType  PBtn15:1;					/* flag single button */
-			ButtonDataType  PBtn11:1;					/* flag single button */
-			ButtonDataType  PBtn7:1;					/* flag single button */
-			ButtonDataType  PBtn3:1;					/* flag single button */
 			ButtonDataType  PBtn16:1;					/* flag single button */
 			ButtonDataType  PBtn12:1;					/* flag single button */
 			ButtonDataType  PBtn8:1;					/* flag single button */
 			ButtonDataType  PBtn4:1;					/* flag single button */
+			ButtonDataType  PBtn15:1;					/* flag single button */
+			ButtonDataType  PBtn11:1;					/* flag single button */
+			ButtonDataType  PBtn7:1;					/* flag single button */
+			ButtonDataType  PBtn3:1;					/* flag single button */
+			ButtonDataType  PBtn14:1;					/* flag single button */
+			ButtonDataType  PBtn10:1;					/* flag single button */
+			ButtonDataType  PBtn6:1;					/* flag single button */
+			ButtonDataType  PBtn2:1;					/* flag single button */
+			ButtonDataType  PBtn13:1;					/* flag single button */
+			ButtonDataType  PBtn9:1;					/* flag single button */
+			ButtonDataType  PBtn5:1;					/* flag single button */
+			ButtonDataType  PBtn1:1;					/* flag single button */
 			ButtonDataType  PBtn20:1;					/* flag single button */
 			ButtonDataType  PBtn19:1;					/* flag single button */
 			ButtonDataType  PBtn18:1;					/* flag single button */
@@ -101,9 +106,7 @@ typedef struct button_data {
 */
 #define BTN_DOUBLE_TAP			(1*60)	/* button two times press interval for get a twice tap event */
 #define BTN_MIN_HOLD_60			(35)	/* bigger than this value will assume as hold */
-#define BTN_MIN_PRESS_60		(4)		/* bigger than this value will assume as press, else as debounce */
-#define BTN_ADC_OFFSET 			(4)		/* Offset value, set bigger than zero because actural ADC value out of range and a litter bigger than table value */ 
-#define BTN_ADC_CH 				(1)		/* button adc channel */ 
+#define BTN_MIN_PRESS_60		(2)		/* bigger than this value will assume as press, else as debounce */
 
 /*
 *********************************************************************************************************
