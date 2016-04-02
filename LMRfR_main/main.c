@@ -17,6 +17,7 @@
 //----- Include Files ---------------------------------------------------------
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
 #include <avr/interrupt.h>	// include interrupt support
+#include <util/delay.h>
 
 #include "global.h"		// include our global settings
 #include "uart.h"		// include uart function library
@@ -38,16 +39,21 @@ int main(void)
 	rprintfInit(uartSendByte);
 	
 	// run the test
-	timerTest();
+	//timerTest();
 	
 	/*
 	Calll all initial function
 	*/
 	ButtonInit();
-	
+
 	while(1)
 	{
+		_delay_ms(20);
 		ButtonCycleUpdate();
+		
+		//rprintf("t=%x\n", button.buttonHoldTime);
+		if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
+		if(button.buttonsReleased.bVal) rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
 	}
 	return 0;
 }

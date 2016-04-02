@@ -33,8 +33,11 @@ all button APIs called by core.
 #endif
 
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
-#include "button.h"
+#include <util/delay.h>
 
+#include "button.h"
+#include "uart.h"		// include uart function library
+#include "rprintf.h"	// include printf function library
 /*
 *********************************************************************************************************
 *                                       VARIABLE DEFINITION
@@ -165,6 +168,11 @@ void ButtonCycleUpdate(void)
 *
 *			   3) Eg: button1->PINA7,button1->PINA6. io_state = (~PINA6<<1) | (~PINA7<<0)
 *
+* Button Maps 32 bits for RF remote, more details see hardware schematic.
+*	19		18		17		16
+*	PB17	PB18	PB19	PB20
+*	15		14		13		12		11		10		9		8		7		6		5		4		3		2		1		0
+*	PB1		PB5		PB9		PB13	PB2		PB6		PB10	PB14	PB3		PB7		PB11	PB15	PB4		PB8		PB12	PB16
 *********************************************************************************************************
 */
 ButtonDataType ButtonGetIO_State(void)
@@ -175,31 +183,27 @@ ButtonDataType ButtonGetIO_State(void)
 	uint8_t Col;
 	
 	tempValue = (~PIND) & ((1<<PIND6) | (1<<PIND5) | (1<<PIND4) | (1<<PIND3));	/* Get PD6-PD3 IO state */
-	tempValue >>= 3;
-	/* 
-	Set PC7-PC4 as input as internal pull up
-	Set PC3-PC0 as Tri-state (Hi-Z) 
-	*/
-	DDRC   = (0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
-	PORTC  = (1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (0<<PC3) | (0<<PC2) | (0<<PC1) | (0<<PC0);
+	tempValue >>= 3;	/* right rotate to low 4 bits location */
+	
 	for(Col = 0, MatrixButtonValue = 0; Col < 4; Col++)
 	{
-		/* Set one Column as output low */
-		DDRC  |= 0x08>>Col;			/* Set the column as output */
-		PORTC &= ~(0x08>>Col);		/* Set the column as low */
-		
-		/* Save button state after the column which active as low */
-		MatrixButtonValue = ((~PORTC) & 0xf0) << 4*(3-Col);
-		
 		/* 
-		Set PC7-PC4 as input as internal pull up,
-		Set PC3-PC0 as Tri-state (Hi-Z), prepare next column read.
+		Set PC7-PC4 as input as internal pull up
+		Set PC3-PC0 as Tri-state (Hi-Z)
 		*/
 		DDRC   = (0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
 		PORTC  = (1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (0<<PC3) | (0<<PC2) | (0<<PC1) | (0<<PC0);
+	
+		/* Set one Column as output with low */
+		DDRC  |= 0x08>>Col;			/* Set the column as output */
+		PORTC &= ~(0x08>>Col);		/* Set the column as low */
+		
+		/* read and save button state after the column which active as low */
+		MatrixButtonValue <<= 4;	/* newer 4 button state store in lower four bits */
+		MatrixButtonValue |= ((~PINC) & 0x00f0) >> 4;
 	}
 	
-	io_state = MatrixButtonValue | (tempValue << 16);
+	io_state = (tempValue << 16) | MatrixButtonValue;
 	return  io_state;
 }
 
