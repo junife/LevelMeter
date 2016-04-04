@@ -45,16 +45,18 @@ int main(void)
 	/*
 	Calll all initial function
 	*/
+	rprintf("RF remote start!\n");
 	ButtonInit();
-	glcdInit();
+	//glcdInit();	/* Need connect to LCD device because MCU will check lcd busy or not will cause waiting */
 	while(1)
 	{
 		_delay_ms(20);
 		ButtonCycleUpdate();
 		
 		//rprintf("t=%x\n", button.buttonHoldTime);
-		//if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
-		//if(button.buttonsReleased.bVal) rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
+		if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
+		if(button.buttonsReleased.bVal) rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
+		//rprintf("\r\n\n\nWelcome to the timer library test program!\r\n");
 	}
 	return 0;
 }
