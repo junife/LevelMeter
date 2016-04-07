@@ -6,6 +6,8 @@
 #include "button.h"
 #include "ks0108.h"
 
+char greeting[20];
+
 /*
 *********************************************************************************************************
 *                                         MCU INITIALIZATION
@@ -47,12 +49,7 @@ void ApplInit(void)
 	
 	glcdInit();	/* Need connect to LCD device because MCU will check lcd busy or not will cause waiting */
 	
-	glcdWriteChar('H');
-	glcdWriteChar('E');
-	glcdWriteChar('L');
-	glcdWriteChar('L');
-	glcdWriteChar('O');
-
+	glcdPutStr(&greeting[0]);
 	// Just print message for debug.
 	rprintf("RF remote start!\n" );	
 }
@@ -68,20 +65,64 @@ void ApplInit(void)
 * Returns    : none
 *********************************************************************************************************
 */
-char greeting[] = "a";
 void AppCycleUpdate(void)
 {	
+	static cnt;
 	//if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
 	if(button.buttonsReleased.bVal) 
 	{
-		//rprintf("rl=%x\n", button.buttonsReleased.bVal);
-		//rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
-		//rprintfStr("a\n");
-		//rputchar("\n");
+		rprintf("rl=%x\n", button.buttonsReleased.bVal);
+		rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
 		
-	}
-	
+		if(button.buttonsReleased.PBtn13)
+		{
+			glcdSetAddress(0,0);
+			char greeting[] = "PBtn13,Hello World!";
+			glcdPutStr(&greeting[0]);
+			rprintf("PBtn13\n");
+		}
+		else if(button.buttonsReleased.PBtn14)
+		{
+			glcdSetAddress(0,1);
+			char greeting[] = "PBtn14,Hello World!";
+			glcdPutStr(&greeting[0]);
+			rprintf("PBtn14\n");
+		}
+		else if(button.buttonsReleased.PBtn15)
+		{
+			glcdSetAddress(0,2);
+			char greeting[] = "PBtn15,Hello World!";
+			glcdPutStr(&greeting[0]);
+			rprintf("PBtn15\n");
+		}
+		else if(button.buttonsReleased.PBtn1)
+		{
+			glcdSetAddress(0,3);
+			char greeting[] = "PBtn1,Hello World!";
+			glcdPutStr(&greeting[0]);
+			rprintf("PBtn1\n");
+		}
+		else if(button.buttonsReleased.PBtn5)
+		{
+			glcdSetAddress(0,4);
+			char greeting[] = "PBtn5,Hello World!";
+			glcdPutStr(&greeting[0]);
+			rprintf("PBtn5\n");
+		}
+		else if(button.buttonsReleased.PBtn9)
+		{
+			glcdSetAddress(0,5);
+			char greeting[] = "PBtn9,Hello World!";
+			glcdPutStr(&greeting[0]);
+			rprintf("PBtn9\n");
+		}
+		else if(button.buttonsReleased.PBtn18)
+		{
+			//glcdSetAddress(0,1);
+			glcdClearScreen();
+			rprintf("PBtn18,Clear Home\n");
+		}
+	}	
 	//rprintfChar('a');
-	glcdWriteChar('A');
-	rprintf("\r\n\n\nWelcome to the timer library test program!\r\n");
+	//glcdWriteChar(cnt++/2);
 }

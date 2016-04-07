@@ -54,6 +54,16 @@
 *	PBtn17	PBtn18	PBtn19	PBtn20
 *	15		14		13		12		11		10		9		8		7		6		5		4		3		2		1		0
 *	PBtn1	PBtn5	PBtn9	PBtn13	PBtn2	PBtn6	PBtn10	PBtn14	PBtn3	PBtn7	PBtn11	PBtn15	PBtn4	PBtn8	PBtn12	PBtn16
+*
+* Butto map in board
+PBtn18		PBtn17		PBtn20
+	PBtn16		PBtn19
+
+PBtn13		PBtn14		PBtn15
+PBtn1 		PBtn5 		PBtn9
+PBtn2 		PBtn6 		PBtn10
+PBtn3 		PBtn7 		PBtn11
+PBtn4 		PBtn8 		PBtn12
 *********************************************************************************************************
 */
 typedef struct button_t{
