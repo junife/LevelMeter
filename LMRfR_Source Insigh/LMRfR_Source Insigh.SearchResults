@@ -1,0 +1,4 @@
+---- GLCD_STATUS_BUSY Matches (3 in 2 files) ----
+Ks0108.c (common_avr-liberty-master_src):	while(inb_lcd_pin_port(GLCD_DATA_PIN) & GLCD_STATUS_BUSY)
+Ks0108.c (common_avr-liberty-master_src):		(GLCD_CONTROLLER0_CTRL_ADDR + GLCD_CONTROLLER_ADDR_OFFSET*controller) & GLCD_STATUS_BUSY);
+Ks0108.h (common_avr-liberty-master_src):#define GLCD_STATUS_BUSY	0x80	// (1)->LCD IS BUSY

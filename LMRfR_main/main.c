@@ -1,66 +1,30 @@
-//*****************************************************************************
-// File Name	: timertest.c
-// 
-// Title		: example usage of timer library functions
-// Revision		: 1.0
-// Notes		:	
-// Target MCU	: Atmel AVR series
-// Editor Tabs	: 4
-// 
-// Revision History:
-// When			Who			Description of change
-// -----------	-----------	-----------------------
-// 30-Apr-2003	pstang		Created the program
-//*****************************************************************************
-
-
 //----- Include Files ---------------------------------------------------------
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
-#include <avr/interrupt.h>	// include interrupt support
 #include <util/delay.h>
-
-#include "global.h"		// include our global settings
-#include "uart.h"		// include uart function library
-#include "rprintf.h"	// include printf function library
-#include "timerx8.h"		// include timer function library (timing, PWM, etc)
+#include "appl.h"
 #include "button.h"
-#include "ks0108.h"
-
-void timerTest(void);
 
 //----- Begin Code ------------------------------------------------------------
 int main(void)
-{
-	// initialize our libraries
-	// initialize the UART (serial port)
-	uartInit();
-	// set the baud rate of the UART for our debug/reporting output
-	uartSetBaudRate(9600);
-	// initialize rprintf system
-	rprintfInit(uartSendByte);
-	
-	// run the test
-	//timerTest();
-	
+{	
 	/*
 	Calll all initial function
 	*/
-	rprintf("RF remote start!\n");
-	ButtonInit();
-	//glcdInit();	/* Need connect to LCD device because MCU will check lcd busy or not will cause waiting */
+	McuInit();
+	ApplInit();
+	
 	while(1)
 	{
 		_delay_ms(20);
 		ButtonCycleUpdate();
-		
-		//rprintf("t=%x\n", button.buttonHoldTime);
-		if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
-		if(button.buttonsReleased.bVal) rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
-		//rprintf("\r\n\n\nWelcome to the timer library test program!\r\n");
+		AppCycleUpdate();
 	}
 	return 0;
 }
 
+
+
+#if 0	//Want get more information for using timer, see example D:\my docs\workspace\avr-liberty\avr-liberty-master\examples\timer
 void timerTest(void)
 {
 	// print a little intro message so we know things are working
@@ -121,4 +85,5 @@ void timerTest(void)
 	rprintf("Turning off all PWM on timer1\r\n");
 	timer1PWMOff();
 }
+#endif
 
