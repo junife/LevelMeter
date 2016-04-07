@@ -24,5 +24,7 @@ LMRfR_lcd_ks0108lib\KS0108-AVR.c
 
 LMRfR_lcd_ks0108lib\KS0108.c
 
+LMRfR_main\appl.c
+
 LMRfR_main\main.c
 

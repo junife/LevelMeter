@@ -23,6 +23,7 @@
 // AVR specific includes
 	#include <avr/io.h>
 	#include <avr/interrupt.h>
+	#include <util/delay.h>
 #endif
 
 #include "global.h"
@@ -52,6 +53,7 @@ void glcdInitHW(void)
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RS);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RW);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
+	cbi(GLCD_CTRL_PORT, GLCD_CTRL_LED);		/* Turn on LCD LED */
 	cbi(GLCD_CTRL_PORTA, GLCD_CTRL_CS0);
 	cbi(GLCD_CTRL_PORTA, GLCD_CTRL_CS1);
 	cbi(GLCD_CTRL_PORTA, GLCD_CTRL_CS2);
@@ -62,6 +64,7 @@ void glcdInitHW(void)
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_RS);
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_RW);
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_E);
+	sbi(GLCD_CTRL_DDR, GLCD_CTRL_LED);
 	sbi(GLCD_CTRL_DDRA, GLCD_CTRL_CS0);
 	sbi(GLCD_CTRL_DDRA, GLCD_CTRL_CS1);
 	sbi(GLCD_CTRL_DDRA, GLCD_CTRL_CS2);
@@ -108,22 +111,24 @@ void glcdBusyWait(u08 controller)
 	glcdControllerSelect(controller);
 	// do a read from control register
 	outb_lcd_data_port(GLCD_DATA_PORT, 0xFF);
-	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RS);
-	outb_lcd_ddr_port(GLCD_DATA_DDR, 0x00);
-	sbi(GLCD_CTRL_PORT, GLCD_CTRL_RW);
-	sbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
+	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RS);		/* Clear RS, read instruction data */
+	outb_lcd_ddr_port(GLCD_DATA_DDR, 0x00);	/* Set data port as input */
+	sbi(GLCD_CTRL_PORT, GLCD_CTRL_RW);		/* Set RW, read data */
+	sbi(GLCD_CTRL_PORT, GLCD_CTRL_E);		/* set enable */
 	asm volatile ("nop"); asm volatile ("nop");
 	while(inb_lcd_pin_port(GLCD_DATA_PIN) & GLCD_STATUS_BUSY)
 	{
-		cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
+		cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);	/* clear enable */
 		asm volatile ("nop"); asm volatile ("nop");
 		asm volatile ("nop"); asm volatile ("nop");
-		sbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
+		_delay_us(1);
+		sbi(GLCD_CTRL_PORT, GLCD_CTRL_E);	/* set enable */
 		asm volatile ("nop"); asm volatile ("nop");
 		asm volatile ("nop"); asm volatile ("nop");
+		_delay_us(1);
 	}
-	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
-	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RW);
+	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);		/* clear enable */
+	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RW);		/* clear RW */
 	outb_lcd_ddr_port(GLCD_DATA_DDR, 0xFF);
 	sei();
 #else
@@ -149,6 +154,7 @@ void glcdControlWrite(u08 controller, u08 data)
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
+	_delay_us(1);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
 	sei();
 #else
@@ -173,6 +179,7 @@ u08 glcdControlRead(u08 controller)
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
+	_delay_us(1);
 	data = inb_lcd_pin_port(GLCD_DATA_PIN);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RW);
@@ -202,6 +209,7 @@ void glcdDataWrite(u08 data)
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
+	_delay_us(1);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
 	sei();
 #else
@@ -236,6 +244,7 @@ u08 glcdDataRead(void)
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
 	asm volatile ("nop"); asm volatile ("nop");
+	_delay_us(1);
 	data = inb_lcd_pin_port(GLCD_DATA_PIN);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RW);
@@ -310,7 +319,7 @@ void glcdInit()
 	// initialize hardware
 	glcdInitHW();
 	// bring lcd out of reset
-	glcdReset(FALSE);
+	//glcdReset(FALSE);
 	// Turn on LCD
 	for(i=0; i<GLCD_NUM_CONTROLLERS; i++)
 	{
@@ -395,12 +404,15 @@ void outb_lcd_data_port(u08 port, u08 data)
 	port = port;		/* avoid Warnings from compiler */
 	
 	PORTA &= 0xf0;		/* PA3-PA0 clear */
-	PORTA |= data>>4;	/* DB7-DB4 output to LCD */
+	temp = data>>4;		/* DB7-DB4 output to LCD */
+	PORTA |= temp;		/* DB7-DB4 output to LCD */
 	
+	data &= 0x0f;		/* mask high 4 bits prepare output lower 4 bits to PORTA */
+	 
 	for(i = 0, temp = 0; i < 4; i++)
 	{
-		temp |= data&0x01?1:0;
 		temp <<= 1;
+		temp |= data&0x01?1:0;
 		data >>= 1;
 	}	
 	PORTB &= 0xf0;		/* PB3-PB0 clear */
@@ -418,8 +430,8 @@ void outb_lcd_ddr_port(u08 port, u08 data)
 	}
 	else
 	{
-		DDRA |= ~0xf0;	/* PA3-PA0 set as output */
-		DDRB |= ~0xf0;	/* PB3-PB0 set as output */ 
+		DDRA |= 0x0f;	/* PA3-PA0 set as output */
+		DDRB |= 0x0f;	/* PB3-PB0 set as output */ 
 	}
 }
 
@@ -437,9 +449,9 @@ u08 inb_lcd_pin_port(u08 port)
 	/* DB3-DB0 read */
 	for(i = 0, tempPINB = PINB, tempData = 0; i < 4; i++)
 	{
+		tempData <<= 1;
 		tempData |= tempPINB&0x01?1:0;
 		tempPINB >>= 1;
-		tempData <<= 1;
 	}
 	data |= (tempData & 0x0f);	/* Get whole 8 bits data */		
 	

@@ -45,8 +45,9 @@
 		#define GLCD_CTRL_RS	PB7		// pin for LCD Register Select
 		#define GLCD_CTRL_RW	PB6		// pin for LCD Read/Write
 		#define GLCD_CTRL_E		PB5		// pin for LCD Enable
+		#define GLCD_CTRL_LED	PB4		// pin for LCD backgroud LED Enable
 		#define GLCD_CTRL_CS0	PA4		// pin for LCD Controller 0 Chip Select
-		#define GLCD_CTRL_CS1	PA4		// pin for LCD Controller 1 Chip Select(*)
+		#define GLCD_CTRL_CS1	PA5		// pin for LCD Controller 1 Chip Select(*)
 		#define GLCD_CTRL_CS2	PA5		// pin for LCD Controller 2 Chip Select(*)
 		#define GLCD_CTRL_CS3	PA5		// pin for LCD Controller 3 Chip Select(*)
 		#define GLCD_CTRL_RESET	PB5		// pin for LCD Reset
