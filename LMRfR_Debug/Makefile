@@ -39,7 +39,6 @@ SUBDIRS :=  \
 ../LevelMeterRfRemote_src/ \
 ../LevelMeterRfRemote_src/ \
 ../LevelMeterRfRemote_src/ \
-../LevelMeterRfRemote_src/ \
 ../LMRfR_main/ \
 ../LM_button/
 
