@@ -2,7 +2,7 @@
 //*****************************************************************************
 //
 // File Name	: 'global.h'
-// Title		: AVR project global include 
+// Title		: AVR project global include
 // Author		: Pascal Stang
 // Created		: 7/12/2001
 // Revised		: 9/30/2002
@@ -21,6 +21,8 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+#include  <stdint.h>
+
 // global AVRLIB defines
 #include "avrlibdefs.h"
 // global AVRLIB types definitions
@@ -36,5 +38,7 @@
 //#define F_CPU        4000000               		// 4MHz processor
 //#define F_CPU        3686400               		// 3.69MHz processor
 #define CYCLES_PER_US ((F_CPU+500000)/1000000) 	// cpu cycles per microsecond
+
+#define BUTTON_DATA_TYPE        uint32_t
 
 #endif

@@ -36,14 +36,12 @@ SUBDIRS :=  \
 ../common_avr-liberty-master_src/ \
 ../common_avr-liberty-master_src/ \
 ../common_avr-liberty-master_src/ \
-../common_src/ \
 ../LevelMeterRfRemote_src/ \
 ../LevelMeterRfRemote_src/ \
 ../LevelMeterRfRemote_src/ \
 ../LevelMeterRfRemote_src/ \
-../LMRfR_button/ \
-../LMRfR_lcd_ks0108lib/ \
-../LMRfR_main/
+../LMRfR_main/ \
+../LM_button/
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -54,13 +52,9 @@ C_SRCS +=  \
 ../common_avr-liberty-master_src/rprintf.c \
 ../common_avr-liberty-master_src/timerx8.c \
 ../common_avr-liberty-master_src/uart.c \
-../common_src/fun.c \
-../LMRfR_button/button.c \
-../LMRfR_lcd_ks0108lib/graphic.c \
-../LMRfR_lcd_ks0108lib/KS0108-AVR.c \
-../LMRfR_lcd_ks0108lib/KS0108.c \
 ../LMRfR_main/appl.c \
-../LMRfR_main/main.c
+../LMRfR_main/main.c \
+../LM_button/button.c
 
 
 PREPROCESSING_SRCS += 
@@ -76,13 +70,9 @@ common_avr-liberty-master_src/ks0108.o \
 common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/timerx8.o \
 common_avr-liberty-master_src/uart.o \
-common_src/fun.o \
-LMRfR_button/button.o \
-LMRfR_lcd_ks0108lib/graphic.o \
-LMRfR_lcd_ks0108lib/KS0108-AVR.o \
-LMRfR_lcd_ks0108lib/KS0108.o \
 LMRfR_main/appl.o \
-LMRfR_main/main.o
+LMRfR_main/main.o \
+LM_button/button.o
 
 OBJS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.o \
@@ -91,13 +81,9 @@ common_avr-liberty-master_src/ks0108.o \
 common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/timerx8.o \
 common_avr-liberty-master_src/uart.o \
-common_src/fun.o \
-LMRfR_button/button.o \
-LMRfR_lcd_ks0108lib/graphic.o \
-LMRfR_lcd_ks0108lib/KS0108-AVR.o \
-LMRfR_lcd_ks0108lib/KS0108.o \
 LMRfR_main/appl.o \
-LMRfR_main/main.o
+LMRfR_main/main.o \
+LM_button/button.o
 
 C_DEPS +=  \
 common_avr-liberty-master_src/buffer.d \
@@ -106,13 +92,9 @@ common_avr-liberty-master_src/ks0108.d \
 common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/timerx8.d \
 common_avr-liberty-master_src/uart.d \
-common_src/fun.d \
-LMRfR_button/button.d \
-LMRfR_lcd_ks0108lib/graphic.d \
-LMRfR_lcd_ks0108lib/KS0108-AVR.d \
-LMRfR_lcd_ks0108lib/KS0108.d \
 LMRfR_main/appl.d \
-LMRfR_main/main.d
+LMRfR_main/main.d \
+LM_button/button.d
 
 C_DEPS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.d \
@@ -121,13 +103,9 @@ common_avr-liberty-master_src/ks0108.d \
 common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/timerx8.d \
 common_avr-liberty-master_src/uart.d \
-common_src/fun.d \
-LMRfR_button/button.d \
-LMRfR_lcd_ks0108lib/graphic.d \
-LMRfR_lcd_ks0108lib/KS0108-AVR.d \
-LMRfR_lcd_ks0108lib/KS0108.d \
 LMRfR_main/appl.d \
-LMRfR_main/main.d
+LMRfR_main/main.d \
+LM_button/button.d
 
 OUTPUT_FILE_PATH +=LevelMeterRfRemote.elf
 
@@ -162,46 +140,24 @@ LINKER_SCRIPT_DEP+=
 
 
 
-
-
-
-
-
-
-
-
 common_avr-liberty-master_src/%.o: ../common_avr-liberty-master_src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"../LMRfR_button" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-common_src/%.o: ../common_src/%.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"../LMRfR_button" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-LMRfR_button/%.o: ../LMRfR_button/%.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"../LMRfR_button" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-LMRfR_lcd_ks0108lib/%.o: ../LMRfR_lcd_ks0108lib/%.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"../LMRfR_button" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include" -I"../LMRfR_main" -I"../LM_button"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 LMRfR_main/%.o: ../LMRfR_main/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"../LMRfR_button" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include" -I"../LMRfR_main" -I"../LM_button"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+LM_button/%.o: ../LM_button/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=8000000UL -D__AVR_ATmega644__  -I"../common_avr-liberty-master_src" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include" -I"../LMRfR_main" -I"../LM_button"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
