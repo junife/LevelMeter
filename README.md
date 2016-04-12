@@ -13,5 +13,3 @@ Comments for LevelMeterMainboard:
 	1 Prefix LMMB_ folders including codes are for Level Meter main board.
 	2 All IDE output file in folder LMMB_Debug, such as *.hex, *.eep.
 	
-Hujunfeng
-Xiaodie
