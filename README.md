@@ -14,3 +14,4 @@ Comments for LevelMeterMainboard:
 	2 All IDE output file in folder LMMB_Debug, such as *.hex, *.eep.
 	
 Hujunfeng
+Xiaodie
