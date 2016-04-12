@@ -32,6 +32,7 @@
 
 #include  <stdint.h>
 #include  <stdbool.h>
+#include "global.h"		// include our global settings
 
 #ifdef   BUTTON_GLOBALS
 #define  BUTTON_EXT
@@ -42,10 +43,10 @@
 /*
 *********************************************************************************************************
 *                                          BUTTON DATA TYPE DEFINE
-* Choose uint8_t/uint16_t/uint32_t will support 8/16/32 buttons. 
+* Choose uint8_t/uint16_t/uint32_t will support 8/16/32 buttons. BUTTON_DATA_TYPE define in global.h
 *********************************************************************************************************
 */
-#define ButtonDataType uint32_t
+#define ButtonDataType BUTTON_DATA_TYPE
 /*
 *********************************************************************************************************
 *                                          DEFINE BUTTON BITs STRUCT

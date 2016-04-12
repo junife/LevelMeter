@@ -14,17 +14,9 @@ common_avr-liberty-master_src\timerx8.c
 
 common_avr-liberty-master_src\uart.c
 
-common_src\fun.c
-
-LMRfR_button\button.c
-
-LMRfR_lcd_ks0108lib\graphic.c
-
-LMRfR_lcd_ks0108lib\KS0108-AVR.c
-
-LMRfR_lcd_ks0108lib\KS0108.c
-
 LMRfR_main\appl.c
 
 LMRfR_main\main.c
+
+LM_button\button.c
 
