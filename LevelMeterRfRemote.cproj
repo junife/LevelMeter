@@ -216,7 +216,6 @@
     <Folder Include="LevelMeterRfRemote_src\" />
     <Folder Include="LevelMeterRfRemote_src\" />
     <Folder Include="LevelMeterRfRemote_src\" />
-    <Folder Include="LevelMeterRfRemote_src\" />
     <Folder Include="LMRfR_main\" />
     <Folder Include="LM_button\" />
   </ItemGroup>
