@@ -1,7 +1,8 @@
----- UartRxFunc Matches (6 in 2 files) ----
-Appl.c (lmrfr_main):void UartRxFunc(unsigned char c)
-Uart.c (common_avr-liberty-master_src):volatile static voidFuncPtru08 UartRxFunc;
-Uart.c (common_avr-liberty-master_src):	UartRxFunc = 0;
-Uart.c (common_avr-liberty-master_src):	UartRxFunc = rx_func;
-Uart.c (common_avr-liberty-master_src):	if(UartRxFunc)
-Uart.c (common_avr-liberty-master_src):		UartRxFunc(c);
+---- SIG_UART_TRANS Matches (7 in 2 files) ----
+Uart.c (common_avr-liberty-master_src):UART_INTERRUPT_HANDLER(SIG_UART_TRANS)
+Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART0_TX_vect//USART_TX_vect
+Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART_TXC_vect
+Uart.h (common_avr-liberty-master_src):#define SIG_UART_TRANS		SIG_USART_TRANS
+Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		SIG_UART0_TRANS
+Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART1_TX_vect
+Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART0_TX_vect

@@ -21,7 +21,6 @@ Allocating common symbols
 Common symbol       size              file
 
 uartReadyTx         0x1               common_avr-liberty-master_src/uart.o
-greeting            0x14              LMRfR_main/appl.o
 Timer0Reg0          0x4               common_avr-liberty-master_src/timerx8.o
 uartRxBuffer        0x8               common_avr-liberty-master_src/uart.o
 TimerPauseReg       0x4               common_avr-liberty-master_src/timerx8.o
@@ -180,6 +179,7 @@ Discarded input sections
  .text          0x00000000        0x0 LMRfR_main/appl.o
  .data          0x00000000        0x0 LMRfR_main/appl.o
  .bss           0x00000000        0x0 LMRfR_main/appl.o
+ COMMON         0x00000000        0x1 LMRfR_main/appl.o
  .text          0x00000000        0x0 LMRfR_main/main.o
  .data          0x00000000        0x0 LMRfR_main/main.o
  .bss           0x00000000        0x0 LMRfR_main/main.o
@@ -719,61 +719,61 @@ END GROUP
  *(.fini0)
                 0x000011c4                _etext = .
 
-.data           0x00800100       0x76 load address 0x000011c4
+.data           0x00800100       0x8a load address 0x000011c4
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
+ .data.greeting
+                0x00800100       0x14 LMRfR_main/appl.o
+                0x00800100                greeting
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800100       0x75 LMRfR_main/appl.o
+                0x00800114       0x75 LMRfR_main/appl.o
  *(.gnu.linkonce.d*)
-                0x00800176                . = ALIGN (0x2)
- *fill*         0x00800175        0x1 
-                0x00800176                _edata = .
-                0x00800176                PROVIDE (__data_end, .)
+                0x0080018a                . = ALIGN (0x2)
+ *fill*         0x00800189        0x1 
+                0x0080018a                _edata = .
+                0x0080018a                PROVIDE (__data_end, .)
 
-.bss            0x00800176       0xe7
-                0x00800176                PROVIDE (__bss_start, .)
+.bss            0x0080018a       0xd2
+                0x0080018a                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.rputchar  0x00800176        0x2 common_avr-liberty-master_src/rprintf.o
+ .bss.rputchar  0x0080018a        0x2 common_avr-liberty-master_src/rprintf.o
  .bss.TimerIntFunc
-                0x00800178        0xe common_avr-liberty-master_src/timerx8.o
+                0x0080018c        0xe common_avr-liberty-master_src/timerx8.o
  .bss.UartRxFunc
-                0x00800186        0x2 common_avr-liberty-master_src/uart.o
+                0x0080019a        0x2 common_avr-liberty-master_src/uart.o
  .bss.uartTxData
-                0x00800188       0x40 common_avr-liberty-master_src/uart.o
+                0x0080019c       0x40 common_avr-liberty-master_src/uart.o
  .bss.uartRxData
-                0x008001c8       0x40 common_avr-liberty-master_src/uart.o
+                0x008001dc       0x40 common_avr-liberty-master_src/uart.o
  *(COMMON)
- COMMON         0x00800208        0x6 common_avr-liberty-master_src/ks0108.o
-                0x00800208                GrLcdState
- COMMON         0x0080020e        0xc common_avr-liberty-master_src/timerx8.o
-                0x0080020e                Timer0Reg0
-                0x00800212                TimerPauseReg
-                0x00800216                Timer2Reg0
- COMMON         0x0080021a       0x14 common_avr-liberty-master_src/uart.o
-                0x0080021a                uartReadyTx
-                0x0080021b                uartRxBuffer
-                0x00800223                uartBufferedTx
-                0x00800224                uartTxBuffer
-                0x0080022c                uartRxOverflow
- COMMON         0x0080022e       0x15 LMRfR_main/appl.o
-                0x0080022e                greeting
-                0x00800242                testChar
- COMMON         0x00800243       0x1a LM_button/button.o
-                0x00800243                button
-                0x0080025d                PROVIDE (__bss_end, .)
+ COMMON         0x0080021c        0x6 common_avr-liberty-master_src/ks0108.o
+                0x0080021c                GrLcdState
+ COMMON         0x00800222        0xc common_avr-liberty-master_src/timerx8.o
+                0x00800222                Timer0Reg0
+                0x00800226                TimerPauseReg
+                0x0080022a                Timer2Reg0
+ COMMON         0x0080022e       0x14 common_avr-liberty-master_src/uart.o
+                0x0080022e                uartReadyTx
+                0x0080022f                uartRxBuffer
+                0x00800237                uartBufferedTx
+                0x00800238                uartTxBuffer
+                0x00800240                uartRxOverflow
+ COMMON         0x00800242       0x1a LM_button/button.o
+                0x00800242                button
+                0x0080025c                PROVIDE (__bss_end, .)
                 0x000011c4                __data_load_start = LOADADDR (.data)
-                0x0000123a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000124e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080025d        0x0
-                0x0080025d                PROVIDE (__noinit_start, .)
+.noinit         0x0080025c        0x0
+                0x0080025c                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080025d                PROVIDE (__noinit_end, .)
-                0x0080025d                _end = .
-                0x0080025d                PROVIDE (__heap_start, .)
+                0x0080025c                PROVIDE (__noinit_end, .)
+                0x0080025c                _end = .
+                0x0080025c                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)

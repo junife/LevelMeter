@@ -7,7 +7,7 @@
 #include "ks0108.h"
 
 cBuffer uartRxBuffer;				///< uart receive buffer
-char greeting[20];
+char greeting[20]="hello world!";
 void UartRxFuncXX(unsigned char c);
 char testChar;
 

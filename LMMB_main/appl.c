@@ -131,7 +131,7 @@ void AppCycleUpdate(void)
 	{
 		tempChar = bufferGetFromFront(&uartRxBuffer);
 		//rprintf("char=%c\n",tempChar);
-		rprintf("%c",tempChar);
+		rprintf("Type=%c\n",tempChar);
 	}
 	//rprintf("D=%d\n",uartRxBuffer.datalength);
 
