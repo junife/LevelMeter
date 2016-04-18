@@ -16,6 +16,8 @@ common_avr-liberty-master_src\uart.c
 
 LMRfR_main\appl.c
 
+LMRfR_main\button_dep.c
+
 LMRfR_main\main.c
 
 LM_button\button.c

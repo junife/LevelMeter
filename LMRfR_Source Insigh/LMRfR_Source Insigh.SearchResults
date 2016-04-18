@@ -1,8 +1,2 @@
----- SIG_UART_TRANS Matches (7 in 2 files) ----
-Uart.c (common_avr-liberty-master_src):UART_INTERRUPT_HANDLER(SIG_UART_TRANS)
-Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART0_TX_vect//USART_TX_vect
-Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART_TXC_vect
-Uart.h (common_avr-liberty-master_src):#define SIG_UART_TRANS		SIG_USART_TRANS
-Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		SIG_UART0_TRANS
-Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART1_TX_vect
-Uart.h (common_avr-liberty-master_src):	#define SIG_UART_TRANS		USART0_TX_vect
+---- BUTTON_BUFFER_SIZE Matches (1 in 1 files) ----
+Button.h (lm_button):#define BUTTON_BUFFER_SIZE 		2

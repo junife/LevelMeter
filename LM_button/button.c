@@ -1,20 +1,6 @@
 /*
 *********************************************************************************************************
-
-* Copyright 2008 The Watt Stopper / Legrand
-* as an unpublished work.
-* All Rights Reserved.
 *
-* The information contained herein is confidential
-* property of The Watt Stopper / Legrand.
-* The use, copying, transfer or disclosure of such
-* information is prohibited except by express written
-* agreement with The Watt Stopper / Legrand.
-*
-* Project:PW/DSW 31x
-* MCU:Atmega168P
-* Compile condition: AVR Studio 6
-* First written on March 2015, by Corner Hu.
 *
 * Module Description:
 * This file list all function for button, such as initialize, update button state each power cycle. And 
@@ -32,12 +18,9 @@ all button APIs called by core.
 #define   BUTTON_GLOBALS
 #endif
 
-#include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
-#include <util/delay.h>
-
 #include "button.h"
-#include "uart.h"		// include uart function library
-#include "rprintf.h"	// include printf function library
+#include "button_dep.h"
+
 /*
 *********************************************************************************************************
 *                                       VARIABLE DEFINITION
@@ -65,18 +48,9 @@ static ButtonDataType ButtonGetIO_State(void);
 * Returns    : none
 *********************************************************************************************************
 */
-
 void ButtonInit(void)
 {
-	DDRD  &= ~((1<<DDD6) | (1<<DDD5) | (1<<DDD4) | (1<<DDD3));	/* Set PD6-PD3 as input */
-	PORTD |= (1<<PD6) | (1<<PD5) | (1<<PD4) | (1<<PD3);			/* Set PD6-PD3 as internal pull up */
-	
-	/* 
-	Set PC7-PC4 as input as internal pull up
-	Set PC3-PC0 as Tri-state (Hi-Z) 
-	*/
-	DDRC   = (0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
-	PORTC  = (1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (0<<PC3) | (0<<PC2) | (0<<PC1) | (0<<PC0);
+	ButtonInitEx();
 }
 
 
@@ -154,57 +128,18 @@ void ButtonCycleUpdate(void)
 *********************************************************************************************************
 *                                         ButtonReadIOs
 *
-* Description : This function called by ButtonCycleUpdate
+* Description : This function called by ButtonCycleUpdate to read hardware button IO state.
 *
 * Arguments   : None.
 *
 * Returns    : Button IO value.
 *
-* Notes      : 1) Button IO general set as internal/external pull-up, so press button IO will low. However,
-*			      button structure define high when button press, so need reverse IO input value so that keep
-*                 consistently.
+* Notes      : None
 *
-*              2) Bit location in one byte need to map with BUTTON_T structure.
-*
-*			   3) Eg: button1->PINA7,button1->PINA6. io_state = (~PINA6<<1) | (~PINA7<<0)
-*
-* Button Maps 32 bits for RF remote, more details see hardware schematic.
-*	19		18		17		16
-*	PB17	PB18	PB19	PB20
-*	15		14		13		12		11		10		9		8		7		6		5		4		3		2		1		0
-*	PB1		PB5		PB9		PB13	PB2		PB6		PB10	PB14	PB3		PB7		PB11	PB15	PB4		PB8		PB12	PB16
-*********************************************************************************************************
 */
 ButtonDataType ButtonGetIO_State(void)
 {
-	ButtonDataType io_state = 0;
-	ButtonDataType tempValue;
-	ButtonDataType MatrixButtonValue;
-	uint8_t Col;
-	
-	tempValue = (~PIND) & ((1<<PIND6) | (1<<PIND5) | (1<<PIND4) | (1<<PIND3));	/* Get PD6-PD3 IO state */
-	tempValue >>= 3;	/* right rotate to low 4 bits location */
-	
-	for(Col = 0, MatrixButtonValue = 0; Col < 4; Col++)
-	{
-		/* 
-		Set PC7-PC4 as input as internal pull up
-		Set PC3-PC0 as Tri-state (Hi-Z)
-		*/
-		DDRC   = (0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
-		PORTC  = (1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (0<<PC3) | (0<<PC2) | (0<<PC1) | (0<<PC0);
-	
-		/* Set one Column as output with low */
-		DDRC  |= 0x08>>Col;			/* Set the column as output */
-		PORTC &= ~(0x08>>Col);		/* Set the column as low */
-		
-		/* read and save button state after the column which active as low */
-		MatrixButtonValue <<= 4;	/* newer 4 button state store in lower four bits */
-		MatrixButtonValue |= ((~PINC) & 0x00f0) >> 4;
-	}
-	
-	io_state = (tempValue << 16) | MatrixButtonValue;
-	return  io_state;
+	return  ButtonGetIO_StateEx();
 }
 
 /*
@@ -288,141 +223,8 @@ ButtonDataType ButtonGetHeld (void)
 *********************************************************************************************************
 */
 
-ButtonDataType ButtonGetTwiceTapEvent(void)
+ButtonDataType ButtonGetTwiceTap(void)
 {
 	return button.buttonsTwiceReleased.bVal;
 }
 
-#if 0
-/*
-*********************************************************************************************************
-*                                         ButtonDownTapEvent
-*
-* Description : This function called by application and get a button tap event
-*
-* Arguments   : none
-*
-* Returns    : == true          button have pressed in the past, now it is released.
-*              == false          button doesn't press
-*********************************************************************************************************
-*/
-
-bool ButtonDownTapEvent (void)
-{
-	if (button.buttonsReleased.PB13) {
-		return true;
-	}
-    
-	return false;
-}
-
-/*
-*********************************************************************************************************
-*                                         ButtonDownTwiceTapEvent
-*
-* Description : This function called by application and get a button twice continuous tap event
-*
-* Arguments   : none
-*
-* Returns    : == true          button twice continuous tap event.
-*              == false          no event
-*********************************************************************************************************
-*/
-
-bool ButtonDownTwiceTapEvent (void)
-{
-	if (button.buttonsTwiceReleased.PB13) {
-		return true;
-	}
-    
-    return false;
-}
-
-/*
-*********************************************************************************************************
-*                                         ButtonDownHeldEvent
-*
-* Description : This function called by application and get a button held event
-*
-* Arguments   : none
-*
-* Returns    : == true          button have held
-*              == false          button doesn't held
-*********************************************************************************************************
-*/
-
-bool ButtonDownHeldEvent (void)
-{
-	if (button.buttonsHeld.PB13) {
-		return true;
-	}
-    
-    return false;
-}
-
-/*
-*********************************************************************************************************
-*                                         ButtonUpTapEvent
-*
-* Description : This function called by application and get a button tap event
-*
-* Arguments   : none
-*
-* Returns    : == true          button have pressed in the past, now it is released.
-*              == false          button doesn't press
-*********************************************************************************************************
-*/
-
-bool ButtonUpTapEvent (void)
-{
-	if (button.buttonsReleased.PB13) {
-		return true;
-	}
-    
-    return false;
-}
-
-/*
-*********************************************************************************************************
-*                                         ButtonUpTwiceTapEvent
-*
-* Description : This function called by application and get a button twice continuous tap event
-*
-* Arguments   : none
-*
-* Returns    : == true          button twice continuous tap event.
-*              == false          no event
-*********************************************************************************************************
-*/
-
-bool ButtonUpTwiceTapEvent(void)
-{
-	if (button.buttonsTwiceReleased.PB13) {
-		return true;
-	}
-    
-    return false;
-}
-
-/*
-*********************************************************************************************************
-*                                         ButtonUpHeldEvent
-*
-* Description : This function called by application and get a button held event
-*
-* Arguments   : none
-*
-* Returns    : == true          button have held
-*              == false          button doesn't held
-*********************************************************************************************************
-*/
-
-bool ButtonUpHeldEvent(void)
-{
-	if (button.buttonsHeld.PB13) {
-		return true;
-	}
-    
-    return false;
-}
-#endif

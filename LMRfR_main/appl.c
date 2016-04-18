@@ -7,7 +7,7 @@
 #include "ks0108.h"
 
 cBuffer uartRxBuffer;				///< uart receive buffer
-char greeting[20]="hello world!";
+char greeting[20]="hello world!!!!";
 void UartRxFuncXX(unsigned char c);
 char testChar;
 
@@ -54,7 +54,7 @@ void ApplInit(void)
 	
 	glcdPutStr(&greeting[0]);
 	// Just print message for debug.
-	rprintf("RF remote start!\n" );	
+	rprintf("RF remote start!!!\n" );	
 }
 
 /*
