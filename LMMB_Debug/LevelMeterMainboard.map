@@ -17,7 +17,7 @@ Common symbol       size              file
 uartReadyTx         0x1               common_avr-liberty-master_src/uart.o
 greeting            0x14              LMMB_main/appl.o
 uartRxBuffer        0x8               common_avr-liberty-master_src/uart.o
-button              0x14              LM_button/button.o
+button              0x8               LM_button/button.o
 uartBufferedTx      0x1               common_avr-liberty-master_src/uart.o
 testChar            0x1               LMMB_main/appl.o
 uartTxBuffer        0x8               common_avr-liberty-master_src/uart.o
@@ -80,6 +80,9 @@ Discarded input sections
  .data          0x00000000        0x0 LMMB_main/appl.o
  .bss           0x00000000        0x0 LMMB_main/appl.o
  COMMON         0x00000000       0x15 LMMB_main/appl.o
+ .text          0x00000000        0x0 LMMB_main/button_dep.o
+ .data          0x00000000        0x0 LMMB_main/button_dep.o
+ .bss           0x00000000        0x0 LMMB_main/button_dep.o
  .text          0x00000000        0x0 LMMB_main/main.o
  .data          0x00000000        0x0 LMMB_main/main.o
  .bss           0x00000000        0x0 LMMB_main/main.o
@@ -88,11 +91,7 @@ Discarded input sections
  .bss           0x00000000        0x0 LM_button/button.o
  .text.ButtonGetHoldTime
                 0x00000000        0xa LM_button/button.o
- .text.ButtonGetReleased
-                0x00000000        0x6 LM_button/button.o
- .text.ButtonGetHeld
-                0x00000000        0x6 LM_button/button.o
- .text.ButtonGetTwiceTapEvent
+ .text.ButtonGetTwiceTap
                 0x00000000        0x6 LM_button/button.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
@@ -188,6 +187,7 @@ LOAD common_avr-liberty-master_src/buffer.o
 LOAD common_avr-liberty-master_src/rprintf.o
 LOAD common_avr-liberty-master_src/uart.o
 LOAD LMMB_main/appl.o
+LOAD LMMB_main/button_dep.o
 LOAD LMMB_main/main.o
 LOAD LM_button/button.o
 START GROUP
@@ -290,7 +290,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x86a
+.text           0x00000000      0x780
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
                 0x00000000                __vector_default
@@ -306,56 +306,45 @@ END GROUP
  *(.progmem*)
  .progmem.data.HexChars
                 0x00000054       0x11 common_avr-liberty-master_src/rprintf.o
- .progmem.data.__c.2034
+ .progmem.data.__c.1998
                 0x00000065        0x9 LMMB_main/appl.o
- .progmem.data.__c.2032
-                0x0000006e       0x13 LMMB_main/appl.o
- .progmem.data.__c.2030
-                0x00000081        0x7 LMMB_main/appl.o
- .progmem.data.__c.2027
-                0x00000088        0x7 LMMB_main/appl.o
- .progmem.data.__c.2024
-                0x0000008f        0x7 LMMB_main/appl.o
- .progmem.data.__c.2021
-                0x00000096        0x8 LMMB_main/appl.o
- .progmem.data.__c.2018
-                0x0000009e        0x8 LMMB_main/appl.o
- .progmem.data.__c.2015
-                0x000000a6        0x8 LMMB_main/appl.o
- .progmem.data.__c.2012
-                0x000000ae        0x7 LMMB_main/appl.o
- .progmem.data.__c.2010
-                0x000000b5        0x7 LMMB_main/appl.o
- .progmem.data.__c.2004
-                0x000000bc       0x13 LMMB_main/appl.o
-                0x000000d0                . = ALIGN (0x2)
- *fill*         0x000000cf        0x1 
+ .progmem.data.__c.1996
+                0x0000006e        0x8 LMMB_main/appl.o
+ .progmem.data.__c.1994
+                0x00000076        0x8 LMMB_main/appl.o
+ .progmem.data.__c.1992
+                0x0000007e        0x6 LMMB_main/appl.o
+ .progmem.data.__c.1990
+                0x00000084        0x6 LMMB_main/appl.o
+ .progmem.data.__c.1984
+                0x0000008a       0x12 LMMB_main/appl.o
+                0x0000009c                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000000d0                __ctors_start = .
+                0x0000009c                __ctors_start = .
  *(.ctors)
-                0x000000d0                __ctors_end = .
-                0x000000d0                __dtors_start = .
+                0x0000009c                __ctors_end = .
+                0x0000009c                __dtors_start = .
  *(.dtors)
-                0x000000d0                __dtors_end = .
+                0x0000009c                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000000d0        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
-                0x000000d0                __init
+ .init0         0x0000009c        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
+                0x0000009c                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000000d0        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
+ .init2         0x0000009c        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000dc       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_clear_bss.o)
-                0x000000dc                __do_clear_bss
+ .init4         0x000000a8       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_clear_bss.o)
+                0x000000a8                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -366,103 +355,127 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000ec        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
+ .init9         0x000000b8        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
  *(.init9)
  *(.text)
- .text          0x000000f4        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
-                0x000000f4                __vector_1
-                0x000000f4                __vector_12
-                0x000000f4                __bad_interrupt
-                0x000000f4                __vector_6
-                0x000000f4                __vector_3
-                0x000000f4                __vector_17
-                0x000000f4                __vector_19
-                0x000000f4                __vector_7
-                0x000000f4                __vector_5
-                0x000000f4                __vector_4
-                0x000000f4                __vector_9
-                0x000000f4                __vector_2
-                0x000000f4                __vector_15
-                0x000000f4                __vector_8
-                0x000000f4                __vector_14
-                0x000000f4                __vector_10
-                0x000000f4                __vector_16
-                0x000000f4                __vector_18
-                0x000000f4                __vector_20
-                0x000000f8                . = ALIGN (0x2)
+ .text          0x000000c0        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega16/avr5/crtatmega16.o
+                0x000000c0                __vector_1
+                0x000000c0                __vector_12
+                0x000000c0                __bad_interrupt
+                0x000000c0                __vector_6
+                0x000000c0                __vector_3
+                0x000000c0                __vector_17
+                0x000000c0                __vector_19
+                0x000000c0                __vector_7
+                0x000000c0                __vector_5
+                0x000000c0                __vector_4
+                0x000000c0                __vector_9
+                0x000000c0                __vector_2
+                0x000000c0                __vector_15
+                0x000000c0                __vector_8
+                0x000000c0                __vector_14
+                0x000000c0                __vector_10
+                0x000000c0                __vector_16
+                0x000000c0                __vector_18
+                0x000000c0                __vector_20
+                0x000000c4                . = ALIGN (0x2)
  *(.text.*)
  .text.bufferInit
-                0x000000f8       0x1a common_avr-liberty-master_src/buffer.o
-                0x000000f8                bufferInit
+                0x000000c4       0x1a common_avr-liberty-master_src/buffer.o
+                0x000000c4                bufferInit
  .text.bufferGetFromFront
-                0x00000112       0x48 common_avr-liberty-master_src/buffer.o
-                0x00000112                bufferGetFromFront
+                0x000000de       0x48 common_avr-liberty-master_src/buffer.o
+                0x000000de                bufferGetFromFront
  .text.bufferAddToEnd
-                0x0000015a       0x4a common_avr-liberty-master_src/buffer.o
-                0x0000015a                bufferAddToEnd
+                0x00000126       0x4a common_avr-liberty-master_src/buffer.o
+                0x00000126                bufferAddToEnd
  .text.bufferIsNotFull
-                0x000001a4       0x16 common_avr-liberty-master_src/buffer.o
-                0x000001a4                bufferIsNotFull
+                0x00000170       0x16 common_avr-liberty-master_src/buffer.o
+                0x00000170                bufferIsNotFull
  .text.rprintfInit
-                0x000001ba        0xa common_avr-liberty-master_src/rprintf.o
-                0x000001ba                rprintfInit
+                0x00000186        0xa common_avr-liberty-master_src/rprintf.o
+                0x00000186                rprintfInit
  .text.rprintfChar
-                0x000001c4       0x24 common_avr-liberty-master_src/rprintf.o
-                0x000001c4                rprintfChar
+                0x00000190       0x24 common_avr-liberty-master_src/rprintf.o
+                0x00000190                rprintfChar
  .text.rprintfu04
-                0x000001e8       0x12 common_avr-liberty-master_src/rprintf.o
-                0x000001e8                rprintfu04
+                0x000001b4       0x12 common_avr-liberty-master_src/rprintf.o
+                0x000001b4                rprintfu04
  .text.rprintf1RamRom
-                0x000001fa      0x188 common_avr-liberty-master_src/rprintf.o
-                0x000001fa                rprintf1RamRom
+                0x000001c6      0x188 common_avr-liberty-master_src/rprintf.o
+                0x000001c6                rprintf1RamRom
  .text.uartInitBuffers
-                0x00000382       0x22 common_avr-liberty-master_src/uart.o
-                0x00000382                uartInitBuffers
+                0x0000034e       0x22 common_avr-liberty-master_src/uart.o
+                0x0000034e                uartInitBuffers
  .text.uartInit
-                0x000003a4       0x2c common_avr-liberty-master_src/uart.o
-                0x000003a4                uartInit
+                0x00000370       0x2c common_avr-liberty-master_src/uart.o
+                0x00000370                uartInit
  .text.uartSetBaudRate
-                0x000003d0       0x64 common_avr-liberty-master_src/uart.o
-                0x000003d0                uartSetBaudRate
+                0x0000039c       0x64 common_avr-liberty-master_src/uart.o
+                0x0000039c                uartSetBaudRate
  .text.uartSendByte
-                0x00000434       0x10 common_avr-liberty-master_src/uart.o
-                0x00000434                uartSendByte
+                0x00000400       0x10 common_avr-liberty-master_src/uart.o
+                0x00000400                uartSendByte
  .text.__vector_13
-                0x00000444       0x76 common_avr-liberty-master_src/uart.o
-                0x00000444                __vector_13
+                0x00000410       0x76 common_avr-liberty-master_src/uart.o
+                0x00000410                __vector_13
  .text.__vector_11
-                0x000004ba       0x7e common_avr-liberty-master_src/uart.o
-                0x000004ba                __vector_11
- .text.McuInit  0x00000538       0x1a LMMB_main/appl.o
-                0x00000538                McuInit
+                0x00000486       0x7e common_avr-liberty-master_src/uart.o
+                0x00000486                __vector_11
+ .text.McuInit  0x00000504       0x1a LMMB_main/appl.o
+                0x00000504                McuInit
  .text.ApplInit
-                0x00000552       0x1c LMMB_main/appl.o
-                0x00000552                ApplInit
+                0x0000051e       0x1c LMMB_main/appl.o
+                0x0000051e                ApplInit
  .text.AppCycleUpdate
-                0x0000056e      0x162 LMMB_main/appl.o
-                0x0000056e                AppCycleUpdate
- .text.main     0x000006d0       0x20 LMMB_main/main.o
-                0x000006d0                main
+                0x0000053a       0xd2 LMMB_main/appl.o
+                0x0000053a                AppCycleUpdate
+ .text.ButtonInitEx
+                0x0000060c        0x8 LMMB_main/button_dep.o
+                0x0000060c                ButtonInitEx
+ .text.ButtonGetIO_StateEx
+                0x00000614        0x8 LMMB_main/button_dep.o
+                0x00000614                ButtonGetIO_StateEx
+ .text.ButtonJMP1ReleasedEvent
+                0x0000061c        0x8 LMMB_main/button_dep.o
+                0x0000061c                ButtonJMP1ReleasedEvent
+ .text.ButtonJMP1HeldEvent
+                0x00000624        0x8 LMMB_main/button_dep.o
+                0x00000624                ButtonJMP1HeldEvent
+ .text.ButtonJMP2ReleasedEvent
+                0x0000062c        0xa LMMB_main/button_dep.o
+                0x0000062c                ButtonJMP2ReleasedEvent
+ .text.ButtonJMP2HeldEvent
+                0x00000636        0xa LMMB_main/button_dep.o
+                0x00000636                ButtonJMP2HeldEvent
+ .text.main     0x00000640       0x20 LMMB_main/main.o
+                0x00000640                main
  .text.ButtonInit
-                0x000006f0       0x14 LM_button/button.o
-                0x000006f0                ButtonInit
+                0x00000660        0x6 LM_button/button.o
+                0x00000660                ButtonInit
  .text.ButtonCycleUpdate
-                0x00000704       0xd8 LM_button/button.o
-                0x00000704                ButtonCycleUpdate
+                0x00000666       0x80 LM_button/button.o
+                0x00000666                ButtonCycleUpdate
+ .text.ButtonGetReleased
+                0x000006e6        0x6 LM_button/button.o
+                0x000006e6                ButtonGetReleased
+ .text.ButtonGetHeld
+                0x000006ec        0x6 LM_button/button.o
+                0x000006ec                ButtonGetHeld
  .text.libgcc.div
-                0x000007dc       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
-                0x000007dc                __udivmodhi4
+                0x000006f2       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x000006f2                __udivmodhi4
  .text.libgcc.div
-                0x00000804       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
-                0x00000804                __udivmodsi4
+                0x0000071a       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000071a                __udivmodsi4
  .text.libgcc.mul
-                0x00000848       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
-                0x00000848                __umulhisi3
-                0x00000866                . = ALIGN (0x2)
+                0x0000075e       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
+                0x0000075e                __umulhisi3
+                0x0000077c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000866        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
-                0x00000866                _exit
-                0x00000866                exit
+ .fini9         0x0000077c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+                0x0000077c                _exit
+                0x0000077c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -481,11 +494,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000866        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000077c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000086a                _etext = .
+                0x00000780                _etext = .
 
-.data           0x00800060        0x0 load address 0x0000086a
+.data           0x00800060        0x0 load address 0x00000780
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -496,7 +509,7 @@ END GROUP
                 0x00800060                _edata = .
                 0x00800060                PROVIDE (__data_end, .)
 
-.bss            0x00800060       0xac
+.bss            0x00800060       0xa0
                 0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -514,18 +527,18 @@ END GROUP
                 0x008000ed                uartBufferedTx
                 0x008000ee                uartTxBuffer
                 0x008000f6                uartRxOverflow
- COMMON         0x008000f8       0x14 LM_button/button.o
+ COMMON         0x008000f8        0x8 LM_button/button.o
                 0x008000f8                button
-                0x0080010c                PROVIDE (__bss_end, .)
-                0x0000086a                __data_load_start = LOADADDR (.data)
-                0x0000086a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800100                PROVIDE (__bss_end, .)
+                0x00000780                __data_load_start = LOADADDR (.data)
+                0x00000780                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080010c        0x0
-                0x0080010c                PROVIDE (__noinit_start, .)
+.noinit         0x00800100        0x0
+                0x00800100                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080010c                PROVIDE (__noinit_end, .)
-                0x0080010c                _end = .
-                0x0080010c                PROVIDE (__heap_start, .)
+                0x00800100                PROVIDE (__noinit_end, .)
+                0x00800100                _end = .
+                0x00800100                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -571,6 +584,7 @@ END GROUP
  .comment       0x00000030       0x31 common_avr-liberty-master_src/rprintf.o
  .comment       0x00000030       0x31 common_avr-liberty-master_src/uart.o
  .comment       0x00000030       0x31 LMMB_main/appl.o
+ .comment       0x00000030       0x31 LMMB_main/button_dep.o
  .comment       0x00000030       0x31 LMMB_main/main.o
  .comment       0x00000030       0x31 LM_button/button.o
 
@@ -594,7 +608,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x1f0
+.debug_aranges  0x00000000      0x238
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x50 common_avr-liberty-master_src/buffer.o
@@ -605,50 +619,56 @@ END GROUP
  .debug_aranges
                 0x00000158       0x30 LMMB_main/appl.o
  .debug_aranges
-                0x00000188       0x20 LMMB_main/main.o
+                0x00000188       0x48 LMMB_main/button_dep.o
  .debug_aranges
-                0x000001a8       0x48 LM_button/button.o
+                0x000001d0       0x20 LMMB_main/main.o
+ .debug_aranges
+                0x000001f0       0x48 LM_button/button.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1911
+.debug_info     0x00000000     0x183e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x2ef common_avr-liberty-master_src/buffer.o
  .debug_info    0x000002ef      0x63b common_avr-liberty-master_src/rprintf.o
  .debug_info    0x0000092a      0x581 common_avr-liberty-master_src/uart.o
- .debug_info    0x00000eab      0x511 LMMB_main/appl.o
- .debug_info    0x000013bc      0x168 LMMB_main/main.o
- .debug_info    0x00001524      0x3ed LM_button/button.o
+ .debug_info    0x00000eab      0x373 LMMB_main/appl.o
+ .debug_info    0x0000121e      0x22b LMMB_main/button_dep.o
+ .debug_info    0x00001449      0x168 LMMB_main/main.o
+ .debug_info    0x000015b1      0x28d LM_button/button.o
 
-.debug_abbrev   0x00000000      0x9ad
+.debug_abbrev   0x00000000      0xa23
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x106 common_avr-liberty-master_src/buffer.o
  .debug_abbrev  0x00000106      0x1d2 common_avr-liberty-master_src/rprintf.o
  .debug_abbrev  0x000002d8      0x291 common_avr-liberty-master_src/uart.o
- .debug_abbrev  0x00000569      0x1d5 LMMB_main/appl.o
- .debug_abbrev  0x0000073e       0xe2 LMMB_main/main.o
- .debug_abbrev  0x00000820      0x18d LM_button/button.o
+ .debug_abbrev  0x00000569      0x172 LMMB_main/appl.o
+ .debug_abbrev  0x000006db      0x111 LMMB_main/button_dep.o
+ .debug_abbrev  0x000007ec       0xe2 LMMB_main/main.o
+ .debug_abbrev  0x000008ce      0x155 LM_button/button.o
 
-.debug_line     0x00000000      0x9b1
+.debug_line     0x00000000      0xaf0
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x153 common_avr-liberty-master_src/buffer.o
  .debug_line    0x00000153      0x2a5 common_avr-liberty-master_src/rprintf.o
  .debug_line    0x000003f8      0x1f4 common_avr-liberty-master_src/uart.o
- .debug_line    0x000005ec      0x149 LMMB_main/appl.o
- .debug_line    0x00000735      0x149 LMMB_main/main.o
- .debug_line    0x0000087e      0x133 LM_button/button.o
+ .debug_line    0x000005ec      0x152 LMMB_main/appl.o
+ .debug_line    0x0000073e      0x12b LMMB_main/button_dep.o
+ .debug_line    0x00000869      0x149 LMMB_main/main.o
+ .debug_line    0x000009b2      0x13e LM_button/button.o
 
-.debug_frame    0x00000000      0x5c0
+.debug_frame    0x00000000      0x5ec
  *(.debug_frame)
  .debug_frame   0x00000000       0x90 common_avr-liberty-master_src/buffer.o
  .debug_frame   0x00000090      0x1f8 common_avr-liberty-master_src/rprintf.o
  .debug_frame   0x00000288      0x1bc common_avr-liberty-master_src/uart.o
- .debug_frame   0x00000444       0xe4 LMMB_main/appl.o
- .debug_frame   0x00000528       0x24 LMMB_main/main.o
- .debug_frame   0x0000054c       0x74 LM_button/button.o
+ .debug_frame   0x00000444       0x9c LMMB_main/appl.o
+ .debug_frame   0x000004e0       0x74 LMMB_main/button_dep.o
+ .debug_frame   0x00000554       0x24 LMMB_main/main.o
+ .debug_frame   0x00000578       0x74 LM_button/button.o
 
-.debug_str      0x00000000      0x805
+.debug_str      0x00000000      0x804
  *(.debug_str)
  .debug_str     0x00000000      0x227 common_avr-liberty-master_src/buffer.o
                                 0x273 (size before relaxing)
@@ -656,20 +676,23 @@ END GROUP
                                 0x308 (size before relaxing)
  .debug_str     0x000003ab      0x1b1 common_avr-liberty-master_src/uart.o
                                 0x396 (size before relaxing)
- .debug_str     0x0000055c      0x18c LMMB_main/appl.o
-                                0x389 (size before relaxing)
- .debug_str     0x000006e8       0x76 LMMB_main/main.o
+ .debug_str     0x0000055c       0xd8 LMMB_main/appl.o
+                                0x2ef (size before relaxing)
+ .debug_str     0x00000634       0xfd LMMB_main/button_dep.o
+                                0x2d5 (size before relaxing)
+ .debug_str     0x00000731       0x76 LMMB_main/main.o
                                 0x1ff (size before relaxing)
- .debug_str     0x0000075e       0xa7 LM_button/button.o
-                                0x370 (size before relaxing)
+ .debug_str     0x000007a7       0x5d LM_button/button.o
+                                0x2ee (size before relaxing)
 
-.debug_loc      0x00000000     0x1630
+.debug_loc      0x00000000     0x14c7
  *(.debug_loc)
  .debug_loc     0x00000000      0x23c common_avr-liberty-master_src/buffer.o
  .debug_loc     0x0000023c      0xcf9 common_avr-liberty-master_src/rprintf.o
  .debug_loc     0x00000f35      0x337 common_avr-liberty-master_src/uart.o
- .debug_loc     0x0000126c      0x2c1 LMMB_main/appl.o
- .debug_loc     0x0000152d      0x103 LM_button/button.o
+ .debug_loc     0x0000126c      0x1b5 LMMB_main/appl.o
+ .debug_loc     0x00001421       0x32 LMMB_main/button_dep.o
+ .debug_loc     0x00001453       0x74 LM_button/button.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -689,14 +712,15 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x1a8
+.debug_ranges   0x00000000      0x1e0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x40 common_avr-liberty-master_src/buffer.o
  .debug_ranges  0x00000040       0x80 common_avr-liberty-master_src/rprintf.o
  .debug_ranges  0x000000c0       0x80 common_avr-liberty-master_src/uart.o
  .debug_ranges  0x00000140       0x20 LMMB_main/appl.o
- .debug_ranges  0x00000160       0x10 LMMB_main/main.o
- .debug_ranges  0x00000170       0x38 LM_button/button.o
+ .debug_ranges  0x00000160       0x38 LMMB_main/button_dep.o
+ .debug_ranges  0x00000198       0x10 LMMB_main/main.o
+ .debug_ranges  0x000001a8       0x38 LM_button/button.o
 
 .debug_macro
  *(.debug_macro)
