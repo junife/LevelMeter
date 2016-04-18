@@ -183,6 +183,7 @@
     <ListValues>
       <Value>DEBUG</Value>
       <Value>F_CPU=8000000UL</Value>
+      <Value>RF_REMOTE</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
@@ -274,6 +275,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="LMRfR_main\appl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LMRfR_main\button_dep.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LMRfR_main\button_dep.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="LMRfR_main\global.h">
