@@ -3,6 +3,7 @@
 #include <util/delay.h>
 #include "appl.h"
 #include "button.h"
+#include "led.h"
 
 //----- Begin Code ------------------------------------------------------------
 int main(void)
@@ -18,6 +19,7 @@ int main(void)
 		_delay_ms(20);
 		ButtonCycleUpdate();
 		AppCycleUpdate();
+		LEDCycleUpdate();
 	}
 	return 0;
 }

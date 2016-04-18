@@ -5,6 +5,7 @@
 #include "timerx8.h"		// include timer function library (timing, PWM, etc)
 #include "button.h"
 #include "button_dep.h"
+#include "led.h"
 //#include "ks0108.h"
 
 cBuffer uartRxBuffer;				///< uart receive buffer
@@ -50,6 +51,7 @@ void McuInit(void)
 void ApplInit(void)
 {
 	ButtonInit();
+	LEDInit();
 	
 	//glcdInit();	/* Need connect to LCD device because MCU will check lcd busy or not will cause waiting */
 	
@@ -78,23 +80,31 @@ void AppCycleUpdate(void)
 		if(ButtonJMP2ReleasedEvent())
 		{
 			rprintf("JMP2\n");
+			LEDFlag1On();
+			LEDFlag2On();
 		}
 		else if(ButtonJMP1ReleasedEvent())
 		{
 			rprintf("JMP1\n");
+			LEDFlag1Off();
+			LEDFlag2Off();
 		}
 	}
-	
+
 	if(ButtonGetHeld())
 	{
 		if(ButtonJMP2HeldEvent())
 		{
 			rprintf("H-JMP2\n");
+			LEDFlag1Flash1Hz();
+			LEDFlag2Flash1Hz();
 		}
 		
 		else if(ButtonJMP1HeldEvent())
 		{
 			rprintf("H-JMP1\n");
+			LEDFlag1Flash3Hz();
+			LEDFlag2Flash3Hz();
 		}
 	}
 	
