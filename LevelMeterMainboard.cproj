@@ -234,6 +234,12 @@
     <Compile Include="LMMB_main\global.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LMMB_main\led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LMMB_main\led.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LMMB_main\main.c">
       <SubType>compile</SubType>
     </Compile>

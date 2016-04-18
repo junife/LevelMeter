@@ -45,6 +45,7 @@ C_SRCS +=  \
 ../common_avr-liberty-master_src/uart.c \
 ../LMMB_main/appl.c \
 ../LMMB_main/button_dep.c \
+../LMMB_main/led.c \
 ../LMMB_main/main.c \
 ../LM_button/button.c
 
@@ -61,6 +62,7 @@ common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/uart.o \
 LMMB_main/appl.o \
 LMMB_main/button_dep.o \
+LMMB_main/led.o \
 LMMB_main/main.o \
 LM_button/button.o
 
@@ -70,6 +72,7 @@ common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/uart.o \
 LMMB_main/appl.o \
 LMMB_main/button_dep.o \
+LMMB_main/led.o \
 LMMB_main/main.o \
 LM_button/button.o
 
@@ -79,6 +82,7 @@ common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/uart.d \
 LMMB_main/appl.d \
 LMMB_main/button_dep.d \
+LMMB_main/led.d \
 LMMB_main/main.d \
 LM_button/button.d
 
@@ -88,6 +92,7 @@ common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/uart.d \
 LMMB_main/appl.d \
 LMMB_main/button_dep.d \
+LMMB_main/led.d \
 LMMB_main/main.d \
 LM_button/button.d
 
@@ -105,6 +110,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
