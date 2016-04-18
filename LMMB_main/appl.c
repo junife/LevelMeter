@@ -4,6 +4,7 @@
 #include "rprintf.h"	// include printf function library
 #include "timerx8.h"		// include timer function library (timing, PWM, etc)
 #include "button.h"
+#include "button_dep.h"
 //#include "ks0108.h"
 
 cBuffer uartRxBuffer;				///< uart receive buffer
@@ -71,70 +72,36 @@ void ApplInit(void)
 void AppCycleUpdate(void)
 {	
 	char tempChar;
-	//if(button.buttonsReleased.bVal) rprintf("rl=%x\n", button.buttonsReleased.bVal);
-	if(button.buttonsReleased.bVal) 
+	
+	if(ButtonGetReleased())
 	{
-		rprintf("rl=%x\n", button.buttonsReleased.bVal);
-		rprintf("rh=%x\n", button.buttonsReleased.bVal>>16);
-		
-		if(button.buttonsReleased.PBtn13)
+		if(ButtonJMP2ReleasedEvent())
 		{
-			//glcdSetAddress(0,0);
-			char greeting[] = "PBtn13,Hello World!";
-			//glcdPutStr(&greeting[0]);
-			rprintf("PBtn13\n");
+			rprintf("JMP2\n");
 		}
-		else if(button.buttonsReleased.PBtn14)
+		else if(ButtonJMP1ReleasedEvent())
 		{
-			//glcdSetAddress(0,1);
-			char greeting[] = "PBtn14,Hello World!";
-			//glcdPutStr(&greeting[0]);
-			rprintf("PBtn14\n");
-		}
-		else if(button.buttonsReleased.PBtn15)
-		{
-			//glcdSetAddress(0,2);
-			char greeting[] = "PBtn15,Hello World!";
-			//glcdPutStr(&greeting[0]);
-			rprintf("PBtn15\n");
-		}
-		else if(button.buttonsReleased.PBtn1)
-		{
-			//glcdSetAddress(0,3);
-			char greeting[] = "PBtn1,Hello World!";
-			//glcdPutStr(&greeting[0]);
-			rprintf("PBtn1\n");
-		}
-		else if(button.buttonsReleased.PBtn5)
-		{
-			//glcdSetAddress(0,4);
-			char greeting[] = "PBtn5,Hello World!";
-			//glcdPutStr(&greeting[0]);
-			rprintf("PBtn5\n");
-		}
-		else if(button.buttonsReleased.PBtn9)
-		{
-			//glcdSetAddress(0,5);
-			char greeting[] = "PBtn9,Hello World!";
-			//glcdPutStr(&greeting[0]);
-			rprintf("PBtn9\n");
-		}
-		else if(button.buttonsReleased.PBtn18)
-		{
-			//glcdSetAddress(0,1);
-			//glcdClearScreen();
-			rprintf("PBtn18,Clear Home\n");
+			rprintf("JMP1\n");
 		}
 	}
-
+	
+	if(ButtonGetHeld())
+	{
+		if(ButtonJMP2HeldEvent())
+		{
+			rprintf("H-JMP2\n");
+		}
+		
+		else if(ButtonJMP1HeldEvent())
+		{
+			rprintf("H-JMP1\n");
+		}
+	}
+	
 	if(uartRxBuffer.size - bufferIsNotFull(&uartRxBuffer) != 0)
 	{
 		tempChar = bufferGetFromFront(&uartRxBuffer);
 		//rprintf("char=%c\n",tempChar);
 		rprintf("Type=%c\n",tempChar);
 	}
-	//rprintf("D=%d\n",uartRxBuffer.datalength);
-
-	//rprintfChar('a');
-	//glcdWriteChar(cnt++/2);
 }

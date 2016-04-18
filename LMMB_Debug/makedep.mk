@@ -10,6 +10,8 @@ common_avr-liberty-master_src\uart.c
 
 LMMB_main\appl.c
 
+LMMB_main\button_dep.c
+
 LMMB_main\main.c
 
 LM_button\button.c
