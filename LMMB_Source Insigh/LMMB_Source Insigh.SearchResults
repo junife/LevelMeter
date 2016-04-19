@@ -1,7 +1,5 @@
----- PORTB Matches (6 in 3 files) ----
-Ks0108.c (common_avr-liberty-master_src):	PORTB &= 0xf0;		/* PB3-PB0 clear */
-Ks0108.c (common_avr-liberty-master_src):	PORTB |= temp;		/* DB3-DB0 output to LCD */
-Ks0108conf.h (common_avr-liberty-master_src):		#define GLCD_CTRL_PORT	PORTB	// PORT for LCD control signals
-Led.c (lmmb_main):	PORTB |= ((1<<DDB2) | (1<<DDB1));
-Led.c (lmmb_main):	PORTB &= ~((1<<DDB2) | (1<<DDB1));
-Led.c (lmmb_main):	PORTB |= state;
+---- SSDShitfOutData Matches (4 in 1 files) ----
+Ssd.c (lmmb_main):static void SSDShitfOutData(uint32_t val);
+Ssd.c (lmmb_main):	SSDShitfOutData(value);
+Ssd.c (lmmb_main):	SSDShitfOutData(value);
+Ssd.c (lmmb_main):void SSDShitfOutData(uint32_t val)

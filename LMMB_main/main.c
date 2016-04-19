@@ -4,6 +4,7 @@
 #include "appl.h"
 #include "button.h"
 #include "led.h"
+#include "ssd.h"
 
 //----- Begin Code ------------------------------------------------------------
 int main(void)
@@ -20,6 +21,7 @@ int main(void)
 		ButtonCycleUpdate();
 		AppCycleUpdate();
 		LEDCycleUpdate();
+		SSDCycleUpdate();
 	}
 	return 0;
 }

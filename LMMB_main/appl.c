@@ -6,6 +6,8 @@
 #include "button.h"
 #include "button_dep.h"
 #include "led.h"
+#include "ssd.h"
+
 //#include "ks0108.h"
 
 cBuffer uartRxBuffer;				///< uart receive buffer
@@ -52,6 +54,7 @@ void ApplInit(void)
 {
 	ButtonInit();
 	LEDInit();
+	SSDInit();
 	
 	//glcdInit();	/* Need connect to LCD device because MCU will check lcd busy or not will cause waiting */
 	
@@ -74,7 +77,9 @@ void ApplInit(void)
 void AppCycleUpdate(void)
 {	
 	char tempChar;
-	
+	static uint16_t cnt;
+	cnt++;
+
 	if(ButtonGetReleased())
 	{
 		if(ButtonJMP2ReleasedEvent())
@@ -82,12 +87,14 @@ void AppCycleUpdate(void)
 			rprintf("JMP2\n");
 			LEDFlag1On();
 			LEDFlag2On();
+			SSDDisplayDec(9, SSD_0HZ, SSD_GREEN);
 		}
 		else if(ButtonJMP1ReleasedEvent())
 		{
 			rprintf("JMP1\n");
 			LEDFlag1Off();
 			LEDFlag2Off();
+			SSDDisplayHex(0x1abc, SSD_0HZ, SSD_RED);
 		}
 	}
 
@@ -98,6 +105,7 @@ void AppCycleUpdate(void)
 			rprintf("H-JMP2\n");
 			LEDFlag1Flash1Hz();
 			LEDFlag2Flash1Hz();
+			SSDDisplayDec(0x1def, SSD_1HZ, SSD_AMBER);
 		}
 		
 		else if(ButtonJMP1HeldEvent())
@@ -105,6 +113,7 @@ void AppCycleUpdate(void)
 			rprintf("H-JMP1\n");
 			LEDFlag1Flash3Hz();
 			LEDFlag2Flash3Hz();
+			SSDDisplayHex(0x1def, SSD_3HZ, SSD_RED);
 		}
 	}
 	
