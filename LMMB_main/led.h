@@ -31,7 +31,7 @@
 #define LED_ONE_SEC	60	/* one second need 60 cycles, simulater 60Hz power cycle */
 
 typedef enum led_rate   {LED_0HZ=0, LED_1HZ=1, LED_2HZ=2, LED_3HZ=3,LED_OFF=4} LED_RATE;
-typedef enum led_state   {S_ON=0, S_OFF} LED_STATE;
+typedef enum led_state   {S_ON=0, S_OFF=1} LED_STATE;
 
 typedef union 
 {

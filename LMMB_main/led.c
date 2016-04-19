@@ -73,7 +73,7 @@ void LEDInit(void)
 
 void LEDCycleUpdate(void)
 {
-	uint8_t rate;
+	LED_RATE rate;
 	uint8_t ft;				/* flash timer */
 	uint8_t i;
 
@@ -83,14 +83,14 @@ void LEDCycleUpdate(void)
 		ft = LEDs[i].flashTimer;
 		
 		ft += rate;
-		if((rate == 4) || (ft >= LED_ONE_SEC))
+		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
 		{
 			ft = 0;
 			LEDs[i].led.state = S_OFF;
 		}
 		LEDs[i].flashTimer = ft;
 		
-		if((rate == 0) || (ft >= (LED_ONE_SEC/2)))
+		if((rate == LED_0HZ) || (ft > (LED_ONE_SEC/2)))
 		{
 			LEDs[i].led.state = S_ON;
 		}

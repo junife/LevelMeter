@@ -1341,7 +1341,7 @@ void LEDCycleUpdate(void)
  6b8:	9c 91       	ld	r25, X
 		
 		ft += rate;
-		if((rate == 4) || (ft >= LED_ONE_SEC))
+		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
  6ba:	84 30       	cpi	r24, 0x04	; 4
  6bc:	a9 f1       	breq	.+106    	; 0x728 <LEDCycleUpdate+0x8e>
 	for(i = 0; i < LED_NUM; i++)
@@ -1351,8 +1351,8 @@ void LEDCycleUpdate(void)
 		
 		ft += rate;
  6be:	98 0f       	add	r25, r24
-		if((rate == 4) || (ft >= LED_ONE_SEC))
- 6c0:	9c 33       	cpi	r25, 0x3C	; 60
+		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
+ 6c0:	9d 33       	cpi	r25, 0x3D	; 61
  6c2:	68 f0       	brcs	.+26     	; 0x6de <LEDCycleUpdate+0x44>
 		{
 			ft = 0;
@@ -1370,11 +1370,11 @@ void LEDCycleUpdate(void)
 		LEDs[i].flashTimer = ft;
  6d6:	18 82       	st	Y, r1
 		
-		if((rate == 0) || (ft >= (LED_ONE_SEC/2)))
+		if((rate == LED_0HZ) || (ft > (LED_ONE_SEC/2)))
  6d8:	88 23       	and	r24, r24
  6da:	31 f0       	breq	.+12     	; 0x6e8 <LEDCycleUpdate+0x4e>
  6dc:	0d c0       	rjmp	.+26     	; 0x6f8 <LEDCycleUpdate+0x5e>
-		if((rate == 4) || (ft >= LED_ONE_SEC))
+		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
 		{
 			ft = 0;
 			LEDs[i].led.state = S_OFF;
@@ -1382,10 +1382,10 @@ void LEDCycleUpdate(void)
 		LEDs[i].flashTimer = ft;
  6de:	98 83       	st	Y, r25
 		
-		if((rate == 0) || (ft >= (LED_ONE_SEC/2)))
+		if((rate == LED_0HZ) || (ft > (LED_ONE_SEC/2)))
  6e0:	88 23       	and	r24, r24
  6e2:	11 f0       	breq	.+4      	; 0x6e8 <LEDCycleUpdate+0x4e>
- 6e4:	9e 31       	cpi	r25, 0x1E	; 30
+ 6e4:	9f 31       	cpi	r25, 0x1F	; 31
  6e6:	40 f0       	brcs	.+16     	; 0x6f8 <LEDCycleUpdate+0x5e>
 		{
 			LEDs[i].led.state = S_ON;
@@ -1401,7 +1401,7 @@ void LEDCycleUpdate(void)
  6fa:	3f 4f       	sbci	r19, 0xFF	; 255
  6fc:	12 96       	adiw	r26, 0x02	; 2
 {
-	uint8_t rate;
+	LED_RATE rate;
 	uint8_t ft;				/* flash timer */
 	uint8_t i;
 
@@ -1453,7 +1453,7 @@ void LEDUpdateState(void)
  726:	0a c0       	rjmp	.+20     	; 0x73c <LEDCycleUpdate+0xa2>
 		
 		ft += rate;
-		if((rate == 4) || (ft >= LED_ONE_SEC))
+		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
 		{
 			ft = 0;
 			LEDs[i].led.state = S_OFF;
