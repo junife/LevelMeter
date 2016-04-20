@@ -17,7 +17,8 @@ int main(void)
 	
 	while(1)
 	{
-		_delay_ms(20);
+		_delay_us(16667);
+		//_delay_ms(20);
 		ButtonCycleUpdate();
 		AppCycleUpdate();
 		LEDCycleUpdate();

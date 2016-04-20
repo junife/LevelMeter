@@ -28,6 +28,8 @@
 // global AVRLIB types definitions
 #include "avrlibtypes.h"
 
+#define FOR_DEBUG	1		/* Set generate codes for debug */
+
 // project/system dependent defines
 
 // CPU clock speed

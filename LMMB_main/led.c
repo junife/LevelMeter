@@ -6,16 +6,15 @@
 * All LED APIs
 *********************************************************************************************************
 */
-
-#ifndef   LED_GLOBALS
-#define   LED_GLOBALS
-#endif
-
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
 #include "led.h"
 
 #include "uart.h"		// include uart function library
 #include "rprintf.h"	// include printf function library
+
+#ifndef   LED_GLOBALS
+#define   LED_GLOBALS
+#endif
 
 static void LEDUpdateState(void);
 
