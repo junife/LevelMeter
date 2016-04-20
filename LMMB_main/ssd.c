@@ -19,7 +19,6 @@
 #include "uart.h"		// include uart function library
 #include "rprintf.h"	// include printf function library
 
-//0-9,A,b,c,d,e,f.	common char for Common Anode, 
 /*
 *********************************************************************************************************
 *                                          COMMON ANODE SEVEN SEGMENT DISPAY CODE
@@ -34,7 +33,7 @@ static const uint8_t PROGMEM ssdCharTble[]=
 
 /*
 *********************************************************************************************************
-*                                          LOCAL FUNCTION
+*                                          LOCAL  FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
 static void SSDUpdateComPin(void);
