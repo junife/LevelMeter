@@ -47,6 +47,7 @@ C_SRCS +=  \
 ../LMMB_main/button_dep.c \
 ../LMMB_main/led.c \
 ../LMMB_main/main.c \
+../LMMB_main/measure.c \
 ../LMMB_main/ssd.c \
 ../LM_button/button.c
 
@@ -65,6 +66,7 @@ LMMB_main/appl.o \
 LMMB_main/button_dep.o \
 LMMB_main/led.o \
 LMMB_main/main.o \
+LMMB_main/measure.o \
 LMMB_main/ssd.o \
 LM_button/button.o
 
@@ -76,6 +78,7 @@ LMMB_main/appl.o \
 LMMB_main/button_dep.o \
 LMMB_main/led.o \
 LMMB_main/main.o \
+LMMB_main/measure.o \
 LMMB_main/ssd.o \
 LM_button/button.o
 
@@ -87,6 +90,7 @@ LMMB_main/appl.d \
 LMMB_main/button_dep.d \
 LMMB_main/led.d \
 LMMB_main/main.d \
+LMMB_main/measure.d \
 LMMB_main/ssd.d \
 LM_button/button.d
 
@@ -98,6 +102,7 @@ LMMB_main/appl.d \
 LMMB_main/button_dep.d \
 LMMB_main/led.d \
 LMMB_main/main.d \
+LMMB_main/measure.d \
 LMMB_main/ssd.d \
 LM_button/button.d
 
@@ -115,6 +120,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

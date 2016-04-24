@@ -1,5 +1,7 @@
----- AppCycleUpdate Matches (4 in 3 files) ----
-Appl.c (lmmb_main):*                                         AppCycleUpdate
-Appl.c (lmmb_main):void AppCycleUpdate(void)
-Appl.h (lmmb_main):APPL_EXT void AppCycleUpdate(void);
-Main.c (lmmb_main):		AppCycleUpdate();
+---- PwrOnSteps Matches (6 in 2 files) ----
+Appl.c (lmmb_main):	appl.PwrOnSteps = DISP_START;
+Appl.c (lmmb_main):			appl.PwrOnSteps = DISP_START;
+Appl.c (lmmb_main):			rprintf("st=%x\n",appl.PwrOnSteps);
+Appl.c (lmmb_main):			switch (appl.PwrOnSteps)
+Appl.c (lmmb_main):			appl.PwrOnSteps++;
+Appl.h (lmmb_main):	PWR_ON_STEPS PwrOnSteps;
