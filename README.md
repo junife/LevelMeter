@@ -7,7 +7,7 @@ Comments for LevelMeterRfRemote:
 
 	1 Prefix LMRfR_ folders including codes are for Level Meter RF Remote board.
 	2 All IDE output file in folder LMRfR_Debug, such as *.hex, *.eep.
-
+//hujunfenng
 Comments for LevelMeterMainboard:
 
 	1 Prefix LMMB_ folders including codes are for Level Meter main board.
