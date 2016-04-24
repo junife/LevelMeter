@@ -16,6 +16,8 @@ LMMB_main\led.c
 
 LMMB_main\main.c
 
+LMMB_main\measure.c
+
 LMMB_main\ssd.c
 
 LM_button\button.c

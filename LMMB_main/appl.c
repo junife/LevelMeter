@@ -32,8 +32,8 @@ APPL_DATA appl;
 */
 static void AppSelfDet(void);
 static void AppUpdateTimers(void);
-static bool AppPwrOnCtrl(void);
 static void ApplDataInit(void);
+static void AppDisplay(DISP_CODE DispCode, WORK_MODE mode);
 
 /*
 *********************************************************************************************************
@@ -96,9 +96,14 @@ void ApplInit(void)
 
 void ApplDataInit(void)
 {
-	/* Following for power on display steps */
+	/* Following for initial power on display steps */
+	appl.workMode = PWR_ON;
+	appl.CurEvent = NULL_EVENT;
+	appl.LastEvent = NULL_EVENT;
+	appl.second = 0;
+	appl.ModeTimer = TIME_SWITCH_TOTAL;
+	appl.DispCode= START_CHAR;
 	appl.PwrOnSteps = DISP_START;
-	appl.PwrOnTimer = TIME_SWITCH_TOTAL;
 }
 
 /*
@@ -120,42 +125,176 @@ void AppCycleUpdate(void)
 	
 	AppUpdateTimers();
 
+	/* work mode convert according to ModeTimer and push button events */
+	switch(appl.workMode)
+	{
+		case PWR_ON:
+			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
+			{
+				if(appl.ModeTimer % (TIME_CONTENT_SWITCH - 1) == 0)
+				{
+#if 1		
+#if (FOR_DEBUG==1)
+					rprintf("wM=%d\n",appl.workMode);
+					rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
+					rprintf("dC=%d\n\n",appl.DispCode);
+#endif
+#endif
+					AppDisplay(appl.DispCode,PWR_ON);
+					appl.DispCode++;
+				}
+				
+				if(ButtonJMP1HeldEvent() && (ButtonGetHoldTime() == TIME_B_HELD_RST))	/* Press/Held JMP1 after power on will set to factory default */
+				{
+					/* Following for initial power on display steps */
+					appl.ModeTimer = TIME_SWITCH_TOTAL;
+					appl.workMode = PWR_ON;
+					appl.LastEvent = JP1_HELD;
+					appl.DispCode= START_CHAR;
+#if 1		
+#if (FOR_DEBUG==1)
+					rprintf("PJ1H\n\n");
+#endif
+#endif
+					
+				}
+			}
+			else if(appl.ModeTimer == TIMER_TIMEOUT)
+			{
+				appl.ModeTimer = TIMER_INT_DISABLED;	/* Disable count */
+				appl.workMode = NORMAL;					/* convert to NORMAL */
+				appl.LastEvent = NULL_EVENT;			/* update  LastEvent */
+				appl.DispCode = CURRENT_VALUE;			/* Initial to display material value in setting mode */
+			}
+			break;
+			
+		case NORMAL:			
+			if(ButtonGetReleased())
+			{
+				if(ButtonJMP2ReleasedEvent())
+				{
+					if(--appl.DispCode < CURRENT_VALUE)
+					{
+						appl.DispCode = REMOTE_ADDR;
+					}
+					
+					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
+					appl.workMode = SETTING; 			/* convert to SETTING */
+					appl.LastEvent = JP2_PRESS;			/* update  LastEvent */
+					
+#if 1		
+#if (FOR_DEBUG==1)
+					rprintf("NJ2R\n\n");
+#endif
+#endif
+				}
+				else if(ButtonJMP1ReleasedEvent())
+				{
+					//rprintf("JMP1\n");
+					//LEDFlag1Off();
+					//LEDFlag2Off();
+					//SSDDisplayHex(0x1abc, SSD_0HZ, SSD_RED);
+				}
+			}
+			else if(ButtonGetHeld())
+			{
+				if(ButtonJMP2HeldEvent())//(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/2) == 0))
+				{
+					if(++appl.DispCode > REMOTE_ADDR)
+					{
+						appl.DispCode = CURRENT_VALUE;
+					}
+					
+					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
+					appl.workMode = SETTING; 			/* convert to SETTING */
+					appl.LastEvent = JP2_HELD;			/* update  LastEvent */
+				}
+				else if(ButtonJMP1HeldEvent())
+				{
+					//rprintf("H-JMP1\n");
+					//LEDFlag1Flash3Hz();
+					//LEDFlag2Flash3Hz();
+					//SSDDisplayHex(0x1def, SSD_3HZ, SSD_RED);
+				}
+#if 1		
+#if (FOR_DEBUG==1)
+				rprintf("NJ2H\n\n");
+#endif
+#endif
+			}
+			else
+			{
+#if 0		
+#if (FOR_DEBUG==1)
+			rprintf("NM\n\n");
+#endif
+#endif
+				//AppDisplay(appl.DispCode,NORMAL);
+			}
+			break;
+			
+		case SETTING:
+			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
+			{
+			}
+			else if(appl.ModeTimer == TIMER_TIMEOUT)
+			{
+				appl.ModeTimer = TIMER_INT_DISABLED;	/* Disable count */
+				appl.workMode = NORMAL;					/* convert to NORMAL */
+				appl.LastEvent = NULL_EVENT;			/* update  LastEvent */
+				appl.DispCode = CURRENT_VALUE;			/* Initial to display material value in setting mode */
+			}
+#if 0		
+#if (FOR_DEBUG==1)
+			rprintf("SET\n\n");
+#endif
+#endif
+			break;
+			
+		default:
+			break;						
+	}
+	
+#if 0	
 	if(AppPwrOnCtrl() == true)
 	{
 		if(ButtonGetReleased())
 		{
 			if(ButtonJMP2ReleasedEvent())
 			{
-				rprintf("JMP2\n");
+				if(--appl.DispCode > REMOTE_ADDR)
+				{
+					appl.DispCode = REMOTE_ADDR;
+				}
 				LEDFlag1On();
-				LEDFlag2On();
-				SSDDisplayDec(9, SSD_0HZ, SSD_GREEN);
+				SSDDisplayDec(appl.DispCode, SSD_0HZ, SSD_GREEN);
 			}
 			else if(ButtonJMP1ReleasedEvent())
 			{
-				rprintf("JMP1\n");
-				LEDFlag1Off();
-				LEDFlag2Off();
-				SSDDisplayHex(0x1abc, SSD_0HZ, SSD_RED);
+				//rprintf("JMP1\n");
+				//LEDFlag1Off();
+				//LEDFlag2Off();
+				//SSDDisplayHex(0x1abc, SSD_0HZ, SSD_RED);
 			}
 		}
-
-		if(ButtonGetHeld())
+		else if(ButtonGetHeld())
 		{
-			if(ButtonJMP2HeldEvent())
+			if(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/2) == 0))
 			{
-				rprintf("H-JMP2\n");
-				LEDFlag1Flash1Hz();
-				LEDFlag2Flash1Hz();
-				SSDDisplayDec(0x1def, SSD_1HZ, SSD_AMBER);
+				if(++appl.DispCode > REMOTE_ADDR)
+				{
+					appl.DispCode = CURRENT_VALUE;
+				}
+				
+				LEDFlag1Off();
+				SSDDisplayDec(appl.DispCode, SSD_0HZ, SSD_RED);
 			}
-			
 			else if(ButtonJMP1HeldEvent())
 			{
 				rprintf("H-JMP1\n");
 				LEDFlag1Flash3Hz();
 				LEDFlag2Flash3Hz();
-				SSDDisplayHex(0x1def, SSD_3HZ, SSD_RED);
+				//SSDDisplayHex(0x1def, SSD_3HZ, SSD_RED);
 			}
 		}
 		
@@ -166,6 +305,16 @@ void AppCycleUpdate(void)
 			rprintf("Type=%c\n",tempChar);
 		}
 	}
+	else
+	{
+		if(ButtonJMP1HeldEvent() && (ButtonGetHoldTime() == TIME_B_HELD_RST))
+		{
+			/* Following for initial power on display steps */
+			appl.PwrOnSteps = DISP_START;
+			appl.ModeTimer = TIME_SWITCH_TOTAL;
+		}
+	}
+#endif	
 }
 
 /*
@@ -184,10 +333,76 @@ void AppUpdateTimers(void)
 	if(++appl.second > TIMER_1_SEC_60HZ) 
 	{
 		appl.second = 0;
+#if 0		
+#if (FOR_DEBUG==1)
+			rprintf("wM=%d\n",appl.workMode);
+			rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
+			rprintf("dC=%d\n\n",appl.DispCode);
+#endif
+#endif
+		
 	}
 	
-	if(appl.PwrOnTimer != TIMER_TIMEOUT && appl.PwrOnTimer != TIMER_INT_DISABLED) appl.PwrOnTimer--;
+	if(appl.ModeTimer != TIMER_TIMEOUT && appl.ModeTimer != TIMER_INT_DISABLED) appl.ModeTimer--;
 }
+
+#if 0
+/*
+*********************************************************************************************************
+*                                         AppUpdateTimers
+*
+* Description : This function should be called by loop each power cycle to update timers which used by applications.
+*
+* Arguments   : none
+*
+* Returns    : true, power on control has finised. false, is processing
+*********************************************************************************************************
+*/
+void AppPwrOnCtrl(void)
+{
+	if(appl.ModeTimer % (TIME_CONTENT_SWITCH - 1) == 0)
+	{
+		switch (appl.PwrOnSteps)
+		{
+			case DISP_START:
+				SSDDisplayDec(DISP_START, SSD_0HZ, SSD_RED);
+				break;
+				
+			case DISP_RF_ADDR:
+				SSDDisplayDec(DISP_RF_ADDR, SSD_0HZ, SSD_RED);
+				break;
+				
+			case DISP_CUR_MAT:
+				SSDDisplayDec(DISP_CUR_MAT, SSD_0HZ, SSD_RED);
+				break;
+				
+			case DISP_FULL_WH:
+				SSDDisplayDec(DISP_FULL_WH, SSD_0HZ, SSD_RED);
+				break;
+				
+			case DISP_EMPTY_WH:
+				SSDDisplayDec(DISP_EMPTY_WH, SSD_0HZ, SSD_RED);
+				break;
+				
+			case DISP_H_PERCENT:
+				SSDDisplayDec(DISP_H_PERCENT, SSD_0HZ, SSD_RED);
+				break;
+				
+			case DISP_L_PERCENT:
+				SSDDisplayDec(DISP_L_PERCENT, SSD_0HZ, SSD_RED);
+				break;
+				
+			case DISP_RP_TIME:
+				SSDDisplayDec(DISP_RP_TIME, SSD_0HZ, SSD_RED);
+				break;
+				
+			default:
+				break;						
+		}
+		appl.PwrOnSteps++;
+	}
+}
+#endif
 
 /*
 *********************************************************************************************************
@@ -200,59 +415,141 @@ void AppUpdateTimers(void)
 * Returns    : true, power on control has finised. false, is processing
 *********************************************************************************************************
 */
-bool AppPwrOnCtrl(void)
+void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 {
-	if((appl.PwrOnTimer != TIMER_INT_DISABLED && appl.PwrOnTimer != TIMER_TIMEOUT))
+	switch(DispCode)
 	{
-		if(appl.PwrOnTimer % (TIME_CONTENT_SWITCH - 1) == 0)
-		{
-#if (FOR_DEBUG==1)
-						rprintf("tm=%d\n",appl.PwrOnTimer);
-						rprintf("st=%x\n",appl.PwrOnSteps);
-#endif
-			switch (appl.PwrOnSteps)
+		case START_CHAR:
+			if(mode == PWR_ON)
 			{
-				case DISP_START:
-					break;
-					
-				case DISP_RF_ADDR:
-					break;
-					
-				case DISP_CUR_MAT:
-					break;
-					
-				case DISP_FULL_WH:
-					break;
-					
-				case DISP_EMPTY_WH:
-					break;
-					
-				case DISP_H_PERCENT:
-					break;
-					
-				case DISP_L_PERCENT:
-					break;
-					
-				case DISP_RP_TIME:
-					break;
-					
-				default:
-					break;						
+
 			}
-			appl.PwrOnSteps++;
-		}
-		return false;
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(START_CHAR, SSD_0HZ, SSD_RED);
+			break;
+			
+		case CURRENT_VALUE:
+			if(mode == PWR_ON)
+			{
+
+			}
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(CURRENT_VALUE, SSD_0HZ, SSD_RED);
+			break;
+			
+		case FULL_WAREHOUSE:
+			if(mode == PWR_ON)
+			{
+
+			}
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(FULL_WAREHOUSE, SSD_0HZ, SSD_RED);
+			break;
+			
+		case EMPTY_WAREHOUSE:
+			if(mode == PWR_ON)
+			{
+
+			}
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(EMPTY_WAREHOUSE, SSD_0HZ, SSD_RED);
+			break;
+			
+		case ALARM_H_PERCENT:
+			if(mode == PWR_ON)
+			{
+
+			}
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(ALARM_H_PERCENT, SSD_0HZ, SSD_RED);
+			break;
+			
+		case ALARM_L_PERCENT:
+			if(mode == PWR_ON)
+			{
+
+			}
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(ALARM_L_PERCENT, SSD_0HZ, SSD_RED);
+			break;
+			
+		case RESPONSE_TIME:
+			if(mode == PWR_ON)
+			{
+
+			}
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(RESPONSE_TIME, SSD_0HZ, SSD_RED);
+			break;
+			
+		case REMOTE_ADDR:
+			if(mode == PWR_ON)
+			{
+
+			}
+			else if(mode == NORMAL)
+			{
+
+			}
+			else	/* setting mode */
+			{
+
+			}
+			SSDDisplayDec(REMOTE_ADDR, SSD_0HZ, SSD_RED);
+			break;
+			
+		default:
+			break;						
 	}
-	else if(appl.PwrOnTimer == TIMER_TIMEOUT)
-	{
-		appl.PwrOnTimer = TIMER_INT_DISABLED;
-#if (FOR_DEBUG==1)
-		rprintf("tm=%d\n",appl.PwrOnTimer);
-		rprintf("st=%x\n",appl.PwrOnSteps);
-#endif
-	}
-	
-	return true;
 }
 
 /*
