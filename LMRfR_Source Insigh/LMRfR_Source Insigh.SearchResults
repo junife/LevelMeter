@@ -1,2 +1,7 @@
----- BUTTON_BUFFER_SIZE Matches (1 in 1 files) ----
-Button.h (lm_button):#define BUTTON_BUFFER_SIZE 		2
+---- PWM10 Matches (6 in 2 files) ----
+Timer.c (common_avr-liberty-master_src):		cbi(TCCR1A,PWM10);
+Timer.c (common_avr-liberty-master_src):		sbi(TCCR1A,PWM10);
+Timer.c (common_avr-liberty-master_src):		sbi(TCCR1A,PWM10);
+Timer.c (common_avr-liberty-master_src):	cbi(TCCR1A,PWM10);
+Timer.h (common_avr-liberty-master_src):#ifndef PWM10
+Timer.h (common_avr-liberty-master_src):	#define PWM10	WGM10
