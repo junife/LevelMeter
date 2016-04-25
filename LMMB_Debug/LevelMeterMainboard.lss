@@ -3,65 +3,65 @@ LevelMeterMainboard.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000b34  00000000  00000000  00000074  2**1
+  0 .text         00000bf2  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000ba8  2**0
+  1 .data         00000000  00800060  00800060  00000c66  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          000000d7  00800060  00800060  00000ba8  2**0
+  2 .bss          000000d7  00800060  00800060  00000c66  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000ba8  2**0
+  3 .comment      00000030  00000000  00000000  00000c66  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000bd8  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000c98  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000308  00000000  00000000  00000c14  2**0
+  5 .debug_aranges 00000310  00000000  00000000  00000cd4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000026ac  00000000  00000000  00000f1c  2**0
+  6 .debug_info   0000288e  00000000  00000000  00000fe4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000f4e  00000000  00000000  000035c8  2**0
+  7 .debug_abbrev 00000f64  00000000  00000000  00003872  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000e92  00000000  00000000  00004516  2**0
+  8 .debug_line   00000ebb  00000000  00000000  000047d6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000760  00000000  00000000  000053a8  2**2
+  9 .debug_frame  00000768  00000000  00000000  00005694  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000df1  00000000  00000000  00005b08  2**0
+ 10 .debug_str    00000df1  00000000  00000000  00005dfc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00001834  00000000  00000000  000068f9  2**0
+ 11 .debug_loc    00001838  00000000  00000000  00006bed  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000278  00000000  00000000  0000812d  2**0
+ 12 .debug_ranges 00000280  00000000  00000000  00008425  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	0c 94 65 00 	jmp	0xca	; 0xca <__ctors_end>
-   4:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-   8:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-   c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  10:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  14:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  18:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  1c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  20:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  24:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  28:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  2c:	0c 94 12 02 	jmp	0x424	; 0x424 <__vector_11>
-  30:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  34:	0c 94 db 01 	jmp	0x3b6	; 0x3b6 <__vector_13>
-  38:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  3c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  40:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  44:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  48:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  4c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  50:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  54:	f6 02       	muls	r31, r22
-  56:	f9 02       	muls	r31, r25
-  58:	fc 02       	muls	r31, r28
-  5a:	ff 02       	muls	r31, r31
-  5c:	02 03       	mulsu	r16, r18
-  5e:	05 03       	mulsu	r16, r21
-  60:	08 03       	fmul	r16, r16
-  62:	0b 03       	fmul	r16, r19
+   0:	0c 94 5f 00 	jmp	0xbe	; 0xbe <__ctors_end>
+   4:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+   8:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+   c:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  10:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  14:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  18:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  1c:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  20:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  24:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  28:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  2c:	0c 94 0c 02 	jmp	0x418	; 0x418 <__vector_11>
+  30:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  34:	0c 94 d5 01 	jmp	0x3aa	; 0x3aa <__vector_13>
+  38:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  3c:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  40:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  44:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  48:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  4c:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  50:	0c 94 71 00 	jmp	0xe2	; 0xe2 <__bad_interrupt>
+  54:	56 02       	muls	r21, r22
+  56:	59 02       	muls	r21, r25
+  58:	5c 02       	muls	r21, r28
+  5a:	5f 02       	muls	r21, r31
+  5c:	62 02       	muls	r22, r18
+  5e:	65 02       	muls	r22, r21
+  60:	68 02       	muls	r22, r24
+  62:	6b 02       	muls	r22, r27
 
 00000064 <__trampolines_end>:
   64:	30 31       	cpi	r19, 0x10	; 16
@@ -74,2273 +74,2352 @@ Disassembly of section .text:
   72:	45 46       	sbci	r20, 0x65	; 101
 	...
 
-00000075 <__c.2185>:
-  75:	4e 4a 32 48 0a 0a 00                                NJ2H...
+00000075 <__c.2183>:
+  75:	6c 45 3d 25 64 0a 0a 00                             lE=%d...
 
-0000007c <__c.2183>:
-  7c:	4e 4a 32 52 0a 0a 00                                NJ2R...
+0000007d <__c.2181>:
+  7d:	64 43 3d 25 64 0a 0a 00                             dC=%d...
 
-00000083 <__c.2179>:
-  83:	50 4a 31 48 0a 0a 00                                PJ1H...
+00000085 <__c.2179>:
+  85:	6d 54 3d 25 64 2c 30 78 25 78 0a 00                 mT=%d,0x%x..
 
-0000008a <__c.2177>:
-  8a:	64 43 3d 25 64 0a 0a 00                             dC=%d...
+00000091 <__c.2177>:
+  91:	77 4d 3d 25 64 0a 00                                wM=%d..
 
-00000092 <__c.2175>:
-  92:	6d 54 3d 25 64 2c 30 78 25 78 0a 00                 mT=%d,0x%x..
+00000098 <__c.2162>:
+  98:	4d 61 69 6e 20 62 6f 61 72 64 20 68 65 72 65 21     Main board here!
+  a8:	0a 00                                               ..
 
-0000009e <__c.2173>:
-  9e:	77 4d 3d 25 64 0a 00                                wM=%d..
+000000aa <ssdCharTble>:
+  aa:	c0 f9 a4 b0 99 92 82 f8 80 90 88 83 c6 a1 86 8e     ................
+  ba:	ff fe f7 00                                         ....
 
-000000a5 <__c.2162>:
-  a5:	4d 61 69 6e 20 62 6f 61 72 64 20 68 65 72 65 21     Main board here!
-  b5:	0a 00                                               ..
+000000be <__ctors_end>:
+  be:	11 24       	eor	r1, r1
+  c0:	1f be       	out	0x3f, r1	; 63
+  c2:	cf e5       	ldi	r28, 0x5F	; 95
+  c4:	d4 e0       	ldi	r29, 0x04	; 4
+  c6:	de bf       	out	0x3e, r29	; 62
+  c8:	cd bf       	out	0x3d, r28	; 61
 
-000000b7 <ssdCharTble>:
-  b7:	c0 f9 a4 b0 99 92 82 f8 80 90 88 83 c6 a1 86 8e     ................
-  c7:	ff fe f7                                            ...
+000000ca <__do_clear_bss>:
+  ca:	21 e0       	ldi	r18, 0x01	; 1
+  cc:	a0 e6       	ldi	r26, 0x60	; 96
+  ce:	b0 e0       	ldi	r27, 0x00	; 0
+  d0:	01 c0       	rjmp	.+2      	; 0xd4 <.do_clear_bss_start>
 
-000000ca <__ctors_end>:
-  ca:	11 24       	eor	r1, r1
-  cc:	1f be       	out	0x3f, r1	; 63
-  ce:	cf e5       	ldi	r28, 0x5F	; 95
-  d0:	d4 e0       	ldi	r29, 0x04	; 4
-  d2:	de bf       	out	0x3e, r29	; 62
-  d4:	cd bf       	out	0x3d, r28	; 61
+000000d2 <.do_clear_bss_loop>:
+  d2:	1d 92       	st	X+, r1
 
-000000d6 <__do_clear_bss>:
-  d6:	21 e0       	ldi	r18, 0x01	; 1
-  d8:	a0 e6       	ldi	r26, 0x60	; 96
-  da:	b0 e0       	ldi	r27, 0x00	; 0
-  dc:	01 c0       	rjmp	.+2      	; 0xe0 <.do_clear_bss_start>
+000000d4 <.do_clear_bss_start>:
+  d4:	a7 33       	cpi	r26, 0x37	; 55
+  d6:	b2 07       	cpc	r27, r18
+  d8:	e1 f7       	brne	.-8      	; 0xd2 <.do_clear_bss_loop>
+  da:	0e 94 60 04 	call	0x8c0	; 0x8c0 <main>
+  de:	0c 94 f7 05 	jmp	0xbee	; 0xbee <_exit>
 
-000000de <.do_clear_bss_loop>:
-  de:	1d 92       	st	X+, r1
+000000e2 <__bad_interrupt>:
+  e2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-000000e0 <.do_clear_bss_start>:
-  e0:	a7 33       	cpi	r26, 0x37	; 55
-  e2:	b2 07       	cpc	r27, r18
-  e4:	e1 f7       	brne	.-8      	; 0xde <.do_clear_bss_loop>
-  e6:	0e 94 01 04 	call	0x802	; 0x802 <main>
-  ea:	0c 94 98 05 	jmp	0xb30	; 0xb30 <_exit>
-
-000000ee <__bad_interrupt>:
-  ee:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
-
-000000f2 <bufferInit>:
+000000e6 <bufferInit>:
 // global variables
 
 // initialization
 
 void bufferInit(cBuffer* buffer, unsigned char *start, unsigned short size)
 {
-  f2:	fc 01       	movw	r30, r24
+  e6:	fc 01       	movw	r30, r24
 	// begin critical section
 	CRITICAL_SECTION_START;
-  f4:	8f b7       	in	r24, 0x3f	; 63
-  f6:	f8 94       	cli
+  e8:	8f b7       	in	r24, 0x3f	; 63
+  ea:	f8 94       	cli
 	// set start pointer of the buffer
 	buffer->dataptr = start;
-  f8:	71 83       	std	Z+1, r23	; 0x01
-  fa:	60 83       	st	Z, r22
+  ec:	71 83       	std	Z+1, r23	; 0x01
+  ee:	60 83       	st	Z, r22
 	buffer->size = size;
-  fc:	53 83       	std	Z+3, r21	; 0x03
-  fe:	42 83       	std	Z+2, r20	; 0x02
+  f0:	53 83       	std	Z+3, r21	; 0x03
+  f2:	42 83       	std	Z+2, r20	; 0x02
 	// initialize index and length
 	buffer->dataindex = 0;
- 100:	17 82       	std	Z+7, r1	; 0x07
- 102:	16 82       	std	Z+6, r1	; 0x06
+  f4:	17 82       	std	Z+7, r1	; 0x07
+  f6:	16 82       	std	Z+6, r1	; 0x06
 	buffer->datalength = 0;
- 104:	15 82       	std	Z+5, r1	; 0x05
- 106:	14 82       	std	Z+4, r1	; 0x04
+  f8:	15 82       	std	Z+5, r1	; 0x05
+  fa:	14 82       	std	Z+4, r1	; 0x04
 	// end critical section
 	CRITICAL_SECTION_END;
- 108:	8f bf       	out	0x3f, r24	; 63
- 10a:	08 95       	ret
+  fc:	8f bf       	out	0x3f, r24	; 63
+  fe:	08 95       	ret
 
-0000010c <bufferGetFromFront>:
+00000100 <bufferGetFromFront>:
 }
 
 // access routines
 unsigned char  bufferGetFromFront(cBuffer* buffer)
 {
- 10c:	fc 01       	movw	r30, r24
+ 100:	fc 01       	movw	r30, r24
 	unsigned char data = 0;
 	// begin critical section
 	CRITICAL_SECTION_START;
- 10e:	9f b7       	in	r25, 0x3f	; 63
- 110:	f8 94       	cli
+ 102:	9f b7       	in	r25, 0x3f	; 63
+ 104:	f8 94       	cli
 	// check to see if there's data in the buffer
 	if(buffer->datalength)
- 112:	44 81       	ldd	r20, Z+4	; 0x04
- 114:	55 81       	ldd	r21, Z+5	; 0x05
- 116:	41 15       	cp	r20, r1
- 118:	51 05       	cpc	r21, r1
- 11a:	c9 f0       	breq	.+50     	; 0x14e <bufferGetFromFront+0x42>
+ 106:	44 81       	ldd	r20, Z+4	; 0x04
+ 108:	55 81       	ldd	r21, Z+5	; 0x05
+ 10a:	41 15       	cp	r20, r1
+ 10c:	51 05       	cpc	r21, r1
+ 10e:	c9 f0       	breq	.+50     	; 0x142 <bufferGetFromFront+0x42>
 	{
 		// get the first character from buffer
 		data = buffer->dataptr[buffer->dataindex];
- 11c:	26 81       	ldd	r18, Z+6	; 0x06
- 11e:	37 81       	ldd	r19, Z+7	; 0x07
- 120:	a0 81       	ld	r26, Z
- 122:	b1 81       	ldd	r27, Z+1	; 0x01
- 124:	a2 0f       	add	r26, r18
- 126:	b3 1f       	adc	r27, r19
- 128:	8c 91       	ld	r24, X
+ 110:	26 81       	ldd	r18, Z+6	; 0x06
+ 112:	37 81       	ldd	r19, Z+7	; 0x07
+ 114:	a0 81       	ld	r26, Z
+ 116:	b1 81       	ldd	r27, Z+1	; 0x01
+ 118:	a2 0f       	add	r26, r18
+ 11a:	b3 1f       	adc	r27, r19
+ 11c:	8c 91       	ld	r24, X
 		// move index down and decrement length
 		buffer->dataindex++;
- 12a:	2f 5f       	subi	r18, 0xFF	; 255
- 12c:	3f 4f       	sbci	r19, 0xFF	; 255
- 12e:	37 83       	std	Z+7, r19	; 0x07
- 130:	26 83       	std	Z+6, r18	; 0x06
+ 11e:	2f 5f       	subi	r18, 0xFF	; 255
+ 120:	3f 4f       	sbci	r19, 0xFF	; 255
+ 122:	37 83       	std	Z+7, r19	; 0x07
+ 124:	26 83       	std	Z+6, r18	; 0x06
 		if(buffer->dataindex >= buffer->size)
- 132:	62 81       	ldd	r22, Z+2	; 0x02
- 134:	73 81       	ldd	r23, Z+3	; 0x03
- 136:	26 17       	cp	r18, r22
- 138:	37 07       	cpc	r19, r23
- 13a:	20 f0       	brcs	.+8      	; 0x144 <bufferGetFromFront+0x38>
+ 126:	62 81       	ldd	r22, Z+2	; 0x02
+ 128:	73 81       	ldd	r23, Z+3	; 0x03
+ 12a:	26 17       	cp	r18, r22
+ 12c:	37 07       	cpc	r19, r23
+ 12e:	20 f0       	brcs	.+8      	; 0x138 <bufferGetFromFront+0x38>
 		{
 			buffer->dataindex -= buffer->size;
- 13c:	26 1b       	sub	r18, r22
- 13e:	37 0b       	sbc	r19, r23
- 140:	37 83       	std	Z+7, r19	; 0x07
- 142:	26 83       	std	Z+6, r18	; 0x06
+ 130:	26 1b       	sub	r18, r22
+ 132:	37 0b       	sbc	r19, r23
+ 134:	37 83       	std	Z+7, r19	; 0x07
+ 136:	26 83       	std	Z+6, r18	; 0x06
 		}
 		buffer->datalength--;
- 144:	41 50       	subi	r20, 0x01	; 1
- 146:	51 09       	sbc	r21, r1
- 148:	55 83       	std	Z+5, r21	; 0x05
- 14a:	44 83       	std	Z+4, r20	; 0x04
- 14c:	01 c0       	rjmp	.+2      	; 0x150 <bufferGetFromFront+0x44>
+ 138:	41 50       	subi	r20, 0x01	; 1
+ 13a:	51 09       	sbc	r21, r1
+ 13c:	55 83       	std	Z+5, r21	; 0x05
+ 13e:	44 83       	std	Z+4, r20	; 0x04
+ 140:	01 c0       	rjmp	.+2      	; 0x144 <bufferGetFromFront+0x44>
 }
 
 // access routines
 unsigned char  bufferGetFromFront(cBuffer* buffer)
 {
 	unsigned char data = 0;
- 14e:	80 e0       	ldi	r24, 0x00	; 0
+ 142:	80 e0       	ldi	r24, 0x00	; 0
 			buffer->dataindex -= buffer->size;
 		}
 		buffer->datalength--;
 	}
 	// end critical section
 	CRITICAL_SECTION_END;
- 150:	9f bf       	out	0x3f, r25	; 63
+ 144:	9f bf       	out	0x3f, r25	; 63
 	// return
 	return data;
 }
- 152:	08 95       	ret
+ 146:	08 95       	ret
 
-00000154 <bufferAddToEnd>:
+00000148 <bufferAddToEnd>:
 	CRITICAL_SECTION_END;
 	return data;
 }
 
 unsigned char bufferAddToEnd(cBuffer* buffer, unsigned char data)
 {
- 154:	fc 01       	movw	r30, r24
- 156:	36 2f       	mov	r19, r22
+ 148:	fc 01       	movw	r30, r24
+ 14a:	36 2f       	mov	r19, r22
 	// begin critical section
 	CRITICAL_SECTION_START;
- 158:	2f b7       	in	r18, 0x3f	; 63
- 15a:	f8 94       	cli
+ 14c:	2f b7       	in	r18, 0x3f	; 63
+ 14e:	f8 94       	cli
 	// make sure the buffer has room
 	if(buffer->datalength < buffer->size)
- 15c:	a4 81       	ldd	r26, Z+4	; 0x04
- 15e:	b5 81       	ldd	r27, Z+5	; 0x05
- 160:	62 81       	ldd	r22, Z+2	; 0x02
- 162:	73 81       	ldd	r23, Z+3	; 0x03
- 164:	a6 17       	cp	r26, r22
- 166:	b7 07       	cpc	r27, r23
- 168:	98 f4       	brcc	.+38     	; 0x190 <bufferAddToEnd+0x3c>
+ 150:	a4 81       	ldd	r26, Z+4	; 0x04
+ 152:	b5 81       	ldd	r27, Z+5	; 0x05
+ 154:	62 81       	ldd	r22, Z+2	; 0x02
+ 156:	73 81       	ldd	r23, Z+3	; 0x03
+ 158:	a6 17       	cp	r26, r22
+ 15a:	b7 07       	cpc	r27, r23
+ 15c:	98 f4       	brcc	.+38     	; 0x184 <bufferAddToEnd+0x3c>
 	{
 		// save data byte at end of buffer
 		buffer->dataptr[(buffer->dataindex + buffer->datalength) % buffer->size] = data;
- 16a:	86 81       	ldd	r24, Z+6	; 0x06
- 16c:	97 81       	ldd	r25, Z+7	; 0x07
- 16e:	8a 0f       	add	r24, r26
- 170:	9b 1f       	adc	r25, r27
- 172:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 176:	a0 81       	ld	r26, Z
- 178:	b1 81       	ldd	r27, Z+1	; 0x01
- 17a:	a8 0f       	add	r26, r24
- 17c:	b9 1f       	adc	r27, r25
- 17e:	3c 93       	st	X, r19
+ 15e:	86 81       	ldd	r24, Z+6	; 0x06
+ 160:	97 81       	ldd	r25, Z+7	; 0x07
+ 162:	8a 0f       	add	r24, r26
+ 164:	9b 1f       	adc	r25, r27
+ 166:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 16a:	a0 81       	ld	r26, Z
+ 16c:	b1 81       	ldd	r27, Z+1	; 0x01
+ 16e:	a8 0f       	add	r26, r24
+ 170:	b9 1f       	adc	r27, r25
+ 172:	3c 93       	st	X, r19
 		// increment the length
 		buffer->datalength++;
- 180:	84 81       	ldd	r24, Z+4	; 0x04
- 182:	95 81       	ldd	r25, Z+5	; 0x05
- 184:	01 96       	adiw	r24, 0x01	; 1
- 186:	95 83       	std	Z+5, r25	; 0x05
- 188:	84 83       	std	Z+4, r24	; 0x04
+ 174:	84 81       	ldd	r24, Z+4	; 0x04
+ 176:	95 81       	ldd	r25, Z+5	; 0x05
+ 178:	01 96       	adiw	r24, 0x01	; 1
+ 17a:	95 83       	std	Z+5, r25	; 0x05
+ 17c:	84 83       	std	Z+4, r24	; 0x04
 		// end critical section
 		CRITICAL_SECTION_END;
- 18a:	2f bf       	out	0x3f, r18	; 63
+ 17e:	2f bf       	out	0x3f, r18	; 63
 		// return success
 		return -1;
- 18c:	8f ef       	ldi	r24, 0xFF	; 255
- 18e:	08 95       	ret
+ 180:	8f ef       	ldi	r24, 0xFF	; 255
+ 182:	08 95       	ret
 	}
 	// end critical section
 	CRITICAL_SECTION_END;
- 190:	2f bf       	out	0x3f, r18	; 63
+ 184:	2f bf       	out	0x3f, r18	; 63
 	// return failure
 	return 0;
- 192:	80 e0       	ldi	r24, 0x00	; 0
+ 186:	80 e0       	ldi	r24, 0x00	; 0
 }
- 194:	08 95       	ret
+ 188:	08 95       	ret
 
-00000196 <rprintfInit>:
+0000018a <rprintfInit>:
 // *** rprintf initialization ***
 // you must call this function once and supply the character output
 // routine before using other functions in this library
 void rprintfInit(void (*putchar_func)(unsigned char c))
 {
 	rputchar = putchar_func;
- 196:	90 93 61 00 	sts	0x0061, r25
- 19a:	80 93 60 00 	sts	0x0060, r24
- 19e:	08 95       	ret
+ 18a:	90 93 61 00 	sts	0x0061, r25
+ 18e:	80 93 60 00 	sts	0x0060, r24
+ 192:	08 95       	ret
 
-000001a0 <rprintfChar>:
+00000194 <rprintfChar>:
 }
 
 // *** rprintfChar ***
 // send a character/byte to the current output device
 void rprintfChar(unsigned char c)
 {
- 1a0:	cf 93       	push	r28
- 1a2:	c8 2f       	mov	r28, r24
+ 194:	cf 93       	push	r28
+ 196:	c8 2f       	mov	r28, r24
 	// do LF -> CR/LF translation
 	if(c == '\n')
- 1a4:	8a 30       	cpi	r24, 0x0A	; 10
- 1a6:	31 f4       	brne	.+12     	; 0x1b4 <rprintfChar+0x14>
+ 198:	8a 30       	cpi	r24, 0x0A	; 10
+ 19a:	31 f4       	brne	.+12     	; 0x1a8 <rprintfChar+0x14>
 		rputchar('\r');
- 1a8:	e0 91 60 00 	lds	r30, 0x0060
- 1ac:	f0 91 61 00 	lds	r31, 0x0061
- 1b0:	8d e0       	ldi	r24, 0x0D	; 13
- 1b2:	09 95       	icall
+ 19c:	e0 91 60 00 	lds	r30, 0x0060
+ 1a0:	f0 91 61 00 	lds	r31, 0x0061
+ 1a4:	8d e0       	ldi	r24, 0x0D	; 13
+ 1a6:	09 95       	icall
 	// send character
 	rputchar(c);
- 1b4:	e0 91 60 00 	lds	r30, 0x0060
- 1b8:	f0 91 61 00 	lds	r31, 0x0061
- 1bc:	8c 2f       	mov	r24, r28
+ 1a8:	e0 91 60 00 	lds	r30, 0x0060
+ 1ac:	f0 91 61 00 	lds	r31, 0x0061
+ 1b0:	8c 2f       	mov	r24, r28
 }
- 1be:	cf 91       	pop	r28
+ 1b2:	cf 91       	pop	r28
 {
 	// do LF -> CR/LF translation
 	if(c == '\n')
 		rputchar('\r');
 	// send character
 	rputchar(c);
- 1c0:	09 94       	ijmp
+ 1b4:	09 94       	ijmp
 
-000001c2 <rprintfu04>:
+000001b6 <rprintfu04>:
 //	char Character = data&0x0f;
 //	if (Character>9)
 //		Character+='A'-10;
 //	else
 //		Character+='0';
 	rprintfChar(hexchar(data));
- 1c2:	8f 70       	andi	r24, 0x0F	; 15
- 1c4:	e8 2f       	mov	r30, r24
- 1c6:	f0 e0       	ldi	r31, 0x00	; 0
- 1c8:	ec 59       	subi	r30, 0x9C	; 156
- 1ca:	ff 4f       	sbci	r31, 0xFF	; 255
- 1cc:	84 91       	lpm	r24, Z
- 1ce:	0c 94 d0 00 	jmp	0x1a0	; 0x1a0 <rprintfChar>
+ 1b6:	8f 70       	andi	r24, 0x0F	; 15
+ 1b8:	e8 2f       	mov	r30, r24
+ 1ba:	f0 e0       	ldi	r31, 0x00	; 0
+ 1bc:	ec 59       	subi	r30, 0x9C	; 156
+ 1be:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1c0:	84 91       	lpm	r24, Z
+ 1c2:	0c 94 ca 00 	jmp	0x194	; 0x194 <rprintfChar>
 
-000001d2 <rprintf1RamRom>:
+000001c6 <rprintf1RamRom>:
 // Supports:
 // %d - decimal
 // %x - hex
 // %c - character
 int rprintf1RamRom(unsigned char stringInRom, const char *format, ...)
 {
- 1d2:	5f 92       	push	r5
- 1d4:	6f 92       	push	r6
- 1d6:	7f 92       	push	r7
- 1d8:	8f 92       	push	r8
- 1da:	9f 92       	push	r9
- 1dc:	af 92       	push	r10
- 1de:	bf 92       	push	r11
- 1e0:	cf 92       	push	r12
- 1e2:	df 92       	push	r13
- 1e4:	ef 92       	push	r14
- 1e6:	ff 92       	push	r15
- 1e8:	0f 93       	push	r16
- 1ea:	1f 93       	push	r17
- 1ec:	cf 93       	push	r28
- 1ee:	df 93       	push	r29
- 1f0:	1f 92       	push	r1
- 1f2:	cd b7       	in	r28, 0x3d	; 61
- 1f4:	de b7       	in	r29, 0x3e	; 62
- 1f6:	ec 89       	ldd	r30, Y+20	; 0x14
- 1f8:	fd 89       	ldd	r31, Y+21	; 0x15
+ 1c6:	5f 92       	push	r5
+ 1c8:	6f 92       	push	r6
+ 1ca:	7f 92       	push	r7
+ 1cc:	8f 92       	push	r8
+ 1ce:	9f 92       	push	r9
+ 1d0:	af 92       	push	r10
+ 1d2:	bf 92       	push	r11
+ 1d4:	cf 92       	push	r12
+ 1d6:	df 92       	push	r13
+ 1d8:	ef 92       	push	r14
+ 1da:	ff 92       	push	r15
+ 1dc:	0f 93       	push	r16
+ 1de:	1f 93       	push	r17
+ 1e0:	cf 93       	push	r28
+ 1e2:	df 93       	push	r29
+ 1e4:	1f 92       	push	r1
+ 1e6:	cd b7       	in	r28, 0x3d	; 61
+ 1e8:	de b7       	in	r29, 0x3e	; 62
+ 1ea:	ec 89       	ldd	r30, Y+20	; 0x14
+ 1ec:	fd 89       	ldd	r31, Y+21	; 0x15
 	//static char HexChars[16] = "0123456789ABCDEF";
 	char format_flag;
 	unsigned int u_val, div_val, base;
 	va_list ap;
 
 	va_start(ap, format);
- 1fa:	3e 01       	movw	r6, r28
- 1fc:	26 e1       	ldi	r18, 0x16	; 22
- 1fe:	62 0e       	add	r6, r18
- 200:	71 1c       	adc	r7, r1
+ 1ee:	3e 01       	movw	r6, r28
+ 1f0:	26 e1       	ldi	r18, 0x16	; 22
+ 1f2:	62 0e       	add	r6, r18
+ 1f4:	71 1c       	adc	r7, r1
 				if (((int)u_val) < 0)
 				{
 					u_val = - u_val;
 					rprintfChar('-');
 				}
 				while (div_val > 1 && div_val > u_val) div_val /= 10;
- 202:	3a e0       	ldi	r19, 0x0A	; 10
- 204:	a3 2e       	mov	r10, r19
- 206:	b1 2c       	mov	r11, r1
+ 1f6:	3a e0       	ldi	r19, 0x0A	; 10
+ 1f8:	a3 2e       	mov	r10, r19
+ 1fa:	b1 2c       	mov	r11, r1
 	va_list ap;
 
 	va_start(ap, format);
 	for (;;)
 	{
 		while ((format_flag = READMEMBYTE(stringInRom,format++) ) != '%')
- 208:	3b 89       	ldd	r19, Y+19	; 0x13
- 20a:	33 23       	and	r19, r19
- 20c:	81 f0       	breq	.+32     	; 0x22e <rprintf1RamRom+0x5c>
- 20e:	8f 01       	movw	r16, r30
- 210:	0f 5f       	subi	r16, 0xFF	; 255
- 212:	1f 4f       	sbci	r17, 0xFF	; 255
- 214:	84 91       	lpm	r24, Z
- 216:	85 32       	cpi	r24, 0x25	; 37
- 218:	89 f0       	breq	.+34     	; 0x23c <rprintf1RamRom+0x6a>
+ 1fc:	3b 89       	ldd	r19, Y+19	; 0x13
+ 1fe:	33 23       	and	r19, r19
+ 200:	81 f0       	breq	.+32     	; 0x222 <rprintf1RamRom+0x5c>
+ 202:	8f 01       	movw	r16, r30
+ 204:	0f 5f       	subi	r16, 0xFF	; 255
+ 206:	1f 4f       	sbci	r17, 0xFF	; 255
+ 208:	84 91       	lpm	r24, Z
+ 20a:	85 32       	cpi	r24, 0x25	; 37
+ 20c:	89 f0       	breq	.+34     	; 0x230 <rprintf1RamRom+0x6a>
 		{	// Until '%' or '\0'
 			if (!format_flag)
- 21a:	88 23       	and	r24, r24
- 21c:	09 f4       	brne	.+2      	; 0x220 <rprintf1RamRom+0x4e>
- 21e:	66 c0       	rjmp	.+204    	; 0x2ec <rprintf1RamRom+0x11a>
+ 20e:	88 23       	and	r24, r24
+ 210:	09 f4       	brne	.+2      	; 0x214 <rprintf1RamRom+0x4e>
+ 212:	66 c0       	rjmp	.+204    	; 0x2e0 <rprintf1RamRom+0x11a>
 			{
 				va_end(ap);
 				return(0);
 			}
 			rprintfChar(format_flag);
- 220:	0e 94 d0 00 	call	0x1a0	; 0x1a0 <rprintfChar>
- 224:	63 01       	movw	r12, r6
- 226:	78 01       	movw	r14, r16
+ 214:	0e 94 ca 00 	call	0x194	; 0x194 <rprintfChar>
+ 218:	63 01       	movw	r12, r6
+ 21a:	78 01       	movw	r14, r16
 		}
 
 		switch (format_flag = READMEMBYTE(stringInRom,format++) )
 		{
 			case 'c': format_flag = va_arg(ap,int);
 			default:  rprintfChar(format_flag); continue;
- 228:	36 01       	movw	r6, r12
- 22a:	f7 01       	movw	r30, r14
- 22c:	ed cf       	rjmp	.-38     	; 0x208 <rprintf1RamRom+0x36>
+ 21c:	36 01       	movw	r6, r12
+ 21e:	f7 01       	movw	r30, r14
+ 220:	ed cf       	rjmp	.-38     	; 0x1fc <rprintf1RamRom+0x36>
 	va_list ap;
 
 	va_start(ap, format);
 	for (;;)
 	{
 		while ((format_flag = READMEMBYTE(stringInRom,format++) ) != '%')
- 22e:	80 81       	ld	r24, Z
- 230:	85 32       	cpi	r24, 0x25	; 37
- 232:	59 f0       	breq	.+22     	; 0x24a <rprintf1RamRom+0x78>
- 234:	8f 01       	movw	r16, r30
- 236:	0f 5f       	subi	r16, 0xFF	; 255
- 238:	1f 4f       	sbci	r17, 0xFF	; 255
- 23a:	ef cf       	rjmp	.-34     	; 0x21a <rprintf1RamRom+0x48>
+ 222:	80 81       	ld	r24, Z
+ 224:	85 32       	cpi	r24, 0x25	; 37
+ 226:	59 f0       	breq	.+22     	; 0x23e <rprintf1RamRom+0x78>
+ 228:	8f 01       	movw	r16, r30
+ 22a:	0f 5f       	subi	r16, 0xFF	; 255
+ 22c:	1f 4f       	sbci	r17, 0xFF	; 255
+ 22e:	ef cf       	rjmp	.-34     	; 0x20e <rprintf1RamRom+0x48>
 				return(0);
 			}
 			rprintfChar(format_flag);
 		}
 
 		switch (format_flag = READMEMBYTE(stringInRom,format++) )
- 23c:	7f 01       	movw	r14, r30
- 23e:	82 e0       	ldi	r24, 0x02	; 2
- 240:	e8 0e       	add	r14, r24
- 242:	f1 1c       	adc	r15, r1
- 244:	f8 01       	movw	r30, r16
- 246:	84 91       	lpm	r24, Z
- 248:	05 c0       	rjmp	.+10     	; 0x254 <rprintf1RamRom+0x82>
- 24a:	7f 01       	movw	r14, r30
- 24c:	22 e0       	ldi	r18, 0x02	; 2
- 24e:	e2 0e       	add	r14, r18
- 250:	f1 1c       	adc	r15, r1
- 252:	81 81       	ldd	r24, Z+1	; 0x01
- 254:	84 36       	cpi	r24, 0x64	; 100
- 256:	a1 f0       	breq	.+40     	; 0x280 <rprintf1RamRom+0xae>
- 258:	88 37       	cpi	r24, 0x78	; 120
- 25a:	61 f0       	breq	.+24     	; 0x274 <rprintf1RamRom+0xa2>
- 25c:	83 36       	cpi	r24, 0x63	; 99
- 25e:	31 f4       	brne	.+12     	; 0x26c <rprintf1RamRom+0x9a>
+ 230:	7f 01       	movw	r14, r30
+ 232:	82 e0       	ldi	r24, 0x02	; 2
+ 234:	e8 0e       	add	r14, r24
+ 236:	f1 1c       	adc	r15, r1
+ 238:	f8 01       	movw	r30, r16
+ 23a:	84 91       	lpm	r24, Z
+ 23c:	05 c0       	rjmp	.+10     	; 0x248 <rprintf1RamRom+0x82>
+ 23e:	7f 01       	movw	r14, r30
+ 240:	22 e0       	ldi	r18, 0x02	; 2
+ 242:	e2 0e       	add	r14, r18
+ 244:	f1 1c       	adc	r15, r1
+ 246:	81 81       	ldd	r24, Z+1	; 0x01
+ 248:	84 36       	cpi	r24, 0x64	; 100
+ 24a:	a1 f0       	breq	.+40     	; 0x274 <rprintf1RamRom+0xae>
+ 24c:	88 37       	cpi	r24, 0x78	; 120
+ 24e:	61 f0       	breq	.+24     	; 0x268 <rprintf1RamRom+0xa2>
+ 250:	83 36       	cpi	r24, 0x63	; 99
+ 252:	31 f4       	brne	.+12     	; 0x260 <rprintf1RamRom+0x9a>
 		{
 			case 'c': format_flag = va_arg(ap,int);
- 260:	f3 01       	movw	r30, r6
- 262:	80 81       	ld	r24, Z
- 264:	93 01       	movw	r18, r6
- 266:	2e 5f       	subi	r18, 0xFE	; 254
- 268:	3f 4f       	sbci	r19, 0xFF	; 255
- 26a:	39 01       	movw	r6, r18
+ 254:	f3 01       	movw	r30, r6
+ 256:	80 81       	ld	r24, Z
+ 258:	93 01       	movw	r18, r6
+ 25a:	2e 5f       	subi	r18, 0xFE	; 254
+ 25c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 25e:	39 01       	movw	r6, r18
 			default:  rprintfChar(format_flag); continue;
- 26c:	0e 94 d0 00 	call	0x1a0	; 0x1a0 <rprintfChar>
- 270:	63 01       	movw	r12, r6
- 272:	da cf       	rjmp	.-76     	; 0x228 <rprintf1RamRom+0x56>
+ 260:	0e 94 ca 00 	call	0x194	; 0x194 <rprintfChar>
+ 264:	63 01       	movw	r12, r6
+ 266:	da cf       	rjmp	.-76     	; 0x21c <rprintf1RamRom+0x56>
 			case 'd': base = 10; div_val = 10000; goto CONVERSION_LOOP;
 //			case 'x': base = 16; div_val = 0x10;
 			case 'x': base = 16; div_val = 0x1000;
- 274:	20 e1       	ldi	r18, 0x10	; 16
- 276:	82 2e       	mov	r8, r18
- 278:	91 2c       	mov	r9, r1
- 27a:	00 e0       	ldi	r16, 0x00	; 0
- 27c:	10 e1       	ldi	r17, 0x10	; 16
- 27e:	05 c0       	rjmp	.+10     	; 0x28a <rprintf1RamRom+0xb8>
+ 268:	20 e1       	ldi	r18, 0x10	; 16
+ 26a:	82 2e       	mov	r8, r18
+ 26c:	91 2c       	mov	r9, r1
+ 26e:	00 e0       	ldi	r16, 0x00	; 0
+ 270:	10 e1       	ldi	r17, 0x10	; 16
+ 272:	05 c0       	rjmp	.+10     	; 0x27e <rprintf1RamRom+0xb8>
 
 		switch (format_flag = READMEMBYTE(stringInRom,format++) )
 		{
 			case 'c': format_flag = va_arg(ap,int);
 			default:  rprintfChar(format_flag); continue;
 			case 'd': base = 10; div_val = 10000; goto CONVERSION_LOOP;
- 280:	9a e0       	ldi	r25, 0x0A	; 10
- 282:	89 2e       	mov	r8, r25
- 284:	91 2c       	mov	r9, r1
- 286:	00 e1       	ldi	r16, 0x10	; 16
- 288:	17 e2       	ldi	r17, 0x27	; 39
+ 274:	9a e0       	ldi	r25, 0x0A	; 10
+ 276:	89 2e       	mov	r8, r25
+ 278:	91 2c       	mov	r9, r1
+ 27a:	00 e1       	ldi	r16, 0x10	; 16
+ 27c:	17 e2       	ldi	r17, 0x27	; 39
 //			case 'x': base = 16; div_val = 0x10;
 			case 'x': base = 16; div_val = 0x1000;
 
 			CONVERSION_LOOP:
 			u_val = va_arg(ap,int);
- 28a:	63 01       	movw	r12, r6
- 28c:	32 e0       	ldi	r19, 0x02	; 2
- 28e:	c3 0e       	add	r12, r19
- 290:	d1 1c       	adc	r13, r1
- 292:	f3 01       	movw	r30, r6
- 294:	60 80       	ld	r6, Z
- 296:	71 80       	ldd	r7, Z+1	; 0x01
+ 27e:	63 01       	movw	r12, r6
+ 280:	32 e0       	ldi	r19, 0x02	; 2
+ 282:	c3 0e       	add	r12, r19
+ 284:	d1 1c       	adc	r13, r1
+ 286:	f3 01       	movw	r30, r6
+ 288:	60 80       	ld	r6, Z
+ 28a:	71 80       	ldd	r7, Z+1	; 0x01
 			if (format_flag == 'd')
- 298:	84 36       	cpi	r24, 0x64	; 100
- 29a:	a1 f4       	brne	.+40     	; 0x2c4 <rprintf1RamRom+0xf2>
+ 28c:	84 36       	cpi	r24, 0x64	; 100
+ 28e:	a1 f4       	brne	.+40     	; 0x2b8 <rprintf1RamRom+0xf2>
 			{
 				if (((int)u_val) < 0)
- 29c:	77 fe       	sbrs	r7, 7
- 29e:	0f c0       	rjmp	.+30     	; 0x2be <rprintf1RamRom+0xec>
+ 290:	77 fe       	sbrs	r7, 7
+ 292:	0f c0       	rjmp	.+30     	; 0x2b2 <rprintf1RamRom+0xec>
 				{
 					u_val = - u_val;
- 2a0:	71 94       	neg	r7
- 2a2:	61 94       	neg	r6
- 2a4:	71 08       	sbc	r7, r1
+ 294:	71 94       	neg	r7
+ 296:	61 94       	neg	r6
+ 298:	71 08       	sbc	r7, r1
 					rprintfChar('-');
- 2a6:	8d e2       	ldi	r24, 0x2D	; 45
- 2a8:	0e 94 d0 00 	call	0x1a0	; 0x1a0 <rprintfChar>
- 2ac:	08 c0       	rjmp	.+16     	; 0x2be <rprintf1RamRom+0xec>
+ 29a:	8d e2       	ldi	r24, 0x2D	; 45
+ 29c:	0e 94 ca 00 	call	0x194	; 0x194 <rprintfChar>
+ 2a0:	08 c0       	rjmp	.+16     	; 0x2b2 <rprintf1RamRom+0xec>
 				}
 				while (div_val > 1 && div_val > u_val) div_val /= 10;
- 2ae:	c8 01       	movw	r24, r16
- 2b0:	b5 01       	movw	r22, r10
- 2b2:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 2b6:	8b 01       	movw	r16, r22
- 2b8:	62 30       	cpi	r22, 0x02	; 2
- 2ba:	71 05       	cpc	r23, r1
- 2bc:	18 f0       	brcs	.+6      	; 0x2c4 <rprintf1RamRom+0xf2>
- 2be:	60 16       	cp	r6, r16
- 2c0:	71 06       	cpc	r7, r17
- 2c2:	a8 f3       	brcs	.-22     	; 0x2ae <rprintf1RamRom+0xdc>
+ 2a2:	c8 01       	movw	r24, r16
+ 2a4:	b5 01       	movw	r22, r10
+ 2a6:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 2aa:	8b 01       	movw	r16, r22
+ 2ac:	62 30       	cpi	r22, 0x02	; 2
+ 2ae:	71 05       	cpc	r23, r1
+ 2b0:	18 f0       	brcs	.+6      	; 0x2b8 <rprintf1RamRom+0xf2>
+ 2b2:	60 16       	cp	r6, r16
+ 2b4:	71 06       	cpc	r7, r17
+ 2b6:	a8 f3       	brcs	.-22     	; 0x2a2 <rprintf1RamRom+0xdc>
 			}
 			do
 			{
 				//rprintfChar(pgm_read_byte(HexChars+(u_val/div_val)));
 				rprintfu04(u_val/div_val);
- 2c4:	c3 01       	movw	r24, r6
- 2c6:	b8 01       	movw	r22, r16
- 2c8:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 2cc:	58 2e       	mov	r5, r24
- 2ce:	86 2f       	mov	r24, r22
- 2d0:	99 83       	std	Y+1, r25	; 0x01
- 2d2:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <rprintfu04>
+ 2b8:	c3 01       	movw	r24, r6
+ 2ba:	b8 01       	movw	r22, r16
+ 2bc:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 2c0:	58 2e       	mov	r5, r24
+ 2c2:	86 2f       	mov	r24, r22
+ 2c4:	99 83       	std	Y+1, r25	; 0x01
+ 2c6:	0e 94 db 00 	call	0x1b6	; 0x1b6 <rprintfu04>
 				u_val %= div_val;
- 2d6:	65 2c       	mov	r6, r5
- 2d8:	99 81       	ldd	r25, Y+1	; 0x01
- 2da:	79 2e       	mov	r7, r25
+ 2ca:	65 2c       	mov	r6, r5
+ 2cc:	99 81       	ldd	r25, Y+1	; 0x01
+ 2ce:	79 2e       	mov	r7, r25
 				div_val /= base;
- 2dc:	c8 01       	movw	r24, r16
- 2de:	b4 01       	movw	r22, r8
- 2e0:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 2e4:	8b 01       	movw	r16, r22
+ 2d0:	c8 01       	movw	r24, r16
+ 2d2:	b4 01       	movw	r22, r8
+ 2d4:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 2d8:	8b 01       	movw	r16, r22
 			} while (div_val);
- 2e6:	67 2b       	or	r22, r23
- 2e8:	69 f7       	brne	.-38     	; 0x2c4 <rprintf1RamRom+0xf2>
- 2ea:	9e cf       	rjmp	.-196    	; 0x228 <rprintf1RamRom+0x56>
+ 2da:	67 2b       	or	r22, r23
+ 2dc:	69 f7       	brne	.-38     	; 0x2b8 <rprintf1RamRom+0xf2>
+ 2de:	9e cf       	rjmp	.-196    	; 0x21c <rprintf1RamRom+0x56>
 		}
 	}
 	va_end(ap);
 }
- 2ec:	80 e0       	ldi	r24, 0x00	; 0
- 2ee:	90 e0       	ldi	r25, 0x00	; 0
- 2f0:	0f 90       	pop	r0
- 2f2:	df 91       	pop	r29
- 2f4:	cf 91       	pop	r28
- 2f6:	1f 91       	pop	r17
- 2f8:	0f 91       	pop	r16
- 2fa:	ff 90       	pop	r15
- 2fc:	ef 90       	pop	r14
- 2fe:	df 90       	pop	r13
- 300:	cf 90       	pop	r12
- 302:	bf 90       	pop	r11
- 304:	af 90       	pop	r10
- 306:	9f 90       	pop	r9
- 308:	8f 90       	pop	r8
- 30a:	7f 90       	pop	r7
- 30c:	6f 90       	pop	r6
- 30e:	5f 90       	pop	r5
- 310:	08 95       	ret
+ 2e0:	80 e0       	ldi	r24, 0x00	; 0
+ 2e2:	90 e0       	ldi	r25, 0x00	; 0
+ 2e4:	0f 90       	pop	r0
+ 2e6:	df 91       	pop	r29
+ 2e8:	cf 91       	pop	r28
+ 2ea:	1f 91       	pop	r17
+ 2ec:	0f 91       	pop	r16
+ 2ee:	ff 90       	pop	r15
+ 2f0:	ef 90       	pop	r14
+ 2f2:	df 90       	pop	r13
+ 2f4:	cf 90       	pop	r12
+ 2f6:	bf 90       	pop	r11
+ 2f8:	af 90       	pop	r10
+ 2fa:	9f 90       	pop	r9
+ 2fc:	8f 90       	pop	r8
+ 2fe:	7f 90       	pop	r7
+ 300:	6f 90       	pop	r6
+ 302:	5f 90       	pop	r5
+ 304:	08 95       	ret
 
-00000312 <uartInitBuffers>:
+00000306 <uartInitBuffers>:
 // create and initialize the uart transmit and receive buffers
 void uartInitBuffers(void)
 {
 	#ifndef UART_BUFFERS_EXTERNAL_RAM
 		// initialize the UART receive buffer
 		bufferInit(&uartRxBuffer, (unsigned char *)uartRxData, UART_RX_BUFFER_SIZE);
- 312:	40 e4       	ldi	r20, 0x40	; 64
- 314:	50 e0       	ldi	r21, 0x00	; 0
- 316:	64 ea       	ldi	r22, 0xA4	; 164
- 318:	70 e0       	ldi	r23, 0x00	; 0
- 31a:	87 ee       	ldi	r24, 0xE7	; 231
- 31c:	90 e0       	ldi	r25, 0x00	; 0
- 31e:	0e 94 79 00 	call	0xf2	; 0xf2 <bufferInit>
+ 306:	40 e4       	ldi	r20, 0x40	; 64
+ 308:	50 e0       	ldi	r21, 0x00	; 0
+ 30a:	64 ea       	ldi	r22, 0xA4	; 164
+ 30c:	70 e0       	ldi	r23, 0x00	; 0
+ 30e:	87 ee       	ldi	r24, 0xE7	; 231
+ 310:	90 e0       	ldi	r25, 0x00	; 0
+ 312:	0e 94 73 00 	call	0xe6	; 0xe6 <bufferInit>
 		// initialize the UART transmit buffer
 		bufferInit(&uartTxBuffer, (unsigned char *)uartTxData, UART_TX_BUFFER_SIZE);
- 322:	40 e4       	ldi	r20, 0x40	; 64
- 324:	50 e0       	ldi	r21, 0x00	; 0
- 326:	64 e6       	ldi	r22, 0x64	; 100
- 328:	70 e0       	ldi	r23, 0x00	; 0
- 32a:	80 ef       	ldi	r24, 0xF0	; 240
- 32c:	90 e0       	ldi	r25, 0x00	; 0
- 32e:	0c 94 79 00 	jmp	0xf2	; 0xf2 <bufferInit>
+ 316:	40 e4       	ldi	r20, 0x40	; 64
+ 318:	50 e0       	ldi	r21, 0x00	; 0
+ 31a:	64 e6       	ldi	r22, 0x64	; 100
+ 31c:	70 e0       	ldi	r23, 0x00	; 0
+ 31e:	80 ef       	ldi	r24, 0xF0	; 240
+ 320:	90 e0       	ldi	r25, 0x00	; 0
+ 322:	0c 94 73 00 	jmp	0xe6	; 0xe6 <bufferInit>
 
-00000332 <uartInit>:
+00000326 <uartInit>:
 
 // enable and initialize the uart
 void uartInit(void)
 {
 	// initialize the buffers
 	uartInitBuffers();
- 332:	0e 94 89 01 	call	0x312	; 0x312 <uartInitBuffers>
+ 326:	0e 94 83 01 	call	0x306	; 0x306 <uartInitBuffers>
 	// initialize user receive handler
 	UartRxFunc = 0;
- 336:	10 92 63 00 	sts	0x0063, r1
- 33a:	10 92 62 00 	sts	0x0062, r1
+ 32a:	10 92 63 00 	sts	0x0063, r1
+ 32e:	10 92 62 00 	sts	0x0062, r1
 
 	// enable RxD/TxD and interrupts
 	outb(UCR, BV(RXCIE)|BV(TXCIE)|BV(RXEN)|BV(TXEN));
- 33e:	88 ed       	ldi	r24, 0xD8	; 216
- 340:	8a b9       	out	0x0a, r24	; 10
+ 332:	88 ed       	ldi	r24, 0xD8	; 216
+ 334:	8a b9       	out	0x0a, r24	; 10
 // set the uart baud rate
 void uartSetBaudRate(u32 baudrate)
 {
 	// calculate division factor for requested baud rate, and set it
 	u16 bauddiv = ((F_CPU+(baudrate*8L))/(baudrate*16L)-1);
 	outb(UBRRL, bauddiv);
- 342:	8f e5       	ldi	r24, 0x5F	; 95
- 344:	89 b9       	out	0x09, r24	; 9
+ 336:	8f e5       	ldi	r24, 0x5F	; 95
+ 338:	89 b9       	out	0x09, r24	; 9
 	#ifdef UBRRH
 	outb(UBRRH, bauddiv>>8);
- 346:	10 bc       	out	0x20, r1	; 32
+ 33a:	10 bc       	out	0x20, r1	; 32
 	outb(UCR, BV(RXCIE)|BV(TXCIE)|BV(RXEN)|BV(TXEN));
 
 	// set default baud rate
 	uartSetBaudRate(UART_DEFAULT_BAUD_RATE);  
 	// initialize states
 	uartReadyTx = TRUE;
- 348:	8f ef       	ldi	r24, 0xFF	; 255
- 34a:	80 93 e6 00 	sts	0x00E6, r24
+ 33c:	8f ef       	ldi	r24, 0xFF	; 255
+ 33e:	80 93 e6 00 	sts	0x00E6, r24
 	uartBufferedTx = FALSE;
- 34e:	10 92 ef 00 	sts	0x00EF, r1
+ 342:	10 92 ef 00 	sts	0x00EF, r1
 	// clear overflow count
 	uartRxOverflow = 0;
- 352:	10 92 f9 00 	sts	0x00F9, r1
- 356:	10 92 f8 00 	sts	0x00F8, r1
+ 346:	10 92 f9 00 	sts	0x00F9, r1
+ 34a:	10 92 f8 00 	sts	0x00F8, r1
 	// enable interrupts
 	sei();
- 35a:	78 94       	sei
- 35c:	08 95       	ret
+ 34e:	78 94       	sei
+ 350:	08 95       	ret
 
-0000035e <uartSetBaudRate>:
+00000352 <uartSetBaudRate>:
 	UartRxFunc = rx_func;
 }
 
 // set the uart baud rate
 void uartSetBaudRate(u32 baudrate)
 {
- 35e:	0f 93       	push	r16
- 360:	1f 93       	push	r17
- 362:	8b 01       	movw	r16, r22
- 364:	9c 01       	movw	r18, r24
+ 352:	0f 93       	push	r16
+ 354:	1f 93       	push	r17
+ 356:	8b 01       	movw	r16, r22
+ 358:	9c 01       	movw	r18, r24
 	// calculate division factor for requested baud rate, and set it
 	u16 bauddiv = ((F_CPU+(baudrate*8L))/(baudrate*16L)-1);
- 366:	dc 01       	movw	r26, r24
- 368:	cb 01       	movw	r24, r22
- 36a:	90 5e       	subi	r25, 0xE0	; 224
- 36c:	a3 4e       	sbci	r26, 0xE3	; 227
- 36e:	bf 4f       	sbci	r27, 0xFF	; 255
- 370:	bc 01       	movw	r22, r24
- 372:	cd 01       	movw	r24, r26
- 374:	43 e0       	ldi	r20, 0x03	; 3
- 376:	66 0f       	add	r22, r22
- 378:	77 1f       	adc	r23, r23
- 37a:	88 1f       	adc	r24, r24
- 37c:	99 1f       	adc	r25, r25
- 37e:	4a 95       	dec	r20
- 380:	d1 f7       	brne	.-12     	; 0x376 <uartSetBaudRate+0x18>
- 382:	a9 01       	movw	r20, r18
- 384:	98 01       	movw	r18, r16
- 386:	e4 e0       	ldi	r30, 0x04	; 4
- 388:	22 0f       	add	r18, r18
- 38a:	33 1f       	adc	r19, r19
- 38c:	44 1f       	adc	r20, r20
- 38e:	55 1f       	adc	r21, r21
- 390:	ea 95       	dec	r30
- 392:	d1 f7       	brne	.-12     	; 0x388 <uartSetBaudRate+0x2a>
- 394:	0e 94 70 05 	call	0xae0	; 0xae0 <__udivmodsi4>
- 398:	21 50       	subi	r18, 0x01	; 1
- 39a:	31 09       	sbc	r19, r1
+ 35a:	dc 01       	movw	r26, r24
+ 35c:	cb 01       	movw	r24, r22
+ 35e:	90 5e       	subi	r25, 0xE0	; 224
+ 360:	a3 4e       	sbci	r26, 0xE3	; 227
+ 362:	bf 4f       	sbci	r27, 0xFF	; 255
+ 364:	bc 01       	movw	r22, r24
+ 366:	cd 01       	movw	r24, r26
+ 368:	43 e0       	ldi	r20, 0x03	; 3
+ 36a:	66 0f       	add	r22, r22
+ 36c:	77 1f       	adc	r23, r23
+ 36e:	88 1f       	adc	r24, r24
+ 370:	99 1f       	adc	r25, r25
+ 372:	4a 95       	dec	r20
+ 374:	d1 f7       	brne	.-12     	; 0x36a <uartSetBaudRate+0x18>
+ 376:	a9 01       	movw	r20, r18
+ 378:	98 01       	movw	r18, r16
+ 37a:	e4 e0       	ldi	r30, 0x04	; 4
+ 37c:	22 0f       	add	r18, r18
+ 37e:	33 1f       	adc	r19, r19
+ 380:	44 1f       	adc	r20, r20
+ 382:	55 1f       	adc	r21, r21
+ 384:	ea 95       	dec	r30
+ 386:	d1 f7       	brne	.-12     	; 0x37c <uartSetBaudRate+0x2a>
+ 388:	0e 94 cf 05 	call	0xb9e	; 0xb9e <__udivmodsi4>
+ 38c:	21 50       	subi	r18, 0x01	; 1
+ 38e:	31 09       	sbc	r19, r1
 	outb(UBRRL, bauddiv);
- 39c:	29 b9       	out	0x09, r18	; 9
+ 390:	29 b9       	out	0x09, r18	; 9
 	#ifdef UBRRH
 	outb(UBRRH, bauddiv>>8);
- 39e:	30 bd       	out	0x20, r19	; 32
+ 392:	30 bd       	out	0x20, r19	; 32
 	#endif
 }
- 3a0:	1f 91       	pop	r17
- 3a2:	0f 91       	pop	r16
- 3a4:	08 95       	ret
+ 394:	1f 91       	pop	r17
+ 396:	0f 91       	pop	r16
+ 398:	08 95       	ret
 
-000003a6 <uartSendByte>:
+0000039a <uartSendByte>:
 
 // transmits a byte over the uart
 void uartSendByte(u08 txData)
 {
 	// wait for the transmitter to be ready
 	while(!uartReadyTx);
- 3a6:	90 91 e6 00 	lds	r25, 0x00E6
- 3aa:	99 23       	and	r25, r25
- 3ac:	e1 f3       	breq	.-8      	; 0x3a6 <uartSendByte>
+ 39a:	90 91 e6 00 	lds	r25, 0x00E6
+ 39e:	99 23       	and	r25, r25
+ 3a0:	e1 f3       	breq	.-8      	; 0x39a <uartSendByte>
 	// send byte
 	outb(UDR, txData);
- 3ae:	8c b9       	out	0x0c, r24	; 12
+ 3a2:	8c b9       	out	0x0c, r24	; 12
 	// set ready state to FALSE
 	uartReadyTx = FALSE;
- 3b0:	10 92 e6 00 	sts	0x00E6, r1
- 3b4:	08 95       	ret
+ 3a4:	10 92 e6 00 	sts	0x00E6, r1
+ 3a8:	08 95       	ret
 
-000003b6 <__vector_13>:
+000003aa <__vector_13>:
 	}
 }
 */
 // UART Transmit Complete Interrupt Handler
 UART_INTERRUPT_HANDLER(__SIG_UART_TRANS)
 {
- 3b6:	1f 92       	push	r1
- 3b8:	0f 92       	push	r0
- 3ba:	0f b6       	in	r0, 0x3f	; 63
- 3bc:	0f 92       	push	r0
- 3be:	11 24       	eor	r1, r1
- 3c0:	2f 93       	push	r18
- 3c2:	3f 93       	push	r19
- 3c4:	4f 93       	push	r20
- 3c6:	5f 93       	push	r21
- 3c8:	6f 93       	push	r22
- 3ca:	7f 93       	push	r23
- 3cc:	8f 93       	push	r24
- 3ce:	9f 93       	push	r25
- 3d0:	af 93       	push	r26
- 3d2:	bf 93       	push	r27
- 3d4:	ef 93       	push	r30
- 3d6:	ff 93       	push	r31
+ 3aa:	1f 92       	push	r1
+ 3ac:	0f 92       	push	r0
+ 3ae:	0f b6       	in	r0, 0x3f	; 63
+ 3b0:	0f 92       	push	r0
+ 3b2:	11 24       	eor	r1, r1
+ 3b4:	2f 93       	push	r18
+ 3b6:	3f 93       	push	r19
+ 3b8:	4f 93       	push	r20
+ 3ba:	5f 93       	push	r21
+ 3bc:	6f 93       	push	r22
+ 3be:	7f 93       	push	r23
+ 3c0:	8f 93       	push	r24
+ 3c2:	9f 93       	push	r25
+ 3c4:	af 93       	push	r26
+ 3c6:	bf 93       	push	r27
+ 3c8:	ef 93       	push	r30
+ 3ca:	ff 93       	push	r31
 	// check if buffered tx is enabled
 	if(uartBufferedTx)
- 3d8:	80 91 ef 00 	lds	r24, 0x00EF
- 3dc:	88 23       	and	r24, r24
- 3de:	71 f0       	breq	.+28     	; 0x3fc <__vector_13+0x46>
+ 3cc:	80 91 ef 00 	lds	r24, 0x00EF
+ 3d0:	88 23       	and	r24, r24
+ 3d2:	71 f0       	breq	.+28     	; 0x3f0 <__vector_13+0x46>
 	{
 		// check if there's data left in the buffer
 		if(uartTxBuffer.datalength)
- 3e0:	80 91 f4 00 	lds	r24, 0x00F4
- 3e4:	90 91 f5 00 	lds	r25, 0x00F5
- 3e8:	89 2b       	or	r24, r25
- 3ea:	31 f0       	breq	.+12     	; 0x3f8 <__vector_13+0x42>
+ 3d4:	80 91 f4 00 	lds	r24, 0x00F4
+ 3d8:	90 91 f5 00 	lds	r25, 0x00F5
+ 3dc:	89 2b       	or	r24, r25
+ 3de:	31 f0       	breq	.+12     	; 0x3ec <__vector_13+0x42>
 		{
 			// send byte from top of buffer
 			outb(UDR, bufferGetFromFront(&uartTxBuffer));
- 3ec:	80 ef       	ldi	r24, 0xF0	; 240
- 3ee:	90 e0       	ldi	r25, 0x00	; 0
- 3f0:	0e 94 86 00 	call	0x10c	; 0x10c <bufferGetFromFront>
- 3f4:	8c b9       	out	0x0c, r24	; 12
- 3f6:	05 c0       	rjmp	.+10     	; 0x402 <__vector_13+0x4c>
+ 3e0:	80 ef       	ldi	r24, 0xF0	; 240
+ 3e2:	90 e0       	ldi	r25, 0x00	; 0
+ 3e4:	0e 94 80 00 	call	0x100	; 0x100 <bufferGetFromFront>
+ 3e8:	8c b9       	out	0x0c, r24	; 12
+ 3ea:	05 c0       	rjmp	.+10     	; 0x3f6 <__vector_13+0x4c>
 		}
 		else
 		{
 			// no data left
 			uartBufferedTx = FALSE;
- 3f8:	10 92 ef 00 	sts	0x00EF, r1
+ 3ec:	10 92 ef 00 	sts	0x00EF, r1
 	}
 	else
 	{
 		// we're using single-byte tx mode
 		// indicate transmit complete, back to ready
 		uartReadyTx = TRUE;
- 3fc:	8f ef       	ldi	r24, 0xFF	; 255
- 3fe:	80 93 e6 00 	sts	0x00E6, r24
+ 3f0:	8f ef       	ldi	r24, 0xFF	; 255
+ 3f2:	80 93 e6 00 	sts	0x00E6, r24
 	}
 }
- 402:	ff 91       	pop	r31
- 404:	ef 91       	pop	r30
- 406:	bf 91       	pop	r27
- 408:	af 91       	pop	r26
- 40a:	9f 91       	pop	r25
- 40c:	8f 91       	pop	r24
- 40e:	7f 91       	pop	r23
- 410:	6f 91       	pop	r22
- 412:	5f 91       	pop	r21
- 414:	4f 91       	pop	r20
- 416:	3f 91       	pop	r19
- 418:	2f 91       	pop	r18
- 41a:	0f 90       	pop	r0
- 41c:	0f be       	out	0x3f, r0	; 63
- 41e:	0f 90       	pop	r0
- 420:	1f 90       	pop	r1
- 422:	18 95       	reti
+ 3f6:	ff 91       	pop	r31
+ 3f8:	ef 91       	pop	r30
+ 3fa:	bf 91       	pop	r27
+ 3fc:	af 91       	pop	r26
+ 3fe:	9f 91       	pop	r25
+ 400:	8f 91       	pop	r24
+ 402:	7f 91       	pop	r23
+ 404:	6f 91       	pop	r22
+ 406:	5f 91       	pop	r21
+ 408:	4f 91       	pop	r20
+ 40a:	3f 91       	pop	r19
+ 40c:	2f 91       	pop	r18
+ 40e:	0f 90       	pop	r0
+ 410:	0f be       	out	0x3f, r0	; 63
+ 412:	0f 90       	pop	r0
+ 414:	1f 90       	pop	r1
+ 416:	18 95       	reti
 
-00000424 <__vector_11>:
+00000418 <__vector_11>:
 
 // UART Receive Complete Interrupt Handler
 UART_INTERRUPT_HANDLER(__SIG_UART_RECV)
 {
- 424:	1f 92       	push	r1
- 426:	0f 92       	push	r0
- 428:	0f b6       	in	r0, 0x3f	; 63
- 42a:	0f 92       	push	r0
- 42c:	11 24       	eor	r1, r1
- 42e:	2f 93       	push	r18
- 430:	3f 93       	push	r19
- 432:	4f 93       	push	r20
- 434:	5f 93       	push	r21
- 436:	6f 93       	push	r22
- 438:	7f 93       	push	r23
- 43a:	8f 93       	push	r24
- 43c:	9f 93       	push	r25
- 43e:	af 93       	push	r26
- 440:	bf 93       	push	r27
- 442:	ef 93       	push	r30
- 444:	ff 93       	push	r31
+ 418:	1f 92       	push	r1
+ 41a:	0f 92       	push	r0
+ 41c:	0f b6       	in	r0, 0x3f	; 63
+ 41e:	0f 92       	push	r0
+ 420:	11 24       	eor	r1, r1
+ 422:	2f 93       	push	r18
+ 424:	3f 93       	push	r19
+ 426:	4f 93       	push	r20
+ 428:	5f 93       	push	r21
+ 42a:	6f 93       	push	r22
+ 42c:	7f 93       	push	r23
+ 42e:	8f 93       	push	r24
+ 430:	9f 93       	push	r25
+ 432:	af 93       	push	r26
+ 434:	bf 93       	push	r27
+ 436:	ef 93       	push	r30
+ 438:	ff 93       	push	r31
 	u08 c;
 	
 	// get received char
 	c = inb(UDR);
- 446:	8c b1       	in	r24, 0x0c	; 12
+ 43a:	8c b1       	in	r24, 0x0c	; 12
 
 	// if there's a user function to handle this receive event
 	if(UartRxFunc)
- 448:	20 91 62 00 	lds	r18, 0x0062
- 44c:	30 91 63 00 	lds	r19, 0x0063
- 450:	23 2b       	or	r18, r19
- 452:	31 f0       	breq	.+12     	; 0x460 <__stack+0x1>
+ 43c:	20 91 62 00 	lds	r18, 0x0062
+ 440:	30 91 63 00 	lds	r19, 0x0063
+ 444:	23 2b       	or	r18, r19
+ 446:	31 f0       	breq	.+12     	; 0x454 <__vector_11+0x3c>
 	{
 		// call it and pass the received data
 		UartRxFunc(c);
- 454:	e0 91 62 00 	lds	r30, 0x0062
- 458:	f0 91 63 00 	lds	r31, 0x0063
- 45c:	09 95       	icall
- 45e:	10 c0       	rjmp	.+32     	; 0x480 <__stack+0x21>
+ 448:	e0 91 62 00 	lds	r30, 0x0062
+ 44c:	f0 91 63 00 	lds	r31, 0x0063
+ 450:	09 95       	icall
+ 452:	10 c0       	rjmp	.+32     	; 0x474 <__stack+0x15>
 	else
 	{
 		// otherwise do default processing
 		// put received char in buffer
 		// check if there's space
 		if( !bufferAddToEnd(&uartRxBuffer, c) )
- 460:	68 2f       	mov	r22, r24
- 462:	87 ee       	ldi	r24, 0xE7	; 231
- 464:	90 e0       	ldi	r25, 0x00	; 0
- 466:	0e 94 aa 00 	call	0x154	; 0x154 <bufferAddToEnd>
- 46a:	81 11       	cpse	r24, r1
- 46c:	09 c0       	rjmp	.+18     	; 0x480 <__stack+0x21>
+ 454:	68 2f       	mov	r22, r24
+ 456:	87 ee       	ldi	r24, 0xE7	; 231
+ 458:	90 e0       	ldi	r25, 0x00	; 0
+ 45a:	0e 94 a4 00 	call	0x148	; 0x148 <bufferAddToEnd>
+ 45e:	81 11       	cpse	r24, r1
+ 460:	09 c0       	rjmp	.+18     	; 0x474 <__stack+0x15>
 		{
 			// no space in buffer
 			// count overflow
 			uartRxOverflow++;
- 46e:	80 91 f8 00 	lds	r24, 0x00F8
- 472:	90 91 f9 00 	lds	r25, 0x00F9
- 476:	01 96       	adiw	r24, 0x01	; 1
- 478:	90 93 f9 00 	sts	0x00F9, r25
- 47c:	80 93 f8 00 	sts	0x00F8, r24
+ 462:	80 91 f8 00 	lds	r24, 0x00F8
+ 466:	90 91 f9 00 	lds	r25, 0x00F9
+ 46a:	01 96       	adiw	r24, 0x01	; 1
+ 46c:	90 93 f9 00 	sts	0x00F9, r25
+ 470:	80 93 f8 00 	sts	0x00F8, r24
 		}
 	}
 }
- 480:	ff 91       	pop	r31
- 482:	ef 91       	pop	r30
- 484:	bf 91       	pop	r27
- 486:	af 91       	pop	r26
- 488:	9f 91       	pop	r25
- 48a:	8f 91       	pop	r24
- 48c:	7f 91       	pop	r23
- 48e:	6f 91       	pop	r22
- 490:	5f 91       	pop	r21
- 492:	4f 91       	pop	r20
- 494:	3f 91       	pop	r19
- 496:	2f 91       	pop	r18
- 498:	0f 90       	pop	r0
- 49a:	0f be       	out	0x3f, r0	; 63
- 49c:	0f 90       	pop	r0
- 49e:	1f 90       	pop	r1
- 4a0:	18 95       	reti
+ 474:	ff 91       	pop	r31
+ 476:	ef 91       	pop	r30
+ 478:	bf 91       	pop	r27
+ 47a:	af 91       	pop	r26
+ 47c:	9f 91       	pop	r25
+ 47e:	8f 91       	pop	r24
+ 480:	7f 91       	pop	r23
+ 482:	6f 91       	pop	r22
+ 484:	5f 91       	pop	r21
+ 486:	4f 91       	pop	r20
+ 488:	3f 91       	pop	r19
+ 48a:	2f 91       	pop	r18
+ 48c:	0f 90       	pop	r0
+ 48e:	0f be       	out	0x3f, r0	; 63
+ 490:	0f 90       	pop	r0
+ 492:	1f 90       	pop	r1
+ 494:	18 95       	reti
 
-000004a2 <McuInit>:
-
-void McuInit(void)
-{
-	// initialize our libraries
-	// initialize the UART (serial port)
-	uartInit();		/* sei() call in the function */
- 4a2:	0e 94 99 01 	call	0x332	; 0x332 <uartInit>
-	// set the baud rate of the UART for our debug/reporting output
-	uartSetBaudRate(9600);
- 4a6:	60 e8       	ldi	r22, 0x80	; 128
- 4a8:	75 e2       	ldi	r23, 0x25	; 37
- 4aa:	80 e0       	ldi	r24, 0x00	; 0
- 4ac:	90 e0       	ldi	r25, 0x00	; 0
- 4ae:	0e 94 af 01 	call	0x35e	; 0x35e <uartSetBaudRate>
-	// initialize rprintf system
-	rprintfInit(uartSendByte);
- 4b2:	83 ed       	ldi	r24, 0xD3	; 211
- 4b4:	91 e0       	ldi	r25, 0x01	; 1
- 4b6:	0c 94 cb 00 	jmp	0x196	; 0x196 <rprintfInit>
-
-000004ba <ApplInit>:
-*********************************************************************************************************
-*/
-
-void ApplInit(void)
-{
-	ButtonInit();
- 4ba:	0e 94 08 05 	call	0xa10	; 0xa10 <ButtonInit>
-	LEDInit();
- 4be:	0e 94 a9 03 	call	0x752	; 0x752 <LEDInit>
-	SSDInit();
- 4c2:	0e 94 f9 04 	call	0x9f2	; 0x9f2 <SSDInit>
-*/
-
-void ApplDataInit(void)
-{
-	/* Following for initial power on display steps */
-	appl.workMode = PWR_ON;
- 4c6:	ea ef       	ldi	r30, 0xFA	; 250
- 4c8:	f0 e0       	ldi	r31, 0x00	; 0
- 4ca:	14 86       	std	Z+12, r1	; 0x0c
-	appl.CurEvent = NULL_EVENT;
- 4cc:	15 86       	std	Z+13, r1	; 0x0d
-	appl.LastEvent = NULL_EVENT;
- 4ce:	16 86       	std	Z+14, r1	; 0x0e
-	appl.second = 0;
- 4d0:	17 86       	std	Z+15, r1	; 0x0f
-	appl.ModeTimer = TIME_SWITCH_TOTAL;
- 4d2:	80 ec       	ldi	r24, 0xC0	; 192
- 4d4:	93 e0       	ldi	r25, 0x03	; 3
- 4d6:	93 8b       	std	Z+19, r25	; 0x13
- 4d8:	82 8b       	std	Z+18, r24	; 0x12
-	appl.DispCode= START_CHAR;
- 4da:	14 8a       	std	Z+20, r1	; 0x14
-	appl.PwrOnSteps = DISP_START;
- 4dc:	15 8a       	std	Z+21, r1	; 0x15
-	ButtonInit();
-	LEDInit();
-	SSDInit();
-	ApplDataInit();
-	
-	rprintf("Main board here!\n" );	
- 4de:	85 ea       	ldi	r24, 0xA5	; 165
- 4e0:	90 e0       	ldi	r25, 0x00	; 0
- 4e2:	9f 93       	push	r25
- 4e4:	8f 93       	push	r24
- 4e6:	81 e0       	ldi	r24, 0x01	; 1
- 4e8:	8f 93       	push	r24
- 4ea:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <rprintf1RamRom>
- 4ee:	0f 90       	pop	r0
- 4f0:	0f 90       	pop	r0
- 4f2:	0f 90       	pop	r0
- 4f4:	08 95       	ret
-
-000004f6 <AppCycleUpdate>:
-*
-* Returns    : none
-*********************************************************************************************************
-*/
-void AppCycleUpdate(void)
-{	
- 4f6:	cf 93       	push	r28
-	char tempChar;
-	static uint16_t cnt;
-	cnt++;
- 4f8:	80 91 e4 00 	lds	r24, 0x00E4
- 4fc:	90 91 e5 00 	lds	r25, 0x00E5
- 500:	01 96       	adiw	r24, 0x01	; 1
- 502:	90 93 e5 00 	sts	0x00E5, r25
- 506:	80 93 e4 00 	sts	0x00E4, r24
-* Returns    : none
-*********************************************************************************************************
-*/
-void AppUpdateTimers(void)
-{
-	if(++appl.second > TIMER_1_SEC_60HZ) 
- 50a:	80 91 09 01 	lds	r24, 0x0109
- 50e:	8f 5f       	subi	r24, 0xFF	; 255
- 510:	8d 33       	cpi	r24, 0x3D	; 61
- 512:	18 f4       	brcc	.+6      	; 0x51a <AppCycleUpdate+0x24>
- 514:	80 93 09 01 	sts	0x0109, r24
- 518:	02 c0       	rjmp	.+4      	; 0x51e <AppCycleUpdate+0x28>
-	{
-		appl.second = 0;
- 51a:	10 92 09 01 	sts	0x0109, r1
-#endif
-#endif
-		
-	}
-	
-	if(appl.ModeTimer != TIMER_TIMEOUT && appl.ModeTimer != TIMER_INT_DISABLED) appl.ModeTimer--;
- 51e:	80 91 0c 01 	lds	r24, 0x010C
- 522:	90 91 0d 01 	lds	r25, 0x010D
- 526:	01 97       	sbiw	r24, 0x01	; 1
- 528:	8e 3f       	cpi	r24, 0xFE	; 254
- 52a:	2f ef       	ldi	r18, 0xFF	; 255
- 52c:	92 07       	cpc	r25, r18
- 52e:	20 f4       	brcc	.+8      	; 0x538 <AppCycleUpdate+0x42>
- 530:	90 93 0d 01 	sts	0x010D, r25
- 534:	80 93 0c 01 	sts	0x010C, r24
-	cnt++;
-	
-	AppUpdateTimers();
-
-	/* work mode convert according to ModeTimer and push button events */
-	switch(appl.workMode)
- 538:	c0 91 06 01 	lds	r28, 0x0106
- 53c:	c1 30       	cpi	r28, 0x01	; 1
- 53e:	09 f4       	brne	.+2      	; 0x542 <AppCycleUpdate+0x4c>
- 540:	9e c0       	rjmp	.+316    	; 0x67e <AppCycleUpdate+0x188>
- 542:	40 f0       	brcs	.+16     	; 0x554 <AppCycleUpdate+0x5e>
- 544:	c2 30       	cpi	r28, 0x02	; 2
- 546:	09 f0       	breq	.+2      	; 0x54a <AppCycleUpdate+0x54>
- 548:	e8 c0       	rjmp	.+464    	; 0x71a <AppCycleUpdate+0x224>
-			
-		case SETTING:
-			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
-			{
-			}
-			else if(appl.ModeTimer == TIMER_TIMEOUT)
- 54a:	80 91 0c 01 	lds	r24, 0x010C
- 54e:	90 91 0d 01 	lds	r25, 0x010D
- 552:	84 c0       	rjmp	.+264    	; 0x65c <AppCycleUpdate+0x166>
-
-	/* work mode convert according to ModeTimer and push button events */
-	switch(appl.workMode)
-	{
-		case PWR_ON:
-			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
- 554:	80 91 0c 01 	lds	r24, 0x010C
- 558:	90 91 0d 01 	lds	r25, 0x010D
- 55c:	9c 01       	movw	r18, r24
- 55e:	21 50       	subi	r18, 0x01	; 1
- 560:	31 09       	sbc	r19, r1
- 562:	2e 3f       	cpi	r18, 0xFE	; 254
- 564:	3f 4f       	sbci	r19, 0xFF	; 255
- 566:	08 f0       	brcs	.+2      	; 0x56a <AppCycleUpdate+0x74>
- 568:	79 c0       	rjmp	.+242    	; 0x65c <AppCycleUpdate+0x166>
-			{
-				if(appl.ModeTimer % (TIME_CONTENT_SWITCH - 1) == 0)
- 56a:	67 e7       	ldi	r22, 0x77	; 119
- 56c:	70 e0       	ldi	r23, 0x00	; 0
- 56e:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 572:	89 2b       	or	r24, r25
- 574:	09 f0       	breq	.+2      	; 0x578 <AppCycleUpdate+0x82>
- 576:	58 c0       	rjmp	.+176    	; 0x628 <AppCycleUpdate+0x132>
-				{
-#if 1		
-#if (FOR_DEBUG==1)
-					rprintf("wM=%d\n",appl.workMode);
- 578:	1f 92       	push	r1
- 57a:	1f 92       	push	r1
- 57c:	8e e9       	ldi	r24, 0x9E	; 158
- 57e:	90 e0       	ldi	r25, 0x00	; 0
- 580:	9f 93       	push	r25
- 582:	8f 93       	push	r24
- 584:	c1 e0       	ldi	r28, 0x01	; 1
- 586:	cf 93       	push	r28
- 588:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <rprintf1RamRom>
-					rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
- 58c:	80 91 0c 01 	lds	r24, 0x010C
- 590:	90 91 0d 01 	lds	r25, 0x010D
- 594:	9f 93       	push	r25
- 596:	8f 93       	push	r24
- 598:	9f 93       	push	r25
- 59a:	8f 93       	push	r24
- 59c:	82 e9       	ldi	r24, 0x92	; 146
- 59e:	90 e0       	ldi	r25, 0x00	; 0
- 5a0:	9f 93       	push	r25
- 5a2:	8f 93       	push	r24
- 5a4:	cf 93       	push	r28
- 5a6:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <rprintf1RamRom>
-					rprintf("dC=%d\n\n",appl.DispCode);
- 5aa:	80 91 0e 01 	lds	r24, 0x010E
- 5ae:	1f 92       	push	r1
- 5b0:	8f 93       	push	r24
- 5b2:	8a e8       	ldi	r24, 0x8A	; 138
- 5b4:	90 e0       	ldi	r25, 0x00	; 0
- 5b6:	9f 93       	push	r25
- 5b8:	8f 93       	push	r24
- 5ba:	cf 93       	push	r28
- 5bc:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <rprintf1RamRom>
+00000496 <AppDisplay.isra.0>:
 * Returns    : true, power on control has finised. false, is processing
 *********************************************************************************************************
 */
 void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 {
 	switch(DispCode)
- 5c0:	8d b7       	in	r24, 0x3d	; 61
- 5c2:	9e b7       	in	r25, 0x3e	; 62
- 5c4:	41 96       	adiw	r24, 0x11	; 17
- 5c6:	0f b6       	in	r0, 0x3f	; 63
- 5c8:	f8 94       	cli
- 5ca:	9e bf       	out	0x3e, r25	; 62
- 5cc:	0f be       	out	0x3f, r0	; 63
- 5ce:	8d bf       	out	0x3d, r24	; 61
- 5d0:	e0 91 0e 01 	lds	r30, 0x010E
- 5d4:	8e 2f       	mov	r24, r30
- 5d6:	90 e0       	ldi	r25, 0x00	; 0
- 5d8:	88 30       	cpi	r24, 0x08	; 8
- 5da:	91 05       	cpc	r25, r1
- 5dc:	00 f5       	brcc	.+64     	; 0x61e <AppCycleUpdate+0x128>
- 5de:	fc 01       	movw	r30, r24
- 5e0:	e6 5d       	subi	r30, 0xD6	; 214
- 5e2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 496:	90 e0       	ldi	r25, 0x00	; 0
+ 498:	88 30       	cpi	r24, 0x08	; 8
+ 49a:	91 05       	cpc	r25, r1
+ 49c:	00 f5       	brcc	.+64     	; 0x4de <AppDisplay.isra.0+0x48>
+ 49e:	fc 01       	movw	r30, r24
+ 4a0:	e6 5d       	subi	r30, 0xD6	; 214
+ 4a2:	ff 4f       	sbci	r31, 0xFF	; 255
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(REMOTE_ADDR, SSD_0HZ, SSD_RED);
- 5e4:	40 e0       	ldi	r20, 0x00	; 0
- 5e6:	60 e0       	ldi	r22, 0x00	; 0
+ 4a4:	40 e0       	ldi	r20, 0x00	; 0
+ 4a6:	60 e0       	ldi	r22, 0x00	; 0
 * Returns    : true, power on control has finised. false, is processing
 *********************************************************************************************************
 */
 void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 {
 	switch(DispCode)
- 5e8:	0c 94 92 05 	jmp	0xb24	; 0xb24 <__tablejump2__>
+ 4a8:	0c 94 f1 05 	jmp	0xbe2	; 0xbe2 <__tablejump2__>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(START_CHAR, SSD_0HZ, SSD_RED);
- 5ec:	80 e0       	ldi	r24, 0x00	; 0
- 5ee:	90 e0       	ldi	r25, 0x00	; 0
- 5f0:	14 c0       	rjmp	.+40     	; 0x61a <AppCycleUpdate+0x124>
+ 4ac:	80 e0       	ldi	r24, 0x00	; 0
+ 4ae:	90 e0       	ldi	r25, 0x00	; 0
+ 4b0:	14 c0       	rjmp	.+40     	; 0x4da <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(CURRENT_VALUE, SSD_0HZ, SSD_RED);
- 5f2:	81 e0       	ldi	r24, 0x01	; 1
- 5f4:	90 e0       	ldi	r25, 0x00	; 0
- 5f6:	11 c0       	rjmp	.+34     	; 0x61a <AppCycleUpdate+0x124>
+ 4b2:	81 e0       	ldi	r24, 0x01	; 1
+ 4b4:	90 e0       	ldi	r25, 0x00	; 0
+ 4b6:	11 c0       	rjmp	.+34     	; 0x4da <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(FULL_WAREHOUSE, SSD_0HZ, SSD_RED);
- 5f8:	82 e0       	ldi	r24, 0x02	; 2
- 5fa:	90 e0       	ldi	r25, 0x00	; 0
- 5fc:	0e c0       	rjmp	.+28     	; 0x61a <AppCycleUpdate+0x124>
+ 4b8:	82 e0       	ldi	r24, 0x02	; 2
+ 4ba:	90 e0       	ldi	r25, 0x00	; 0
+ 4bc:	0e c0       	rjmp	.+28     	; 0x4da <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(EMPTY_WAREHOUSE, SSD_0HZ, SSD_RED);
- 5fe:	83 e0       	ldi	r24, 0x03	; 3
- 600:	90 e0       	ldi	r25, 0x00	; 0
- 602:	0b c0       	rjmp	.+22     	; 0x61a <AppCycleUpdate+0x124>
+ 4be:	83 e0       	ldi	r24, 0x03	; 3
+ 4c0:	90 e0       	ldi	r25, 0x00	; 0
+ 4c2:	0b c0       	rjmp	.+22     	; 0x4da <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(ALARM_H_PERCENT, SSD_0HZ, SSD_RED);
- 604:	84 e0       	ldi	r24, 0x04	; 4
- 606:	90 e0       	ldi	r25, 0x00	; 0
- 608:	08 c0       	rjmp	.+16     	; 0x61a <AppCycleUpdate+0x124>
+ 4c4:	84 e0       	ldi	r24, 0x04	; 4
+ 4c6:	90 e0       	ldi	r25, 0x00	; 0
+ 4c8:	08 c0       	rjmp	.+16     	; 0x4da <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(ALARM_L_PERCENT, SSD_0HZ, SSD_RED);
- 60a:	85 e0       	ldi	r24, 0x05	; 5
- 60c:	90 e0       	ldi	r25, 0x00	; 0
- 60e:	05 c0       	rjmp	.+10     	; 0x61a <AppCycleUpdate+0x124>
+ 4ca:	85 e0       	ldi	r24, 0x05	; 5
+ 4cc:	90 e0       	ldi	r25, 0x00	; 0
+ 4ce:	05 c0       	rjmp	.+10     	; 0x4da <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(RESPONSE_TIME, SSD_0HZ, SSD_RED);
- 610:	86 e0       	ldi	r24, 0x06	; 6
- 612:	90 e0       	ldi	r25, 0x00	; 0
- 614:	02 c0       	rjmp	.+4      	; 0x61a <AppCycleUpdate+0x124>
+ 4d0:	86 e0       	ldi	r24, 0x06	; 6
+ 4d2:	90 e0       	ldi	r25, 0x00	; 0
+ 4d4:	02 c0       	rjmp	.+4      	; 0x4da <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(REMOTE_ADDR, SSD_0HZ, SSD_RED);
- 616:	87 e0       	ldi	r24, 0x07	; 7
- 618:	90 e0       	ldi	r25, 0x00	; 0
- 61a:	0e 94 59 04 	call	0x8b2	; 0x8b2 <SSDDisplayDec>
-					rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
-					rprintf("dC=%d\n\n",appl.DispCode);
+ 4d6:	87 e0       	ldi	r24, 0x07	; 7
+ 4d8:	90 e0       	ldi	r25, 0x00	; 0
+ 4da:	0c 94 b8 04 	jmp	0x970	; 0x970 <SSDDisplayDec>
+ 4de:	08 95       	ret
+
+000004e0 <McuInit>:
+
+void McuInit(void)
+{
+	// initialize our libraries
+	// initialize the UART (serial port)
+	uartInit();		/* sei() call in the function */
+ 4e0:	0e 94 93 01 	call	0x326	; 0x326 <uartInit>
+	// set the baud rate of the UART for our debug/reporting output
+	uartSetBaudRate(9600);
+ 4e4:	60 e8       	ldi	r22, 0x80	; 128
+ 4e6:	75 e2       	ldi	r23, 0x25	; 37
+ 4e8:	80 e0       	ldi	r24, 0x00	; 0
+ 4ea:	90 e0       	ldi	r25, 0x00	; 0
+ 4ec:	0e 94 a9 01 	call	0x352	; 0x352 <uartSetBaudRate>
+	// initialize rprintf system
+	rprintfInit(uartSendByte);
+ 4f0:	8d ec       	ldi	r24, 0xCD	; 205
+ 4f2:	91 e0       	ldi	r25, 0x01	; 1
+ 4f4:	0c 94 c5 00 	jmp	0x18a	; 0x18a <rprintfInit>
+
+000004f8 <ApplInit>:
+*********************************************************************************************************
+*/
+
+void ApplInit(void)
+{
+	ButtonInit();
+ 4f8:	0e 94 67 05 	call	0xace	; 0xace <ButtonInit>
+	LEDInit();
+ 4fc:	0e 94 08 04 	call	0x810	; 0x810 <LEDInit>
+	SSDInit();
+ 500:	0e 94 58 05 	call	0xab0	; 0xab0 <SSDInit>
+*/
+
+void ApplDataInit(void)
+{
+	/* Following for initial power on display steps */
+	appl.workMode = PWR_ON;
+ 504:	ea ef       	ldi	r30, 0xFA	; 250
+ 506:	f0 e0       	ldi	r31, 0x00	; 0
+ 508:	14 86       	std	Z+12, r1	; 0x0c
+	appl.CurEvent = NULL_EVENT;
+ 50a:	15 86       	std	Z+13, r1	; 0x0d
+	appl.LastEvent = NULL_EVENT;
+ 50c:	16 86       	std	Z+14, r1	; 0x0e
+	appl.second = 0;
+ 50e:	17 86       	std	Z+15, r1	; 0x0f
+	appl.ModeTimer = TIME_SWITCH_TOTAL;
+ 510:	80 ee       	ldi	r24, 0xE0	; 224
+ 512:	91 e0       	ldi	r25, 0x01	; 1
+ 514:	93 8b       	std	Z+19, r25	; 0x13
+ 516:	82 8b       	std	Z+18, r24	; 0x12
+	appl.DispCode= START_CHAR;
+ 518:	14 8a       	std	Z+20, r1	; 0x14
+	appl.PwrOnSteps = DISP_START;
+ 51a:	15 8a       	std	Z+21, r1	; 0x15
+	ButtonInit();
+	LEDInit();
+	SSDInit();
+	ApplDataInit();
+	
+	rprintf("Main board here!\n" );	
+ 51c:	88 e9       	ldi	r24, 0x98	; 152
+ 51e:	90 e0       	ldi	r25, 0x00	; 0
+ 520:	9f 93       	push	r25
+ 522:	8f 93       	push	r24
+ 524:	81 e0       	ldi	r24, 0x01	; 1
+ 526:	8f 93       	push	r24
+ 528:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <rprintf1RamRom>
+ 52c:	0f 90       	pop	r0
+ 52e:	0f 90       	pop	r0
+ 530:	0f 90       	pop	r0
+ 532:	08 95       	ret
+
+00000534 <AppCycleUpdate>:
+*
+* Returns    : none
+*********************************************************************************************************
+*/
+void AppCycleUpdate(void)
+{	
+ 534:	cf 93       	push	r28
+	char tempChar;
+	static uint16_t cnt;
+	cnt++;
+ 536:	80 91 e4 00 	lds	r24, 0x00E4
+ 53a:	90 91 e5 00 	lds	r25, 0x00E5
+ 53e:	01 96       	adiw	r24, 0x01	; 1
+ 540:	90 93 e5 00 	sts	0x00E5, r25
+ 544:	80 93 e4 00 	sts	0x00E4, r24
+* Returns    : none
+*********************************************************************************************************
+*/
+void AppUpdateTimers(void)
+{
+	if(++appl.second > TIMER_1_SEC_60HZ) 
+ 548:	80 91 09 01 	lds	r24, 0x0109
+ 54c:	8f 5f       	subi	r24, 0xFF	; 255
+ 54e:	8d 33       	cpi	r24, 0x3D	; 61
+ 550:	18 f4       	brcc	.+6      	; 0x558 <AppCycleUpdate+0x24>
+ 552:	80 93 09 01 	sts	0x0109, r24
+ 556:	02 c0       	rjmp	.+4      	; 0x55c <AppCycleUpdate+0x28>
+	{
+		appl.second = 0;
+ 558:	10 92 09 01 	sts	0x0109, r1
 #endif
 #endif
-					AppDisplay(appl.DispCode,PWR_ON);
-					appl.DispCode++;
- 61e:	80 91 0e 01 	lds	r24, 0x010E
- 622:	8f 5f       	subi	r24, 0xFF	; 255
- 624:	80 93 0e 01 	sts	0x010E, r24
+		
+	}
+	
+	if(appl.ModeTimer != TIMER_TIMEOUT && appl.ModeTimer != TIMER_INT_DISABLED) appl.ModeTimer--;
+ 55c:	80 91 0c 01 	lds	r24, 0x010C
+ 560:	90 91 0d 01 	lds	r25, 0x010D
+ 564:	01 97       	sbiw	r24, 0x01	; 1
+ 566:	8e 3f       	cpi	r24, 0xFE	; 254
+ 568:	2f ef       	ldi	r18, 0xFF	; 255
+ 56a:	92 07       	cpc	r25, r18
+ 56c:	20 f4       	brcc	.+8      	; 0x576 <AppCycleUpdate+0x42>
+ 56e:	90 93 0d 01 	sts	0x010D, r25
+ 572:	80 93 0c 01 	sts	0x010C, r24
+	cnt++;
+	
+	AppUpdateTimers();
+
+	/* work mode convert according to ModeTimer and push button events */
+	switch(appl.workMode)
+ 576:	c0 91 06 01 	lds	r28, 0x0106
+ 57a:	c1 30       	cpi	r28, 0x01	; 1
+ 57c:	09 f4       	brne	.+2      	; 0x580 <AppCycleUpdate+0x4c>
+ 57e:	4e c0       	rjmp	.+156    	; 0x61c <AppCycleUpdate+0xe8>
+ 580:	18 f0       	brcs	.+6      	; 0x588 <AppCycleUpdate+0x54>
+ 582:	c2 30       	cpi	r28, 0x02	; 2
+ 584:	81 f1       	breq	.+96     	; 0x5e6 <AppCycleUpdate+0xb2>
+ 586:	ef c0       	rjmp	.+478    	; 0x766 <AppCycleUpdate+0x232>
+	{
+		case PWR_ON:
+			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
+ 588:	80 91 0c 01 	lds	r24, 0x010C
+ 58c:	90 91 0d 01 	lds	r25, 0x010D
+ 590:	9c 01       	movw	r18, r24
+ 592:	21 50       	subi	r18, 0x01	; 1
+ 594:	31 09       	sbc	r19, r1
+ 596:	2e 3f       	cpi	r18, 0xFE	; 254
+ 598:	3f 4f       	sbci	r19, 0xFF	; 255
+ 59a:	78 f5       	brcc	.+94     	; 0x5fa <AppCycleUpdate+0xc6>
+			{
+				if(appl.ModeTimer % (TIME_CONTENT_SWITCH - 1) == 0)
+ 59c:	6b e3       	ldi	r22, 0x3B	; 59
+ 59e:	70 e0       	ldi	r23, 0x00	; 0
+ 5a0:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 5a4:	89 2b       	or	r24, r25
+ 5a6:	39 f4       	brne	.+14     	; 0x5b6 <AppCycleUpdate+0x82>
+				{
+					AppDisplay(++appl.DispCode,PWR_ON);
+ 5a8:	80 91 0e 01 	lds	r24, 0x010E
+ 5ac:	8f 5f       	subi	r24, 0xFF	; 255
+ 5ae:	80 93 0e 01 	sts	0x010E, r24
+ 5b2:	0e 94 4b 02 	call	0x496	; 0x496 <AppDisplay.isra.0>
 				}
 				
 				if(ButtonJMP1HeldEvent() && (ButtonGetHoldTime() == TIME_B_HELD_RST))	/* Press/Held JMP1 after power on will set to factory default */
- 628:	0e 94 9b 03 	call	0x736	; 0x736 <ButtonJMP1HeldEvent>
- 62c:	88 23       	and	r24, r24
- 62e:	09 f4       	brne	.+2      	; 0x632 <AppCycleUpdate+0x13c>
- 630:	74 c0       	rjmp	.+232    	; 0x71a <AppCycleUpdate+0x224>
- 632:	0e 94 51 05 	call	0xaa2	; 0xaa2 <ButtonGetHoldTime>
- 636:	cc 97       	sbiw	r24, 0x3c	; 60
- 638:	09 f0       	breq	.+2      	; 0x63c <AppCycleUpdate+0x146>
- 63a:	6f c0       	rjmp	.+222    	; 0x71a <AppCycleUpdate+0x224>
+ 5b6:	0e 94 fa 03 	call	0x7f4	; 0x7f4 <ButtonJMP1HeldEvent>
+ 5ba:	88 23       	and	r24, r24
+ 5bc:	09 f4       	brne	.+2      	; 0x5c0 <AppCycleUpdate+0x8c>
+ 5be:	d3 c0       	rjmp	.+422    	; 0x766 <AppCycleUpdate+0x232>
+ 5c0:	0e 94 b0 05 	call	0xb60	; 0xb60 <ButtonGetHoldTime>
+ 5c4:	cc 97       	sbiw	r24, 0x3c	; 60
+ 5c6:	09 f0       	breq	.+2      	; 0x5ca <AppCycleUpdate+0x96>
+ 5c8:	ce c0       	rjmp	.+412    	; 0x766 <AppCycleUpdate+0x232>
 				{
 					/* Following for initial power on display steps */
 					appl.ModeTimer = TIME_SWITCH_TOTAL;
- 63c:	80 ec       	ldi	r24, 0xC0	; 192
- 63e:	93 e0       	ldi	r25, 0x03	; 3
- 640:	90 93 0d 01 	sts	0x010D, r25
- 644:	80 93 0c 01 	sts	0x010C, r24
+ 5ca:	80 ee       	ldi	r24, 0xE0	; 224
+ 5cc:	91 e0       	ldi	r25, 0x01	; 1
+ 5ce:	90 93 0d 01 	sts	0x010D, r25
+ 5d2:	80 93 0c 01 	sts	0x010C, r24
 					appl.workMode = PWR_ON;
- 648:	10 92 06 01 	sts	0x0106, r1
+ 5d6:	10 92 06 01 	sts	0x0106, r1
 					appl.LastEvent = JP1_HELD;
- 64c:	84 e0       	ldi	r24, 0x04	; 4
- 64e:	80 93 08 01 	sts	0x0108, r24
+ 5da:	84 e0       	ldi	r24, 0x04	; 4
+ 5dc:	80 93 08 01 	sts	0x0108, r24
 					appl.DispCode= START_CHAR;
- 652:	10 92 0e 01 	sts	0x010E, r1
-#if 1		
-#if (FOR_DEBUG==1)
-					rprintf("PJ1H\n\n");
- 656:	83 e8       	ldi	r24, 0x83	; 131
- 658:	90 e0       	ldi	r25, 0x00	; 0
- 65a:	56 c0       	rjmp	.+172    	; 0x708 <AppCycleUpdate+0x212>
-#endif
-#endif
-					
+ 5e0:	10 92 0e 01 	sts	0x010E, r1
+ 5e4:	c0 c0       	rjmp	.+384    	; 0x766 <AppCycleUpdate+0x232>
+				AppDisplay(appl.DispCode,NORMAL);
+			}
+			break;
+			
+		case SETTING:
+			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
+ 5e6:	80 91 0c 01 	lds	r24, 0x010C
+ 5ea:	90 91 0d 01 	lds	r25, 0x010D
+ 5ee:	9c 01       	movw	r18, r24
+ 5f0:	21 50       	subi	r18, 0x01	; 1
+ 5f2:	31 09       	sbc	r19, r1
+ 5f4:	2e 3f       	cpi	r18, 0xFE	; 254
+ 5f6:	3f 4f       	sbci	r19, 0xFF	; 255
+ 5f8:	c0 f1       	brcs	.+112    	; 0x66a <AppCycleUpdate+0x136>
+					appl.workMode = PWR_ON;
+					appl.LastEvent = JP1_HELD;
+					appl.DispCode= START_CHAR;
 				}
 			}
 			else if(appl.ModeTimer == TIMER_TIMEOUT)
- 65c:	89 2b       	or	r24, r25
- 65e:	09 f0       	breq	.+2      	; 0x662 <AppCycleUpdate+0x16c>
- 660:	5c c0       	rjmp	.+184    	; 0x71a <AppCycleUpdate+0x224>
+ 5fa:	89 2b       	or	r24, r25
+ 5fc:	09 f0       	breq	.+2      	; 0x600 <AppCycleUpdate+0xcc>
+ 5fe:	b3 c0       	rjmp	.+358    	; 0x766 <AppCycleUpdate+0x232>
 			{
 				appl.ModeTimer = TIMER_INT_DISABLED;	/* Disable count */
- 662:	8f ef       	ldi	r24, 0xFF	; 255
- 664:	9f ef       	ldi	r25, 0xFF	; 255
- 666:	90 93 0d 01 	sts	0x010D, r25
- 66a:	80 93 0c 01 	sts	0x010C, r24
+ 600:	8f ef       	ldi	r24, 0xFF	; 255
+ 602:	9f ef       	ldi	r25, 0xFF	; 255
+ 604:	90 93 0d 01 	sts	0x010D, r25
+ 608:	80 93 0c 01 	sts	0x010C, r24
 				appl.workMode = NORMAL;					/* convert to NORMAL */
- 66e:	81 e0       	ldi	r24, 0x01	; 1
- 670:	80 93 06 01 	sts	0x0106, r24
+ 60c:	81 e0       	ldi	r24, 0x01	; 1
+ 60e:	80 93 06 01 	sts	0x0106, r24
 				appl.LastEvent = NULL_EVENT;			/* update  LastEvent */
- 674:	10 92 08 01 	sts	0x0108, r1
+ 612:	10 92 08 01 	sts	0x0108, r1
 				appl.DispCode = CURRENT_VALUE;			/* Initial to display material value in setting mode */
- 678:	80 93 0e 01 	sts	0x010E, r24
- 67c:	4e c0       	rjmp	.+156    	; 0x71a <AppCycleUpdate+0x224>
+ 616:	80 93 0e 01 	sts	0x010E, r24
+ 61a:	a5 c0       	rjmp	.+330    	; 0x766 <AppCycleUpdate+0x232>
 			}
 			break;
 			
 		case NORMAL:			
 			if(ButtonGetReleased())
- 67e:	0e 94 56 05 	call	0xaac	; 0xaac <ButtonGetReleased>
- 682:	88 23       	and	r24, r24
- 684:	f9 f0       	breq	.+62     	; 0x6c4 <AppCycleUpdate+0x1ce>
+ 61c:	0e 94 b5 05 	call	0xb6a	; 0xb6a <ButtonGetReleased>
+ 620:	88 23       	and	r24, r24
+ 622:	99 f0       	breq	.+38     	; 0x64a <AppCycleUpdate+0x116>
 			{
 				if(ButtonJMP2ReleasedEvent())
- 686:	0e 94 9f 03 	call	0x73e	; 0x73e <ButtonJMP2ReleasedEvent>
- 68a:	88 23       	and	r24, r24
- 68c:	c1 f0       	breq	.+48     	; 0x6be <AppCycleUpdate+0x1c8>
+ 624:	0e 94 fe 03 	call	0x7fc	; 0x7fc <ButtonJMP2ReleasedEvent>
+ 628:	88 23       	and	r24, r24
+ 62a:	61 f0       	breq	.+24     	; 0x644 <AppCycleUpdate+0x110>
 				{
-					if(--appl.DispCode < CURRENT_VALUE)
- 68e:	80 91 0e 01 	lds	r24, 0x010E
- 692:	81 50       	subi	r24, 0x01	; 1
- 694:	09 f4       	brne	.+2      	; 0x698 <AppCycleUpdate+0x1a2>
-					{
-						appl.DispCode = REMOTE_ADDR;
- 696:	87 e0       	ldi	r24, 0x07	; 7
- 698:	80 93 0e 01 	sts	0x010E, r24
-					}
-					
 					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
- 69c:	84 eb       	ldi	r24, 0xB4	; 180
- 69e:	90 e0       	ldi	r25, 0x00	; 0
- 6a0:	90 93 0d 01 	sts	0x010D, r25
- 6a4:	80 93 0c 01 	sts	0x010C, r24
+ 62c:	84 eb       	ldi	r24, 0xB4	; 180
+ 62e:	90 e0       	ldi	r25, 0x00	; 0
+ 630:	90 93 0d 01 	sts	0x010D, r25
+ 634:	80 93 0c 01 	sts	0x010C, r24
 					appl.workMode = SETTING; 			/* convert to SETTING */
- 6a8:	82 e0       	ldi	r24, 0x02	; 2
- 6aa:	80 93 06 01 	sts	0x0106, r24
+ 638:	82 e0       	ldi	r24, 0x02	; 2
+ 63a:	80 93 06 01 	sts	0x0106, r24
 					appl.LastEvent = JP2_PRESS;			/* update  LastEvent */
- 6ae:	81 e0       	ldi	r24, 0x01	; 1
- 6b0:	80 93 08 01 	sts	0x0108, r24
-					
-#if 1		
-#if (FOR_DEBUG==1)
-					rprintf("NJ2R\n\n");
- 6b4:	2c e7       	ldi	r18, 0x7C	; 124
- 6b6:	30 e0       	ldi	r19, 0x00	; 0
- 6b8:	3f 93       	push	r19
- 6ba:	2f 93       	push	r18
- 6bc:	28 c0       	rjmp	.+80     	; 0x70e <AppCycleUpdate+0x218>
-			appl.PwrOnSteps = DISP_START;
-			appl.ModeTimer = TIME_SWITCH_TOTAL;
-		}
-	}
-#endif	
-}
- 6be:	cf 91       	pop	r28
-#if (FOR_DEBUG==1)
-					rprintf("NJ2R\n\n");
-#endif
-#endif
+ 63e:	c0 93 08 01 	sts	0x0108, r28
+ 642:	91 c0       	rjmp	.+290    	; 0x766 <AppCycleUpdate+0x232>
 				}
 				else if(ButtonJMP1ReleasedEvent())
- 6c0:	0c 94 97 03 	jmp	0x72e	; 0x72e <ButtonJMP1ReleasedEvent>
-					//LEDFlag1Off();
-					//LEDFlag2Off();
-					//SSDDisplayHex(0x1abc, SSD_0HZ, SSD_RED);
+ 644:	0e 94 f6 03 	call	0x7ec	; 0x7ec <ButtonJMP1ReleasedEvent>
+ 648:	8e c0       	rjmp	.+284    	; 0x766 <AppCycleUpdate+0x232>
+				{
 				}
 			}
 			else if(ButtonGetHeld())
- 6c4:	0e 94 59 05 	call	0xab2	; 0xab2 <ButtonGetHeld>
- 6c8:	88 23       	and	r24, r24
- 6ca:	39 f1       	breq	.+78     	; 0x71a <AppCycleUpdate+0x224>
+ 64a:	0e 94 b8 05 	call	0xb70	; 0xb70 <ButtonGetHeld>
+ 64e:	88 23       	and	r24, r24
+ 650:	39 f0       	breq	.+14     	; 0x660 <AppCycleUpdate+0x12c>
 			{
 				if(ButtonJMP2HeldEvent())//(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/2) == 0))
- 6cc:	0e 94 a4 03 	call	0x748	; 0x748 <ButtonJMP2HeldEvent>
- 6d0:	88 23       	and	r24, r24
- 6d2:	b1 f0       	breq	.+44     	; 0x700 <AppCycleUpdate+0x20a>
+ 652:	0e 94 03 04 	call	0x806	; 0x806 <ButtonJMP2HeldEvent>
+ 656:	81 11       	cpse	r24, r1
+ 658:	5f c0       	rjmp	.+190    	; 0x718 <AppCycleUpdate+0x1e4>
 				{
-					if(++appl.DispCode > REMOTE_ADDR)
- 6d4:	80 91 0e 01 	lds	r24, 0x010E
- 6d8:	8f 5f       	subi	r24, 0xFF	; 255
- 6da:	88 30       	cpi	r24, 0x08	; 8
- 6dc:	18 f4       	brcc	.+6      	; 0x6e4 <AppCycleUpdate+0x1ee>
- 6de:	80 93 0e 01 	sts	0x010E, r24
- 6e2:	02 c0       	rjmp	.+4      	; 0x6e8 <AppCycleUpdate+0x1f2>
-					{
-						appl.DispCode = CURRENT_VALUE;
- 6e4:	c0 93 0e 01 	sts	0x010E, r28
-					}
-					
 					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
- 6e8:	84 eb       	ldi	r24, 0xB4	; 180
- 6ea:	90 e0       	ldi	r25, 0x00	; 0
- 6ec:	90 93 0d 01 	sts	0x010D, r25
- 6f0:	80 93 0c 01 	sts	0x010C, r24
 					appl.workMode = SETTING; 			/* convert to SETTING */
- 6f4:	82 e0       	ldi	r24, 0x02	; 2
- 6f6:	80 93 06 01 	sts	0x0106, r24
 					appl.LastEvent = JP2_HELD;			/* update  LastEvent */
- 6fa:	80 93 08 01 	sts	0x0108, r24
- 6fe:	02 c0       	rjmp	.+4      	; 0x704 <AppCycleUpdate+0x20e>
 				}
 				else if(ButtonJMP1HeldEvent())
- 700:	0e 94 9b 03 	call	0x736	; 0x736 <ButtonJMP1HeldEvent>
-					//LEDFlag2Flash3Hz();
-					//SSDDisplayHex(0x1def, SSD_3HZ, SSD_RED);
+ 65a:	0e 94 fa 03 	call	0x7f4	; 0x7f4 <ButtonJMP1HeldEvent>
+ 65e:	83 c0       	rjmp	.+262    	; 0x766 <AppCycleUpdate+0x232>
 				}
+			}
+			else
+			{
+				/* Display current material, and display color change according to value compare with user setting */
+				AppDisplay(appl.DispCode,NORMAL);
+ 660:	80 91 0e 01 	lds	r24, 0x010E
+ 664:	0e 94 4b 02 	call	0x496	; 0x496 <AppDisplay.isra.0>
+ 668:	7e c0       	rjmp	.+252    	; 0x766 <AppCycleUpdate+0x232>
+			break;
+			
+		case SETTING:
+			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
+			{
+				if(ButtonGetReleased())
+ 66a:	0e 94 b5 05 	call	0xb6a	; 0xb6a <ButtonGetReleased>
+ 66e:	88 23       	and	r24, r24
+ 670:	b1 f1       	breq	.+108    	; 0x6de <AppCycleUpdate+0x1aa>
+				{
+					if(ButtonJMP2ReleasedEvent())
+ 672:	0e 94 fe 03 	call	0x7fc	; 0x7fc <ButtonJMP2ReleasedEvent>
+ 676:	88 23       	and	r24, r24
+ 678:	b1 f0       	breq	.+44     	; 0x6a6 <AppCycleUpdate+0x172>
+					{
+						if(--appl.DispCode < CURRENT_VALUE)
+ 67a:	80 91 0e 01 	lds	r24, 0x010E
+ 67e:	81 50       	subi	r24, 0x01	; 1
+ 680:	09 f4       	brne	.+2      	; 0x684 <AppCycleUpdate+0x150>
+						{
+							appl.DispCode = REMOTE_ADDR;
+ 682:	87 e0       	ldi	r24, 0x07	; 7
+ 684:	80 93 0e 01 	sts	0x010E, r24
+						}
+						AppDisplay(appl.DispCode,SETTING);
+ 688:	80 91 0e 01 	lds	r24, 0x010E
+ 68c:	0e 94 4b 02 	call	0x496	; 0x496 <AppDisplay.isra.0>
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+ 690:	84 eb       	ldi	r24, 0xB4	; 180
+ 692:	90 e0       	ldi	r25, 0x00	; 0
+ 694:	90 93 0d 01 	sts	0x010D, r25
+ 698:	80 93 0c 01 	sts	0x010C, r24
+						appl.workMode = SETTING;			/* convert to SETTING */
+ 69c:	82 e0       	ldi	r24, 0x02	; 2
+ 69e:	80 93 06 01 	sts	0x0106, r24
+						appl.LastEvent = JP2_PRESS; 		/* update  LastEvent */
+ 6a2:	81 e0       	ldi	r24, 0x01	; 1
+ 6a4:	5e c0       	rjmp	.+188    	; 0x762 <AppCycleUpdate+0x22e>
+					}
+					else if(ButtonJMP1ReleasedEvent())
+ 6a6:	0e 94 f6 03 	call	0x7ec	; 0x7ec <ButtonJMP1ReleasedEvent>
+ 6aa:	88 23       	and	r24, r24
+ 6ac:	09 f4       	brne	.+2      	; 0x6b0 <AppCycleUpdate+0x17c>
+ 6ae:	5b c0       	rjmp	.+182    	; 0x766 <AppCycleUpdate+0x232>
+					{
+						SSDDisplayDec(--appl.FullWarehouse, SSD_0HZ, SSD_GREEN);
+ 6b0:	80 91 fc 00 	lds	r24, 0x00FC
+ 6b4:	90 91 fd 00 	lds	r25, 0x00FD
+ 6b8:	01 97       	sbiw	r24, 0x01	; 1
+ 6ba:	90 93 fd 00 	sts	0x00FD, r25
+ 6be:	80 93 fc 00 	sts	0x00FC, r24
+ 6c2:	41 e0       	ldi	r20, 0x01	; 1
+ 6c4:	60 e0       	ldi	r22, 0x00	; 0
+ 6c6:	0e 94 b8 04 	call	0x970	; 0x970 <SSDDisplayDec>
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+ 6ca:	84 eb       	ldi	r24, 0xB4	; 180
+ 6cc:	90 e0       	ldi	r25, 0x00	; 0
+ 6ce:	90 93 0d 01 	sts	0x010D, r25
+ 6d2:	80 93 0c 01 	sts	0x010C, r24
+						appl.workMode = SETTING;			/* convert to SETTING */
+ 6d6:	c0 93 06 01 	sts	0x0106, r28
+						appl.LastEvent = JP1_PRESS;			/* update  LastEvent */
+ 6da:	83 e0       	ldi	r24, 0x03	; 3
+ 6dc:	42 c0       	rjmp	.+132    	; 0x762 <AppCycleUpdate+0x22e>
+					}
+				}
+				else if(ButtonGetHeld())
+ 6de:	0e 94 b8 05 	call	0xb70	; 0xb70 <ButtonGetHeld>
+ 6e2:	88 23       	and	r24, r24
+ 6e4:	09 f4       	brne	.+2      	; 0x6e8 <AppCycleUpdate+0x1b4>
+ 6e6:	3f c0       	rjmp	.+126    	; 0x766 <AppCycleUpdate+0x232>
+				{
+					if(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/6) == 0))	/* fast increase */
+ 6e8:	0e 94 03 04 	call	0x806	; 0x806 <ButtonJMP2HeldEvent>
+ 6ec:	88 23       	and	r24, r24
+ 6ee:	f1 f0       	breq	.+60     	; 0x72c <AppCycleUpdate+0x1f8>
+ 6f0:	0e 94 b0 05 	call	0xb60	; 0xb60 <ButtonGetHoldTime>
+ 6f4:	6a e0       	ldi	r22, 0x0A	; 10
+ 6f6:	70 e0       	ldi	r23, 0x00	; 0
+ 6f8:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 6fc:	89 2b       	or	r24, r25
+ 6fe:	b1 f4       	brne	.+44     	; 0x72c <AppCycleUpdate+0x1f8>
+					{
+						if(++appl.DispCode > REMOTE_ADDR)
+ 700:	80 91 0e 01 	lds	r24, 0x010E
+ 704:	8f 5f       	subi	r24, 0xFF	; 255
+ 706:	88 30       	cpi	r24, 0x08	; 8
+ 708:	08 f0       	brcs	.+2      	; 0x70c <AppCycleUpdate+0x1d8>
+						{
+							appl.DispCode = CURRENT_VALUE;
+ 70a:	81 e0       	ldi	r24, 0x01	; 1
+ 70c:	80 93 0e 01 	sts	0x010E, r24
+						}
+						AppDisplay(appl.DispCode,SETTING);
+ 710:	80 91 0e 01 	lds	r24, 0x010E
+ 714:	0e 94 4b 02 	call	0x496	; 0x496 <AppDisplay.isra.0>
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+ 718:	84 eb       	ldi	r24, 0xB4	; 180
+ 71a:	90 e0       	ldi	r25, 0x00	; 0
+ 71c:	90 93 0d 01 	sts	0x010D, r25
+ 720:	80 93 0c 01 	sts	0x010C, r24
+						appl.workMode = SETTING;			/* convert to SETTING */
+ 724:	82 e0       	ldi	r24, 0x02	; 2
+ 726:	80 93 06 01 	sts	0x0106, r24
+ 72a:	1b c0       	rjmp	.+54     	; 0x762 <AppCycleUpdate+0x22e>
+						appl.LastEvent = JP2_HELD;			/* update  LastEvent */
+					}
+					else if(ButtonJMP1HeldEvent())
+ 72c:	0e 94 fa 03 	call	0x7f4	; 0x7f4 <ButtonJMP1HeldEvent>
+ 730:	88 23       	and	r24, r24
+ 732:	c9 f0       	breq	.+50     	; 0x766 <AppCycleUpdate+0x232>
+					{
+						SSDDisplayDec(++appl.FullWarehouse, SSD_0HZ, SSD_AMBER);
+ 734:	80 91 fc 00 	lds	r24, 0x00FC
+ 738:	90 91 fd 00 	lds	r25, 0x00FD
+ 73c:	01 96       	adiw	r24, 0x01	; 1
+ 73e:	90 93 fd 00 	sts	0x00FD, r25
+ 742:	80 93 fc 00 	sts	0x00FC, r24
+ 746:	42 e0       	ldi	r20, 0x02	; 2
+ 748:	60 e0       	ldi	r22, 0x00	; 0
+ 74a:	0e 94 b8 04 	call	0x970	; 0x970 <SSDDisplayDec>
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+ 74e:	84 eb       	ldi	r24, 0xB4	; 180
+ 750:	90 e0       	ldi	r25, 0x00	; 0
+ 752:	90 93 0d 01 	sts	0x010D, r25
+ 756:	80 93 0c 01 	sts	0x010C, r24
+						appl.workMode = SETTING;			/* convert to SETTING */
+ 75a:	82 e0       	ldi	r24, 0x02	; 2
+ 75c:	80 93 06 01 	sts	0x0106, r24
+						appl.LastEvent = JP1_HELD;			/* update  LastEvent */
+ 760:	84 e0       	ldi	r24, 0x04	; 4
+ 762:	80 93 08 01 	sts	0x0108, r24
+			break;						
+	}
+
 #if 1		
 #if (FOR_DEBUG==1)
-				rprintf("NJ2H\n\n");
- 704:	85 e7       	ldi	r24, 0x75	; 117
- 706:	90 e0       	ldi	r25, 0x00	; 0
- 708:	9f 93       	push	r25
- 70a:	8f 93       	push	r24
- 70c:	81 e0       	ldi	r24, 0x01	; 1
- 70e:	8f 93       	push	r24
- 710:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <rprintf1RamRom>
- 714:	0f 90       	pop	r0
- 716:	0f 90       	pop	r0
- 718:	0f 90       	pop	r0
+	rprintf("wM=%d\n",appl.workMode);
+ 766:	80 91 06 01 	lds	r24, 0x0106
+ 76a:	1f 92       	push	r1
+ 76c:	8f 93       	push	r24
+ 76e:	81 e9       	ldi	r24, 0x91	; 145
+ 770:	90 e0       	ldi	r25, 0x00	; 0
+ 772:	9f 93       	push	r25
+ 774:	8f 93       	push	r24
+ 776:	c1 e0       	ldi	r28, 0x01	; 1
+ 778:	cf 93       	push	r28
+ 77a:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <rprintf1RamRom>
+	rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
+ 77e:	80 91 0c 01 	lds	r24, 0x010C
+ 782:	90 91 0d 01 	lds	r25, 0x010D
+ 786:	9f 93       	push	r25
+ 788:	8f 93       	push	r24
+ 78a:	9f 93       	push	r25
+ 78c:	8f 93       	push	r24
+ 78e:	85 e8       	ldi	r24, 0x85	; 133
+ 790:	90 e0       	ldi	r25, 0x00	; 0
+ 792:	9f 93       	push	r25
+ 794:	8f 93       	push	r24
+ 796:	cf 93       	push	r28
+ 798:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <rprintf1RamRom>
+	rprintf("dC=%d\n\n",appl.DispCode);
+ 79c:	80 91 0e 01 	lds	r24, 0x010E
+ 7a0:	1f 92       	push	r1
+ 7a2:	8f 93       	push	r24
+ 7a4:	8d e7       	ldi	r24, 0x7D	; 125
+ 7a6:	90 e0       	ldi	r25, 0x00	; 0
+ 7a8:	9f 93       	push	r25
+ 7aa:	8f 93       	push	r24
+ 7ac:	cf 93       	push	r28
+ 7ae:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <rprintf1RamRom>
+	rprintf("lE=%d\n\n",appl.LastEvent);
+ 7b2:	80 91 08 01 	lds	r24, 0x0108
+ 7b6:	1f 92       	push	r1
+ 7b8:	8f 93       	push	r24
+ 7ba:	85 e7       	ldi	r24, 0x75	; 117
+ 7bc:	90 e0       	ldi	r25, 0x00	; 0
+ 7be:	9f 93       	push	r25
+ 7c0:	8f 93       	push	r24
+ 7c2:	cf 93       	push	r28
+ 7c4:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <rprintf1RamRom>
+ 7c8:	8d b7       	in	r24, 0x3d	; 61
+ 7ca:	9e b7       	in	r25, 0x3e	; 62
+ 7cc:	46 96       	adiw	r24, 0x16	; 22
+ 7ce:	0f b6       	in	r0, 0x3f	; 63
+ 7d0:	f8 94       	cli
+ 7d2:	9e bf       	out	0x3e, r25	; 62
+ 7d4:	0f be       	out	0x3f, r0	; 63
+ 7d6:	8d bf       	out	0x3d, r24	; 61
 			appl.PwrOnSteps = DISP_START;
 			appl.ModeTimer = TIME_SWITCH_TOTAL;
 		}
 	}
 #endif	
 }
- 71a:	cf 91       	pop	r28
- 71c:	08 95       	ret
+ 7d8:	cf 91       	pop	r28
+ 7da:	08 95       	ret
 
-0000071e <ButtonInitEx>:
+000007dc <ButtonInitEx>:
 void ButtonInitEx(void)
 {	
 	/* 
 	Set PC1-PC0 as input, the tow IO with external pull up 10K resistor.
 	*/
 	DDRC &= ((1<<DDC1) | (1<<DDC0));
- 71e:	84 b3       	in	r24, 0x14	; 20
- 720:	83 70       	andi	r24, 0x03	; 3
- 722:	84 bb       	out	0x14, r24	; 20
- 724:	08 95       	ret
+ 7dc:	84 b3       	in	r24, 0x14	; 20
+ 7de:	83 70       	andi	r24, 0x03	; 3
+ 7e0:	84 bb       	out	0x14, r24	; 20
+ 7e2:	08 95       	ret
 
-00000726 <ButtonGetIO_StateEx>:
+000007e4 <ButtonGetIO_StateEx>:
 */
 ButtonDataType ButtonGetIO_StateEx(void)
 {
 	ButtonDataType io_state;
 	
 	io_state = (~PINC) & ((1<<PINC1) | (1<<PINC0));	/* Get PC1-PC0 IO state */
- 726:	83 b3       	in	r24, 0x13	; 19
- 728:	80 95       	com	r24
+ 7e4:	83 b3       	in	r24, 0x13	; 19
+ 7e6:	80 95       	com	r24
 	
 	return  io_state;
 }
- 72a:	83 70       	andi	r24, 0x03	; 3
- 72c:	08 95       	ret
+ 7e8:	83 70       	andi	r24, 0x03	; 3
+ 7ea:	08 95       	ret
 
-0000072e <ButtonJMP1ReleasedEvent>:
+000007ec <ButtonJMP1ReleasedEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP1ReleasedEvent(void)
 {
 	if (button.buttonsReleased.JMP1) 
- 72e:	80 91 31 01 	lds	r24, 0x0131
+ 7ec:	80 91 31 01 	lds	r24, 0x0131
 	{
 		return true;
 	}
     
     return false;
 }
- 732:	81 70       	andi	r24, 0x01	; 1
- 734:	08 95       	ret
+ 7f0:	81 70       	andi	r24, 0x01	; 1
+ 7f2:	08 95       	ret
 
-00000736 <ButtonJMP1HeldEvent>:
+000007f4 <ButtonJMP1HeldEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP1HeldEvent(void)
 {
 	if (button.buttonsHeld.JMP1) 
- 736:	80 91 32 01 	lds	r24, 0x0132
+ 7f4:	80 91 32 01 	lds	r24, 0x0132
 	{
 		return true;
 	}
     
     return false;
 }
- 73a:	81 70       	andi	r24, 0x01	; 1
- 73c:	08 95       	ret
+ 7f8:	81 70       	andi	r24, 0x01	; 1
+ 7fa:	08 95       	ret
 
-0000073e <ButtonJMP2ReleasedEvent>:
+000007fc <ButtonJMP2ReleasedEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP2ReleasedEvent(void)
 {
 	if (button.buttonsReleased.JMP2) 
- 73e:	80 91 31 01 	lds	r24, 0x0131
+ 7fc:	80 91 31 01 	lds	r24, 0x0131
 	{
 		return true;
 	}
     
     return false;
 }
- 742:	86 95       	lsr	r24
- 744:	81 70       	andi	r24, 0x01	; 1
- 746:	08 95       	ret
+ 800:	86 95       	lsr	r24
+ 802:	81 70       	andi	r24, 0x01	; 1
+ 804:	08 95       	ret
 
-00000748 <ButtonJMP2HeldEvent>:
+00000806 <ButtonJMP2HeldEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP2HeldEvent(void)
 {
 	if (button.buttonsHeld.JMP2) 
- 748:	80 91 32 01 	lds	r24, 0x0132
+ 806:	80 91 32 01 	lds	r24, 0x0132
 	{
 		return true;
 	}
     
     return false;
 }
- 74c:	86 95       	lsr	r24
- 74e:	81 70       	andi	r24, 0x01	; 1
- 750:	08 95       	ret
+ 80a:	86 95       	lsr	r24
+ 80c:	81 70       	andi	r24, 0x01	; 1
+ 80e:	08 95       	ret
 
-00000752 <LEDInit>:
+00000810 <LEDInit>:
 	uint8_t i;
 	
 	/* 
 	Set PB2-PB1 as output to drive to LEDs, default turn off all LEDs
 	*/
 	DDRB &= ~((1<<DDB2) | (1<<DDB1));
- 752:	87 b3       	in	r24, 0x17	; 23
- 754:	89 7f       	andi	r24, 0xF9	; 249
- 756:	87 bb       	out	0x17, r24	; 23
+ 810:	87 b3       	in	r24, 0x17	; 23
+ 812:	89 7f       	andi	r24, 0xF9	; 249
+ 814:	87 bb       	out	0x17, r24	; 23
 	DDRB |= ((1<<DDB2) | (1<<DDB1));
- 758:	87 b3       	in	r24, 0x17	; 23
- 75a:	86 60       	ori	r24, 0x06	; 6
- 75c:	87 bb       	out	0x17, r24	; 23
+ 816:	87 b3       	in	r24, 0x17	; 23
+ 818:	86 60       	ori	r24, 0x06	; 6
+ 81a:	87 bb       	out	0x17, r24	; 23
 	PORTB |= ((1<<DDB2) | (1<<DDB1));
- 75e:	88 b3       	in	r24, 0x18	; 24
- 760:	86 60       	ori	r24, 0x06	; 6
- 762:	88 bb       	out	0x18, r24	; 24
+ 81c:	88 b3       	in	r24, 0x18	; 24
+ 81e:	86 60       	ori	r24, 0x06	; 6
+ 820:	88 bb       	out	0x18, r24	; 24
 	
 	for(i = 0; i < LED_NUM; i++)
 	{
 		LEDs[i].led.LEDRate = LED_OFF;
- 764:	e5 e2       	ldi	r30, 0x25	; 37
- 766:	f1 e0       	ldi	r31, 0x01	; 1
- 768:	80 81       	ld	r24, Z
- 76a:	88 7f       	andi	r24, 0xF8	; 248
+ 822:	e5 e2       	ldi	r30, 0x25	; 37
+ 824:	f1 e0       	ldi	r31, 0x01	; 1
+ 826:	80 81       	ld	r24, Z
+ 828:	88 7f       	andi	r24, 0xF8	; 248
 		LEDs[i].led.state = S_OFF;
- 76c:	84 60       	ori	r24, 0x04	; 4
- 76e:	88 60       	ori	r24, 0x08	; 8
- 770:	80 83       	st	Z, r24
+ 82a:	84 60       	ori	r24, 0x04	; 4
+ 82c:	88 60       	ori	r24, 0x08	; 8
+ 82e:	80 83       	st	Z, r24
 		LEDs[i].flashTimer = LED_ONE_SEC;
- 772:	9c e3       	ldi	r25, 0x3C	; 60
- 774:	91 83       	std	Z+1, r25	; 0x01
+ 830:	9c e3       	ldi	r25, 0x3C	; 60
+ 832:	91 83       	std	Z+1, r25	; 0x01
 	DDRB |= ((1<<DDB2) | (1<<DDB1));
 	PORTB |= ((1<<DDB2) | (1<<DDB1));
 	
 	for(i = 0; i < LED_NUM; i++)
 	{
 		LEDs[i].led.LEDRate = LED_OFF;
- 776:	a7 e2       	ldi	r26, 0x27	; 39
- 778:	b1 e0       	ldi	r27, 0x01	; 1
- 77a:	8c 91       	ld	r24, X
- 77c:	88 7f       	andi	r24, 0xF8	; 248
+ 834:	a7 e2       	ldi	r26, 0x27	; 39
+ 836:	b1 e0       	ldi	r27, 0x01	; 1
+ 838:	8c 91       	ld	r24, X
+ 83a:	88 7f       	andi	r24, 0xF8	; 248
 		LEDs[i].led.state = S_OFF;
- 77e:	84 60       	ori	r24, 0x04	; 4
- 780:	88 60       	ori	r24, 0x08	; 8
- 782:	8c 93       	st	X, r24
+ 83c:	84 60       	ori	r24, 0x04	; 4
+ 83e:	88 60       	ori	r24, 0x08	; 8
+ 840:	8c 93       	st	X, r24
 		LEDs[i].flashTimer = LED_ONE_SEC;
- 784:	93 83       	std	Z+3, r25	; 0x03
- 786:	08 95       	ret
+ 842:	93 83       	std	Z+3, r25	; 0x03
+ 844:	08 95       	ret
 
-00000788 <LEDCycleUpdate>:
+00000846 <LEDCycleUpdate>:
 *
 *********************************************************************************************************
 */
 
 void LEDCycleUpdate(void)
 {
- 788:	a6 e2       	ldi	r26, 0x26	; 38
- 78a:	b1 e0       	ldi	r27, 0x01	; 1
- 78c:	40 e0       	ldi	r20, 0x00	; 0
- 78e:	50 e0       	ldi	r21, 0x00	; 0
+ 846:	a6 e2       	ldi	r26, 0x26	; 38
+ 848:	b1 e0       	ldi	r27, 0x01	; 1
+ 84a:	40 e0       	ldi	r20, 0x00	; 0
+ 84c:	50 e0       	ldi	r21, 0x00	; 0
 	uint8_t ft;				/* flash timer */
 	uint8_t i;
 
 	for(i = 0; i < LED_NUM; i++)
 	{
 		rate = LEDs[i].led.LEDRate;
- 790:	ca 01       	movw	r24, r20
- 792:	88 0f       	add	r24, r24
- 794:	99 1f       	adc	r25, r25
- 796:	fc 01       	movw	r30, r24
- 798:	eb 5d       	subi	r30, 0xDB	; 219
- 79a:	fe 4f       	sbci	r31, 0xFE	; 254
- 79c:	30 81       	ld	r19, Z
- 79e:	37 70       	andi	r19, 0x07	; 7
+ 84e:	ca 01       	movw	r24, r20
+ 850:	88 0f       	add	r24, r24
+ 852:	99 1f       	adc	r25, r25
+ 854:	fc 01       	movw	r30, r24
+ 856:	eb 5d       	subi	r30, 0xDB	; 219
+ 858:	fe 4f       	sbci	r31, 0xFE	; 254
+ 85a:	30 81       	ld	r19, Z
+ 85c:	37 70       	andi	r19, 0x07	; 7
 		ft = LEDs[i].flashTimer;
- 7a0:	2c 91       	ld	r18, X
+ 85e:	2c 91       	ld	r18, X
 		
 		ft += rate;
 		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
- 7a2:	34 30       	cpi	r19, 0x04	; 4
- 7a4:	19 f0       	breq	.+6      	; 0x7ac <LEDCycleUpdate+0x24>
+ 860:	34 30       	cpi	r19, 0x04	; 4
+ 862:	19 f0       	breq	.+6      	; 0x86a <LEDCycleUpdate+0x24>
 	for(i = 0; i < LED_NUM; i++)
 	{
 		rate = LEDs[i].led.LEDRate;
 		ft = LEDs[i].flashTimer;
 		
 		ft += rate;
- 7a6:	23 0f       	add	r18, r19
+ 864:	23 0f       	add	r18, r19
 		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
- 7a8:	2d 33       	cpi	r18, 0x3D	; 61
- 7aa:	38 f0       	brcs	.+14     	; 0x7ba <LEDCycleUpdate+0x32>
+ 866:	2d 33       	cpi	r18, 0x3D	; 61
+ 868:	38 f0       	brcs	.+14     	; 0x878 <LEDCycleUpdate+0x32>
 		{
 			ft = 0;
 			LEDs[i].led.state = S_OFF;
- 7ac:	fc 01       	movw	r30, r24
- 7ae:	eb 5d       	subi	r30, 0xDB	; 219
- 7b0:	fe 4f       	sbci	r31, 0xFE	; 254
- 7b2:	20 81       	ld	r18, Z
- 7b4:	28 60       	ori	r18, 0x08	; 8
- 7b6:	20 83       	st	Z, r18
+ 86a:	fc 01       	movw	r30, r24
+ 86c:	eb 5d       	subi	r30, 0xDB	; 219
+ 86e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 870:	20 81       	ld	r18, Z
+ 872:	28 60       	ori	r18, 0x08	; 8
+ 874:	20 83       	st	Z, r18
 		ft = LEDs[i].flashTimer;
 		
 		ft += rate;
 		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
 		{
 			ft = 0;
- 7b8:	20 e0       	ldi	r18, 0x00	; 0
+ 876:	20 e0       	ldi	r18, 0x00	; 0
 			LEDs[i].led.state = S_OFF;
 		}
 		LEDs[i].flashTimer = ft;
- 7ba:	2c 93       	st	X, r18
+ 878:	2c 93       	st	X, r18
 		
 		if((rate == LED_0HZ) || (ft > (LED_ONE_SEC/2)))
- 7bc:	33 23       	and	r19, r19
- 7be:	11 f0       	breq	.+4      	; 0x7c4 <LEDCycleUpdate+0x3c>
- 7c0:	2f 31       	cpi	r18, 0x1F	; 31
- 7c2:	30 f0       	brcs	.+12     	; 0x7d0 <LEDCycleUpdate+0x48>
+ 87a:	33 23       	and	r19, r19
+ 87c:	11 f0       	breq	.+4      	; 0x882 <LEDCycleUpdate+0x3c>
+ 87e:	2f 31       	cpi	r18, 0x1F	; 31
+ 880:	30 f0       	brcs	.+12     	; 0x88e <LEDCycleUpdate+0x48>
 		{
 			LEDs[i].led.state = S_ON;
- 7c4:	fc 01       	movw	r30, r24
- 7c6:	eb 5d       	subi	r30, 0xDB	; 219
- 7c8:	fe 4f       	sbci	r31, 0xFE	; 254
- 7ca:	80 81       	ld	r24, Z
- 7cc:	87 7f       	andi	r24, 0xF7	; 247
- 7ce:	80 83       	st	Z, r24
- 7d0:	12 96       	adiw	r26, 0x02	; 2
+ 882:	fc 01       	movw	r30, r24
+ 884:	eb 5d       	subi	r30, 0xDB	; 219
+ 886:	fe 4f       	sbci	r31, 0xFE	; 254
+ 888:	80 81       	ld	r24, Z
+ 88a:	87 7f       	andi	r24, 0xF7	; 247
+ 88c:	80 83       	st	Z, r24
+ 88e:	12 96       	adiw	r26, 0x02	; 2
 {
 	LED_RATE rate;
 	uint8_t ft;				/* flash timer */
 	uint8_t i;
 
 	for(i = 0; i < LED_NUM; i++)
- 7d2:	41 30       	cpi	r20, 0x01	; 1
- 7d4:	51 05       	cpc	r21, r1
- 7d6:	19 f0       	breq	.+6      	; 0x7de <LEDCycleUpdate+0x56>
- 7d8:	41 e0       	ldi	r20, 0x01	; 1
- 7da:	50 e0       	ldi	r21, 0x00	; 0
- 7dc:	d9 cf       	rjmp	.-78     	; 0x790 <LEDCycleUpdate+0x8>
+ 890:	41 30       	cpi	r20, 0x01	; 1
+ 892:	51 05       	cpc	r21, r1
+ 894:	19 f0       	breq	.+6      	; 0x89c <LEDCycleUpdate+0x56>
+ 896:	41 e0       	ldi	r20, 0x01	; 1
+ 898:	50 e0       	ldi	r21, 0x00	; 0
+ 89a:	d9 cf       	rjmp	.-78     	; 0x84e <LEDCycleUpdate+0x8>
 */
 void LEDUpdateState(void)
 {
 	uint8_t state = 0;		/* default is turn off LED */
 
 	if(LEDs[0].led.state == S_OFF)
- 7de:	80 91 25 01 	lds	r24, 0x0125
- 7e2:	83 ff       	sbrs	r24, 3
- 7e4:	02 c0       	rjmp	.+4      	; 0x7ea <LEDCycleUpdate+0x62>
+ 89c:	80 91 25 01 	lds	r24, 0x0125
+ 8a0:	83 ff       	sbrs	r24, 3
+ 8a2:	02 c0       	rjmp	.+4      	; 0x8a8 <LEDCycleUpdate+0x62>
 	{
 		state |= (1<<DDB1);
- 7e6:	82 e0       	ldi	r24, 0x02	; 2
- 7e8:	01 c0       	rjmp	.+2      	; 0x7ec <LEDCycleUpdate+0x64>
+ 8a4:	82 e0       	ldi	r24, 0x02	; 2
+ 8a6:	01 c0       	rjmp	.+2      	; 0x8aa <LEDCycleUpdate+0x64>
 *
 *********************************************************************************************************
 */
 void LEDUpdateState(void)
 {
 	uint8_t state = 0;		/* default is turn off LED */
- 7ea:	80 e0       	ldi	r24, 0x00	; 0
+ 8a8:	80 e0       	ldi	r24, 0x00	; 0
 	if(LEDs[0].led.state == S_OFF)
 	{
 		state |= (1<<DDB1);
 	}
 	
 	if(LEDs[1].led.state == S_OFF)
- 7ec:	90 91 27 01 	lds	r25, 0x0127
- 7f0:	93 fd       	sbrc	r25, 3
+ 8aa:	90 91 27 01 	lds	r25, 0x0127
+ 8ae:	93 fd       	sbrc	r25, 3
 	{
 		state |= (1<<DDB2);
- 7f2:	84 60       	ori	r24, 0x04	; 4
+ 8b0:	84 60       	ori	r24, 0x04	; 4
 	}
 
 	PORTB &= ~((1<<DDB2) | (1<<DDB1));
- 7f4:	98 b3       	in	r25, 0x18	; 24
- 7f6:	99 7f       	andi	r25, 0xF9	; 249
- 7f8:	98 bb       	out	0x18, r25	; 24
+ 8b2:	98 b3       	in	r25, 0x18	; 24
+ 8b4:	99 7f       	andi	r25, 0xF9	; 249
+ 8b6:	98 bb       	out	0x18, r25	; 24
 	PORTB |= state;
- 7fa:	98 b3       	in	r25, 0x18	; 24
- 7fc:	89 2b       	or	r24, r25
- 7fe:	88 bb       	out	0x18, r24	; 24
- 800:	08 95       	ret
+ 8b8:	98 b3       	in	r25, 0x18	; 24
+ 8ba:	89 2b       	or	r24, r25
+ 8bc:	88 bb       	out	0x18, r24	; 24
+ 8be:	08 95       	ret
 
-00000802 <main>:
+000008c0 <main>:
 int main(void)
 {	
 	/*
 	Calll all initial function
 	*/
 	McuInit();
- 802:	0e 94 51 02 	call	0x4a2	; 0x4a2 <McuInit>
+ 8c0:	0e 94 70 02 	call	0x4e0	; 0x4e0 <McuInit>
 	ApplInit();
- 806:	0e 94 5d 02 	call	0x4ba	; 0x4ba <ApplInit>
+ 8c4:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <ApplInit>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 80a:	81 e0       	ldi	r24, 0x01	; 1
- 80c:	90 ef       	ldi	r25, 0xF0	; 240
- 80e:	01 97       	sbiw	r24, 0x01	; 1
- 810:	f1 f7       	brne	.-4      	; 0x80e <main+0xc>
+ 8c8:	81 e0       	ldi	r24, 0x01	; 1
+ 8ca:	90 ef       	ldi	r25, 0xF0	; 240
+ 8cc:	01 97       	sbiw	r24, 0x01	; 1
+ 8ce:	f1 f7       	brne	.-4      	; 0x8cc <main+0xc>
 	
 	while(1)
 	{
 		_delay_us(16667);
 		//_delay_ms(20);
 		ButtonCycleUpdate();
- 812:	0e 94 0a 05 	call	0xa14	; 0xa14 <ButtonCycleUpdate>
+ 8d0:	0e 94 69 05 	call	0xad2	; 0xad2 <ButtonCycleUpdate>
 		AppCycleUpdate();
- 816:	0e 94 7b 02 	call	0x4f6	; 0x4f6 <AppCycleUpdate>
+ 8d4:	0e 94 9a 02 	call	0x534	; 0x534 <AppCycleUpdate>
 		LEDCycleUpdate();
- 81a:	0e 94 c4 03 	call	0x788	; 0x788 <LEDCycleUpdate>
+ 8d8:	0e 94 23 04 	call	0x846	; 0x846 <LEDCycleUpdate>
 		SSDCycleUpdate();
- 81e:	0e 94 12 04 	call	0x824	; 0x824 <SSDCycleUpdate>
+ 8dc:	0e 94 71 04 	call	0x8e2	; 0x8e2 <SSDCycleUpdate>
 	}
- 822:	f3 cf       	rjmp	.-26     	; 0x80a <main+0x8>
+ 8e0:	f3 cf       	rjmp	.-26     	; 0x8c8 <main+0x8>
 
-00000824 <SSDCycleUpdate>:
+000008e2 <SSDCycleUpdate>:
 *
 *********************************************************************************************************
 */
 
 void SSDCycleUpdate(void)
 {
- 824:	0f 93       	push	r16
- 826:	1f 93       	push	r17
+ 8e2:	0f 93       	push	r16
+ 8e4:	1f 93       	push	r17
 */
 void SSDShitfOutData(void)
 {
 	uint8_t i;
 	uint8_t bitVal;
 	uint32_t DispValTemp = SSD.DispVal.value; 
- 828:	40 91 2b 01 	lds	r20, 0x012B
- 82c:	50 91 2c 01 	lds	r21, 0x012C
- 830:	60 91 2d 01 	lds	r22, 0x012D
- 834:	70 91 2e 01 	lds	r23, 0x012E
- 838:	80 e2       	ldi	r24, 0x20	; 32
+ 8e6:	40 91 2b 01 	lds	r20, 0x012B
+ 8ea:	50 91 2c 01 	lds	r21, 0x012C
+ 8ee:	60 91 2d 01 	lds	r22, 0x012D
+ 8f2:	70 91 2e 01 	lds	r23, 0x012E
+ 8f6:	80 e2       	ldi	r24, 0x20	; 32
 	
 	for(i = 0; i < 32; i++)
 	{
 		bitVal = 0;
 		if(DispValTemp & 0x80000000)
- 83a:	8a 01       	movw	r16, r20
- 83c:	9b 01       	movw	r18, r22
+ 8f8:	8a 01       	movw	r16, r20
+ 8fa:	9b 01       	movw	r18, r22
 		{
 			bitVal = 1;
 		}
 		DispValTemp <<= 1;
- 83e:	44 0f       	add	r20, r20
- 840:	55 1f       	adc	r21, r21
- 842:	66 1f       	adc	r22, r22
- 844:	77 1f       	adc	r23, r23
+ 8fc:	44 0f       	add	r20, r20
+ 8fe:	55 1f       	adc	r21, r21
+ 900:	66 1f       	adc	r22, r22
+ 902:	77 1f       	adc	r23, r23
 
 		SSD_CLK_CLR();
- 846:	af 98       	cbi	0x15, 7	; 21
+ 904:	af 98       	cbi	0x15, 7	; 21
 		SSD_DAT_CLR();
- 848:	ae 98       	cbi	0x15, 6	; 21
+ 906:	ae 98       	cbi	0x15, 6	; 21
 		if(bitVal)
- 84a:	37 fd       	sbrc	r19, 7
+ 908:	37 fd       	sbrc	r19, 7
 		{
 			SSD_DAT_SET();
- 84c:	ae 9a       	sbi	0x15, 6	; 21
+ 90a:	ae 9a       	sbi	0x15, 6	; 21
 		}
 		SSD_CLK_SET();
- 84e:	af 9a       	sbi	0x15, 7	; 21
- 850:	81 50       	subi	r24, 0x01	; 1
+ 90c:	af 9a       	sbi	0x15, 7	; 21
+ 90e:	81 50       	subi	r24, 0x01	; 1
 {
 	uint8_t i;
 	uint8_t bitVal;
 	uint32_t DispValTemp = SSD.DispVal.value; 
 	
 	for(i = 0; i < 32; i++)
- 852:	99 f7       	brne	.-26     	; 0x83a <SSDCycleUpdate+0x16>
+ 910:	99 f7       	brne	.-26     	; 0x8f8 <SSDCycleUpdate+0x16>
 void SSDUpdateOnOff(void)
 {
 	SSD_RATE rate;
 	uint8_t ft;				/* flash timer */
 
 	rate = SSD.ssd.rate;
- 854:	90 91 29 01 	lds	r25, 0x0129
- 858:	97 70       	andi	r25, 0x07	; 7
+ 912:	90 91 29 01 	lds	r25, 0x0129
+ 916:	97 70       	andi	r25, 0x07	; 7
 	ft = SSD.flashTimer;
- 85a:	80 91 2a 01 	lds	r24, 0x012A
+ 918:	80 91 2a 01 	lds	r24, 0x012A
 	
 	ft += rate;
 	if((rate == SSD_R_OFF) || (ft > SSD_ONE_SEC))
- 85e:	94 30       	cpi	r25, 0x04	; 4
- 860:	19 f0       	breq	.+6      	; 0x868 <SSDCycleUpdate+0x44>
+ 91c:	94 30       	cpi	r25, 0x04	; 4
+ 91e:	19 f0       	breq	.+6      	; 0x926 <SSDCycleUpdate+0x44>
 	uint8_t ft;				/* flash timer */
 
 	rate = SSD.ssd.rate;
 	ft = SSD.flashTimer;
 	
 	ft += rate;
- 862:	89 0f       	add	r24, r25
+ 920:	89 0f       	add	r24, r25
 	if((rate == SSD_R_OFF) || (ft > SSD_ONE_SEC))
- 864:	8d 33       	cpi	r24, 0x3D	; 61
- 866:	30 f0       	brcs	.+12     	; 0x874 <SSDCycleUpdate+0x50>
+ 922:	8d 33       	cpi	r24, 0x3D	; 61
+ 924:	30 f0       	brcs	.+12     	; 0x932 <SSDCycleUpdate+0x50>
 	{
 		ft = 0;
 		SSD.ssd.state = SSD_OFF;
- 868:	80 91 29 01 	lds	r24, 0x0129
- 86c:	8f 7d       	andi	r24, 0xDF	; 223
- 86e:	80 93 29 01 	sts	0x0129, r24
+ 926:	80 91 29 01 	lds	r24, 0x0129
+ 92a:	8f 7d       	andi	r24, 0xDF	; 223
+ 92c:	80 93 29 01 	sts	0x0129, r24
 	ft = SSD.flashTimer;
 	
 	ft += rate;
 	if((rate == SSD_R_OFF) || (ft > SSD_ONE_SEC))
 	{
 		ft = 0;
- 872:	80 e0       	ldi	r24, 0x00	; 0
+ 930:	80 e0       	ldi	r24, 0x00	; 0
 		SSD.ssd.state = SSD_OFF;
 	}
 	SSD.flashTimer = ft;
- 874:	80 93 2a 01 	sts	0x012A, r24
+ 932:	80 93 2a 01 	sts	0x012A, r24
 	
 	if((rate == SSD_0HZ) || (ft > (SSD_ONE_SEC/2)))
- 878:	99 23       	and	r25, r25
- 87a:	11 f0       	breq	.+4      	; 0x880 <SSDCycleUpdate+0x5c>
- 87c:	8f 31       	cpi	r24, 0x1F	; 31
- 87e:	28 f0       	brcs	.+10     	; 0x88a <SSDCycleUpdate+0x66>
+ 936:	99 23       	and	r25, r25
+ 938:	11 f0       	breq	.+4      	; 0x93e <SSDCycleUpdate+0x5c>
+ 93a:	8f 31       	cpi	r24, 0x1F	; 31
+ 93c:	28 f0       	brcs	.+10     	; 0x948 <SSDCycleUpdate+0x66>
 	{
 		SSD.ssd.state = SSD_ON;
- 880:	80 91 29 01 	lds	r24, 0x0129
- 884:	80 62       	ori	r24, 0x20	; 32
- 886:	80 93 29 01 	sts	0x0129, r24
+ 93e:	80 91 29 01 	lds	r24, 0x0129
+ 942:	80 62       	ori	r24, 0x20	; 32
+ 944:	80 93 29 01 	sts	0x0129, r24
 *
 *********************************************************************************************************
 */
 void SSDUpdateComPin(void)
 {
 	if(SSD.ssd.state == SSD_OFF)		/* if ssd is in off state, cut power to green and color */
- 88a:	80 91 29 01 	lds	r24, 0x0129
- 88e:	85 fd       	sbrc	r24, 5
- 890:	02 c0       	rjmp	.+4      	; 0x896 <SSDCycleUpdate+0x72>
+ 948:	80 91 29 01 	lds	r24, 0x0129
+ 94c:	85 fd       	sbrc	r24, 5
+ 94e:	02 c0       	rjmp	.+4      	; 0x954 <SSDCycleUpdate+0x72>
 	{
 		SSD_RED_CLR();
- 892:	ac 98       	cbi	0x15, 4	; 21
- 894:	03 c0       	rjmp	.+6      	; 0x89c <SSDCycleUpdate+0x78>
+ 950:	ac 98       	cbi	0x15, 4	; 21
+ 952:	03 c0       	rjmp	.+6      	; 0x95a <SSDCycleUpdate+0x78>
 		SSD_GRN_CLR();
 	}
 	else
 	{
 		if(SSD.ssd.color == SSD_RED)		/* dispay red color */
- 896:	88 71       	andi	r24, 0x18	; 24
- 898:	19 f4       	brne	.+6      	; 0x8a0 <SSDCycleUpdate+0x7c>
+ 954:	88 71       	andi	r24, 0x18	; 24
+ 956:	19 f4       	brne	.+6      	; 0x95e <SSDCycleUpdate+0x7c>
 		{
 			SSD_RED_SET();	/* give power to red ssd common pin */
- 89a:	ac 9a       	sbi	0x15, 4	; 21
+ 958:	ac 9a       	sbi	0x15, 4	; 21
 			SSD_GRN_CLR();	/* cut power to green ssd common pin */
- 89c:	ad 98       	cbi	0x15, 5	; 21
- 89e:	06 c0       	rjmp	.+12     	; 0x8ac <SSDCycleUpdate+0x88>
+ 95a:	ad 98       	cbi	0x15, 5	; 21
+ 95c:	06 c0       	rjmp	.+12     	; 0x96a <SSDCycleUpdate+0x88>
 		}
 		else if(SSD.ssd.color == SSD_GREEN) /* dispay green color */
- 8a0:	88 30       	cpi	r24, 0x08	; 8
- 8a2:	11 f4       	brne	.+4      	; 0x8a8 <SSDCycleUpdate+0x84>
+ 95e:	88 30       	cpi	r24, 0x08	; 8
+ 960:	11 f4       	brne	.+4      	; 0x966 <SSDCycleUpdate+0x84>
 		{
 			SSD_RED_CLR();
- 8a4:	ac 98       	cbi	0x15, 4	; 21
- 8a6:	01 c0       	rjmp	.+2      	; 0x8aa <SSDCycleUpdate+0x86>
+ 962:	ac 98       	cbi	0x15, 4	; 21
+ 964:	01 c0       	rjmp	.+2      	; 0x968 <SSDCycleUpdate+0x86>
 			SSD_GRN_SET();
 		}
 		else								/* dispay amber color */
 		{
 			SSD_RED_SET();
- 8a8:	ac 9a       	sbi	0x15, 4	; 21
+ 966:	ac 9a       	sbi	0x15, 4	; 21
 			SSD_GRN_SET();
- 8aa:	ad 9a       	sbi	0x15, 5	; 21
+ 968:	ad 9a       	sbi	0x15, 5	; 21
 void SSDCycleUpdate(void)
 {
 	SSDShitfOutData();
 	SSDUpdateOnOff();
 	SSDUpdateComPin();
 }
- 8ac:	1f 91       	pop	r17
- 8ae:	0f 91       	pop	r16
- 8b0:	08 95       	ret
+ 96a:	1f 91       	pop	r17
+ 96c:	0f 91       	pop	r16
+ 96e:	08 95       	ret
 
-000008b2 <SSDDisplayDec>:
+00000970 <SSDDisplayDec>:
 * Notes      :none
 *
 *********************************************************************************************************
 */
 void SSDDisplayDec(uint16_t DispData,  SSD_RATE rate, SSD_COLOR color)
 {
- 8b2:	0f 93       	push	r16
- 8b4:	1f 93       	push	r17
- 8b6:	cf 93       	push	r28
- 8b8:	df 93       	push	r29
- 8ba:	8c 01       	movw	r16, r24
- 8bc:	36 2f       	mov	r19, r22
+ 970:	0f 93       	push	r16
+ 972:	1f 93       	push	r17
+ 974:	cf 93       	push	r28
+ 976:	df 93       	push	r29
+ 978:	8c 01       	movw	r16, r24
+ 97a:	36 2f       	mov	r19, r22
 uint32_t SSDHex2Dec(uint16_t hexValue)
 {
 	SSD_DISP_T dataSTR;
 	dataSTR.value = 0;
 	
 	dataSTR.thousands = hexValue/1000;
- 8be:	68 ee       	ldi	r22, 0xE8	; 232
- 8c0:	73 e0       	ldi	r23, 0x03	; 3
- 8c2:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 8c6:	c6 2f       	mov	r28, r22
+ 97c:	68 ee       	ldi	r22, 0xE8	; 232
+ 97e:	73 e0       	ldi	r23, 0x03	; 3
+ 980:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 984:	c6 2f       	mov	r28, r22
 	dataSTR.hundred   = hexValue%1000/100;
- 8c8:	64 e6       	ldi	r22, 0x64	; 100
- 8ca:	70 e0       	ldi	r23, 0x00	; 0
- 8cc:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 8d0:	d6 2f       	mov	r29, r22
+ 986:	64 e6       	ldi	r22, 0x64	; 100
+ 988:	70 e0       	ldi	r23, 0x00	; 0
+ 98a:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 98e:	d6 2f       	mov	r29, r22
 	dataSTR.tens      = hexValue%1000%100/10;
- 8d2:	6a e0       	ldi	r22, 0x0A	; 10
- 8d4:	70 e0       	ldi	r23, 0x00	; 0
- 8d6:	0e 94 5c 05 	call	0xab8	; 0xab8 <__udivmodhi4>
- 8da:	56 2f       	mov	r21, r22
+ 990:	6a e0       	ldi	r22, 0x0A	; 10
+ 992:	70 e0       	ldi	r23, 0x00	; 0
+ 994:	0e 94 bb 05 	call	0xb76	; 0xb76 <__udivmodhi4>
+ 998:	56 2f       	mov	r21, r22
 {
 	SSD_DISP_T ValueCopy;
 	
 	SSD.DispVal.value = SSDHex2Dec(DispData);
 	ValueCopy.value = SSD.DispVal.value;
 	SSD.ssd.rate = rate;
- 8dc:	37 70       	andi	r19, 0x07	; 7
- 8de:	60 91 29 01 	lds	r22, 0x0129
- 8e2:	60 7e       	andi	r22, 0xE0	; 224
+ 99a:	37 70       	andi	r19, 0x07	; 7
+ 99c:	60 91 29 01 	lds	r22, 0x0129
+ 9a0:	60 7e       	andi	r22, 0xE0	; 224
 	SSD.ssd.color = color;
- 8e4:	43 70       	andi	r20, 0x03	; 3
- 8e6:	94 2f       	mov	r25, r20
- 8e8:	99 0f       	add	r25, r25
- 8ea:	99 0f       	add	r25, r25
- 8ec:	99 0f       	add	r25, r25
- 8ee:	46 2f       	mov	r20, r22
- 8f0:	43 2b       	or	r20, r19
- 8f2:	49 2b       	or	r20, r25
- 8f4:	40 93 29 01 	sts	0x0129, r20
+ 9a2:	43 70       	andi	r20, 0x03	; 3
+ 9a4:	94 2f       	mov	r25, r20
+ 9a6:	99 0f       	add	r25, r25
+ 9a8:	99 0f       	add	r25, r25
+ 9aa:	99 0f       	add	r25, r25
+ 9ac:	46 2f       	mov	r20, r22
+ 9ae:	43 2b       	or	r20, r19
+ 9b0:	49 2b       	or	r20, r25
+ 9b2:	40 93 29 01 	sts	0x0129, r20
 	
 	/* Set display null for all 4 seven segment displays */
 	SSD.DispVal.thousands = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
- 8f8:	e7 ec       	ldi	r30, 0xC7	; 199
- 8fa:	f0 e0       	ldi	r31, 0x00	; 0
- 8fc:	94 91       	lpm	r25, Z
- 8fe:	90 93 2e 01 	sts	0x012E, r25
+ 9b6:	ea eb       	ldi	r30, 0xBA	; 186
+ 9b8:	f0 e0       	ldi	r31, 0x00	; 0
+ 9ba:	94 91       	lpm	r25, Z
+ 9bc:	90 93 2e 01 	sts	0x012E, r25
 	SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
- 902:	94 91       	lpm	r25, Z
- 904:	90 93 2d 01 	sts	0x012D, r25
+ 9c0:	94 91       	lpm	r25, Z
+ 9c2:	90 93 2d 01 	sts	0x012D, r25
 	SSD.DispVal.tens      = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
- 908:	94 91       	lpm	r25, Z
- 90a:	90 93 2c 01 	sts	0x012C, r25
+ 9c6:	94 91       	lpm	r25, Z
+ 9c8:	90 93 2c 01 	sts	0x012C, r25
 	SSD.DispVal.units     = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
- 90e:	e4 91       	lpm	r30, Z
- 910:	28 2f       	mov	r18, r24
- 912:	30 e0       	ldi	r19, 0x00	; 0
+ 9cc:	e4 91       	lpm	r30, Z
+ 9ce:	28 2f       	mov	r18, r24
+ 9d0:	30 e0       	ldi	r19, 0x00	; 0
 
 	/* Set display remove zero before number */
 	if(DispData > 1000)
- 914:	09 3e       	cpi	r16, 0xE9	; 233
- 916:	83 e0       	ldi	r24, 0x03	; 3
- 918:	18 07       	cpc	r17, r24
- 91a:	78 f0       	brcs	.+30     	; 0x93a <SSDDisplayDec+0x88>
+ 9d2:	09 3e       	cpi	r16, 0xE9	; 233
+ 9d4:	83 e0       	ldi	r24, 0x03	; 3
+ 9d6:	18 07       	cpc	r17, r24
+ 9d8:	78 f0       	brcs	.+30     	; 0x9f8 <SSDDisplayDec+0x88>
 	{
 		SSD.DispVal.thousands = pgm_read_byte(&ssdCharTble[ValueCopy.thousands]);
- 91c:	ec 2f       	mov	r30, r28
- 91e:	f0 e0       	ldi	r31, 0x00	; 0
- 920:	e9 54       	subi	r30, 0x49	; 73
- 922:	ff 4f       	sbci	r31, 0xFF	; 255
- 924:	84 91       	lpm	r24, Z
- 926:	80 93 2e 01 	sts	0x012E, r24
+ 9da:	ec 2f       	mov	r30, r28
+ 9dc:	f0 e0       	ldi	r31, 0x00	; 0
+ 9de:	e6 55       	subi	r30, 0x56	; 86
+ 9e0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9e2:	84 91       	lpm	r24, Z
+ 9e4:	80 93 2e 01 	sts	0x012E, r24
 		SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[ValueCopy.hundred]);
- 92a:	ed 2f       	mov	r30, r29
- 92c:	f0 e0       	ldi	r31, 0x00	; 0
- 92e:	e9 54       	subi	r30, 0x49	; 73
- 930:	ff 4f       	sbci	r31, 0xFF	; 255
- 932:	e4 91       	lpm	r30, Z
- 934:	e0 93 2d 01 	sts	0x012D, r30
- 938:	0e c0       	rjmp	.+28     	; 0x956 <SSDDisplayDec+0xa4>
+ 9e8:	ed 2f       	mov	r30, r29
+ 9ea:	f0 e0       	ldi	r31, 0x00	; 0
+ 9ec:	e6 55       	subi	r30, 0x56	; 86
+ 9ee:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9f0:	e4 91       	lpm	r30, Z
+ 9f2:	e0 93 2d 01 	sts	0x012D, r30
+ 9f6:	0e c0       	rjmp	.+28     	; 0xa14 <SSDDisplayDec+0xa4>
 		SSD.DispVal.tens	  = pgm_read_byte(&ssdCharTble[ValueCopy.tens]);
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
 	}
 	else if(DispData > 100)
- 93a:	05 36       	cpi	r16, 0x65	; 101
- 93c:	11 05       	cpc	r17, r1
- 93e:	40 f0       	brcs	.+16     	; 0x950 <SSDDisplayDec+0x9e>
+ 9f8:	05 36       	cpi	r16, 0x65	; 101
+ 9fa:	11 05       	cpc	r17, r1
+ 9fc:	40 f0       	brcs	.+16     	; 0xa0e <SSDDisplayDec+0x9e>
 	{
 		SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[ValueCopy.hundred]);
- 940:	ed 2f       	mov	r30, r29
- 942:	f0 e0       	ldi	r31, 0x00	; 0
- 944:	e9 54       	subi	r30, 0x49	; 73
- 946:	ff 4f       	sbci	r31, 0xFF	; 255
- 948:	84 91       	lpm	r24, Z
- 94a:	80 93 2d 01 	sts	0x012D, r24
- 94e:	03 c0       	rjmp	.+6      	; 0x956 <SSDDisplayDec+0xa4>
+ 9fe:	ed 2f       	mov	r30, r29
+ a00:	f0 e0       	ldi	r31, 0x00	; 0
+ a02:	e6 55       	subi	r30, 0x56	; 86
+ a04:	ff 4f       	sbci	r31, 0xFF	; 255
+ a06:	84 91       	lpm	r24, Z
+ a08:	80 93 2d 01 	sts	0x012D, r24
+ a0c:	03 c0       	rjmp	.+6      	; 0xa14 <SSDDisplayDec+0xa4>
 		SSD.DispVal.tens	  = pgm_read_byte(&ssdCharTble[ValueCopy.tens]);
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
 	}
 	else if(DispData > 10)
- 950:	0b 30       	cpi	r16, 0x0B	; 11
- 952:	11 05       	cpc	r17, r1
- 954:	38 f0       	brcs	.+14     	; 0x964 <SSDDisplayDec+0xb2>
+ a0e:	0b 30       	cpi	r16, 0x0B	; 11
+ a10:	11 05       	cpc	r17, r1
+ a12:	38 f0       	brcs	.+14     	; 0xa22 <SSDDisplayDec+0xb2>
 	{
 		SSD.DispVal.tens	  = pgm_read_byte(&ssdCharTble[ValueCopy.tens]);
- 956:	e5 2f       	mov	r30, r21
- 958:	f0 e0       	ldi	r31, 0x00	; 0
- 95a:	e9 54       	subi	r30, 0x49	; 73
- 95c:	ff 4f       	sbci	r31, 0xFF	; 255
- 95e:	e4 91       	lpm	r30, Z
- 960:	e0 93 2c 01 	sts	0x012C, r30
+ a14:	e5 2f       	mov	r30, r21
+ a16:	f0 e0       	ldi	r31, 0x00	; 0
+ a18:	e6 55       	subi	r30, 0x56	; 86
+ a1a:	ff 4f       	sbci	r31, 0xFF	; 255
+ a1c:	e4 91       	lpm	r30, Z
+ a1e:	e0 93 2c 01 	sts	0x012C, r30
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
 	}
 	else
 	{
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
- 964:	f9 01       	movw	r30, r18
- 966:	e9 54       	subi	r30, 0x49	; 73
- 968:	ff 4f       	sbci	r31, 0xFF	; 255
- 96a:	e4 91       	lpm	r30, Z
- 96c:	e0 93 2b 01 	sts	0x012B, r30
+ a22:	f9 01       	movw	r30, r18
+ a24:	e6 55       	subi	r30, 0x56	; 86
+ a26:	ff 4f       	sbci	r31, 0xFF	; 255
+ a28:	e4 91       	lpm	r30, Z
+ a2a:	e0 93 2b 01 	sts	0x012B, r30
 	}
 }
- 970:	df 91       	pop	r29
- 972:	cf 91       	pop	r28
- 974:	1f 91       	pop	r17
- 976:	0f 91       	pop	r16
- 978:	08 95       	ret
+ a2e:	df 91       	pop	r29
+ a30:	cf 91       	pop	r28
+ a32:	1f 91       	pop	r17
+ a34:	0f 91       	pop	r16
+ a36:	08 95       	ret
 
-0000097a <SSDDisplayHex>:
+00000a38 <SSDDisplayHex>:
 uint32_t SSDHex2Hex(uint16_t hexValue)
 {
 	SSD_DISP_T dataSTR;
 	dataSTR.value = 0;
 	
 	dataSTR.thousands = (hexValue >> 12) & 0x000f;
- 97a:	39 2f       	mov	r19, r25
- 97c:	32 95       	swap	r19
- 97e:	3f 70       	andi	r19, 0x0F	; 15
+ a38:	39 2f       	mov	r19, r25
+ a3a:	32 95       	swap	r19
+ a3c:	3f 70       	andi	r19, 0x0F	; 15
 	dataSTR.hundred   = (hexValue >> 8) & 0x000f;
- 980:	29 2f       	mov	r18, r25
- 982:	2f 70       	andi	r18, 0x0F	; 15
+ a3e:	29 2f       	mov	r18, r25
+ a40:	2f 70       	andi	r18, 0x0F	; 15
 	dataSTR.tens      = (hexValue >> 4) & 0x000f;
- 984:	fc 01       	movw	r30, r24
- 986:	94 e0       	ldi	r25, 0x04	; 4
- 988:	f6 95       	lsr	r31
- 98a:	e7 95       	ror	r30
- 98c:	9a 95       	dec	r25
- 98e:	e1 f7       	brne	.-8      	; 0x988 <SSDDisplayHex+0xe>
- 990:	9e 2f       	mov	r25, r30
- 992:	9f 70       	andi	r25, 0x0F	; 15
+ a42:	fc 01       	movw	r30, r24
+ a44:	94 e0       	ldi	r25, 0x04	; 4
+ a46:	f6 95       	lsr	r31
+ a48:	e7 95       	ror	r30
+ a4a:	9a 95       	dec	r25
+ a4c:	e1 f7       	brne	.-8      	; 0xa46 <SSDDisplayHex+0xe>
+ a4e:	9e 2f       	mov	r25, r30
+ a50:	9f 70       	andi	r25, 0x0F	; 15
 	dataSTR.units     = (hexValue >> 0) & 0x000f;
- 994:	8f 70       	andi	r24, 0x0F	; 15
+ a52:	8f 70       	andi	r24, 0x0F	; 15
 *
 *********************************************************************************************************
 */
 void SSDDisplayHex(uint16_t DispData,  SSD_RATE rate, SSD_COLOR color)
 {
 	SSD.DispVal.value = SSDHex2Hex(DispData);
- 996:	a9 e2       	ldi	r26, 0x29	; 41
- 998:	b1 e0       	ldi	r27, 0x01	; 1
+ a54:	a9 e2       	ldi	r26, 0x29	; 41
+ a56:	b1 e0       	ldi	r27, 0x01	; 1
 	SSD.ssd.rate = rate;
- 99a:	67 70       	andi	r22, 0x07	; 7
- 99c:	7c 91       	ld	r23, X
- 99e:	70 7e       	andi	r23, 0xE0	; 224
+ a58:	67 70       	andi	r22, 0x07	; 7
+ a5a:	7c 91       	ld	r23, X
+ a5c:	70 7e       	andi	r23, 0xE0	; 224
 	SSD.ssd.color = color;
- 9a0:	43 70       	andi	r20, 0x03	; 3
- 9a2:	54 2f       	mov	r21, r20
- 9a4:	55 0f       	add	r21, r21
- 9a6:	55 0f       	add	r21, r21
- 9a8:	55 0f       	add	r21, r21
- 9aa:	47 2f       	mov	r20, r23
- 9ac:	46 2b       	or	r20, r22
- 9ae:	45 2b       	or	r20, r21
- 9b0:	4c 93       	st	X, r20
+ a5e:	43 70       	andi	r20, 0x03	; 3
+ a60:	54 2f       	mov	r21, r20
+ a62:	55 0f       	add	r21, r21
+ a64:	55 0f       	add	r21, r21
+ a66:	55 0f       	add	r21, r21
+ a68:	47 2f       	mov	r20, r23
+ a6a:	46 2b       	or	r20, r22
+ a6c:	45 2b       	or	r20, r21
+ a6e:	4c 93       	st	X, r20
 	
 	SSD.DispVal.thousands = pgm_read_byte(&ssdCharTble[SSD.DispVal.thousands]);
- 9b2:	e3 2f       	mov	r30, r19
- 9b4:	f0 e0       	ldi	r31, 0x00	; 0
- 9b6:	e9 54       	subi	r30, 0x49	; 73
- 9b8:	ff 4f       	sbci	r31, 0xFF	; 255
- 9ba:	34 91       	lpm	r19, Z
- 9bc:	15 96       	adiw	r26, 0x05	; 5
- 9be:	3c 93       	st	X, r19
- 9c0:	15 97       	sbiw	r26, 0x05	; 5
+ a70:	e3 2f       	mov	r30, r19
+ a72:	f0 e0       	ldi	r31, 0x00	; 0
+ a74:	e6 55       	subi	r30, 0x56	; 86
+ a76:	ff 4f       	sbci	r31, 0xFF	; 255
+ a78:	34 91       	lpm	r19, Z
+ a7a:	15 96       	adiw	r26, 0x05	; 5
+ a7c:	3c 93       	st	X, r19
+ a7e:	15 97       	sbiw	r26, 0x05	; 5
 	SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[SSD.DispVal.hundred]);
- 9c2:	e2 2f       	mov	r30, r18
- 9c4:	f0 e0       	ldi	r31, 0x00	; 0
- 9c6:	e9 54       	subi	r30, 0x49	; 73
- 9c8:	ff 4f       	sbci	r31, 0xFF	; 255
- 9ca:	24 91       	lpm	r18, Z
- 9cc:	14 96       	adiw	r26, 0x04	; 4
- 9ce:	2c 93       	st	X, r18
- 9d0:	14 97       	sbiw	r26, 0x04	; 4
+ a80:	e2 2f       	mov	r30, r18
+ a82:	f0 e0       	ldi	r31, 0x00	; 0
+ a84:	e6 55       	subi	r30, 0x56	; 86
+ a86:	ff 4f       	sbci	r31, 0xFF	; 255
+ a88:	24 91       	lpm	r18, Z
+ a8a:	14 96       	adiw	r26, 0x04	; 4
+ a8c:	2c 93       	st	X, r18
+ a8e:	14 97       	sbiw	r26, 0x04	; 4
 	SSD.DispVal.tens      = pgm_read_byte(&ssdCharTble[SSD.DispVal.tens]);
- 9d2:	e9 2f       	mov	r30, r25
- 9d4:	f0 e0       	ldi	r31, 0x00	; 0
- 9d6:	e9 54       	subi	r30, 0x49	; 73
- 9d8:	ff 4f       	sbci	r31, 0xFF	; 255
- 9da:	e4 91       	lpm	r30, Z
- 9dc:	13 96       	adiw	r26, 0x03	; 3
- 9de:	ec 93       	st	X, r30
- 9e0:	13 97       	sbiw	r26, 0x03	; 3
+ a90:	e9 2f       	mov	r30, r25
+ a92:	f0 e0       	ldi	r31, 0x00	; 0
+ a94:	e6 55       	subi	r30, 0x56	; 86
+ a96:	ff 4f       	sbci	r31, 0xFF	; 255
+ a98:	e4 91       	lpm	r30, Z
+ a9a:	13 96       	adiw	r26, 0x03	; 3
+ a9c:	ec 93       	st	X, r30
+ a9e:	13 97       	sbiw	r26, 0x03	; 3
 	SSD.DispVal.units     = pgm_read_byte(&ssdCharTble[SSD.DispVal.units]);
- 9e2:	e8 2f       	mov	r30, r24
- 9e4:	f0 e0       	ldi	r31, 0x00	; 0
- 9e6:	e9 54       	subi	r30, 0x49	; 73
- 9e8:	ff 4f       	sbci	r31, 0xFF	; 255
- 9ea:	e4 91       	lpm	r30, Z
- 9ec:	12 96       	adiw	r26, 0x02	; 2
- 9ee:	ec 93       	st	X, r30
- 9f0:	08 95       	ret
+ aa0:	e8 2f       	mov	r30, r24
+ aa2:	f0 e0       	ldi	r31, 0x00	; 0
+ aa4:	e6 55       	subi	r30, 0x56	; 86
+ aa6:	ff 4f       	sbci	r31, 0xFF	; 255
+ aa8:	e4 91       	lpm	r30, Z
+ aaa:	12 96       	adiw	r26, 0x02	; 2
+ aac:	ec 93       	st	X, r30
+ aae:	08 95       	ret
 
-000009f2 <SSDInit>:
+00000ab0 <SSDInit>:
 void SSDInit(void)
 {	
 	/* 
 	Set PB7-PB4 as output to drive seven segment display, default display turn off
 	*/
 	DDRC &= ~((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4));
- 9f2:	84 b3       	in	r24, 0x14	; 20
- 9f4:	8f 70       	andi	r24, 0x0F	; 15
- 9f6:	84 bb       	out	0x14, r24	; 20
+ ab0:	84 b3       	in	r24, 0x14	; 20
+ ab2:	8f 70       	andi	r24, 0x0F	; 15
+ ab4:	84 bb       	out	0x14, r24	; 20
 	DDRC |= ((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4));
- 9f8:	84 b3       	in	r24, 0x14	; 20
- 9fa:	80 6f       	ori	r24, 0xF0	; 240
- 9fc:	84 bb       	out	0x14, r24	; 20
+ ab6:	84 b3       	in	r24, 0x14	; 20
+ ab8:	80 6f       	ori	r24, 0xF0	; 240
+ aba:	84 bb       	out	0x14, r24	; 20
 	PORTC &= ~((1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4));
- 9fe:	85 b3       	in	r24, 0x15	; 21
- a00:	8f 70       	andi	r24, 0x0F	; 15
- a02:	85 bb       	out	0x15, r24	; 21
+ abc:	85 b3       	in	r24, 0x15	; 21
+ abe:	8f 70       	andi	r24, 0x0F	; 15
+ ac0:	85 bb       	out	0x15, r24	; 21
 
 	SSDDisplayHex(0, SSD_R_OFF, SSD_RED);	/* Initial turn off all SSDs */
- a04:	40 e0       	ldi	r20, 0x00	; 0
- a06:	64 e0       	ldi	r22, 0x04	; 4
- a08:	80 e0       	ldi	r24, 0x00	; 0
- a0a:	90 e0       	ldi	r25, 0x00	; 0
- a0c:	0c 94 bd 04 	jmp	0x97a	; 0x97a <SSDDisplayHex>
+ ac2:	40 e0       	ldi	r20, 0x00	; 0
+ ac4:	64 e0       	ldi	r22, 0x04	; 4
+ ac6:	80 e0       	ldi	r24, 0x00	; 0
+ ac8:	90 e0       	ldi	r25, 0x00	; 0
+ aca:	0c 94 1c 05 	jmp	0xa38	; 0xa38 <SSDDisplayHex>
 
-00000a10 <ButtonInit>:
+00000ace <ButtonInit>:
 * Returns    : none
 *********************************************************************************************************
 */
 void ButtonInit(void)
 {
 	ButtonInitEx();
- a10:	0c 94 8f 03 	jmp	0x71e	; 0x71e <ButtonInitEx>
+ ace:	0c 94 ee 03 	jmp	0x7dc	; 0x7dc <ButtonInitEx>
 
-00000a14 <ButtonCycleUpdate>:
+00000ad2 <ButtonCycleUpdate>:
 * Notes      : None
 *
 */
 ButtonDataType ButtonGetIO_State(void)
 {
 	return  ButtonGetIO_StateEx();
- a14:	0e 94 93 03 	call	0x726	; 0x726 <ButtonGetIO_StateEx>
+ ad2:	0e 94 f2 03 	call	0x7e4	; 0x7e4 <ButtonGetIO_StateEx>
 	ButtonDataType b;											/* store last power cycle button value */
 	ButtonDataType buttons;
 	uint16_t holdTime;
 	
 	buttons = ButtonGetIO_State();
 	buttons |= button.buttonsNextCycle.bVal;			/* Add in any buttons asserted by software */	
- a18:	90 91 2f 01 	lds	r25, 0x012F
- a1c:	89 2b       	or	r24, r25
+ ad6:	90 91 2f 01 	lds	r25, 0x012F
+ ada:	89 2b       	or	r24, r25
 	button.buttonsNextCycle.bVal = 0;					/* and clear any that may have been set */
- a1e:	10 92 2f 01 	sts	0x012F, r1
+ adc:	10 92 2f 01 	sts	0x012F, r1
 	b = button.buttonsLastCycle.bVal;
- a22:	90 91 30 01 	lds	r25, 0x0130
+ ae0:	90 91 30 01 	lds	r25, 0x0130
 	holdTime = button.buttonHoldTime;
- a26:	20 91 35 01 	lds	r18, 0x0135
- a2a:	30 91 36 01 	lds	r19, 0x0136
+ ae4:	20 91 35 01 	lds	r18, 0x0135
+ ae8:	30 91 36 01 	lds	r19, 0x0136
 	
 	if (button.buttonsReleased.bVal != 0) {		
- a2e:	40 91 31 01 	lds	r20, 0x0131
- a32:	44 23       	and	r20, r20
- a34:	19 f0       	breq	.+6      	; 0xa3c <ButtonCycleUpdate+0x28>
+ aec:	40 91 31 01 	lds	r20, 0x0131
+ af0:	44 23       	and	r20, r20
+ af2:	19 f0       	breq	.+6      	; 0xafa <ButtonCycleUpdate+0x28>
 														/* store value of release button */
 		button.buttonsReleasedHistory.bVal = button.buttonsReleased.bVal;	
- a36:	40 93 33 01 	sts	0x0133, r20
- a3a:	05 c0       	rjmp	.+10     	; 0xa46 <ButtonCycleUpdate+0x32>
+ af4:	40 93 33 01 	sts	0x0133, r20
+ af8:	05 c0       	rjmp	.+10     	; 0xb04 <ButtonCycleUpdate+0x32>
 	}
 	else {
 		if (holdTime > BTN_DOUBLE_TAP) {
- a3c:	2d 33       	cpi	r18, 0x3D	; 61
- a3e:	31 05       	cpc	r19, r1
- a40:	10 f0       	brcs	.+4      	; 0xa46 <ButtonCycleUpdate+0x32>
+ afa:	2d 33       	cpi	r18, 0x3D	; 61
+ afc:	31 05       	cpc	r19, r1
+ afe:	10 f0       	brcs	.+4      	; 0xb04 <ButtonCycleUpdate+0x32>
 														/* Clear history value when interval time out */
 			button.buttonsReleasedHistory.bVal = 0;	
- a42:	10 92 33 01 	sts	0x0133, r1
+ b00:	10 92 33 01 	sts	0x0133, r1
 		}
 	}
 
 	button.buttonsReleased.bVal = 0;					/* Assume no buttons released this time */
- a46:	10 92 31 01 	sts	0x0131, r1
+ b04:	10 92 31 01 	sts	0x0131, r1
 	button.buttonsTwiceReleased.bVal = 0;				/* Assume no buttons twice released this time */
- a4a:	10 92 34 01 	sts	0x0134, r1
+ b08:	10 92 34 01 	sts	0x0134, r1
   
 	if (buttons == b) {									/* If the button situation has not changed in this past cycle */ 
- a4e:	89 13       	cpse	r24, r25
- a50:	0f c0       	rjmp	.+30     	; 0xa70 <ButtonCycleUpdate+0x5c>
+ b0c:	89 13       	cpse	r24, r25
+ b0e:	0f c0       	rjmp	.+30     	; 0xb2e <ButtonCycleUpdate+0x5c>
 		button.buttonsHeld.bVal = 0;					/* Assume no buttons held */
 		if ( ++holdTime > BTN_MIN_HOLD_60) {
- a52:	2f 5f       	subi	r18, 0xFF	; 255
- a54:	3f 4f       	sbci	r19, 0xFF	; 255
- a56:	24 32       	cpi	r18, 0x24	; 36
- a58:	31 05       	cpc	r19, r1
- a5a:	18 f4       	brcc	.+6      	; 0xa62 <ButtonCycleUpdate+0x4e>
+ b10:	2f 5f       	subi	r18, 0xFF	; 255
+ b12:	3f 4f       	sbci	r19, 0xFF	; 255
+ b14:	24 32       	cpi	r18, 0x24	; 36
+ b16:	31 05       	cpc	r19, r1
+ b18:	18 f4       	brcc	.+6      	; 0xb20 <ButtonCycleUpdate+0x4e>
 
 	button.buttonsReleased.bVal = 0;					/* Assume no buttons released this time */
 	button.buttonsTwiceReleased.bVal = 0;				/* Assume no buttons twice released this time */
   
 	if (buttons == b) {									/* If the button situation has not changed in this past cycle */ 
 		button.buttonsHeld.bVal = 0;					/* Assume no buttons held */
- a5c:	10 92 32 01 	sts	0x0132, r1
- a60:	02 c0       	rjmp	.+4      	; 0xa66 <ButtonCycleUpdate+0x52>
+ b1a:	10 92 32 01 	sts	0x0132, r1
+ b1e:	02 c0       	rjmp	.+4      	; 0xb24 <ButtonCycleUpdate+0x52>
 		if ( ++holdTime > BTN_MIN_HOLD_60) {
 			button.buttonsHeld.bVal = buttons;
- a62:	80 93 32 01 	sts	0x0132, r24
+ b20:	80 93 32 01 	sts	0x0132, r24
 		}	
 		button.buttonHoldTime = holdTime;
- a66:	30 93 36 01 	sts	0x0136, r19
- a6a:	20 93 35 01 	sts	0x0135, r18
- a6e:	08 95       	ret
+ b24:	30 93 36 01 	sts	0x0136, r19
+ b28:	20 93 35 01 	sts	0x0135, r18
+ b2c:	08 95       	ret
 	}
 	else {
 														/* Here if the buttons have changed since last line cycle */
 		button.buttonsLastCycle.bVal = buttons;
- a70:	80 93 30 01 	sts	0x0130, r24
+ b2e:	80 93 30 01 	sts	0x0130, r24
 		buttons = (buttons ^ b) & b;					/* Select out only the ones that have changed */
- a74:	80 95       	com	r24
- a76:	89 23       	and	r24, r25
+ b32:	80 95       	com	r24
+ b34:	89 23       	and	r24, r25
 		
 		if ((buttons & button.buttonsHeld.bVal) == 0){													
- a78:	90 91 32 01 	lds	r25, 0x0132
- a7c:	98 23       	and	r25, r24
- a7e:	81 f4       	brne	.+32     	; 0xaa0 <ButtonCycleUpdate+0x8c>
+ b36:	90 91 32 01 	lds	r25, 0x0132
+ b3a:	98 23       	and	r25, r24
+ b3c:	81 f4       	brne	.+32     	; 0xb5e <ButtonCycleUpdate+0x8c>
 			button.buttonHoldTime = 0;					/* Ignore the release of any buttons that were previously marked as held down */
- a80:	10 92 36 01 	sts	0x0136, r1
- a84:	10 92 35 01 	sts	0x0135, r1
+ b3e:	10 92 36 01 	sts	0x0136, r1
+ b42:	10 92 35 01 	sts	0x0135, r1
 		
 			if ((holdTime < BTN_MIN_HOLD_60) && (holdTime > BTN_MIN_PRESS_60)){
- a88:	23 50       	subi	r18, 0x03	; 3
- a8a:	31 09       	sbc	r19, r1
- a8c:	20 32       	cpi	r18, 0x20	; 32
- a8e:	31 05       	cpc	r19, r1
- a90:	38 f4       	brcc	.+14     	; 0xaa0 <ButtonCycleUpdate+0x8c>
+ b46:	23 50       	subi	r18, 0x03	; 3
+ b48:	31 09       	sbc	r19, r1
+ b4a:	20 32       	cpi	r18, 0x20	; 32
+ b4c:	31 05       	cpc	r19, r1
+ b4e:	38 f4       	brcc	.+14     	; 0xb5e <ButtonCycleUpdate+0x8c>
 				button.buttonsReleased.bVal = buttons;	
- a92:	80 93 31 01 	sts	0x0131, r24
+ b50:	80 93 31 01 	sts	0x0131, r24
 														/* Calculate twice release button value */
 				button.buttonsTwiceReleased.bVal =	button.buttonsReleased.bVal &   
- a96:	90 91 33 01 	lds	r25, 0x0133
- a9a:	89 23       	and	r24, r25
- a9c:	80 93 34 01 	sts	0x0134, r24
- aa0:	08 95       	ret
+ b54:	90 91 33 01 	lds	r25, 0x0133
+ b58:	89 23       	and	r24, r25
+ b5a:	80 93 34 01 	sts	0x0134, r24
+ b5e:	08 95       	ret
 
-00000aa2 <ButtonGetHoldTime>:
+00000b60 <ButtonGetHoldTime>:
 */
 
 uint16_t ButtonGetHoldTime(void)
 {
 	return button.buttonHoldTime;
 }
- aa2:	80 91 35 01 	lds	r24, 0x0135
- aa6:	90 91 36 01 	lds	r25, 0x0136
- aaa:	08 95       	ret
+ b60:	80 91 35 01 	lds	r24, 0x0135
+ b64:	90 91 36 01 	lds	r25, 0x0136
+ b68:	08 95       	ret
 
-00000aac <ButtonGetReleased>:
+00000b6a <ButtonGetReleased>:
 */
 
 ButtonDataType ButtonGetReleased(void)
 {
 	return button.buttonsReleased.bVal;
 }
- aac:	80 91 31 01 	lds	r24, 0x0131
- ab0:	08 95       	ret
+ b6a:	80 91 31 01 	lds	r24, 0x0131
+ b6e:	08 95       	ret
 
-00000ab2 <ButtonGetHeld>:
+00000b70 <ButtonGetHeld>:
 */
 
 ButtonDataType ButtonGetHeld (void)
 {
 	return button.buttonsHeld.bVal;
 }
- ab2:	80 91 32 01 	lds	r24, 0x0132
- ab6:	08 95       	ret
+ b70:	80 91 32 01 	lds	r24, 0x0132
+ b74:	08 95       	ret
 
-00000ab8 <__udivmodhi4>:
- ab8:	aa 1b       	sub	r26, r26
- aba:	bb 1b       	sub	r27, r27
- abc:	51 e1       	ldi	r21, 0x11	; 17
- abe:	07 c0       	rjmp	.+14     	; 0xace <__udivmodhi4_ep>
+00000b76 <__udivmodhi4>:
+ b76:	aa 1b       	sub	r26, r26
+ b78:	bb 1b       	sub	r27, r27
+ b7a:	51 e1       	ldi	r21, 0x11	; 17
+ b7c:	07 c0       	rjmp	.+14     	; 0xb8c <__udivmodhi4_ep>
 
-00000ac0 <__udivmodhi4_loop>:
- ac0:	aa 1f       	adc	r26, r26
- ac2:	bb 1f       	adc	r27, r27
- ac4:	a6 17       	cp	r26, r22
- ac6:	b7 07       	cpc	r27, r23
- ac8:	10 f0       	brcs	.+4      	; 0xace <__udivmodhi4_ep>
- aca:	a6 1b       	sub	r26, r22
- acc:	b7 0b       	sbc	r27, r23
+00000b7e <__udivmodhi4_loop>:
+ b7e:	aa 1f       	adc	r26, r26
+ b80:	bb 1f       	adc	r27, r27
+ b82:	a6 17       	cp	r26, r22
+ b84:	b7 07       	cpc	r27, r23
+ b86:	10 f0       	brcs	.+4      	; 0xb8c <__udivmodhi4_ep>
+ b88:	a6 1b       	sub	r26, r22
+ b8a:	b7 0b       	sbc	r27, r23
 
-00000ace <__udivmodhi4_ep>:
- ace:	88 1f       	adc	r24, r24
- ad0:	99 1f       	adc	r25, r25
- ad2:	5a 95       	dec	r21
- ad4:	a9 f7       	brne	.-22     	; 0xac0 <__udivmodhi4_loop>
- ad6:	80 95       	com	r24
- ad8:	90 95       	com	r25
- ada:	bc 01       	movw	r22, r24
- adc:	cd 01       	movw	r24, r26
- ade:	08 95       	ret
+00000b8c <__udivmodhi4_ep>:
+ b8c:	88 1f       	adc	r24, r24
+ b8e:	99 1f       	adc	r25, r25
+ b90:	5a 95       	dec	r21
+ b92:	a9 f7       	brne	.-22     	; 0xb7e <__udivmodhi4_loop>
+ b94:	80 95       	com	r24
+ b96:	90 95       	com	r25
+ b98:	bc 01       	movw	r22, r24
+ b9a:	cd 01       	movw	r24, r26
+ b9c:	08 95       	ret
 
-00000ae0 <__udivmodsi4>:
- ae0:	a1 e2       	ldi	r26, 0x21	; 33
- ae2:	1a 2e       	mov	r1, r26
- ae4:	aa 1b       	sub	r26, r26
- ae6:	bb 1b       	sub	r27, r27
- ae8:	fd 01       	movw	r30, r26
- aea:	0d c0       	rjmp	.+26     	; 0xb06 <__udivmodsi4_ep>
+00000b9e <__udivmodsi4>:
+ b9e:	a1 e2       	ldi	r26, 0x21	; 33
+ ba0:	1a 2e       	mov	r1, r26
+ ba2:	aa 1b       	sub	r26, r26
+ ba4:	bb 1b       	sub	r27, r27
+ ba6:	fd 01       	movw	r30, r26
+ ba8:	0d c0       	rjmp	.+26     	; 0xbc4 <__udivmodsi4_ep>
 
-00000aec <__udivmodsi4_loop>:
- aec:	aa 1f       	adc	r26, r26
- aee:	bb 1f       	adc	r27, r27
- af0:	ee 1f       	adc	r30, r30
- af2:	ff 1f       	adc	r31, r31
- af4:	a2 17       	cp	r26, r18
- af6:	b3 07       	cpc	r27, r19
- af8:	e4 07       	cpc	r30, r20
- afa:	f5 07       	cpc	r31, r21
- afc:	20 f0       	brcs	.+8      	; 0xb06 <__udivmodsi4_ep>
- afe:	a2 1b       	sub	r26, r18
- b00:	b3 0b       	sbc	r27, r19
- b02:	e4 0b       	sbc	r30, r20
- b04:	f5 0b       	sbc	r31, r21
+00000baa <__udivmodsi4_loop>:
+ baa:	aa 1f       	adc	r26, r26
+ bac:	bb 1f       	adc	r27, r27
+ bae:	ee 1f       	adc	r30, r30
+ bb0:	ff 1f       	adc	r31, r31
+ bb2:	a2 17       	cp	r26, r18
+ bb4:	b3 07       	cpc	r27, r19
+ bb6:	e4 07       	cpc	r30, r20
+ bb8:	f5 07       	cpc	r31, r21
+ bba:	20 f0       	brcs	.+8      	; 0xbc4 <__udivmodsi4_ep>
+ bbc:	a2 1b       	sub	r26, r18
+ bbe:	b3 0b       	sbc	r27, r19
+ bc0:	e4 0b       	sbc	r30, r20
+ bc2:	f5 0b       	sbc	r31, r21
 
-00000b06 <__udivmodsi4_ep>:
- b06:	66 1f       	adc	r22, r22
- b08:	77 1f       	adc	r23, r23
- b0a:	88 1f       	adc	r24, r24
- b0c:	99 1f       	adc	r25, r25
- b0e:	1a 94       	dec	r1
- b10:	69 f7       	brne	.-38     	; 0xaec <__udivmodsi4_loop>
- b12:	60 95       	com	r22
- b14:	70 95       	com	r23
- b16:	80 95       	com	r24
- b18:	90 95       	com	r25
- b1a:	9b 01       	movw	r18, r22
- b1c:	ac 01       	movw	r20, r24
- b1e:	bd 01       	movw	r22, r26
- b20:	cf 01       	movw	r24, r30
- b22:	08 95       	ret
+00000bc4 <__udivmodsi4_ep>:
+ bc4:	66 1f       	adc	r22, r22
+ bc6:	77 1f       	adc	r23, r23
+ bc8:	88 1f       	adc	r24, r24
+ bca:	99 1f       	adc	r25, r25
+ bcc:	1a 94       	dec	r1
+ bce:	69 f7       	brne	.-38     	; 0xbaa <__udivmodsi4_loop>
+ bd0:	60 95       	com	r22
+ bd2:	70 95       	com	r23
+ bd4:	80 95       	com	r24
+ bd6:	90 95       	com	r25
+ bd8:	9b 01       	movw	r18, r22
+ bda:	ac 01       	movw	r20, r24
+ bdc:	bd 01       	movw	r22, r26
+ bde:	cf 01       	movw	r24, r30
+ be0:	08 95       	ret
 
-00000b24 <__tablejump2__>:
- b24:	ee 0f       	add	r30, r30
- b26:	ff 1f       	adc	r31, r31
- b28:	05 90       	lpm	r0, Z+
- b2a:	f4 91       	lpm	r31, Z
- b2c:	e0 2d       	mov	r30, r0
- b2e:	09 94       	ijmp
+00000be2 <__tablejump2__>:
+ be2:	ee 0f       	add	r30, r30
+ be4:	ff 1f       	adc	r31, r31
+ be6:	05 90       	lpm	r0, Z+
+ be8:	f4 91       	lpm	r31, Z
+ bea:	e0 2d       	mov	r30, r0
+ bec:	09 94       	ijmp
 
-00000b30 <_exit>:
- b30:	f8 94       	cli
+00000bee <_exit>:
+ bee:	f8 94       	cli
 
-00000b32 <__stop_program>:
- b32:	ff cf       	rjmp	.-2      	; 0xb32 <__stop_program>
+00000bf0 <__stop_program>:
+ bf0:	ff cf       	rjmp	.-2      	; 0xbf0 <__stop_program>
