@@ -133,15 +133,7 @@ void AppCycleUpdate(void)
 			{
 				if(appl.ModeTimer % (TIME_CONTENT_SWITCH - 1) == 0)
 				{
-#if 1		
-#if (FOR_DEBUG==1)
-					rprintf("wM=%d\n",appl.workMode);
-					rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
-					rprintf("dC=%d\n\n",appl.DispCode);
-#endif
-#endif
-					AppDisplay(appl.DispCode,PWR_ON);
-					appl.DispCode++;
+					AppDisplay(++appl.DispCode,PWR_ON);
 				}
 				
 				if(ButtonJMP1HeldEvent() && (ButtonGetHoldTime() == TIME_B_HELD_RST))	/* Press/Held JMP1 after power on will set to factory default */
@@ -151,12 +143,6 @@ void AppCycleUpdate(void)
 					appl.workMode = PWR_ON;
 					appl.LastEvent = JP1_HELD;
 					appl.DispCode= START_CHAR;
-#if 1		
-#if (FOR_DEBUG==1)
-					rprintf("PJ1H\n\n");
-#endif
-#endif
-					
 				}
 			}
 			else if(appl.ModeTimer == TIMER_TIMEOUT)
@@ -173,87 +159,109 @@ void AppCycleUpdate(void)
 			{
 				if(ButtonJMP2ReleasedEvent())
 				{
-					if(--appl.DispCode < CURRENT_VALUE)
-					{
-						appl.DispCode = REMOTE_ADDR;
-					}
-					
 					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
 					appl.workMode = SETTING; 			/* convert to SETTING */
 					appl.LastEvent = JP2_PRESS;			/* update  LastEvent */
-					
-#if 1		
-#if (FOR_DEBUG==1)
-					rprintf("NJ2R\n\n");
-#endif
-#endif
 				}
 				else if(ButtonJMP1ReleasedEvent())
 				{
-					//rprintf("JMP1\n");
-					//LEDFlag1Off();
-					//LEDFlag2Off();
-					//SSDDisplayHex(0x1abc, SSD_0HZ, SSD_RED);
 				}
 			}
 			else if(ButtonGetHeld())
 			{
 				if(ButtonJMP2HeldEvent())//(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/2) == 0))
 				{
-					if(++appl.DispCode > REMOTE_ADDR)
-					{
-						appl.DispCode = CURRENT_VALUE;
-					}
-					
 					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
 					appl.workMode = SETTING; 			/* convert to SETTING */
 					appl.LastEvent = JP2_HELD;			/* update  LastEvent */
 				}
 				else if(ButtonJMP1HeldEvent())
 				{
-					//rprintf("H-JMP1\n");
-					//LEDFlag1Flash3Hz();
-					//LEDFlag2Flash3Hz();
-					//SSDDisplayHex(0x1def, SSD_3HZ, SSD_RED);
 				}
-#if 1		
-#if (FOR_DEBUG==1)
-				rprintf("NJ2H\n\n");
-#endif
-#endif
 			}
 			else
 			{
-#if 0		
-#if (FOR_DEBUG==1)
-			rprintf("NM\n\n");
-#endif
-#endif
-				//AppDisplay(appl.DispCode,NORMAL);
+				/* Display current material, and display color change according to value compare with user setting */
+				AppDisplay(appl.DispCode,NORMAL);
 			}
 			break;
 			
 		case SETTING:
 			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
 			{
+				if(ButtonGetReleased())
+				{
+					if(ButtonJMP2ReleasedEvent())
+					{
+						if(--appl.DispCode < CURRENT_VALUE)
+						{
+							appl.DispCode = REMOTE_ADDR;
+						}
+						AppDisplay(appl.DispCode,SETTING);
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+						appl.workMode = SETTING;			/* convert to SETTING */
+						appl.LastEvent = JP2_PRESS; 		/* update  LastEvent */
+					}
+					else if(ButtonJMP1ReleasedEvent())
+					{
+						SSDDisplayDec(--appl.FullWarehouse, SSD_0HZ, SSD_GREEN);
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+						appl.workMode = SETTING;			/* convert to SETTING */
+						appl.LastEvent = JP1_PRESS;			/* update  LastEvent */
+					}
+				}
+				else if(ButtonGetHeld())
+				{
+					if(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/6) == 0))	/* fast increase */
+					{
+						if(++appl.DispCode > REMOTE_ADDR)
+						{
+							appl.DispCode = CURRENT_VALUE;
+						}
+						AppDisplay(appl.DispCode,SETTING);
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+						appl.workMode = SETTING;			/* convert to SETTING */
+						appl.LastEvent = JP2_HELD;			/* update  LastEvent */
+					}
+					else if(ButtonJMP1HeldEvent())
+					{
+						SSDDisplayDec(++appl.FullWarehouse, SSD_0HZ, SSD_AMBER);
+						
+						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
+						appl.workMode = SETTING;			/* convert to SETTING */
+						appl.LastEvent = JP1_HELD;			/* update  LastEvent */
+					}
+				}
+				else
+				{
+				
+				}
 			}
 			else if(appl.ModeTimer == TIMER_TIMEOUT)
 			{
 				appl.ModeTimer = TIMER_INT_DISABLED;	/* Disable count */
-				appl.workMode = NORMAL;					/* convert to NORMAL */
+				appl.workMode = NORMAL; 				/* convert to NORMAL */
 				appl.LastEvent = NULL_EVENT;			/* update  LastEvent */
 				appl.DispCode = CURRENT_VALUE;			/* Initial to display material value in setting mode */
 			}
-#if 0		
-#if (FOR_DEBUG==1)
-			rprintf("SET\n\n");
-#endif
-#endif
 			break;
+
 			
 		default:
 			break;						
 	}
+
+#if 1		
+#if (FOR_DEBUG==1)
+	rprintf("wM=%d\n",appl.workMode);
+	rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
+	rprintf("dC=%d\n\n",appl.DispCode);
+	rprintf("lE=%d\n\n",appl.LastEvent);
+#endif
+#endif
 	
 #if 0	
 	if(AppPwrOnCtrl() == true)

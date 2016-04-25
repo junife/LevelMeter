@@ -38,7 +38,7 @@
 *                                       CONST DEFINITION FOR APPLICATION TIME
 *********************************************************************************************************
 */
-#define TIME_CONTENT_SWITCH		(TIMER_1_SEC_60HZ*2)	/* content switch interval after power on, 2s */
+#define TIME_CONTENT_SWITCH		(TIMER_1_SEC_60HZ*1)	/* content switch interval after power on, 2s */
 #define TIME_SWITCH_TOTAL		(TIME_CONTENT_SWITCH*8)	/* content switch total time,items in PWR_ON_STEPS */
 #define TIME_B_HELD_RST			(TIMER_1_SEC_60HZ)		/* press/held button reset to factory defalut  */
 #define TIME_D_CODE_HELD		(TIMER_1_SEC_60HZ*3)	/* time for hold display code after chaneg, 3s */
