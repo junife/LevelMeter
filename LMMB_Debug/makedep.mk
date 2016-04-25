@@ -6,6 +6,8 @@ common_avr-liberty-master_src\buffer.c
 
 common_avr-liberty-master_src\rprintf.c
 
+common_avr-liberty-master_src\timer.c
+
 common_avr-liberty-master_src\uart.c
 
 LMMB_main\appl.c

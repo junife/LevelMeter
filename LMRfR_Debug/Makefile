@@ -49,7 +49,7 @@ C_SRCS +=  \
 ../common_avr-liberty-master_src/glcd.c \
 ../common_avr-liberty-master_src/ks0108.c \
 ../common_avr-liberty-master_src/rprintf.c \
-../common_avr-liberty-master_src/timerx8.c \
+../common_avr-liberty-master_src/timer.c \
 ../common_avr-liberty-master_src/uart.c \
 ../LMRfR_main/appl.c \
 ../LMRfR_main/button_dep.c \
@@ -68,7 +68,7 @@ common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/glcd.o \
 common_avr-liberty-master_src/ks0108.o \
 common_avr-liberty-master_src/rprintf.o \
-common_avr-liberty-master_src/timerx8.o \
+common_avr-liberty-master_src/timer.o \
 common_avr-liberty-master_src/uart.o \
 LMRfR_main/appl.o \
 LMRfR_main/button_dep.o \
@@ -80,7 +80,7 @@ common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/glcd.o \
 common_avr-liberty-master_src/ks0108.o \
 common_avr-liberty-master_src/rprintf.o \
-common_avr-liberty-master_src/timerx8.o \
+common_avr-liberty-master_src/timer.o \
 common_avr-liberty-master_src/uart.o \
 LMRfR_main/appl.o \
 LMRfR_main/button_dep.o \
@@ -92,7 +92,7 @@ common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/glcd.d \
 common_avr-liberty-master_src/ks0108.d \
 common_avr-liberty-master_src/rprintf.d \
-common_avr-liberty-master_src/timerx8.d \
+common_avr-liberty-master_src/timer.d \
 common_avr-liberty-master_src/uart.d \
 LMRfR_main/appl.d \
 LMRfR_main/button_dep.d \
@@ -104,7 +104,7 @@ common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/glcd.d \
 common_avr-liberty-master_src/ks0108.d \
 common_avr-liberty-master_src/rprintf.d \
-common_avr-liberty-master_src/timerx8.d \
+common_avr-liberty-master_src/timer.d \
 common_avr-liberty-master_src/uart.d \
 LMRfR_main/appl.d \
 LMRfR_main/button_dep.d \

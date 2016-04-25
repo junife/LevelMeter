@@ -42,6 +42,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../common_avr-liberty-master_src/buffer.c \
 ../common_avr-liberty-master_src/rprintf.c \
+../common_avr-liberty-master_src/timer.c \
 ../common_avr-liberty-master_src/uart.c \
 ../LMMB_main/appl.c \
 ../LMMB_main/button_dep.c \
@@ -61,6 +62,7 @@ ASM_SRCS +=
 OBJS +=  \
 common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/rprintf.o \
+common_avr-liberty-master_src/timer.o \
 common_avr-liberty-master_src/uart.o \
 LMMB_main/appl.o \
 LMMB_main/button_dep.o \
@@ -73,6 +75,7 @@ LM_button/button.o
 OBJS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/rprintf.o \
+common_avr-liberty-master_src/timer.o \
 common_avr-liberty-master_src/uart.o \
 LMMB_main/appl.o \
 LMMB_main/button_dep.o \
@@ -85,6 +88,7 @@ LM_button/button.o
 C_DEPS +=  \
 common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/rprintf.d \
+common_avr-liberty-master_src/timer.d \
 common_avr-liberty-master_src/uart.d \
 LMMB_main/appl.d \
 LMMB_main/button_dep.d \
@@ -97,6 +101,7 @@ LM_button/button.d
 C_DEPS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/rprintf.d \
+common_avr-liberty-master_src/timer.d \
 common_avr-liberty-master_src/uart.d \
 LMMB_main/appl.d \
 LMMB_main/button_dep.d \
@@ -120,6 +125,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
