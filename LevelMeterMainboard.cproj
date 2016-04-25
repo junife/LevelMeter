@@ -213,6 +213,12 @@
     <Compile Include="common_avr-liberty-master_src\rprintf.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="common_avr-liberty-master_src\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="common_avr-liberty-master_src\timer.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="common_avr-liberty-master_src\uart.c">
       <SubType>compile</SubType>
     </Compile>
