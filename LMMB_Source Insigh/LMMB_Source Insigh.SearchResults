@@ -1,7 +1,13 @@
----- PwrOnSteps Matches (6 in 2 files) ----
-Appl.c (lmmb_main):	appl.PwrOnSteps = DISP_START;
-Appl.c (lmmb_main):			appl.PwrOnSteps = DISP_START;
-Appl.c (lmmb_main):			rprintf("st=%x\n",appl.PwrOnSteps);
-Appl.c (lmmb_main):			switch (appl.PwrOnSteps)
-Appl.c (lmmb_main):			appl.PwrOnSteps++;
-Appl.h (lmmb_main):	PWR_ON_STEPS PwrOnSteps;
+---- delay Matches (12 in 5 files) ----
+Appl.c (lmmb_main)://#include <util/delay.h>
+Appl.c (lmmb_main):	// to use the internal timers to produce a calibrated delay,
+Appl.c (lmmb_main):	rprintf("Here comes a 1/2-second delay...\r\n");
+Main.c (lmmb_main)://#include <util/delay.h>
+Main.c (lmmb_main):	// to use the internal timers to produce a calibrated delay,
+Main.c (lmmb_main):	rprintf("Here comes a 1/2-second delay...\r\n");
+Ssd.c (lmmb_main):#include <util/delay.h>
+Timer.c (common_avr-liberty-master_src):// delay for a minimum of <us> microseconds 
+Timer.c (common_avr-liberty-master_src):	// calculate delay for [pause_ms] milliseconds
+Timer.c (common_avr-liberty-master_src):	// calculate delay for [pause_ms] milliseconds
+Timer.h (common_avr-liberty-master_src):#define delay		delay_us
+Timer.h (common_avr-liberty-master_src):/// A timer-based delay/pause function

@@ -13,7 +13,7 @@
 
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
 #include <avr/pgmspace.h>
-#include <util/delay.h>
+//#include <util/delay.h>
 #include "ssd.h"
 
 #include "uart.h"		// include uart function library

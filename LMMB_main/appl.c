@@ -2,7 +2,7 @@
 #define   SSD_GLOBALS
 #endif
 
-#include <util/delay.h>
+//#include <util/delay.h>
 #include "global.h"		// include our global settings
 #include "uart.h"		// include uart function library
 #include "rprintf.h"	// include printf function library
@@ -35,7 +35,7 @@ static void AppSelfDet(void);
 static void AppUpdateTimers(void);
 static void ApplDataInit(void);
 static void AppDisplay(DISP_CODE DispCode, WORK_MODE mode);
-
+void AppOutputCompare0(void);
 void timerTest(void);
 
 /*
@@ -85,6 +85,8 @@ void ApplInit(void)
 	ApplDataInit();
 	
 	rprintf("Main board here!\n" );	
+
+	timerAttach(TIMER0OUTCOMPARE_INT, AppOutputCompare0);
 }
 
 /*
@@ -262,13 +264,13 @@ void AppCycleUpdate(void)
 
 #if 1		
 #if (FOR_DEBUG==1)
-	rprintf("wM=%d\n",appl.workMode);
-	rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
+	//rprintf("wM=%d\n",appl.workMode);
+	//rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
 	rprintf("dC=%d\n\n",appl.DispCode);
-	rprintf("lE=%d\n\n",appl.LastEvent);
+	//rprintf("lE=%d\n\n",appl.LastEvent);
 #endif
 #endif
-	
+
 #if 0	
 	if(AppPwrOnCtrl() == true)
 	{
@@ -623,6 +625,42 @@ bool AppSelfDetGetResult(void)
 	return false;
 }
 
+/*
+*********************************************************************************************************
+*                                         AppWaitZeroCrossing
+*
+* Description : simulink AC power zero crossing.Simulate zero-crossing for hardware that lacks an AC zero-cross
+*
+* Arguments   : none
+*
+* Returns    : true/false means failed or pass
+*********************************************************************************************************
+*/
+void AppWaitZeroCrossing(void)
+{
+	while(appl.fSysPwrZC == 0);
+	appl.fSysPwrZC = 0;
+	PORTD ^= (1<<PD4);
+}
+
+/*
+*********************************************************************************************************
+*                                         AppOutputCompare0
+*
+* Description : simulink AC power zero crossing.Simulate zero-crossing for hardware that lacks an AC zero-cross
+*
+* Arguments   : none
+*
+* Returns    : true/false means failed or pass
+*********************************************************************************************************
+*/
+void AppOutputCompare0(void)
+{
+	//PORTD ^= (1<<PD4);
+	OCR0 = TCNT0 + CYCLEN_60HZ;
+	appl.fSysPwrZC = 1;
+}
+
 void timerTest(void)
 {
 	// print a little intro message so we know things are working
@@ -638,7 +676,7 @@ void timerTest(void)
 	// example: wait for 1/2 of a second, or 500ms
 	rprintf("\r\nTest of timerPause() function\r\n");
 	rprintf("Here comes a 1/2-second delay...\r\n");
-	timerPause(500);
+	//timerPause(500);
 	rprintf("Done!\r\n");
 
 
@@ -655,8 +693,10 @@ void timerTest(void)
 	sbi(DDRD, PD4);
 	sbi(DDRD, PD5);
 
+#if 0
 	// initialize timer1 for PWM output
 	// - you may use 8,9, or 10 bit PWM resolution
+	// phase correct PWM mode, FREQpwm=F_CPU/(2*N*TOP)
 	rprintf("Initializing timer1 for PWM\r\n");
 	timer1PWMInit(8);
 
@@ -668,13 +708,14 @@ void timerTest(void)
 	// set the duty cycle of the channel A output
 	// - let's try 25% duty, or 256*25% = 64
 	rprintf("Setting duty cycle to 25%%\r\n");
-	timer1PWMASet(254);
+	timer1PWMASet(50);
 
 	// turn on channel B and set it to 75% duty cycle
 	rprintf("Turning on channel B too, with 75%% duty\r\n");
 	timer1PWMBOn();
-	timer1PWMBSet(1);
-	
+	timer1PWMBSet(120);
+#endif
+
 #if 0
 	// wait for 5 seconds
 	rprintf("Pause for 5 seconds...\r\n");
