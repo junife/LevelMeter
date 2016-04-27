@@ -3,31 +3,31 @@ LevelMeterMainboard.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000010c4  00000000  00000000  00000074  2**1
+  0 .text         000010e2  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00001138  2**0
+  1 .data         00000000  00800060  00800060  00001156  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          000000f5  00800060  00800060  00001138  2**0
+  2 .bss          000000f6  00800060  00800060  00001156  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00001138  2**0
+  3 .comment      00000030  00000000  00000000  00001156  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001168  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001188  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000458  00000000  00000000  000011a4  2**0
+  5 .debug_aranges 000004c0  00000000  00000000  000011c4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000304f  00000000  00000000  000015fc  2**0
+  6 .debug_info   0000327f  00000000  00000000  00001684  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 0000116a  00000000  00000000  0000464b  2**0
+  7 .debug_abbrev 0000128a  00000000  00000000  00004903  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000011a2  00000000  00000000  000057b5  2**0
+  8 .debug_line   00001315  00000000  00000000  00005b8d  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000c54  00000000  00000000  00006958  2**2
+  9 .debug_frame  00000d18  00000000  00000000  00006ea4  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000010fd  00000000  00000000  000075ac  2**0
+ 10 .debug_str    000011ba  00000000  00000000  00007bbc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000211c  00000000  00000000  000086a9  2**0
+ 11 .debug_loc    000021fd  00000000  00000000  00008d76  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000003b8  00000000  00000000  0000a7c5  2**0
+ 12 .debug_ranges 00000410  00000000  00000000  0000af73  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -36,32 +36,32 @@ Disassembly of section .text:
        0:	0c 94 9f 00 	jmp	0x13e	; 0x13e <__ctors_end>
        4:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
        8:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
-       c:	0c 94 99 03 	jmp	0x732	; 0x732 <__vector_3>
-      10:	0c 94 a5 02 	jmp	0x54a	; 0x54a <__vector_4>
-      14:	0c 94 6c 03 	jmp	0x6d8	; 0x6d8 <__vector_5>
-      18:	0c 94 12 03 	jmp	0x624	; 0x624 <__vector_6>
-      1c:	0c 94 3f 03 	jmp	0x67e	; 0x67e <__vector_7>
-      20:	0c 94 78 02 	jmp	0x4f0	; 0x4f0 <__vector_8>
-      24:	0c 94 25 02 	jmp	0x44a	; 0x44a <__vector_9>
+       c:	0c 94 a8 03 	jmp	0x750	; 0x750 <__vector_3>
+      10:	0c 94 b4 02 	jmp	0x568	; 0x568 <__vector_4>
+      14:	0c 94 7b 03 	jmp	0x6f6	; 0x6f6 <__vector_5>
+      18:	0c 94 21 03 	jmp	0x642	; 0x642 <__vector_6>
+      1c:	0c 94 4e 03 	jmp	0x69c	; 0x69c <__vector_7>
+      20:	0c 94 87 02 	jmp	0x50e	; 0x50e <__vector_8>
+      24:	0c 94 34 02 	jmp	0x468	; 0x468 <__vector_9>
       28:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
-      2c:	0c 94 4f 04 	jmp	0x89e	; 0x89e <__vector_11>
+      2c:	0c 94 5e 04 	jmp	0x8bc	; 0x8bc <__vector_11>
       30:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
-      34:	0c 94 18 04 	jmp	0x830	; 0x830 <__vector_13>
-      38:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
+      34:	0c 94 27 04 	jmp	0x84e	; 0x84e <__vector_13>
+      38:	0c 94 b3 00 	jmp	0x166	; 0x166 <__vector_14>
       3c:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
       40:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
       44:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
       48:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
-      4c:	0c 94 e5 02 	jmp	0x5ca	; 0x5ca <__vector_19>
+      4c:	0c 94 f4 02 	jmp	0x5e8	; 0x5e8 <__vector_19>
       50:	0c 94 b1 00 	jmp	0x162	; 0x162 <__bad_interrupt>
-      54:	a2 04       	cpc	r10, r2
-      56:	a5 04       	cpc	r10, r5
-      58:	a8 04       	cpc	r10, r8
-      5a:	ab 04       	cpc	r10, r11
-      5c:	ae 04       	cpc	r10, r14
-      5e:	b1 04       	cpc	r11, r1
-      60:	b4 04       	cpc	r11, r4
-      62:	b7 04       	cpc	r11, r7
+      54:	b1 04       	cpc	r11, r1
+      56:	b4 04       	cpc	r11, r4
+      58:	b7 04       	cpc	r11, r7
+      5a:	ba 04       	cpc	r11, r10
+      5c:	bd 04       	cpc	r11, r13
+      5e:	c0 04       	cpc	r12, r0
+      60:	c3 04       	cpc	r12, r3
+      62:	c6 04       	cpc	r12, r6
 
 00000064 <__trampolines_end>:
       64:	30 31       	cpi	r19, 0x10	; 16
@@ -126,3058 +126,3083 @@ Disassembly of section .text:
      152:	1d 92       	st	X+, r1
 
 00000154 <.do_clear_bss_start>:
-     154:	a5 35       	cpi	r26, 0x55	; 85
+     154:	a6 35       	cpi	r26, 0x56	; 86
      156:	b2 07       	cpc	r27, r18
      158:	e1 f7       	brne	.-8      	; 0x152 <.do_clear_bss_loop>
-     15a:	0e 94 cb 06 	call	0xd96	; 0xd96 <main>
-     15e:	0c 94 60 08 	jmp	0x10c0	; 0x10c0 <_exit>
+     15a:	0e 94 da 06 	call	0xdb4	; 0xdb4 <main>
+     15e:	0c 94 6f 08 	jmp	0x10de	; 0x10de <_exit>
 
 00000162 <__bad_interrupt>:
      162:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-00000166 <bufferInit>:
+00000166 <__vector_14>:
+	return a2dConvert10bit(ch)>>2;			// return ADC MSB byte
+}
+
+//! Interrupt handler for ADC complete interrupt.
+SIGNAL(ADC_vect)
+{
+     166:	1f 92       	push	r1
+     168:	0f 92       	push	r0
+     16a:	0f b6       	in	r0, 0x3f	; 63
+     16c:	0f 92       	push	r0
+     16e:	11 24       	eor	r1, r1
+     170:	8f 93       	push	r24
+	// set the a2d conversion flag to indicate "complete"
+	a2dCompleteFlag = TRUE;
+     172:	8f ef       	ldi	r24, 0xFF	; 255
+     174:	80 93 f6 00 	sts	0x00F6, r24
+}
+     178:	8f 91       	pop	r24
+     17a:	0f 90       	pop	r0
+     17c:	0f be       	out	0x3f, r0	; 63
+     17e:	0f 90       	pop	r0
+     180:	1f 90       	pop	r1
+     182:	18 95       	reti
+
+00000184 <bufferInit>:
 // global variables
 
 // initialization
 
 void bufferInit(cBuffer* buffer, unsigned char *start, unsigned short size)
 {
-     166:	fc 01       	movw	r30, r24
+     184:	fc 01       	movw	r30, r24
 	// begin critical section
 	CRITICAL_SECTION_START;
-     168:	8f b7       	in	r24, 0x3f	; 63
-     16a:	f8 94       	cli
+     186:	8f b7       	in	r24, 0x3f	; 63
+     188:	f8 94       	cli
 	// set start pointer of the buffer
 	buffer->dataptr = start;
-     16c:	71 83       	std	Z+1, r23	; 0x01
-     16e:	60 83       	st	Z, r22
+     18a:	71 83       	std	Z+1, r23	; 0x01
+     18c:	60 83       	st	Z, r22
 	buffer->size = size;
-     170:	53 83       	std	Z+3, r21	; 0x03
-     172:	42 83       	std	Z+2, r20	; 0x02
+     18e:	53 83       	std	Z+3, r21	; 0x03
+     190:	42 83       	std	Z+2, r20	; 0x02
 	// initialize index and length
 	buffer->dataindex = 0;
-     174:	17 82       	std	Z+7, r1	; 0x07
-     176:	16 82       	std	Z+6, r1	; 0x06
+     192:	17 82       	std	Z+7, r1	; 0x07
+     194:	16 82       	std	Z+6, r1	; 0x06
 	buffer->datalength = 0;
-     178:	15 82       	std	Z+5, r1	; 0x05
-     17a:	14 82       	std	Z+4, r1	; 0x04
+     196:	15 82       	std	Z+5, r1	; 0x05
+     198:	14 82       	std	Z+4, r1	; 0x04
 	// end critical section
 	CRITICAL_SECTION_END;
-     17c:	8f bf       	out	0x3f, r24	; 63
-     17e:	08 95       	ret
+     19a:	8f bf       	out	0x3f, r24	; 63
+     19c:	08 95       	ret
 
-00000180 <bufferGetFromFront>:
+0000019e <bufferGetFromFront>:
 }
 
 // access routines
 unsigned char  bufferGetFromFront(cBuffer* buffer)
 {
-     180:	fc 01       	movw	r30, r24
+     19e:	fc 01       	movw	r30, r24
 	unsigned char data = 0;
 	// begin critical section
 	CRITICAL_SECTION_START;
-     182:	9f b7       	in	r25, 0x3f	; 63
-     184:	f8 94       	cli
+     1a0:	9f b7       	in	r25, 0x3f	; 63
+     1a2:	f8 94       	cli
 	// check to see if there's data in the buffer
 	if(buffer->datalength)
-     186:	44 81       	ldd	r20, Z+4	; 0x04
-     188:	55 81       	ldd	r21, Z+5	; 0x05
-     18a:	41 15       	cp	r20, r1
-     18c:	51 05       	cpc	r21, r1
-     18e:	c9 f0       	breq	.+50     	; 0x1c2 <bufferGetFromFront+0x42>
+     1a4:	44 81       	ldd	r20, Z+4	; 0x04
+     1a6:	55 81       	ldd	r21, Z+5	; 0x05
+     1a8:	41 15       	cp	r20, r1
+     1aa:	51 05       	cpc	r21, r1
+     1ac:	c9 f0       	breq	.+50     	; 0x1e0 <bufferGetFromFront+0x42>
 	{
 		// get the first character from buffer
 		data = buffer->dataptr[buffer->dataindex];
-     190:	26 81       	ldd	r18, Z+6	; 0x06
-     192:	37 81       	ldd	r19, Z+7	; 0x07
-     194:	a0 81       	ld	r26, Z
-     196:	b1 81       	ldd	r27, Z+1	; 0x01
-     198:	a2 0f       	add	r26, r18
-     19a:	b3 1f       	adc	r27, r19
-     19c:	8c 91       	ld	r24, X
+     1ae:	26 81       	ldd	r18, Z+6	; 0x06
+     1b0:	37 81       	ldd	r19, Z+7	; 0x07
+     1b2:	a0 81       	ld	r26, Z
+     1b4:	b1 81       	ldd	r27, Z+1	; 0x01
+     1b6:	a2 0f       	add	r26, r18
+     1b8:	b3 1f       	adc	r27, r19
+     1ba:	8c 91       	ld	r24, X
 		// move index down and decrement length
 		buffer->dataindex++;
-     19e:	2f 5f       	subi	r18, 0xFF	; 255
-     1a0:	3f 4f       	sbci	r19, 0xFF	; 255
-     1a2:	37 83       	std	Z+7, r19	; 0x07
-     1a4:	26 83       	std	Z+6, r18	; 0x06
+     1bc:	2f 5f       	subi	r18, 0xFF	; 255
+     1be:	3f 4f       	sbci	r19, 0xFF	; 255
+     1c0:	37 83       	std	Z+7, r19	; 0x07
+     1c2:	26 83       	std	Z+6, r18	; 0x06
 		if(buffer->dataindex >= buffer->size)
-     1a6:	62 81       	ldd	r22, Z+2	; 0x02
-     1a8:	73 81       	ldd	r23, Z+3	; 0x03
-     1aa:	26 17       	cp	r18, r22
-     1ac:	37 07       	cpc	r19, r23
-     1ae:	20 f0       	brcs	.+8      	; 0x1b8 <bufferGetFromFront+0x38>
+     1c4:	62 81       	ldd	r22, Z+2	; 0x02
+     1c6:	73 81       	ldd	r23, Z+3	; 0x03
+     1c8:	26 17       	cp	r18, r22
+     1ca:	37 07       	cpc	r19, r23
+     1cc:	20 f0       	brcs	.+8      	; 0x1d6 <bufferGetFromFront+0x38>
 		{
 			buffer->dataindex -= buffer->size;
-     1b0:	26 1b       	sub	r18, r22
-     1b2:	37 0b       	sbc	r19, r23
-     1b4:	37 83       	std	Z+7, r19	; 0x07
-     1b6:	26 83       	std	Z+6, r18	; 0x06
+     1ce:	26 1b       	sub	r18, r22
+     1d0:	37 0b       	sbc	r19, r23
+     1d2:	37 83       	std	Z+7, r19	; 0x07
+     1d4:	26 83       	std	Z+6, r18	; 0x06
 		}
 		buffer->datalength--;
-     1b8:	41 50       	subi	r20, 0x01	; 1
-     1ba:	51 09       	sbc	r21, r1
-     1bc:	55 83       	std	Z+5, r21	; 0x05
-     1be:	44 83       	std	Z+4, r20	; 0x04
-     1c0:	01 c0       	rjmp	.+2      	; 0x1c4 <bufferGetFromFront+0x44>
+     1d6:	41 50       	subi	r20, 0x01	; 1
+     1d8:	51 09       	sbc	r21, r1
+     1da:	55 83       	std	Z+5, r21	; 0x05
+     1dc:	44 83       	std	Z+4, r20	; 0x04
+     1de:	01 c0       	rjmp	.+2      	; 0x1e2 <bufferGetFromFront+0x44>
 }
 
 // access routines
 unsigned char  bufferGetFromFront(cBuffer* buffer)
 {
 	unsigned char data = 0;
-     1c2:	80 e0       	ldi	r24, 0x00	; 0
+     1e0:	80 e0       	ldi	r24, 0x00	; 0
 			buffer->dataindex -= buffer->size;
 		}
 		buffer->datalength--;
 	}
 	// end critical section
 	CRITICAL_SECTION_END;
-     1c4:	9f bf       	out	0x3f, r25	; 63
+     1e2:	9f bf       	out	0x3f, r25	; 63
 	// return
 	return data;
 }
-     1c6:	08 95       	ret
+     1e4:	08 95       	ret
 
-000001c8 <bufferAddToEnd>:
+000001e6 <bufferAddToEnd>:
 	CRITICAL_SECTION_END;
 	return data;
 }
 
 unsigned char bufferAddToEnd(cBuffer* buffer, unsigned char data)
 {
-     1c8:	fc 01       	movw	r30, r24
-     1ca:	36 2f       	mov	r19, r22
+     1e6:	fc 01       	movw	r30, r24
+     1e8:	36 2f       	mov	r19, r22
 	// begin critical section
 	CRITICAL_SECTION_START;
-     1cc:	2f b7       	in	r18, 0x3f	; 63
-     1ce:	f8 94       	cli
+     1ea:	2f b7       	in	r18, 0x3f	; 63
+     1ec:	f8 94       	cli
 	// make sure the buffer has room
 	if(buffer->datalength < buffer->size)
-     1d0:	a4 81       	ldd	r26, Z+4	; 0x04
-     1d2:	b5 81       	ldd	r27, Z+5	; 0x05
-     1d4:	62 81       	ldd	r22, Z+2	; 0x02
-     1d6:	73 81       	ldd	r23, Z+3	; 0x03
-     1d8:	a6 17       	cp	r26, r22
-     1da:	b7 07       	cpc	r27, r23
-     1dc:	98 f4       	brcc	.+38     	; 0x204 <bufferAddToEnd+0x3c>
+     1ee:	a4 81       	ldd	r26, Z+4	; 0x04
+     1f0:	b5 81       	ldd	r27, Z+5	; 0x05
+     1f2:	62 81       	ldd	r22, Z+2	; 0x02
+     1f4:	73 81       	ldd	r23, Z+3	; 0x03
+     1f6:	a6 17       	cp	r26, r22
+     1f8:	b7 07       	cpc	r27, r23
+     1fa:	98 f4       	brcc	.+38     	; 0x222 <bufferAddToEnd+0x3c>
 	{
 		// save data byte at end of buffer
 		buffer->dataptr[(buffer->dataindex + buffer->datalength) % buffer->size] = data;
-     1de:	86 81       	ldd	r24, Z+6	; 0x06
-     1e0:	97 81       	ldd	r25, Z+7	; 0x07
-     1e2:	8a 0f       	add	r24, r26
-     1e4:	9b 1f       	adc	r25, r27
-     1e6:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     1ea:	a0 81       	ld	r26, Z
-     1ec:	b1 81       	ldd	r27, Z+1	; 0x01
-     1ee:	a8 0f       	add	r26, r24
-     1f0:	b9 1f       	adc	r27, r25
-     1f2:	3c 93       	st	X, r19
+     1fc:	86 81       	ldd	r24, Z+6	; 0x06
+     1fe:	97 81       	ldd	r25, Z+7	; 0x07
+     200:	8a 0f       	add	r24, r26
+     202:	9b 1f       	adc	r25, r27
+     204:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     208:	a0 81       	ld	r26, Z
+     20a:	b1 81       	ldd	r27, Z+1	; 0x01
+     20c:	a8 0f       	add	r26, r24
+     20e:	b9 1f       	adc	r27, r25
+     210:	3c 93       	st	X, r19
 		// increment the length
 		buffer->datalength++;
-     1f4:	84 81       	ldd	r24, Z+4	; 0x04
-     1f6:	95 81       	ldd	r25, Z+5	; 0x05
-     1f8:	01 96       	adiw	r24, 0x01	; 1
-     1fa:	95 83       	std	Z+5, r25	; 0x05
-     1fc:	84 83       	std	Z+4, r24	; 0x04
+     212:	84 81       	ldd	r24, Z+4	; 0x04
+     214:	95 81       	ldd	r25, Z+5	; 0x05
+     216:	01 96       	adiw	r24, 0x01	; 1
+     218:	95 83       	std	Z+5, r25	; 0x05
+     21a:	84 83       	std	Z+4, r24	; 0x04
 		// end critical section
 		CRITICAL_SECTION_END;
-     1fe:	2f bf       	out	0x3f, r18	; 63
+     21c:	2f bf       	out	0x3f, r18	; 63
 		// return success
 		return -1;
-     200:	8f ef       	ldi	r24, 0xFF	; 255
-     202:	08 95       	ret
+     21e:	8f ef       	ldi	r24, 0xFF	; 255
+     220:	08 95       	ret
 	}
 	// end critical section
 	CRITICAL_SECTION_END;
-     204:	2f bf       	out	0x3f, r18	; 63
+     222:	2f bf       	out	0x3f, r18	; 63
 	// return failure
 	return 0;
-     206:	80 e0       	ldi	r24, 0x00	; 0
+     224:	80 e0       	ldi	r24, 0x00	; 0
 }
-     208:	08 95       	ret
+     226:	08 95       	ret
 
-0000020a <rprintfInit>:
+00000228 <rprintfInit>:
 // *** rprintf initialization ***
 // you must call this function once and supply the character output
 // routine before using other functions in this library
 void rprintfInit(void (*putchar_func)(unsigned char c))
 {
 	rputchar = putchar_func;
-     20a:	90 93 61 00 	sts	0x0061, r25
-     20e:	80 93 60 00 	sts	0x0060, r24
-     212:	08 95       	ret
+     228:	90 93 61 00 	sts	0x0061, r25
+     22c:	80 93 60 00 	sts	0x0060, r24
+     230:	08 95       	ret
 
-00000214 <rprintfChar>:
+00000232 <rprintfChar>:
 }
 
 // *** rprintfChar ***
 // send a character/byte to the current output device
 void rprintfChar(unsigned char c)
 {
-     214:	cf 93       	push	r28
-     216:	c8 2f       	mov	r28, r24
+     232:	cf 93       	push	r28
+     234:	c8 2f       	mov	r28, r24
 	// do LF -> CR/LF translation
 	if(c == '\n')
-     218:	8a 30       	cpi	r24, 0x0A	; 10
-     21a:	31 f4       	brne	.+12     	; 0x228 <rprintfChar+0x14>
+     236:	8a 30       	cpi	r24, 0x0A	; 10
+     238:	31 f4       	brne	.+12     	; 0x246 <rprintfChar+0x14>
 		rputchar('\r');
-     21c:	e0 91 60 00 	lds	r30, 0x0060
-     220:	f0 91 61 00 	lds	r31, 0x0061
-     224:	8d e0       	ldi	r24, 0x0D	; 13
-     226:	09 95       	icall
+     23a:	e0 91 60 00 	lds	r30, 0x0060
+     23e:	f0 91 61 00 	lds	r31, 0x0061
+     242:	8d e0       	ldi	r24, 0x0D	; 13
+     244:	09 95       	icall
 	// send character
 	rputchar(c);
-     228:	e0 91 60 00 	lds	r30, 0x0060
-     22c:	f0 91 61 00 	lds	r31, 0x0061
-     230:	8c 2f       	mov	r24, r28
+     246:	e0 91 60 00 	lds	r30, 0x0060
+     24a:	f0 91 61 00 	lds	r31, 0x0061
+     24e:	8c 2f       	mov	r24, r28
 }
-     232:	cf 91       	pop	r28
+     250:	cf 91       	pop	r28
 {
 	// do LF -> CR/LF translation
 	if(c == '\n')
 		rputchar('\r');
 	// send character
 	rputchar(c);
-     234:	09 94       	ijmp
+     252:	09 94       	ijmp
 
-00000236 <rprintfu04>:
+00000254 <rprintfu04>:
 //	char Character = data&0x0f;
 //	if (Character>9)
 //		Character+='A'-10;
 //	else
 //		Character+='0';
 	rprintfChar(hexchar(data));
-     236:	8f 70       	andi	r24, 0x0F	; 15
-     238:	e8 2f       	mov	r30, r24
-     23a:	f0 e0       	ldi	r31, 0x00	; 0
-     23c:	ec 59       	subi	r30, 0x9C	; 156
-     23e:	ff 4f       	sbci	r31, 0xFF	; 255
-     240:	84 91       	lpm	r24, Z
-     242:	0c 94 0a 01 	jmp	0x214	; 0x214 <rprintfChar>
+     254:	8f 70       	andi	r24, 0x0F	; 15
+     256:	e8 2f       	mov	r30, r24
+     258:	f0 e0       	ldi	r31, 0x00	; 0
+     25a:	ec 59       	subi	r30, 0x9C	; 156
+     25c:	ff 4f       	sbci	r31, 0xFF	; 255
+     25e:	84 91       	lpm	r24, Z
+     260:	0c 94 19 01 	jmp	0x232	; 0x232 <rprintfChar>
 
-00000246 <rprintf1RamRom>:
+00000264 <rprintf1RamRom>:
 // Supports:
 // %d - decimal
 // %x - hex
 // %c - character
 int rprintf1RamRom(unsigned char stringInRom, const char *format, ...)
 {
-     246:	5f 92       	push	r5
-     248:	6f 92       	push	r6
-     24a:	7f 92       	push	r7
-     24c:	8f 92       	push	r8
-     24e:	9f 92       	push	r9
-     250:	af 92       	push	r10
-     252:	bf 92       	push	r11
-     254:	cf 92       	push	r12
-     256:	df 92       	push	r13
-     258:	ef 92       	push	r14
-     25a:	ff 92       	push	r15
-     25c:	0f 93       	push	r16
-     25e:	1f 93       	push	r17
-     260:	cf 93       	push	r28
-     262:	df 93       	push	r29
-     264:	1f 92       	push	r1
-     266:	cd b7       	in	r28, 0x3d	; 61
-     268:	de b7       	in	r29, 0x3e	; 62
-     26a:	ec 89       	ldd	r30, Y+20	; 0x14
-     26c:	fd 89       	ldd	r31, Y+21	; 0x15
+     264:	5f 92       	push	r5
+     266:	6f 92       	push	r6
+     268:	7f 92       	push	r7
+     26a:	8f 92       	push	r8
+     26c:	9f 92       	push	r9
+     26e:	af 92       	push	r10
+     270:	bf 92       	push	r11
+     272:	cf 92       	push	r12
+     274:	df 92       	push	r13
+     276:	ef 92       	push	r14
+     278:	ff 92       	push	r15
+     27a:	0f 93       	push	r16
+     27c:	1f 93       	push	r17
+     27e:	cf 93       	push	r28
+     280:	df 93       	push	r29
+     282:	1f 92       	push	r1
+     284:	cd b7       	in	r28, 0x3d	; 61
+     286:	de b7       	in	r29, 0x3e	; 62
+     288:	ec 89       	ldd	r30, Y+20	; 0x14
+     28a:	fd 89       	ldd	r31, Y+21	; 0x15
 	//static char HexChars[16] = "0123456789ABCDEF";
 	char format_flag;
 	unsigned int u_val, div_val, base;
 	va_list ap;
 
 	va_start(ap, format);
-     26e:	3e 01       	movw	r6, r28
-     270:	26 e1       	ldi	r18, 0x16	; 22
-     272:	62 0e       	add	r6, r18
-     274:	71 1c       	adc	r7, r1
+     28c:	3e 01       	movw	r6, r28
+     28e:	26 e1       	ldi	r18, 0x16	; 22
+     290:	62 0e       	add	r6, r18
+     292:	71 1c       	adc	r7, r1
 				if (((int)u_val) < 0)
 				{
 					u_val = - u_val;
 					rprintfChar('-');
 				}
 				while (div_val > 1 && div_val > u_val) div_val /= 10;
-     276:	3a e0       	ldi	r19, 0x0A	; 10
-     278:	a3 2e       	mov	r10, r19
-     27a:	b1 2c       	mov	r11, r1
+     294:	3a e0       	ldi	r19, 0x0A	; 10
+     296:	a3 2e       	mov	r10, r19
+     298:	b1 2c       	mov	r11, r1
 	va_list ap;
 
 	va_start(ap, format);
 	for (;;)
 	{
 		while ((format_flag = READMEMBYTE(stringInRom,format++) ) != '%')
-     27c:	3b 89       	ldd	r19, Y+19	; 0x13
-     27e:	33 23       	and	r19, r19
-     280:	81 f0       	breq	.+32     	; 0x2a2 <rprintf1RamRom+0x5c>
-     282:	8f 01       	movw	r16, r30
-     284:	0f 5f       	subi	r16, 0xFF	; 255
-     286:	1f 4f       	sbci	r17, 0xFF	; 255
-     288:	84 91       	lpm	r24, Z
-     28a:	85 32       	cpi	r24, 0x25	; 37
-     28c:	89 f0       	breq	.+34     	; 0x2b0 <rprintf1RamRom+0x6a>
+     29a:	3b 89       	ldd	r19, Y+19	; 0x13
+     29c:	33 23       	and	r19, r19
+     29e:	81 f0       	breq	.+32     	; 0x2c0 <rprintf1RamRom+0x5c>
+     2a0:	8f 01       	movw	r16, r30
+     2a2:	0f 5f       	subi	r16, 0xFF	; 255
+     2a4:	1f 4f       	sbci	r17, 0xFF	; 255
+     2a6:	84 91       	lpm	r24, Z
+     2a8:	85 32       	cpi	r24, 0x25	; 37
+     2aa:	89 f0       	breq	.+34     	; 0x2ce <rprintf1RamRom+0x6a>
 		{	// Until '%' or '\0'
 			if (!format_flag)
-     28e:	88 23       	and	r24, r24
-     290:	09 f4       	brne	.+2      	; 0x294 <rprintf1RamRom+0x4e>
-     292:	66 c0       	rjmp	.+204    	; 0x360 <rprintf1RamRom+0x11a>
+     2ac:	88 23       	and	r24, r24
+     2ae:	09 f4       	brne	.+2      	; 0x2b2 <rprintf1RamRom+0x4e>
+     2b0:	66 c0       	rjmp	.+204    	; 0x37e <rprintf1RamRom+0x11a>
 			{
 				va_end(ap);
 				return(0);
 			}
 			rprintfChar(format_flag);
-     294:	0e 94 0a 01 	call	0x214	; 0x214 <rprintfChar>
-     298:	63 01       	movw	r12, r6
-     29a:	78 01       	movw	r14, r16
+     2b2:	0e 94 19 01 	call	0x232	; 0x232 <rprintfChar>
+     2b6:	63 01       	movw	r12, r6
+     2b8:	78 01       	movw	r14, r16
 		}
 
 		switch (format_flag = READMEMBYTE(stringInRom,format++) )
 		{
 			case 'c': format_flag = va_arg(ap,int);
 			default:  rprintfChar(format_flag); continue;
-     29c:	36 01       	movw	r6, r12
-     29e:	f7 01       	movw	r30, r14
-     2a0:	ed cf       	rjmp	.-38     	; 0x27c <rprintf1RamRom+0x36>
+     2ba:	36 01       	movw	r6, r12
+     2bc:	f7 01       	movw	r30, r14
+     2be:	ed cf       	rjmp	.-38     	; 0x29a <rprintf1RamRom+0x36>
 	va_list ap;
 
 	va_start(ap, format);
 	for (;;)
 	{
 		while ((format_flag = READMEMBYTE(stringInRom,format++) ) != '%')
-     2a2:	80 81       	ld	r24, Z
-     2a4:	85 32       	cpi	r24, 0x25	; 37
-     2a6:	59 f0       	breq	.+22     	; 0x2be <rprintf1RamRom+0x78>
-     2a8:	8f 01       	movw	r16, r30
-     2aa:	0f 5f       	subi	r16, 0xFF	; 255
-     2ac:	1f 4f       	sbci	r17, 0xFF	; 255
-     2ae:	ef cf       	rjmp	.-34     	; 0x28e <rprintf1RamRom+0x48>
+     2c0:	80 81       	ld	r24, Z
+     2c2:	85 32       	cpi	r24, 0x25	; 37
+     2c4:	59 f0       	breq	.+22     	; 0x2dc <rprintf1RamRom+0x78>
+     2c6:	8f 01       	movw	r16, r30
+     2c8:	0f 5f       	subi	r16, 0xFF	; 255
+     2ca:	1f 4f       	sbci	r17, 0xFF	; 255
+     2cc:	ef cf       	rjmp	.-34     	; 0x2ac <rprintf1RamRom+0x48>
 				return(0);
 			}
 			rprintfChar(format_flag);
 		}
 
 		switch (format_flag = READMEMBYTE(stringInRom,format++) )
-     2b0:	7f 01       	movw	r14, r30
-     2b2:	82 e0       	ldi	r24, 0x02	; 2
-     2b4:	e8 0e       	add	r14, r24
-     2b6:	f1 1c       	adc	r15, r1
-     2b8:	f8 01       	movw	r30, r16
-     2ba:	84 91       	lpm	r24, Z
-     2bc:	05 c0       	rjmp	.+10     	; 0x2c8 <rprintf1RamRom+0x82>
-     2be:	7f 01       	movw	r14, r30
-     2c0:	22 e0       	ldi	r18, 0x02	; 2
-     2c2:	e2 0e       	add	r14, r18
-     2c4:	f1 1c       	adc	r15, r1
-     2c6:	81 81       	ldd	r24, Z+1	; 0x01
-     2c8:	84 36       	cpi	r24, 0x64	; 100
-     2ca:	a1 f0       	breq	.+40     	; 0x2f4 <rprintf1RamRom+0xae>
-     2cc:	88 37       	cpi	r24, 0x78	; 120
-     2ce:	61 f0       	breq	.+24     	; 0x2e8 <rprintf1RamRom+0xa2>
-     2d0:	83 36       	cpi	r24, 0x63	; 99
-     2d2:	31 f4       	brne	.+12     	; 0x2e0 <rprintf1RamRom+0x9a>
+     2ce:	7f 01       	movw	r14, r30
+     2d0:	82 e0       	ldi	r24, 0x02	; 2
+     2d2:	e8 0e       	add	r14, r24
+     2d4:	f1 1c       	adc	r15, r1
+     2d6:	f8 01       	movw	r30, r16
+     2d8:	84 91       	lpm	r24, Z
+     2da:	05 c0       	rjmp	.+10     	; 0x2e6 <rprintf1RamRom+0x82>
+     2dc:	7f 01       	movw	r14, r30
+     2de:	22 e0       	ldi	r18, 0x02	; 2
+     2e0:	e2 0e       	add	r14, r18
+     2e2:	f1 1c       	adc	r15, r1
+     2e4:	81 81       	ldd	r24, Z+1	; 0x01
+     2e6:	84 36       	cpi	r24, 0x64	; 100
+     2e8:	a1 f0       	breq	.+40     	; 0x312 <rprintf1RamRom+0xae>
+     2ea:	88 37       	cpi	r24, 0x78	; 120
+     2ec:	61 f0       	breq	.+24     	; 0x306 <rprintf1RamRom+0xa2>
+     2ee:	83 36       	cpi	r24, 0x63	; 99
+     2f0:	31 f4       	brne	.+12     	; 0x2fe <rprintf1RamRom+0x9a>
 		{
 			case 'c': format_flag = va_arg(ap,int);
-     2d4:	f3 01       	movw	r30, r6
-     2d6:	80 81       	ld	r24, Z
-     2d8:	93 01       	movw	r18, r6
-     2da:	2e 5f       	subi	r18, 0xFE	; 254
-     2dc:	3f 4f       	sbci	r19, 0xFF	; 255
-     2de:	39 01       	movw	r6, r18
+     2f2:	f3 01       	movw	r30, r6
+     2f4:	80 81       	ld	r24, Z
+     2f6:	93 01       	movw	r18, r6
+     2f8:	2e 5f       	subi	r18, 0xFE	; 254
+     2fa:	3f 4f       	sbci	r19, 0xFF	; 255
+     2fc:	39 01       	movw	r6, r18
 			default:  rprintfChar(format_flag); continue;
-     2e0:	0e 94 0a 01 	call	0x214	; 0x214 <rprintfChar>
-     2e4:	63 01       	movw	r12, r6
-     2e6:	da cf       	rjmp	.-76     	; 0x29c <rprintf1RamRom+0x56>
+     2fe:	0e 94 19 01 	call	0x232	; 0x232 <rprintfChar>
+     302:	63 01       	movw	r12, r6
+     304:	da cf       	rjmp	.-76     	; 0x2ba <rprintf1RamRom+0x56>
 			case 'd': base = 10; div_val = 10000; goto CONVERSION_LOOP;
 //			case 'x': base = 16; div_val = 0x10;
 			case 'x': base = 16; div_val = 0x1000;
-     2e8:	20 e1       	ldi	r18, 0x10	; 16
-     2ea:	82 2e       	mov	r8, r18
-     2ec:	91 2c       	mov	r9, r1
-     2ee:	00 e0       	ldi	r16, 0x00	; 0
-     2f0:	10 e1       	ldi	r17, 0x10	; 16
-     2f2:	05 c0       	rjmp	.+10     	; 0x2fe <rprintf1RamRom+0xb8>
+     306:	20 e1       	ldi	r18, 0x10	; 16
+     308:	82 2e       	mov	r8, r18
+     30a:	91 2c       	mov	r9, r1
+     30c:	00 e0       	ldi	r16, 0x00	; 0
+     30e:	10 e1       	ldi	r17, 0x10	; 16
+     310:	05 c0       	rjmp	.+10     	; 0x31c <rprintf1RamRom+0xb8>
 
 		switch (format_flag = READMEMBYTE(stringInRom,format++) )
 		{
 			case 'c': format_flag = va_arg(ap,int);
 			default:  rprintfChar(format_flag); continue;
 			case 'd': base = 10; div_val = 10000; goto CONVERSION_LOOP;
-     2f4:	9a e0       	ldi	r25, 0x0A	; 10
-     2f6:	89 2e       	mov	r8, r25
-     2f8:	91 2c       	mov	r9, r1
-     2fa:	00 e1       	ldi	r16, 0x10	; 16
-     2fc:	17 e2       	ldi	r17, 0x27	; 39
+     312:	9a e0       	ldi	r25, 0x0A	; 10
+     314:	89 2e       	mov	r8, r25
+     316:	91 2c       	mov	r9, r1
+     318:	00 e1       	ldi	r16, 0x10	; 16
+     31a:	17 e2       	ldi	r17, 0x27	; 39
 //			case 'x': base = 16; div_val = 0x10;
 			case 'x': base = 16; div_val = 0x1000;
 
 			CONVERSION_LOOP:
 			u_val = va_arg(ap,int);
-     2fe:	63 01       	movw	r12, r6
-     300:	32 e0       	ldi	r19, 0x02	; 2
-     302:	c3 0e       	add	r12, r19
-     304:	d1 1c       	adc	r13, r1
-     306:	f3 01       	movw	r30, r6
-     308:	60 80       	ld	r6, Z
-     30a:	71 80       	ldd	r7, Z+1	; 0x01
+     31c:	63 01       	movw	r12, r6
+     31e:	32 e0       	ldi	r19, 0x02	; 2
+     320:	c3 0e       	add	r12, r19
+     322:	d1 1c       	adc	r13, r1
+     324:	f3 01       	movw	r30, r6
+     326:	60 80       	ld	r6, Z
+     328:	71 80       	ldd	r7, Z+1	; 0x01
 			if (format_flag == 'd')
-     30c:	84 36       	cpi	r24, 0x64	; 100
-     30e:	a1 f4       	brne	.+40     	; 0x338 <rprintf1RamRom+0xf2>
+     32a:	84 36       	cpi	r24, 0x64	; 100
+     32c:	a1 f4       	brne	.+40     	; 0x356 <rprintf1RamRom+0xf2>
 			{
 				if (((int)u_val) < 0)
-     310:	77 fe       	sbrs	r7, 7
-     312:	0f c0       	rjmp	.+30     	; 0x332 <rprintf1RamRom+0xec>
+     32e:	77 fe       	sbrs	r7, 7
+     330:	0f c0       	rjmp	.+30     	; 0x350 <rprintf1RamRom+0xec>
 				{
 					u_val = - u_val;
-     314:	71 94       	neg	r7
-     316:	61 94       	neg	r6
-     318:	71 08       	sbc	r7, r1
+     332:	71 94       	neg	r7
+     334:	61 94       	neg	r6
+     336:	71 08       	sbc	r7, r1
 					rprintfChar('-');
-     31a:	8d e2       	ldi	r24, 0x2D	; 45
-     31c:	0e 94 0a 01 	call	0x214	; 0x214 <rprintfChar>
-     320:	08 c0       	rjmp	.+16     	; 0x332 <rprintf1RamRom+0xec>
+     338:	8d e2       	ldi	r24, 0x2D	; 45
+     33a:	0e 94 19 01 	call	0x232	; 0x232 <rprintfChar>
+     33e:	08 c0       	rjmp	.+16     	; 0x350 <rprintf1RamRom+0xec>
 				}
 				while (div_val > 1 && div_val > u_val) div_val /= 10;
-     322:	c8 01       	movw	r24, r16
-     324:	b5 01       	movw	r22, r10
-     326:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     32a:	8b 01       	movw	r16, r22
-     32c:	62 30       	cpi	r22, 0x02	; 2
-     32e:	71 05       	cpc	r23, r1
-     330:	18 f0       	brcs	.+6      	; 0x338 <rprintf1RamRom+0xf2>
-     332:	60 16       	cp	r6, r16
-     334:	71 06       	cpc	r7, r17
-     336:	a8 f3       	brcs	.-22     	; 0x322 <rprintf1RamRom+0xdc>
+     340:	c8 01       	movw	r24, r16
+     342:	b5 01       	movw	r22, r10
+     344:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     348:	8b 01       	movw	r16, r22
+     34a:	62 30       	cpi	r22, 0x02	; 2
+     34c:	71 05       	cpc	r23, r1
+     34e:	18 f0       	brcs	.+6      	; 0x356 <rprintf1RamRom+0xf2>
+     350:	60 16       	cp	r6, r16
+     352:	71 06       	cpc	r7, r17
+     354:	a8 f3       	brcs	.-22     	; 0x340 <rprintf1RamRom+0xdc>
 			}
 			do
 			{
 				//rprintfChar(pgm_read_byte(HexChars+(u_val/div_val)));
 				rprintfu04(u_val/div_val);
-     338:	c3 01       	movw	r24, r6
-     33a:	b8 01       	movw	r22, r16
-     33c:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     340:	58 2e       	mov	r5, r24
-     342:	86 2f       	mov	r24, r22
-     344:	99 83       	std	Y+1, r25	; 0x01
-     346:	0e 94 1b 01 	call	0x236	; 0x236 <rprintfu04>
+     356:	c3 01       	movw	r24, r6
+     358:	b8 01       	movw	r22, r16
+     35a:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     35e:	58 2e       	mov	r5, r24
+     360:	86 2f       	mov	r24, r22
+     362:	99 83       	std	Y+1, r25	; 0x01
+     364:	0e 94 2a 01 	call	0x254	; 0x254 <rprintfu04>
 				u_val %= div_val;
-     34a:	65 2c       	mov	r6, r5
-     34c:	99 81       	ldd	r25, Y+1	; 0x01
-     34e:	79 2e       	mov	r7, r25
+     368:	65 2c       	mov	r6, r5
+     36a:	99 81       	ldd	r25, Y+1	; 0x01
+     36c:	79 2e       	mov	r7, r25
 				div_val /= base;
-     350:	c8 01       	movw	r24, r16
-     352:	b4 01       	movw	r22, r8
-     354:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     358:	8b 01       	movw	r16, r22
+     36e:	c8 01       	movw	r24, r16
+     370:	b4 01       	movw	r22, r8
+     372:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     376:	8b 01       	movw	r16, r22
 			} while (div_val);
-     35a:	67 2b       	or	r22, r23
-     35c:	69 f7       	brne	.-38     	; 0x338 <rprintf1RamRom+0xf2>
-     35e:	9e cf       	rjmp	.-196    	; 0x29c <rprintf1RamRom+0x56>
+     378:	67 2b       	or	r22, r23
+     37a:	69 f7       	brne	.-38     	; 0x356 <rprintf1RamRom+0xf2>
+     37c:	9e cf       	rjmp	.-196    	; 0x2ba <rprintf1RamRom+0x56>
 		}
 	}
 	va_end(ap);
 }
-     360:	80 e0       	ldi	r24, 0x00	; 0
-     362:	90 e0       	ldi	r25, 0x00	; 0
-     364:	0f 90       	pop	r0
-     366:	df 91       	pop	r29
-     368:	cf 91       	pop	r28
-     36a:	1f 91       	pop	r17
-     36c:	0f 91       	pop	r16
-     36e:	ff 90       	pop	r15
-     370:	ef 90       	pop	r14
-     372:	df 90       	pop	r13
-     374:	cf 90       	pop	r12
-     376:	bf 90       	pop	r11
-     378:	af 90       	pop	r10
-     37a:	9f 90       	pop	r9
-     37c:	8f 90       	pop	r8
-     37e:	7f 90       	pop	r7
-     380:	6f 90       	pop	r6
-     382:	5f 90       	pop	r5
-     384:	08 95       	ret
+     37e:	80 e0       	ldi	r24, 0x00	; 0
+     380:	90 e0       	ldi	r25, 0x00	; 0
+     382:	0f 90       	pop	r0
+     384:	df 91       	pop	r29
+     386:	cf 91       	pop	r28
+     388:	1f 91       	pop	r17
+     38a:	0f 91       	pop	r16
+     38c:	ff 90       	pop	r15
+     38e:	ef 90       	pop	r14
+     390:	df 90       	pop	r13
+     392:	cf 90       	pop	r12
+     394:	bf 90       	pop	r11
+     396:	af 90       	pop	r10
+     398:	9f 90       	pop	r9
+     39a:	8f 90       	pop	r8
+     39c:	7f 90       	pop	r7
+     39e:	6f 90       	pop	r6
+     3a0:	5f 90       	pop	r5
+     3a2:	08 95       	ret
 
-00000386 <timer0SetPrescaler>:
+000003a4 <timer0SetPrescaler>:
 #endif
 
 void timer0SetPrescaler(u08 prescale)
 {
 	// set prescaler on timer 0
 	outb(TCCR0, (inb(TCCR0) & ~TIMER_PRESCALE_MASK) | prescale);
-     386:	93 b7       	in	r25, 0x33	; 51
-     388:	98 7f       	andi	r25, 0xF8	; 248
-     38a:	89 2b       	or	r24, r25
-     38c:	83 bf       	out	0x33, r24	; 51
-     38e:	08 95       	ret
+     3a4:	93 b7       	in	r25, 0x33	; 51
+     3a6:	98 7f       	andi	r25, 0xF8	; 248
+     3a8:	89 2b       	or	r24, r25
+     3aa:	83 bf       	out	0x33, r24	; 51
+     3ac:	08 95       	ret
 
-00000390 <timer0Init>:
+000003ae <timer0Init>:
 }
 
 void timer0Init()
 {
 	// initialize timer 0
 	timer0SetPrescaler( TIMER0PRESCALE );	// set prescaler
-     390:	85 e0       	ldi	r24, 0x05	; 5
-     392:	0e 94 c3 01 	call	0x386	; 0x386 <timer0SetPrescaler>
+     3ae:	85 e0       	ldi	r24, 0x05	; 5
+     3b0:	0e 94 d2 01 	call	0x3a4	; 0x3a4 <timer0SetPrescaler>
 	outb(TCNT0, 0);							// reset TCNT0
-     396:	12 be       	out	0x32, r1	; 50
+     3b4:	12 be       	out	0x32, r1	; 50
 	sbi(TIMSK, TOIE0);						// enable TCNT0 overflow interrupt
-     398:	89 b7       	in	r24, 0x39	; 57
-     39a:	81 60       	ori	r24, 0x01	; 1
-     39c:	89 bf       	out	0x39, r24	; 57
+     3b6:	89 b7       	in	r24, 0x39	; 57
+     3b8:	81 60       	ori	r24, 0x01	; 1
+     3ba:	89 bf       	out	0x39, r24	; 57
 	sbi(TIMSK, OCIE0);						// enable OCR0 Output Compare Match Interrupt
-     39e:	89 b7       	in	r24, 0x39	; 57
-     3a0:	82 60       	ori	r24, 0x02	; 2
-     3a2:	89 bf       	out	0x39, r24	; 57
+     3bc:	89 b7       	in	r24, 0x39	; 57
+     3be:	82 60       	ori	r24, 0x02	; 2
+     3c0:	89 bf       	out	0x39, r24	; 57
 }
 
 void timer0ClearOverflowCount(void)
 {
 	// clear the timer overflow counter registers
 	Timer0Reg0 = 0;	// initialize time registers
-     3a4:	10 92 f6 00 	sts	0x00F6, r1
-     3a8:	10 92 f7 00 	sts	0x00F7, r1
-     3ac:	10 92 f8 00 	sts	0x00F8, r1
-     3b0:	10 92 f9 00 	sts	0x00F9, r1
-     3b4:	08 95       	ret
+     3c2:	10 92 f7 00 	sts	0x00F7, r1
+     3c6:	10 92 f8 00 	sts	0x00F8, r1
+     3ca:	10 92 f9 00 	sts	0x00F9, r1
+     3ce:	10 92 fa 00 	sts	0x00FA, r1
+     3d2:	08 95       	ret
 
-000003b6 <timer1SetPrescaler>:
+000003d4 <timer1SetPrescaler>:
 }
 
 void timer1SetPrescaler(u08 prescale)
 {
 	// set prescaler on timer 1
 	outb(TCCR1B, (inb(TCCR1B) & ~TIMER_PRESCALE_MASK) | prescale);
-     3b6:	9e b5       	in	r25, 0x2e	; 46
-     3b8:	98 7f       	andi	r25, 0xF8	; 248
-     3ba:	89 2b       	or	r24, r25
-     3bc:	8e bd       	out	0x2e, r24	; 46
-     3be:	08 95       	ret
+     3d4:	9e b5       	in	r25, 0x2e	; 46
+     3d6:	98 7f       	andi	r25, 0xF8	; 248
+     3d8:	89 2b       	or	r24, r25
+     3da:	8e bd       	out	0x2e, r24	; 46
+     3dc:	08 95       	ret
 
-000003c0 <timer1Init>:
+000003de <timer1Init>:
 }
 
 void timer1Init(void)
 {
 	// initialize timer 1
 	timer1SetPrescaler( TIMER1PRESCALE );	// set prescaler
-     3c0:	82 e0       	ldi	r24, 0x02	; 2
-     3c2:	0e 94 db 01 	call	0x3b6	; 0x3b6 <timer1SetPrescaler>
+     3de:	82 e0       	ldi	r24, 0x02	; 2
+     3e0:	0e 94 ea 01 	call	0x3d4	; 0x3d4 <timer1SetPrescaler>
 	outb(TCNT1H, 0);						// reset TCNT1
-     3c6:	1d bc       	out	0x2d, r1	; 45
+     3e4:	1d bc       	out	0x2d, r1	; 45
 	outb(TCNT1L, 0);
-     3c8:	1c bc       	out	0x2c, r1	; 44
+     3e6:	1c bc       	out	0x2c, r1	; 44
 	sbi(TIMSK, TOIE1);						// enable TCNT1 overflow
-     3ca:	89 b7       	in	r24, 0x39	; 57
-     3cc:	84 60       	ori	r24, 0x04	; 4
-     3ce:	89 bf       	out	0x39, r24	; 57
-     3d0:	08 95       	ret
+     3e8:	89 b7       	in	r24, 0x39	; 57
+     3ea:	84 60       	ori	r24, 0x04	; 4
+     3ec:	89 bf       	out	0x39, r24	; 57
+     3ee:	08 95       	ret
 
-000003d2 <timer2SetPrescaler>:
+000003f0 <timer2SetPrescaler>:
 
 #ifdef TCNT2	// support timer2 only if it exists
 void timer2SetPrescaler(u08 prescale)
 {
 	// set prescaler on timer 2
 	outb(TCCR2, (inb(TCCR2) & ~TIMER_PRESCALE_MASK) | prescale);
-     3d2:	95 b5       	in	r25, 0x25	; 37
-     3d4:	98 7f       	andi	r25, 0xF8	; 248
-     3d6:	89 2b       	or	r24, r25
-     3d8:	85 bd       	out	0x25, r24	; 37
-     3da:	08 95       	ret
+     3f0:	95 b5       	in	r25, 0x25	; 37
+     3f2:	98 7f       	andi	r25, 0xF8	; 248
+     3f4:	89 2b       	or	r24, r25
+     3f6:	85 bd       	out	0x25, r24	; 37
+     3f8:	08 95       	ret
 
-000003dc <timer2Init>:
+000003fa <timer2Init>:
 
 #ifdef TCNT2	// support timer2 only if it exists
 void timer2Init(void)
 {
 	// initialize timer 2
 	timer2SetPrescaler( TIMER2PRESCALE );	// set prescaler
-     3dc:	84 e0       	ldi	r24, 0x04	; 4
-     3de:	0e 94 e9 01 	call	0x3d2	; 0x3d2 <timer2SetPrescaler>
+     3fa:	84 e0       	ldi	r24, 0x04	; 4
+     3fc:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <timer2SetPrescaler>
 	outb(TCNT2, 0);							// reset TCNT2
-     3e2:	14 bc       	out	0x24, r1	; 36
+     400:	14 bc       	out	0x24, r1	; 36
 	sbi(TIMSK, TOIE2);						// enable TCNT2 overflow
-     3e4:	89 b7       	in	r24, 0x39	; 57
-     3e6:	80 64       	ori	r24, 0x40	; 64
-     3e8:	89 bf       	out	0x39, r24	; 57
+     402:	89 b7       	in	r24, 0x39	; 57
+     404:	80 64       	ori	r24, 0x40	; 64
+     406:	89 bf       	out	0x39, r24	; 57
 
 #ifdef TCNT2	// support timer2 only if it exists
 void timer2ClearOverflowCount(void)
 {
 	// clear the timer overflow counter registers
 	Timer2Reg0 = 0;	// initialize time registers
-     3ea:	10 92 fe 00 	sts	0x00FE, r1
-     3ee:	10 92 ff 00 	sts	0x00FF, r1
-     3f2:	10 92 00 01 	sts	0x0100, r1
-     3f6:	10 92 01 01 	sts	0x0101, r1
-     3fa:	08 95       	ret
+     408:	10 92 ff 00 	sts	0x00FF, r1
+     40c:	10 92 00 01 	sts	0x0100, r1
+     410:	10 92 01 01 	sts	0x0101, r1
+     414:	10 92 02 01 	sts	0x0102, r1
+     418:	08 95       	ret
 
-000003fc <timerAttach>:
+0000041a <timerAttach>:
 #endif
 
 void timerAttach(u08 interruptNum, void (*userFunc)(void) )
 {
 	// make sure the interrupt number is within bounds
 	if(interruptNum < TIMER_NUM_INTERRUPTS)
-     3fc:	88 30       	cpi	r24, 0x08	; 8
-     3fe:	40 f4       	brcc	.+16     	; 0x410 <timerAttach+0x14>
+     41a:	88 30       	cpi	r24, 0x08	; 8
+     41c:	40 f4       	brcc	.+16     	; 0x42e <timerAttach+0x14>
 	{
 		// set the interrupt function to run
 		// the supplied user's function
 		TimerIntFunc[interruptNum] = userFunc;
-     400:	e8 2f       	mov	r30, r24
-     402:	f0 e0       	ldi	r31, 0x00	; 0
-     404:	ee 0f       	add	r30, r30
-     406:	ff 1f       	adc	r31, r31
-     408:	ee 59       	subi	r30, 0x9E	; 158
-     40a:	ff 4f       	sbci	r31, 0xFF	; 255
-     40c:	71 83       	std	Z+1, r23	; 0x01
-     40e:	60 83       	st	Z, r22
-     410:	08 95       	ret
+     41e:	e8 2f       	mov	r30, r24
+     420:	f0 e0       	ldi	r31, 0x00	; 0
+     422:	ee 0f       	add	r30, r30
+     424:	ff 1f       	adc	r31, r31
+     426:	ee 59       	subi	r30, 0x9E	; 158
+     428:	ff 4f       	sbci	r31, 0xFF	; 255
+     42a:	71 83       	std	Z+1, r23	; 0x01
+     42c:	60 83       	st	Z, r22
+     42e:	08 95       	ret
 
-00000412 <timerDetach>:
+00000430 <timerDetach>:
 }
 
 void timerDetach(u08 interruptNum)
 {
 	// make sure the interrupt number is within bounds
 	if(interruptNum < TIMER_NUM_INTERRUPTS)
-     412:	88 30       	cpi	r24, 0x08	; 8
-     414:	40 f4       	brcc	.+16     	; 0x426 <timerDetach+0x14>
+     430:	88 30       	cpi	r24, 0x08	; 8
+     432:	40 f4       	brcc	.+16     	; 0x444 <timerDetach+0x14>
 	{
 		// set the interrupt function to run nothing
 		TimerIntFunc[interruptNum] = 0;
-     416:	e8 2f       	mov	r30, r24
-     418:	f0 e0       	ldi	r31, 0x00	; 0
-     41a:	ee 0f       	add	r30, r30
-     41c:	ff 1f       	adc	r31, r31
-     41e:	ee 59       	subi	r30, 0x9E	; 158
-     420:	ff 4f       	sbci	r31, 0xFF	; 255
-     422:	11 82       	std	Z+1, r1	; 0x01
-     424:	10 82       	st	Z, r1
-     426:	08 95       	ret
+     434:	e8 2f       	mov	r30, r24
+     436:	f0 e0       	ldi	r31, 0x00	; 0
+     438:	ee 0f       	add	r30, r30
+     43a:	ff 1f       	adc	r31, r31
+     43c:	ee 59       	subi	r30, 0x9E	; 158
+     43e:	ff 4f       	sbci	r31, 0xFF	; 255
+     440:	11 82       	std	Z+1, r1	; 0x01
+     442:	10 82       	st	Z, r1
+     444:	08 95       	ret
 
-00000428 <timerInit>:
+00000446 <timerInit>:
                   :"r"(time_ms), "r"((unsigned short) (delay_count))
 	);
 }
 */
 void timerInit(void)
 {
-     428:	cf 93       	push	r28
+     446:	cf 93       	push	r28
 	u08 intNum;
 	// detach all user functions from interrupts
 	for(intNum=0; intNum<TIMER_NUM_INTERRUPTS; intNum++)
-     42a:	c0 e0       	ldi	r28, 0x00	; 0
+     448:	c0 e0       	ldi	r28, 0x00	; 0
 		timerDetach(intNum);
-     42c:	8c 2f       	mov	r24, r28
-     42e:	0e 94 09 02 	call	0x412	; 0x412 <timerDetach>
+     44a:	8c 2f       	mov	r24, r28
+     44c:	0e 94 18 02 	call	0x430	; 0x430 <timerDetach>
 */
 void timerInit(void)
 {
 	u08 intNum;
 	// detach all user functions from interrupts
 	for(intNum=0; intNum<TIMER_NUM_INTERRUPTS; intNum++)
-     432:	cf 5f       	subi	r28, 0xFF	; 255
-     434:	c8 30       	cpi	r28, 0x08	; 8
-     436:	d1 f7       	brne	.-12     	; 0x42c <timerInit+0x4>
+     450:	cf 5f       	subi	r28, 0xFF	; 255
+     452:	c8 30       	cpi	r28, 0x08	; 8
+     454:	d1 f7       	brne	.-12     	; 0x44a <timerInit+0x4>
 		timerDetach(intNum);
 
 	// initialize all timers
 	timer0Init();
-     438:	0e 94 c8 01 	call	0x390	; 0x390 <timer0Init>
+     456:	0e 94 d7 01 	call	0x3ae	; 0x3ae <timer0Init>
 	timer1Init();
-     43c:	0e 94 e0 01 	call	0x3c0	; 0x3c0 <timer1Init>
+     45a:	0e 94 ef 01 	call	0x3de	; 0x3de <timer1Init>
 	#ifdef TCNT2	// support timer2 only if it exists
 	timer2Init();
-     440:	0e 94 ee 01 	call	0x3dc	; 0x3dc <timer2Init>
+     45e:	0e 94 fd 01 	call	0x3fa	; 0x3fa <timer2Init>
 	#endif
 	// enable interrupts
 	sei();
-     444:	78 94       	sei
+     462:	78 94       	sei
 }
-     446:	cf 91       	pop	r28
-     448:	08 95       	ret
+     464:	cf 91       	pop	r28
+     466:	08 95       	ret
 
-0000044a <__vector_9>:
+00000468 <__vector_9>:
 	OCR1B = pwmDuty;
 }
 
 //! Interrupt handler for tcnt0 overflow interrupt
 TIMER_INTERRUPT_HANDLER(TIMER0_OVF_vect)
 {
-     44a:	1f 92       	push	r1
-     44c:	0f 92       	push	r0
-     44e:	0f b6       	in	r0, 0x3f	; 63
-     450:	0f 92       	push	r0
-     452:	11 24       	eor	r1, r1
-     454:	2f 93       	push	r18
-     456:	3f 93       	push	r19
-     458:	4f 93       	push	r20
-     45a:	5f 93       	push	r21
-     45c:	6f 93       	push	r22
-     45e:	7f 93       	push	r23
-     460:	8f 93       	push	r24
-     462:	9f 93       	push	r25
-     464:	af 93       	push	r26
-     466:	bf 93       	push	r27
-     468:	ef 93       	push	r30
-     46a:	ff 93       	push	r31
+     468:	1f 92       	push	r1
+     46a:	0f 92       	push	r0
+     46c:	0f b6       	in	r0, 0x3f	; 63
+     46e:	0f 92       	push	r0
+     470:	11 24       	eor	r1, r1
+     472:	2f 93       	push	r18
+     474:	3f 93       	push	r19
+     476:	4f 93       	push	r20
+     478:	5f 93       	push	r21
+     47a:	6f 93       	push	r22
+     47c:	7f 93       	push	r23
+     47e:	8f 93       	push	r24
+     480:	9f 93       	push	r25
+     482:	af 93       	push	r26
+     484:	bf 93       	push	r27
+     486:	ef 93       	push	r30
+     488:	ff 93       	push	r31
 	Timer0Reg0++;			// increment low-order counter
-     46c:	80 91 f6 00 	lds	r24, 0x00F6
-     470:	90 91 f7 00 	lds	r25, 0x00F7
-     474:	a0 91 f8 00 	lds	r26, 0x00F8
-     478:	b0 91 f9 00 	lds	r27, 0x00F9
-     47c:	01 96       	adiw	r24, 0x01	; 1
-     47e:	a1 1d       	adc	r26, r1
-     480:	b1 1d       	adc	r27, r1
-     482:	80 93 f6 00 	sts	0x00F6, r24
-     486:	90 93 f7 00 	sts	0x00F7, r25
-     48a:	a0 93 f8 00 	sts	0x00F8, r26
-     48e:	b0 93 f9 00 	sts	0x00F9, r27
+     48a:	80 91 f7 00 	lds	r24, 0x00F7
+     48e:	90 91 f8 00 	lds	r25, 0x00F8
+     492:	a0 91 f9 00 	lds	r26, 0x00F9
+     496:	b0 91 fa 00 	lds	r27, 0x00FA
+     49a:	01 96       	adiw	r24, 0x01	; 1
+     49c:	a1 1d       	adc	r26, r1
+     49e:	b1 1d       	adc	r27, r1
+     4a0:	80 93 f7 00 	sts	0x00F7, r24
+     4a4:	90 93 f8 00 	sts	0x00F8, r25
+     4a8:	a0 93 f9 00 	sts	0x00F9, r26
+     4ac:	b0 93 fa 00 	sts	0x00FA, r27
 
 	// increment pause counter
 	TimerPauseReg++;
-     492:	80 91 fa 00 	lds	r24, 0x00FA
-     496:	90 91 fb 00 	lds	r25, 0x00FB
-     49a:	a0 91 fc 00 	lds	r26, 0x00FC
-     49e:	b0 91 fd 00 	lds	r27, 0x00FD
-     4a2:	01 96       	adiw	r24, 0x01	; 1
-     4a4:	a1 1d       	adc	r26, r1
-     4a6:	b1 1d       	adc	r27, r1
-     4a8:	80 93 fa 00 	sts	0x00FA, r24
-     4ac:	90 93 fb 00 	sts	0x00FB, r25
-     4b0:	a0 93 fc 00 	sts	0x00FC, r26
-     4b4:	b0 93 fd 00 	sts	0x00FD, r27
+     4b0:	80 91 fb 00 	lds	r24, 0x00FB
+     4b4:	90 91 fc 00 	lds	r25, 0x00FC
+     4b8:	a0 91 fd 00 	lds	r26, 0x00FD
+     4bc:	b0 91 fe 00 	lds	r27, 0x00FE
+     4c0:	01 96       	adiw	r24, 0x01	; 1
+     4c2:	a1 1d       	adc	r26, r1
+     4c4:	b1 1d       	adc	r27, r1
+     4c6:	80 93 fb 00 	sts	0x00FB, r24
+     4ca:	90 93 fc 00 	sts	0x00FC, r25
+     4ce:	a0 93 fd 00 	sts	0x00FD, r26
+     4d2:	b0 93 fe 00 	sts	0x00FE, r27
 
 	// if a user function is defined, execute it too
 	if(TimerIntFunc[TIMER0OVERFLOW_INT])
-     4b8:	80 91 62 00 	lds	r24, 0x0062
-     4bc:	90 91 63 00 	lds	r25, 0x0063
-     4c0:	89 2b       	or	r24, r25
-     4c2:	29 f0       	breq	.+10     	; 0x4ce <__stack+0x6f>
+     4d6:	80 91 62 00 	lds	r24, 0x0062
+     4da:	90 91 63 00 	lds	r25, 0x0063
+     4de:	89 2b       	or	r24, r25
+     4e0:	29 f0       	breq	.+10     	; 0x4ec <__vector_9+0x84>
 		TimerIntFunc[TIMER0OVERFLOW_INT]();
-     4c4:	e0 91 62 00 	lds	r30, 0x0062
-     4c8:	f0 91 63 00 	lds	r31, 0x0063
-     4cc:	09 95       	icall
+     4e2:	e0 91 62 00 	lds	r30, 0x0062
+     4e6:	f0 91 63 00 	lds	r31, 0x0063
+     4ea:	09 95       	icall
 }
-     4ce:	ff 91       	pop	r31
-     4d0:	ef 91       	pop	r30
-     4d2:	bf 91       	pop	r27
-     4d4:	af 91       	pop	r26
-     4d6:	9f 91       	pop	r25
-     4d8:	8f 91       	pop	r24
-     4da:	7f 91       	pop	r23
-     4dc:	6f 91       	pop	r22
-     4de:	5f 91       	pop	r21
-     4e0:	4f 91       	pop	r20
-     4e2:	3f 91       	pop	r19
-     4e4:	2f 91       	pop	r18
-     4e6:	0f 90       	pop	r0
-     4e8:	0f be       	out	0x3f, r0	; 63
-     4ea:	0f 90       	pop	r0
-     4ec:	1f 90       	pop	r1
-     4ee:	18 95       	reti
+     4ec:	ff 91       	pop	r31
+     4ee:	ef 91       	pop	r30
+     4f0:	bf 91       	pop	r27
+     4f2:	af 91       	pop	r26
+     4f4:	9f 91       	pop	r25
+     4f6:	8f 91       	pop	r24
+     4f8:	7f 91       	pop	r23
+     4fa:	6f 91       	pop	r22
+     4fc:	5f 91       	pop	r21
+     4fe:	4f 91       	pop	r20
+     500:	3f 91       	pop	r19
+     502:	2f 91       	pop	r18
+     504:	0f 90       	pop	r0
+     506:	0f be       	out	0x3f, r0	; 63
+     508:	0f 90       	pop	r0
+     50a:	1f 90       	pop	r1
+     50c:	18 95       	reti
 
-000004f0 <__vector_8>:
+0000050e <__vector_8>:
 
 //! Interrupt handler for tcnt1 overflow interrupt
 TIMER_INTERRUPT_HANDLER(TIMER1_OVF_vect)
 {
-     4f0:	1f 92       	push	r1
-     4f2:	0f 92       	push	r0
-     4f4:	0f b6       	in	r0, 0x3f	; 63
-     4f6:	0f 92       	push	r0
-     4f8:	11 24       	eor	r1, r1
-     4fa:	2f 93       	push	r18
-     4fc:	3f 93       	push	r19
-     4fe:	4f 93       	push	r20
-     500:	5f 93       	push	r21
-     502:	6f 93       	push	r22
-     504:	7f 93       	push	r23
-     506:	8f 93       	push	r24
-     508:	9f 93       	push	r25
-     50a:	af 93       	push	r26
-     50c:	bf 93       	push	r27
-     50e:	ef 93       	push	r30
-     510:	ff 93       	push	r31
+     50e:	1f 92       	push	r1
+     510:	0f 92       	push	r0
+     512:	0f b6       	in	r0, 0x3f	; 63
+     514:	0f 92       	push	r0
+     516:	11 24       	eor	r1, r1
+     518:	2f 93       	push	r18
+     51a:	3f 93       	push	r19
+     51c:	4f 93       	push	r20
+     51e:	5f 93       	push	r21
+     520:	6f 93       	push	r22
+     522:	7f 93       	push	r23
+     524:	8f 93       	push	r24
+     526:	9f 93       	push	r25
+     528:	af 93       	push	r26
+     52a:	bf 93       	push	r27
+     52c:	ef 93       	push	r30
+     52e:	ff 93       	push	r31
 	// if a user function is defined, execute it
 	if(TimerIntFunc[TIMER1OVERFLOW_INT])
-     512:	80 91 64 00 	lds	r24, 0x0064
-     516:	90 91 65 00 	lds	r25, 0x0065
-     51a:	89 2b       	or	r24, r25
-     51c:	29 f0       	breq	.+10     	; 0x528 <__vector_8+0x38>
+     530:	80 91 64 00 	lds	r24, 0x0064
+     534:	90 91 65 00 	lds	r25, 0x0065
+     538:	89 2b       	or	r24, r25
+     53a:	29 f0       	breq	.+10     	; 0x546 <__vector_8+0x38>
 		TimerIntFunc[TIMER1OVERFLOW_INT]();
-     51e:	e0 91 64 00 	lds	r30, 0x0064
-     522:	f0 91 65 00 	lds	r31, 0x0065
-     526:	09 95       	icall
+     53c:	e0 91 64 00 	lds	r30, 0x0064
+     540:	f0 91 65 00 	lds	r31, 0x0065
+     544:	09 95       	icall
 }
-     528:	ff 91       	pop	r31
-     52a:	ef 91       	pop	r30
-     52c:	bf 91       	pop	r27
-     52e:	af 91       	pop	r26
-     530:	9f 91       	pop	r25
-     532:	8f 91       	pop	r24
-     534:	7f 91       	pop	r23
-     536:	6f 91       	pop	r22
-     538:	5f 91       	pop	r21
-     53a:	4f 91       	pop	r20
-     53c:	3f 91       	pop	r19
-     53e:	2f 91       	pop	r18
-     540:	0f 90       	pop	r0
-     542:	0f be       	out	0x3f, r0	; 63
-     544:	0f 90       	pop	r0
-     546:	1f 90       	pop	r1
-     548:	18 95       	reti
+     546:	ff 91       	pop	r31
+     548:	ef 91       	pop	r30
+     54a:	bf 91       	pop	r27
+     54c:	af 91       	pop	r26
+     54e:	9f 91       	pop	r25
+     550:	8f 91       	pop	r24
+     552:	7f 91       	pop	r23
+     554:	6f 91       	pop	r22
+     556:	5f 91       	pop	r21
+     558:	4f 91       	pop	r20
+     55a:	3f 91       	pop	r19
+     55c:	2f 91       	pop	r18
+     55e:	0f 90       	pop	r0
+     560:	0f be       	out	0x3f, r0	; 63
+     562:	0f 90       	pop	r0
+     564:	1f 90       	pop	r1
+     566:	18 95       	reti
 
-0000054a <__vector_4>:
+00000568 <__vector_4>:
 
 #ifdef TCNT2	// support timer2 only if it exists
 //! Interrupt handler for tcnt2 overflow interrupt
 TIMER_INTERRUPT_HANDLER(TIMER2_OVF_vect)
 {
-     54a:	1f 92       	push	r1
-     54c:	0f 92       	push	r0
-     54e:	0f b6       	in	r0, 0x3f	; 63
-     550:	0f 92       	push	r0
-     552:	11 24       	eor	r1, r1
-     554:	2f 93       	push	r18
-     556:	3f 93       	push	r19
-     558:	4f 93       	push	r20
-     55a:	5f 93       	push	r21
-     55c:	6f 93       	push	r22
-     55e:	7f 93       	push	r23
-     560:	8f 93       	push	r24
-     562:	9f 93       	push	r25
-     564:	af 93       	push	r26
-     566:	bf 93       	push	r27
-     568:	ef 93       	push	r30
-     56a:	ff 93       	push	r31
+     568:	1f 92       	push	r1
+     56a:	0f 92       	push	r0
+     56c:	0f b6       	in	r0, 0x3f	; 63
+     56e:	0f 92       	push	r0
+     570:	11 24       	eor	r1, r1
+     572:	2f 93       	push	r18
+     574:	3f 93       	push	r19
+     576:	4f 93       	push	r20
+     578:	5f 93       	push	r21
+     57a:	6f 93       	push	r22
+     57c:	7f 93       	push	r23
+     57e:	8f 93       	push	r24
+     580:	9f 93       	push	r25
+     582:	af 93       	push	r26
+     584:	bf 93       	push	r27
+     586:	ef 93       	push	r30
+     588:	ff 93       	push	r31
 	Timer2Reg0++;			// increment low-order counter
-     56c:	80 91 fe 00 	lds	r24, 0x00FE
-     570:	90 91 ff 00 	lds	r25, 0x00FF
-     574:	a0 91 00 01 	lds	r26, 0x0100
-     578:	b0 91 01 01 	lds	r27, 0x0101
-     57c:	01 96       	adiw	r24, 0x01	; 1
-     57e:	a1 1d       	adc	r26, r1
-     580:	b1 1d       	adc	r27, r1
-     582:	80 93 fe 00 	sts	0x00FE, r24
-     586:	90 93 ff 00 	sts	0x00FF, r25
-     58a:	a0 93 00 01 	sts	0x0100, r26
-     58e:	b0 93 01 01 	sts	0x0101, r27
+     58a:	80 91 ff 00 	lds	r24, 0x00FF
+     58e:	90 91 00 01 	lds	r25, 0x0100
+     592:	a0 91 01 01 	lds	r26, 0x0101
+     596:	b0 91 02 01 	lds	r27, 0x0102
+     59a:	01 96       	adiw	r24, 0x01	; 1
+     59c:	a1 1d       	adc	r26, r1
+     59e:	b1 1d       	adc	r27, r1
+     5a0:	80 93 ff 00 	sts	0x00FF, r24
+     5a4:	90 93 00 01 	sts	0x0100, r25
+     5a8:	a0 93 01 01 	sts	0x0101, r26
+     5ac:	b0 93 02 01 	sts	0x0102, r27
 
 	// if a user function is defined, execute it
 	if(TimerIntFunc[TIMER2OVERFLOW_INT])
-     592:	80 91 6c 00 	lds	r24, 0x006C
-     596:	90 91 6d 00 	lds	r25, 0x006D
-     59a:	89 2b       	or	r24, r25
-     59c:	29 f0       	breq	.+10     	; 0x5a8 <__vector_4+0x5e>
+     5b0:	80 91 6c 00 	lds	r24, 0x006C
+     5b4:	90 91 6d 00 	lds	r25, 0x006D
+     5b8:	89 2b       	or	r24, r25
+     5ba:	29 f0       	breq	.+10     	; 0x5c6 <__vector_4+0x5e>
 		TimerIntFunc[TIMER2OVERFLOW_INT]();
-     59e:	e0 91 6c 00 	lds	r30, 0x006C
-     5a2:	f0 91 6d 00 	lds	r31, 0x006D
-     5a6:	09 95       	icall
+     5bc:	e0 91 6c 00 	lds	r30, 0x006C
+     5c0:	f0 91 6d 00 	lds	r31, 0x006D
+     5c4:	09 95       	icall
 }
-     5a8:	ff 91       	pop	r31
-     5aa:	ef 91       	pop	r30
-     5ac:	bf 91       	pop	r27
-     5ae:	af 91       	pop	r26
-     5b0:	9f 91       	pop	r25
-     5b2:	8f 91       	pop	r24
-     5b4:	7f 91       	pop	r23
-     5b6:	6f 91       	pop	r22
-     5b8:	5f 91       	pop	r21
-     5ba:	4f 91       	pop	r20
-     5bc:	3f 91       	pop	r19
-     5be:	2f 91       	pop	r18
-     5c0:	0f 90       	pop	r0
-     5c2:	0f be       	out	0x3f, r0	; 63
-     5c4:	0f 90       	pop	r0
-     5c6:	1f 90       	pop	r1
-     5c8:	18 95       	reti
+     5c6:	ff 91       	pop	r31
+     5c8:	ef 91       	pop	r30
+     5ca:	bf 91       	pop	r27
+     5cc:	af 91       	pop	r26
+     5ce:	9f 91       	pop	r25
+     5d0:	8f 91       	pop	r24
+     5d2:	7f 91       	pop	r23
+     5d4:	6f 91       	pop	r22
+     5d6:	5f 91       	pop	r21
+     5d8:	4f 91       	pop	r20
+     5da:	3f 91       	pop	r19
+     5dc:	2f 91       	pop	r18
+     5de:	0f 90       	pop	r0
+     5e0:	0f be       	out	0x3f, r0	; 63
+     5e2:	0f 90       	pop	r0
+     5e4:	1f 90       	pop	r1
+     5e6:	18 95       	reti
 
-000005ca <__vector_19>:
+000005e8 <__vector_19>:
 
 #ifdef OCR0
 // include support for Output Compare 0 for new AVR processors that support it
 //! Interrupt handler for OutputCompare0 match (OC0) interrupt
 TIMER_INTERRUPT_HANDLER(TIMER0_COMP_vect)
 {
-     5ca:	1f 92       	push	r1
-     5cc:	0f 92       	push	r0
-     5ce:	0f b6       	in	r0, 0x3f	; 63
-     5d0:	0f 92       	push	r0
-     5d2:	11 24       	eor	r1, r1
-     5d4:	2f 93       	push	r18
-     5d6:	3f 93       	push	r19
-     5d8:	4f 93       	push	r20
-     5da:	5f 93       	push	r21
-     5dc:	6f 93       	push	r22
-     5de:	7f 93       	push	r23
-     5e0:	8f 93       	push	r24
-     5e2:	9f 93       	push	r25
-     5e4:	af 93       	push	r26
-     5e6:	bf 93       	push	r27
-     5e8:	ef 93       	push	r30
-     5ea:	ff 93       	push	r31
+     5e8:	1f 92       	push	r1
+     5ea:	0f 92       	push	r0
+     5ec:	0f b6       	in	r0, 0x3f	; 63
+     5ee:	0f 92       	push	r0
+     5f0:	11 24       	eor	r1, r1
+     5f2:	2f 93       	push	r18
+     5f4:	3f 93       	push	r19
+     5f6:	4f 93       	push	r20
+     5f8:	5f 93       	push	r21
+     5fa:	6f 93       	push	r22
+     5fc:	7f 93       	push	r23
+     5fe:	8f 93       	push	r24
+     600:	9f 93       	push	r25
+     602:	af 93       	push	r26
+     604:	bf 93       	push	r27
+     606:	ef 93       	push	r30
+     608:	ff 93       	push	r31
 	// if a user function is defined, execute it
 	if(TimerIntFunc[TIMER0OUTCOMPARE_INT])
-     5ec:	80 91 70 00 	lds	r24, 0x0070
-     5f0:	90 91 71 00 	lds	r25, 0x0071
-     5f4:	89 2b       	or	r24, r25
-     5f6:	29 f0       	breq	.+10     	; 0x602 <__vector_19+0x38>
+     60a:	80 91 70 00 	lds	r24, 0x0070
+     60e:	90 91 71 00 	lds	r25, 0x0071
+     612:	89 2b       	or	r24, r25
+     614:	29 f0       	breq	.+10     	; 0x620 <__vector_19+0x38>
 		TimerIntFunc[TIMER0OUTCOMPARE_INT]();
-     5f8:	e0 91 70 00 	lds	r30, 0x0070
-     5fc:	f0 91 71 00 	lds	r31, 0x0071
-     600:	09 95       	icall
+     616:	e0 91 70 00 	lds	r30, 0x0070
+     61a:	f0 91 71 00 	lds	r31, 0x0071
+     61e:	09 95       	icall
 }
-     602:	ff 91       	pop	r31
-     604:	ef 91       	pop	r30
-     606:	bf 91       	pop	r27
-     608:	af 91       	pop	r26
-     60a:	9f 91       	pop	r25
-     60c:	8f 91       	pop	r24
-     60e:	7f 91       	pop	r23
-     610:	6f 91       	pop	r22
-     612:	5f 91       	pop	r21
-     614:	4f 91       	pop	r20
-     616:	3f 91       	pop	r19
-     618:	2f 91       	pop	r18
-     61a:	0f 90       	pop	r0
-     61c:	0f be       	out	0x3f, r0	; 63
-     61e:	0f 90       	pop	r0
-     620:	1f 90       	pop	r1
-     622:	18 95       	reti
+     620:	ff 91       	pop	r31
+     622:	ef 91       	pop	r30
+     624:	bf 91       	pop	r27
+     626:	af 91       	pop	r26
+     628:	9f 91       	pop	r25
+     62a:	8f 91       	pop	r24
+     62c:	7f 91       	pop	r23
+     62e:	6f 91       	pop	r22
+     630:	5f 91       	pop	r21
+     632:	4f 91       	pop	r20
+     634:	3f 91       	pop	r19
+     636:	2f 91       	pop	r18
+     638:	0f 90       	pop	r0
+     63a:	0f be       	out	0x3f, r0	; 63
+     63c:	0f 90       	pop	r0
+     63e:	1f 90       	pop	r1
+     640:	18 95       	reti
 
-00000624 <__vector_6>:
+00000642 <__vector_6>:
 #endif
 
 //! Interrupt handler for CutputCompare1A match (OC1A) interrupt
 TIMER_INTERRUPT_HANDLER(TIMER1_COMPA_vect)
 {
-     624:	1f 92       	push	r1
-     626:	0f 92       	push	r0
-     628:	0f b6       	in	r0, 0x3f	; 63
-     62a:	0f 92       	push	r0
-     62c:	11 24       	eor	r1, r1
-     62e:	2f 93       	push	r18
-     630:	3f 93       	push	r19
-     632:	4f 93       	push	r20
-     634:	5f 93       	push	r21
-     636:	6f 93       	push	r22
-     638:	7f 93       	push	r23
-     63a:	8f 93       	push	r24
-     63c:	9f 93       	push	r25
-     63e:	af 93       	push	r26
-     640:	bf 93       	push	r27
-     642:	ef 93       	push	r30
-     644:	ff 93       	push	r31
+     642:	1f 92       	push	r1
+     644:	0f 92       	push	r0
+     646:	0f b6       	in	r0, 0x3f	; 63
+     648:	0f 92       	push	r0
+     64a:	11 24       	eor	r1, r1
+     64c:	2f 93       	push	r18
+     64e:	3f 93       	push	r19
+     650:	4f 93       	push	r20
+     652:	5f 93       	push	r21
+     654:	6f 93       	push	r22
+     656:	7f 93       	push	r23
+     658:	8f 93       	push	r24
+     65a:	9f 93       	push	r25
+     65c:	af 93       	push	r26
+     65e:	bf 93       	push	r27
+     660:	ef 93       	push	r30
+     662:	ff 93       	push	r31
 	// if a user function is defined, execute it
 	if(TimerIntFunc[TIMER1OUTCOMPAREA_INT])
-     646:	80 91 66 00 	lds	r24, 0x0066
-     64a:	90 91 67 00 	lds	r25, 0x0067
-     64e:	89 2b       	or	r24, r25
-     650:	29 f0       	breq	.+10     	; 0x65c <__vector_6+0x38>
+     664:	80 91 66 00 	lds	r24, 0x0066
+     668:	90 91 67 00 	lds	r25, 0x0067
+     66c:	89 2b       	or	r24, r25
+     66e:	29 f0       	breq	.+10     	; 0x67a <__vector_6+0x38>
 		TimerIntFunc[TIMER1OUTCOMPAREA_INT]();
-     652:	e0 91 66 00 	lds	r30, 0x0066
-     656:	f0 91 67 00 	lds	r31, 0x0067
-     65a:	09 95       	icall
+     670:	e0 91 66 00 	lds	r30, 0x0066
+     674:	f0 91 67 00 	lds	r31, 0x0067
+     678:	09 95       	icall
 }
-     65c:	ff 91       	pop	r31
-     65e:	ef 91       	pop	r30
-     660:	bf 91       	pop	r27
-     662:	af 91       	pop	r26
-     664:	9f 91       	pop	r25
-     666:	8f 91       	pop	r24
-     668:	7f 91       	pop	r23
-     66a:	6f 91       	pop	r22
-     66c:	5f 91       	pop	r21
-     66e:	4f 91       	pop	r20
-     670:	3f 91       	pop	r19
-     672:	2f 91       	pop	r18
-     674:	0f 90       	pop	r0
-     676:	0f be       	out	0x3f, r0	; 63
-     678:	0f 90       	pop	r0
-     67a:	1f 90       	pop	r1
-     67c:	18 95       	reti
+     67a:	ff 91       	pop	r31
+     67c:	ef 91       	pop	r30
+     67e:	bf 91       	pop	r27
+     680:	af 91       	pop	r26
+     682:	9f 91       	pop	r25
+     684:	8f 91       	pop	r24
+     686:	7f 91       	pop	r23
+     688:	6f 91       	pop	r22
+     68a:	5f 91       	pop	r21
+     68c:	4f 91       	pop	r20
+     68e:	3f 91       	pop	r19
+     690:	2f 91       	pop	r18
+     692:	0f 90       	pop	r0
+     694:	0f be       	out	0x3f, r0	; 63
+     696:	0f 90       	pop	r0
+     698:	1f 90       	pop	r1
+     69a:	18 95       	reti
 
-0000067e <__vector_7>:
+0000069c <__vector_7>:
 
 //! Interrupt handler for OutputCompare1B match (OC1B) interrupt
 TIMER_INTERRUPT_HANDLER(TIMER1_COMPB_vect)
 {
-     67e:	1f 92       	push	r1
-     680:	0f 92       	push	r0
-     682:	0f b6       	in	r0, 0x3f	; 63
-     684:	0f 92       	push	r0
-     686:	11 24       	eor	r1, r1
-     688:	2f 93       	push	r18
-     68a:	3f 93       	push	r19
-     68c:	4f 93       	push	r20
-     68e:	5f 93       	push	r21
-     690:	6f 93       	push	r22
-     692:	7f 93       	push	r23
-     694:	8f 93       	push	r24
-     696:	9f 93       	push	r25
-     698:	af 93       	push	r26
-     69a:	bf 93       	push	r27
-     69c:	ef 93       	push	r30
-     69e:	ff 93       	push	r31
+     69c:	1f 92       	push	r1
+     69e:	0f 92       	push	r0
+     6a0:	0f b6       	in	r0, 0x3f	; 63
+     6a2:	0f 92       	push	r0
+     6a4:	11 24       	eor	r1, r1
+     6a6:	2f 93       	push	r18
+     6a8:	3f 93       	push	r19
+     6aa:	4f 93       	push	r20
+     6ac:	5f 93       	push	r21
+     6ae:	6f 93       	push	r22
+     6b0:	7f 93       	push	r23
+     6b2:	8f 93       	push	r24
+     6b4:	9f 93       	push	r25
+     6b6:	af 93       	push	r26
+     6b8:	bf 93       	push	r27
+     6ba:	ef 93       	push	r30
+     6bc:	ff 93       	push	r31
 	// if a user function is defined, execute it
 	if(TimerIntFunc[TIMER1OUTCOMPAREB_INT])
-     6a0:	80 91 68 00 	lds	r24, 0x0068
-     6a4:	90 91 69 00 	lds	r25, 0x0069
-     6a8:	89 2b       	or	r24, r25
-     6aa:	29 f0       	breq	.+10     	; 0x6b6 <__vector_7+0x38>
+     6be:	80 91 68 00 	lds	r24, 0x0068
+     6c2:	90 91 69 00 	lds	r25, 0x0069
+     6c6:	89 2b       	or	r24, r25
+     6c8:	29 f0       	breq	.+10     	; 0x6d4 <__vector_7+0x38>
 		TimerIntFunc[TIMER1OUTCOMPAREB_INT]();
-     6ac:	e0 91 68 00 	lds	r30, 0x0068
-     6b0:	f0 91 69 00 	lds	r31, 0x0069
-     6b4:	09 95       	icall
+     6ca:	e0 91 68 00 	lds	r30, 0x0068
+     6ce:	f0 91 69 00 	lds	r31, 0x0069
+     6d2:	09 95       	icall
 }
-     6b6:	ff 91       	pop	r31
-     6b8:	ef 91       	pop	r30
-     6ba:	bf 91       	pop	r27
-     6bc:	af 91       	pop	r26
-     6be:	9f 91       	pop	r25
-     6c0:	8f 91       	pop	r24
-     6c2:	7f 91       	pop	r23
-     6c4:	6f 91       	pop	r22
-     6c6:	5f 91       	pop	r21
-     6c8:	4f 91       	pop	r20
-     6ca:	3f 91       	pop	r19
-     6cc:	2f 91       	pop	r18
-     6ce:	0f 90       	pop	r0
-     6d0:	0f be       	out	0x3f, r0	; 63
-     6d2:	0f 90       	pop	r0
-     6d4:	1f 90       	pop	r1
-     6d6:	18 95       	reti
+     6d4:	ff 91       	pop	r31
+     6d6:	ef 91       	pop	r30
+     6d8:	bf 91       	pop	r27
+     6da:	af 91       	pop	r26
+     6dc:	9f 91       	pop	r25
+     6de:	8f 91       	pop	r24
+     6e0:	7f 91       	pop	r23
+     6e2:	6f 91       	pop	r22
+     6e4:	5f 91       	pop	r21
+     6e6:	4f 91       	pop	r20
+     6e8:	3f 91       	pop	r19
+     6ea:	2f 91       	pop	r18
+     6ec:	0f 90       	pop	r0
+     6ee:	0f be       	out	0x3f, r0	; 63
+     6f0:	0f 90       	pop	r0
+     6f2:	1f 90       	pop	r1
+     6f4:	18 95       	reti
 
-000006d8 <__vector_5>:
+000006f6 <__vector_5>:
 
 //! Interrupt handler for InputCapture1 (IC1) interrupt
 TIMER_INTERRUPT_HANDLER(TIMER1_CAPT_vect)
 {
-     6d8:	1f 92       	push	r1
-     6da:	0f 92       	push	r0
-     6dc:	0f b6       	in	r0, 0x3f	; 63
-     6de:	0f 92       	push	r0
-     6e0:	11 24       	eor	r1, r1
-     6e2:	2f 93       	push	r18
-     6e4:	3f 93       	push	r19
-     6e6:	4f 93       	push	r20
-     6e8:	5f 93       	push	r21
-     6ea:	6f 93       	push	r22
-     6ec:	7f 93       	push	r23
-     6ee:	8f 93       	push	r24
-     6f0:	9f 93       	push	r25
-     6f2:	af 93       	push	r26
-     6f4:	bf 93       	push	r27
-     6f6:	ef 93       	push	r30
-     6f8:	ff 93       	push	r31
+     6f6:	1f 92       	push	r1
+     6f8:	0f 92       	push	r0
+     6fa:	0f b6       	in	r0, 0x3f	; 63
+     6fc:	0f 92       	push	r0
+     6fe:	11 24       	eor	r1, r1
+     700:	2f 93       	push	r18
+     702:	3f 93       	push	r19
+     704:	4f 93       	push	r20
+     706:	5f 93       	push	r21
+     708:	6f 93       	push	r22
+     70a:	7f 93       	push	r23
+     70c:	8f 93       	push	r24
+     70e:	9f 93       	push	r25
+     710:	af 93       	push	r26
+     712:	bf 93       	push	r27
+     714:	ef 93       	push	r30
+     716:	ff 93       	push	r31
 	// if a user function is defined, execute it
 	if(TimerIntFunc[TIMER1INPUTCAPTURE_INT])
-     6fa:	80 91 6a 00 	lds	r24, 0x006A
-     6fe:	90 91 6b 00 	lds	r25, 0x006B
-     702:	89 2b       	or	r24, r25
-     704:	29 f0       	breq	.+10     	; 0x710 <__vector_5+0x38>
+     718:	80 91 6a 00 	lds	r24, 0x006A
+     71c:	90 91 6b 00 	lds	r25, 0x006B
+     720:	89 2b       	or	r24, r25
+     722:	29 f0       	breq	.+10     	; 0x72e <__vector_5+0x38>
 		TimerIntFunc[TIMER1INPUTCAPTURE_INT]();
-     706:	e0 91 6a 00 	lds	r30, 0x006A
-     70a:	f0 91 6b 00 	lds	r31, 0x006B
-     70e:	09 95       	icall
+     724:	e0 91 6a 00 	lds	r30, 0x006A
+     728:	f0 91 6b 00 	lds	r31, 0x006B
+     72c:	09 95       	icall
 }
-     710:	ff 91       	pop	r31
-     712:	ef 91       	pop	r30
-     714:	bf 91       	pop	r27
-     716:	af 91       	pop	r26
-     718:	9f 91       	pop	r25
-     71a:	8f 91       	pop	r24
-     71c:	7f 91       	pop	r23
-     71e:	6f 91       	pop	r22
-     720:	5f 91       	pop	r21
-     722:	4f 91       	pop	r20
-     724:	3f 91       	pop	r19
-     726:	2f 91       	pop	r18
-     728:	0f 90       	pop	r0
-     72a:	0f be       	out	0x3f, r0	; 63
-     72c:	0f 90       	pop	r0
-     72e:	1f 90       	pop	r1
-     730:	18 95       	reti
+     72e:	ff 91       	pop	r31
+     730:	ef 91       	pop	r30
+     732:	bf 91       	pop	r27
+     734:	af 91       	pop	r26
+     736:	9f 91       	pop	r25
+     738:	8f 91       	pop	r24
+     73a:	7f 91       	pop	r23
+     73c:	6f 91       	pop	r22
+     73e:	5f 91       	pop	r21
+     740:	4f 91       	pop	r20
+     742:	3f 91       	pop	r19
+     744:	2f 91       	pop	r18
+     746:	0f 90       	pop	r0
+     748:	0f be       	out	0x3f, r0	; 63
+     74a:	0f 90       	pop	r0
+     74c:	1f 90       	pop	r1
+     74e:	18 95       	reti
 
-00000732 <__vector_3>:
+00000750 <__vector_3>:
 
 //! Interrupt handler for OutputCompare2 match (OC2) interrupt
 TIMER_INTERRUPT_HANDLER(TIMER2_COMP_vect)
 {
-     732:	1f 92       	push	r1
-     734:	0f 92       	push	r0
-     736:	0f b6       	in	r0, 0x3f	; 63
-     738:	0f 92       	push	r0
-     73a:	11 24       	eor	r1, r1
-     73c:	2f 93       	push	r18
-     73e:	3f 93       	push	r19
-     740:	4f 93       	push	r20
-     742:	5f 93       	push	r21
-     744:	6f 93       	push	r22
-     746:	7f 93       	push	r23
-     748:	8f 93       	push	r24
-     74a:	9f 93       	push	r25
-     74c:	af 93       	push	r26
-     74e:	bf 93       	push	r27
-     750:	ef 93       	push	r30
-     752:	ff 93       	push	r31
+     750:	1f 92       	push	r1
+     752:	0f 92       	push	r0
+     754:	0f b6       	in	r0, 0x3f	; 63
+     756:	0f 92       	push	r0
+     758:	11 24       	eor	r1, r1
+     75a:	2f 93       	push	r18
+     75c:	3f 93       	push	r19
+     75e:	4f 93       	push	r20
+     760:	5f 93       	push	r21
+     762:	6f 93       	push	r22
+     764:	7f 93       	push	r23
+     766:	8f 93       	push	r24
+     768:	9f 93       	push	r25
+     76a:	af 93       	push	r26
+     76c:	bf 93       	push	r27
+     76e:	ef 93       	push	r30
+     770:	ff 93       	push	r31
 	// if a user function is defined, execute it
 	if(TimerIntFunc[TIMER2OUTCOMPARE_INT])
-     754:	80 91 6e 00 	lds	r24, 0x006E
-     758:	90 91 6f 00 	lds	r25, 0x006F
-     75c:	89 2b       	or	r24, r25
-     75e:	29 f0       	breq	.+10     	; 0x76a <__vector_3+0x38>
+     772:	80 91 6e 00 	lds	r24, 0x006E
+     776:	90 91 6f 00 	lds	r25, 0x006F
+     77a:	89 2b       	or	r24, r25
+     77c:	29 f0       	breq	.+10     	; 0x788 <__vector_3+0x38>
 		TimerIntFunc[TIMER2OUTCOMPARE_INT]();
-     760:	e0 91 6e 00 	lds	r30, 0x006E
-     764:	f0 91 6f 00 	lds	r31, 0x006F
-     768:	09 95       	icall
+     77e:	e0 91 6e 00 	lds	r30, 0x006E
+     782:	f0 91 6f 00 	lds	r31, 0x006F
+     786:	09 95       	icall
 }
-     76a:	ff 91       	pop	r31
-     76c:	ef 91       	pop	r30
-     76e:	bf 91       	pop	r27
-     770:	af 91       	pop	r26
-     772:	9f 91       	pop	r25
-     774:	8f 91       	pop	r24
-     776:	7f 91       	pop	r23
-     778:	6f 91       	pop	r22
-     77a:	5f 91       	pop	r21
-     77c:	4f 91       	pop	r20
-     77e:	3f 91       	pop	r19
-     780:	2f 91       	pop	r18
-     782:	0f 90       	pop	r0
-     784:	0f be       	out	0x3f, r0	; 63
-     786:	0f 90       	pop	r0
-     788:	1f 90       	pop	r1
-     78a:	18 95       	reti
+     788:	ff 91       	pop	r31
+     78a:	ef 91       	pop	r30
+     78c:	bf 91       	pop	r27
+     78e:	af 91       	pop	r26
+     790:	9f 91       	pop	r25
+     792:	8f 91       	pop	r24
+     794:	7f 91       	pop	r23
+     796:	6f 91       	pop	r22
+     798:	5f 91       	pop	r21
+     79a:	4f 91       	pop	r20
+     79c:	3f 91       	pop	r19
+     79e:	2f 91       	pop	r18
+     7a0:	0f 90       	pop	r0
+     7a2:	0f be       	out	0x3f, r0	; 63
+     7a4:	0f 90       	pop	r0
+     7a6:	1f 90       	pop	r1
+     7a8:	18 95       	reti
 
-0000078c <uartInitBuffers>:
+000007aa <uartInitBuffers>:
 // create and initialize the uart transmit and receive buffers
 void uartInitBuffers(void)
 {
 	#ifndef UART_BUFFERS_EXTERNAL_RAM
 		// initialize the UART receive buffer
 		bufferInit(&uartRxBuffer, (unsigned char *)uartRxData, UART_RX_BUFFER_SIZE);
-     78c:	40 e4       	ldi	r20, 0x40	; 64
-     78e:	50 e0       	ldi	r21, 0x00	; 0
-     790:	64 eb       	ldi	r22, 0xB4	; 180
-     792:	70 e0       	ldi	r23, 0x00	; 0
-     794:	83 e0       	ldi	r24, 0x03	; 3
-     796:	91 e0       	ldi	r25, 0x01	; 1
-     798:	0e 94 b3 00 	call	0x166	; 0x166 <bufferInit>
+     7aa:	40 e4       	ldi	r20, 0x40	; 64
+     7ac:	50 e0       	ldi	r21, 0x00	; 0
+     7ae:	64 eb       	ldi	r22, 0xB4	; 180
+     7b0:	70 e0       	ldi	r23, 0x00	; 0
+     7b2:	84 e0       	ldi	r24, 0x04	; 4
+     7b4:	91 e0       	ldi	r25, 0x01	; 1
+     7b6:	0e 94 c2 00 	call	0x184	; 0x184 <bufferInit>
 		// initialize the UART transmit buffer
 		bufferInit(&uartTxBuffer, (unsigned char *)uartTxData, UART_TX_BUFFER_SIZE);
-     79c:	40 e4       	ldi	r20, 0x40	; 64
-     79e:	50 e0       	ldi	r21, 0x00	; 0
-     7a0:	64 e7       	ldi	r22, 0x74	; 116
-     7a2:	70 e0       	ldi	r23, 0x00	; 0
-     7a4:	8c e0       	ldi	r24, 0x0C	; 12
-     7a6:	91 e0       	ldi	r25, 0x01	; 1
-     7a8:	0c 94 b3 00 	jmp	0x166	; 0x166 <bufferInit>
+     7ba:	40 e4       	ldi	r20, 0x40	; 64
+     7bc:	50 e0       	ldi	r21, 0x00	; 0
+     7be:	64 e7       	ldi	r22, 0x74	; 116
+     7c0:	70 e0       	ldi	r23, 0x00	; 0
+     7c2:	8d e0       	ldi	r24, 0x0D	; 13
+     7c4:	91 e0       	ldi	r25, 0x01	; 1
+     7c6:	0c 94 c2 00 	jmp	0x184	; 0x184 <bufferInit>
 
-000007ac <uartInit>:
+000007ca <uartInit>:
 
 // enable and initialize the uart
 void uartInit(void)
 {
 	// initialize the buffers
 	uartInitBuffers();
-     7ac:	0e 94 c6 03 	call	0x78c	; 0x78c <uartInitBuffers>
+     7ca:	0e 94 d5 03 	call	0x7aa	; 0x7aa <uartInitBuffers>
 	// initialize user receive handler
 	UartRxFunc = 0;
-     7b0:	10 92 73 00 	sts	0x0073, r1
-     7b4:	10 92 72 00 	sts	0x0072, r1
+     7ce:	10 92 73 00 	sts	0x0073, r1
+     7d2:	10 92 72 00 	sts	0x0072, r1
 
 	// enable RxD/TxD and interrupts
 	outb(UCR, BV(RXCIE)|BV(TXCIE)|BV(RXEN)|BV(TXEN));
-     7b8:	88 ed       	ldi	r24, 0xD8	; 216
-     7ba:	8a b9       	out	0x0a, r24	; 10
+     7d6:	88 ed       	ldi	r24, 0xD8	; 216
+     7d8:	8a b9       	out	0x0a, r24	; 10
 // set the uart baud rate
 void uartSetBaudRate(u32 baudrate)
 {
 	// calculate division factor for requested baud rate, and set it
 	u16 bauddiv = ((F_CPU+(baudrate*8L))/(baudrate*16L)-1);
 	outb(UBRRL, bauddiv);
-     7bc:	8f e5       	ldi	r24, 0x5F	; 95
-     7be:	89 b9       	out	0x09, r24	; 9
+     7da:	8f e5       	ldi	r24, 0x5F	; 95
+     7dc:	89 b9       	out	0x09, r24	; 9
 	#ifdef UBRRH
 	outb(UBRRH, bauddiv>>8);
-     7c0:	10 bc       	out	0x20, r1	; 32
+     7de:	10 bc       	out	0x20, r1	; 32
 	outb(UCR, BV(RXCIE)|BV(TXCIE)|BV(RXEN)|BV(TXEN));
 
 	// set default baud rate
 	uartSetBaudRate(UART_DEFAULT_BAUD_RATE);  
 	// initialize states
 	uartReadyTx = TRUE;
-     7c2:	8f ef       	ldi	r24, 0xFF	; 255
-     7c4:	80 93 02 01 	sts	0x0102, r24
+     7e0:	8f ef       	ldi	r24, 0xFF	; 255
+     7e2:	80 93 03 01 	sts	0x0103, r24
 	uartBufferedTx = FALSE;
-     7c8:	10 92 0b 01 	sts	0x010B, r1
+     7e6:	10 92 0c 01 	sts	0x010C, r1
 	// clear overflow count
 	uartRxOverflow = 0;
-     7cc:	10 92 15 01 	sts	0x0115, r1
-     7d0:	10 92 14 01 	sts	0x0114, r1
+     7ea:	10 92 16 01 	sts	0x0116, r1
+     7ee:	10 92 15 01 	sts	0x0115, r1
 	// enable interrupts
 	sei();
-     7d4:	78 94       	sei
-     7d6:	08 95       	ret
+     7f2:	78 94       	sei
+     7f4:	08 95       	ret
 
-000007d8 <uartSetBaudRate>:
+000007f6 <uartSetBaudRate>:
 	UartRxFunc = rx_func;
 }
 
 // set the uart baud rate
 void uartSetBaudRate(u32 baudrate)
 {
-     7d8:	0f 93       	push	r16
-     7da:	1f 93       	push	r17
-     7dc:	8b 01       	movw	r16, r22
-     7de:	9c 01       	movw	r18, r24
+     7f6:	0f 93       	push	r16
+     7f8:	1f 93       	push	r17
+     7fa:	8b 01       	movw	r16, r22
+     7fc:	9c 01       	movw	r18, r24
 	// calculate division factor for requested baud rate, and set it
 	u16 bauddiv = ((F_CPU+(baudrate*8L))/(baudrate*16L)-1);
-     7e0:	dc 01       	movw	r26, r24
-     7e2:	cb 01       	movw	r24, r22
-     7e4:	90 5e       	subi	r25, 0xE0	; 224
-     7e6:	a3 4e       	sbci	r26, 0xE3	; 227
-     7e8:	bf 4f       	sbci	r27, 0xFF	; 255
-     7ea:	bc 01       	movw	r22, r24
-     7ec:	cd 01       	movw	r24, r26
-     7ee:	43 e0       	ldi	r20, 0x03	; 3
-     7f0:	66 0f       	add	r22, r22
-     7f2:	77 1f       	adc	r23, r23
-     7f4:	88 1f       	adc	r24, r24
-     7f6:	99 1f       	adc	r25, r25
-     7f8:	4a 95       	dec	r20
-     7fa:	d1 f7       	brne	.-12     	; 0x7f0 <uartSetBaudRate+0x18>
-     7fc:	a9 01       	movw	r20, r18
-     7fe:	98 01       	movw	r18, r16
-     800:	e4 e0       	ldi	r30, 0x04	; 4
-     802:	22 0f       	add	r18, r18
-     804:	33 1f       	adc	r19, r19
-     806:	44 1f       	adc	r20, r20
-     808:	55 1f       	adc	r21, r21
-     80a:	ea 95       	dec	r30
-     80c:	d1 f7       	brne	.-12     	; 0x802 <uartSetBaudRate+0x2a>
-     80e:	0e 94 38 08 	call	0x1070	; 0x1070 <__udivmodsi4>
-     812:	21 50       	subi	r18, 0x01	; 1
-     814:	31 09       	sbc	r19, r1
+     7fe:	dc 01       	movw	r26, r24
+     800:	cb 01       	movw	r24, r22
+     802:	90 5e       	subi	r25, 0xE0	; 224
+     804:	a3 4e       	sbci	r26, 0xE3	; 227
+     806:	bf 4f       	sbci	r27, 0xFF	; 255
+     808:	bc 01       	movw	r22, r24
+     80a:	cd 01       	movw	r24, r26
+     80c:	43 e0       	ldi	r20, 0x03	; 3
+     80e:	66 0f       	add	r22, r22
+     810:	77 1f       	adc	r23, r23
+     812:	88 1f       	adc	r24, r24
+     814:	99 1f       	adc	r25, r25
+     816:	4a 95       	dec	r20
+     818:	d1 f7       	brne	.-12     	; 0x80e <uartSetBaudRate+0x18>
+     81a:	a9 01       	movw	r20, r18
+     81c:	98 01       	movw	r18, r16
+     81e:	e4 e0       	ldi	r30, 0x04	; 4
+     820:	22 0f       	add	r18, r18
+     822:	33 1f       	adc	r19, r19
+     824:	44 1f       	adc	r20, r20
+     826:	55 1f       	adc	r21, r21
+     828:	ea 95       	dec	r30
+     82a:	d1 f7       	brne	.-12     	; 0x820 <uartSetBaudRate+0x2a>
+     82c:	0e 94 47 08 	call	0x108e	; 0x108e <__udivmodsi4>
+     830:	21 50       	subi	r18, 0x01	; 1
+     832:	31 09       	sbc	r19, r1
 	outb(UBRRL, bauddiv);
-     816:	29 b9       	out	0x09, r18	; 9
+     834:	29 b9       	out	0x09, r18	; 9
 	#ifdef UBRRH
 	outb(UBRRH, bauddiv>>8);
-     818:	30 bd       	out	0x20, r19	; 32
+     836:	30 bd       	out	0x20, r19	; 32
 	#endif
 }
-     81a:	1f 91       	pop	r17
-     81c:	0f 91       	pop	r16
-     81e:	08 95       	ret
+     838:	1f 91       	pop	r17
+     83a:	0f 91       	pop	r16
+     83c:	08 95       	ret
 
-00000820 <uartSendByte>:
+0000083e <uartSendByte>:
 
 // transmits a byte over the uart
 void uartSendByte(u08 txData)
 {
 	// wait for the transmitter to be ready
 	while(!uartReadyTx);
-     820:	90 91 02 01 	lds	r25, 0x0102
-     824:	99 23       	and	r25, r25
-     826:	e1 f3       	breq	.-8      	; 0x820 <uartSendByte>
+     83e:	90 91 03 01 	lds	r25, 0x0103
+     842:	99 23       	and	r25, r25
+     844:	e1 f3       	breq	.-8      	; 0x83e <uartSendByte>
 	// send byte
 	outb(UDR, txData);
-     828:	8c b9       	out	0x0c, r24	; 12
+     846:	8c b9       	out	0x0c, r24	; 12
 	// set ready state to FALSE
 	uartReadyTx = FALSE;
-     82a:	10 92 02 01 	sts	0x0102, r1
-     82e:	08 95       	ret
+     848:	10 92 03 01 	sts	0x0103, r1
+     84c:	08 95       	ret
 
-00000830 <__vector_13>:
+0000084e <__vector_13>:
 	}
 }
 */
 // UART Transmit Complete Interrupt Handler
 UART_INTERRUPT_HANDLER(__SIG_UART_TRANS)
 {
-     830:	1f 92       	push	r1
-     832:	0f 92       	push	r0
-     834:	0f b6       	in	r0, 0x3f	; 63
-     836:	0f 92       	push	r0
-     838:	11 24       	eor	r1, r1
-     83a:	2f 93       	push	r18
-     83c:	3f 93       	push	r19
-     83e:	4f 93       	push	r20
-     840:	5f 93       	push	r21
-     842:	6f 93       	push	r22
-     844:	7f 93       	push	r23
-     846:	8f 93       	push	r24
-     848:	9f 93       	push	r25
-     84a:	af 93       	push	r26
-     84c:	bf 93       	push	r27
-     84e:	ef 93       	push	r30
-     850:	ff 93       	push	r31
+     84e:	1f 92       	push	r1
+     850:	0f 92       	push	r0
+     852:	0f b6       	in	r0, 0x3f	; 63
+     854:	0f 92       	push	r0
+     856:	11 24       	eor	r1, r1
+     858:	2f 93       	push	r18
+     85a:	3f 93       	push	r19
+     85c:	4f 93       	push	r20
+     85e:	5f 93       	push	r21
+     860:	6f 93       	push	r22
+     862:	7f 93       	push	r23
+     864:	8f 93       	push	r24
+     866:	9f 93       	push	r25
+     868:	af 93       	push	r26
+     86a:	bf 93       	push	r27
+     86c:	ef 93       	push	r30
+     86e:	ff 93       	push	r31
 	// check if buffered tx is enabled
 	if(uartBufferedTx)
-     852:	80 91 0b 01 	lds	r24, 0x010B
-     856:	88 23       	and	r24, r24
-     858:	71 f0       	breq	.+28     	; 0x876 <__vector_13+0x46>
+     870:	80 91 0c 01 	lds	r24, 0x010C
+     874:	88 23       	and	r24, r24
+     876:	71 f0       	breq	.+28     	; 0x894 <__vector_13+0x46>
 	{
 		// check if there's data left in the buffer
 		if(uartTxBuffer.datalength)
-     85a:	80 91 10 01 	lds	r24, 0x0110
-     85e:	90 91 11 01 	lds	r25, 0x0111
-     862:	89 2b       	or	r24, r25
-     864:	31 f0       	breq	.+12     	; 0x872 <__vector_13+0x42>
+     878:	80 91 11 01 	lds	r24, 0x0111
+     87c:	90 91 12 01 	lds	r25, 0x0112
+     880:	89 2b       	or	r24, r25
+     882:	31 f0       	breq	.+12     	; 0x890 <__vector_13+0x42>
 		{
 			// send byte from top of buffer
 			outb(UDR, bufferGetFromFront(&uartTxBuffer));
-     866:	8c e0       	ldi	r24, 0x0C	; 12
-     868:	91 e0       	ldi	r25, 0x01	; 1
-     86a:	0e 94 c0 00 	call	0x180	; 0x180 <bufferGetFromFront>
-     86e:	8c b9       	out	0x0c, r24	; 12
-     870:	05 c0       	rjmp	.+10     	; 0x87c <__vector_13+0x4c>
+     884:	8d e0       	ldi	r24, 0x0D	; 13
+     886:	91 e0       	ldi	r25, 0x01	; 1
+     888:	0e 94 cf 00 	call	0x19e	; 0x19e <bufferGetFromFront>
+     88c:	8c b9       	out	0x0c, r24	; 12
+     88e:	05 c0       	rjmp	.+10     	; 0x89a <__vector_13+0x4c>
 		}
 		else
 		{
 			// no data left
 			uartBufferedTx = FALSE;
-     872:	10 92 0b 01 	sts	0x010B, r1
+     890:	10 92 0c 01 	sts	0x010C, r1
 	}
 	else
 	{
 		// we're using single-byte tx mode
 		// indicate transmit complete, back to ready
 		uartReadyTx = TRUE;
-     876:	8f ef       	ldi	r24, 0xFF	; 255
-     878:	80 93 02 01 	sts	0x0102, r24
+     894:	8f ef       	ldi	r24, 0xFF	; 255
+     896:	80 93 03 01 	sts	0x0103, r24
 	}
 }
-     87c:	ff 91       	pop	r31
-     87e:	ef 91       	pop	r30
-     880:	bf 91       	pop	r27
-     882:	af 91       	pop	r26
-     884:	9f 91       	pop	r25
-     886:	8f 91       	pop	r24
-     888:	7f 91       	pop	r23
-     88a:	6f 91       	pop	r22
-     88c:	5f 91       	pop	r21
-     88e:	4f 91       	pop	r20
-     890:	3f 91       	pop	r19
-     892:	2f 91       	pop	r18
-     894:	0f 90       	pop	r0
-     896:	0f be       	out	0x3f, r0	; 63
-     898:	0f 90       	pop	r0
-     89a:	1f 90       	pop	r1
-     89c:	18 95       	reti
+     89a:	ff 91       	pop	r31
+     89c:	ef 91       	pop	r30
+     89e:	bf 91       	pop	r27
+     8a0:	af 91       	pop	r26
+     8a2:	9f 91       	pop	r25
+     8a4:	8f 91       	pop	r24
+     8a6:	7f 91       	pop	r23
+     8a8:	6f 91       	pop	r22
+     8aa:	5f 91       	pop	r21
+     8ac:	4f 91       	pop	r20
+     8ae:	3f 91       	pop	r19
+     8b0:	2f 91       	pop	r18
+     8b2:	0f 90       	pop	r0
+     8b4:	0f be       	out	0x3f, r0	; 63
+     8b6:	0f 90       	pop	r0
+     8b8:	1f 90       	pop	r1
+     8ba:	18 95       	reti
 
-0000089e <__vector_11>:
+000008bc <__vector_11>:
 
 // UART Receive Complete Interrupt Handler
 UART_INTERRUPT_HANDLER(__SIG_UART_RECV)
 {
-     89e:	1f 92       	push	r1
-     8a0:	0f 92       	push	r0
-     8a2:	0f b6       	in	r0, 0x3f	; 63
-     8a4:	0f 92       	push	r0
-     8a6:	11 24       	eor	r1, r1
-     8a8:	2f 93       	push	r18
-     8aa:	3f 93       	push	r19
-     8ac:	4f 93       	push	r20
-     8ae:	5f 93       	push	r21
-     8b0:	6f 93       	push	r22
-     8b2:	7f 93       	push	r23
-     8b4:	8f 93       	push	r24
-     8b6:	9f 93       	push	r25
-     8b8:	af 93       	push	r26
-     8ba:	bf 93       	push	r27
-     8bc:	ef 93       	push	r30
-     8be:	ff 93       	push	r31
+     8bc:	1f 92       	push	r1
+     8be:	0f 92       	push	r0
+     8c0:	0f b6       	in	r0, 0x3f	; 63
+     8c2:	0f 92       	push	r0
+     8c4:	11 24       	eor	r1, r1
+     8c6:	2f 93       	push	r18
+     8c8:	3f 93       	push	r19
+     8ca:	4f 93       	push	r20
+     8cc:	5f 93       	push	r21
+     8ce:	6f 93       	push	r22
+     8d0:	7f 93       	push	r23
+     8d2:	8f 93       	push	r24
+     8d4:	9f 93       	push	r25
+     8d6:	af 93       	push	r26
+     8d8:	bf 93       	push	r27
+     8da:	ef 93       	push	r30
+     8dc:	ff 93       	push	r31
 	u08 c;
 	
 	// get received char
 	c = inb(UDR);
-     8c0:	8c b1       	in	r24, 0x0c	; 12
+     8de:	8c b1       	in	r24, 0x0c	; 12
 
 	// if there's a user function to handle this receive event
 	if(UartRxFunc)
-     8c2:	20 91 72 00 	lds	r18, 0x0072
-     8c6:	30 91 73 00 	lds	r19, 0x0073
-     8ca:	23 2b       	or	r18, r19
-     8cc:	31 f0       	breq	.+12     	; 0x8da <__vector_11+0x3c>
+     8e0:	20 91 72 00 	lds	r18, 0x0072
+     8e4:	30 91 73 00 	lds	r19, 0x0073
+     8e8:	23 2b       	or	r18, r19
+     8ea:	31 f0       	breq	.+12     	; 0x8f8 <__vector_11+0x3c>
 	{
 		// call it and pass the received data
 		UartRxFunc(c);
-     8ce:	e0 91 72 00 	lds	r30, 0x0072
-     8d2:	f0 91 73 00 	lds	r31, 0x0073
-     8d6:	09 95       	icall
-     8d8:	10 c0       	rjmp	.+32     	; 0x8fa <__vector_11+0x5c>
+     8ec:	e0 91 72 00 	lds	r30, 0x0072
+     8f0:	f0 91 73 00 	lds	r31, 0x0073
+     8f4:	09 95       	icall
+     8f6:	10 c0       	rjmp	.+32     	; 0x918 <__vector_11+0x5c>
 	else
 	{
 		// otherwise do default processing
 		// put received char in buffer
 		// check if there's space
 		if( !bufferAddToEnd(&uartRxBuffer, c) )
-     8da:	68 2f       	mov	r22, r24
-     8dc:	83 e0       	ldi	r24, 0x03	; 3
-     8de:	91 e0       	ldi	r25, 0x01	; 1
-     8e0:	0e 94 e4 00 	call	0x1c8	; 0x1c8 <bufferAddToEnd>
-     8e4:	81 11       	cpse	r24, r1
-     8e6:	09 c0       	rjmp	.+18     	; 0x8fa <__vector_11+0x5c>
+     8f8:	68 2f       	mov	r22, r24
+     8fa:	84 e0       	ldi	r24, 0x04	; 4
+     8fc:	91 e0       	ldi	r25, 0x01	; 1
+     8fe:	0e 94 f3 00 	call	0x1e6	; 0x1e6 <bufferAddToEnd>
+     902:	81 11       	cpse	r24, r1
+     904:	09 c0       	rjmp	.+18     	; 0x918 <__vector_11+0x5c>
 		{
 			// no space in buffer
 			// count overflow
 			uartRxOverflow++;
-     8e8:	80 91 14 01 	lds	r24, 0x0114
-     8ec:	90 91 15 01 	lds	r25, 0x0115
-     8f0:	01 96       	adiw	r24, 0x01	; 1
-     8f2:	90 93 15 01 	sts	0x0115, r25
-     8f6:	80 93 14 01 	sts	0x0114, r24
+     906:	80 91 15 01 	lds	r24, 0x0115
+     90a:	90 91 16 01 	lds	r25, 0x0116
+     90e:	01 96       	adiw	r24, 0x01	; 1
+     910:	90 93 16 01 	sts	0x0116, r25
+     914:	80 93 15 01 	sts	0x0115, r24
 		}
 	}
 }
-     8fa:	ff 91       	pop	r31
-     8fc:	ef 91       	pop	r30
-     8fe:	bf 91       	pop	r27
-     900:	af 91       	pop	r26
-     902:	9f 91       	pop	r25
-     904:	8f 91       	pop	r24
-     906:	7f 91       	pop	r23
-     908:	6f 91       	pop	r22
-     90a:	5f 91       	pop	r21
-     90c:	4f 91       	pop	r20
-     90e:	3f 91       	pop	r19
-     910:	2f 91       	pop	r18
-     912:	0f 90       	pop	r0
-     914:	0f be       	out	0x3f, r0	; 63
-     916:	0f 90       	pop	r0
-     918:	1f 90       	pop	r1
-     91a:	18 95       	reti
+     918:	ff 91       	pop	r31
+     91a:	ef 91       	pop	r30
+     91c:	bf 91       	pop	r27
+     91e:	af 91       	pop	r26
+     920:	9f 91       	pop	r25
+     922:	8f 91       	pop	r24
+     924:	7f 91       	pop	r23
+     926:	6f 91       	pop	r22
+     928:	5f 91       	pop	r21
+     92a:	4f 91       	pop	r20
+     92c:	3f 91       	pop	r19
+     92e:	2f 91       	pop	r18
+     930:	0f 90       	pop	r0
+     932:	0f be       	out	0x3f, r0	; 63
+     934:	0f 90       	pop	r0
+     936:	1f 90       	pop	r1
+     938:	18 95       	reti
 
-0000091c <AppOutputCompare0>:
+0000093a <AppOutputCompare0>:
 *********************************************************************************************************
 */
 void AppOutputCompare0(void)
 {
 	//PORTD ^= (1<<PD4);
 	OCR0 = TCNT0 + CYCLEN_60HZ;
-     91c:	82 b7       	in	r24, 0x32	; 50
-     91e:	80 51       	subi	r24, 0x10	; 16
-     920:	8c bf       	out	0x3c, r24	; 60
+     93a:	82 b7       	in	r24, 0x32	; 50
+     93c:	80 51       	subi	r24, 0x10	; 16
+     93e:	8c bf       	out	0x3c, r24	; 60
 	appl.fSysPwrZC = 1;
-     922:	e6 e1       	ldi	r30, 0x16	; 22
-     924:	f1 e0       	ldi	r31, 0x01	; 1
-     926:	80 81       	ld	r24, Z
-     928:	81 60       	ori	r24, 0x01	; 1
-     92a:	80 83       	st	Z, r24
-     92c:	08 95       	ret
+     940:	e7 e1       	ldi	r30, 0x17	; 23
+     942:	f1 e0       	ldi	r31, 0x01	; 1
+     944:	80 81       	ld	r24, Z
+     946:	81 60       	ori	r24, 0x01	; 1
+     948:	80 83       	st	Z, r24
+     94a:	08 95       	ret
 
-0000092e <AppDisplay.isra.0>:
+0000094c <AppDisplay.isra.0>:
 * Returns    : true, power on control has finised. false, is processing
 *********************************************************************************************************
 */
 void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 {
 	switch(DispCode)
-     92e:	90 e0       	ldi	r25, 0x00	; 0
-     930:	88 30       	cpi	r24, 0x08	; 8
-     932:	91 05       	cpc	r25, r1
-     934:	00 f5       	brcc	.+64     	; 0x976 <AppDisplay.isra.0+0x48>
-     936:	fc 01       	movw	r30, r24
-     938:	e6 5d       	subi	r30, 0xD6	; 214
-     93a:	ff 4f       	sbci	r31, 0xFF	; 255
+     94c:	90 e0       	ldi	r25, 0x00	; 0
+     94e:	88 30       	cpi	r24, 0x08	; 8
+     950:	91 05       	cpc	r25, r1
+     952:	00 f5       	brcc	.+64     	; 0x994 <AppDisplay.isra.0+0x48>
+     954:	fc 01       	movw	r30, r24
+     956:	e6 5d       	subi	r30, 0xD6	; 214
+     958:	ff 4f       	sbci	r31, 0xFF	; 255
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(REMOTE_ADDR, SSD_0HZ, SSD_RED);
-     93c:	40 e0       	ldi	r20, 0x00	; 0
-     93e:	60 e0       	ldi	r22, 0x00	; 0
+     95a:	40 e0       	ldi	r20, 0x00	; 0
+     95c:	60 e0       	ldi	r22, 0x00	; 0
 * Returns    : true, power on control has finised. false, is processing
 *********************************************************************************************************
 */
 void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 {
 	switch(DispCode)
-     940:	0c 94 5a 08 	jmp	0x10b4	; 0x10b4 <__tablejump2__>
+     95e:	0c 94 69 08 	jmp	0x10d2	; 0x10d2 <__tablejump2__>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(START_CHAR, SSD_0HZ, SSD_RED);
-     944:	80 e0       	ldi	r24, 0x00	; 0
-     946:	90 e0       	ldi	r25, 0x00	; 0
-     948:	14 c0       	rjmp	.+40     	; 0x972 <AppDisplay.isra.0+0x44>
+     962:	80 e0       	ldi	r24, 0x00	; 0
+     964:	90 e0       	ldi	r25, 0x00	; 0
+     966:	14 c0       	rjmp	.+40     	; 0x990 <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(CURRENT_VALUE, SSD_0HZ, SSD_RED);
-     94a:	81 e0       	ldi	r24, 0x01	; 1
-     94c:	90 e0       	ldi	r25, 0x00	; 0
-     94e:	11 c0       	rjmp	.+34     	; 0x972 <AppDisplay.isra.0+0x44>
+     968:	81 e0       	ldi	r24, 0x01	; 1
+     96a:	90 e0       	ldi	r25, 0x00	; 0
+     96c:	11 c0       	rjmp	.+34     	; 0x990 <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(FULL_WAREHOUSE, SSD_0HZ, SSD_RED);
-     950:	82 e0       	ldi	r24, 0x02	; 2
-     952:	90 e0       	ldi	r25, 0x00	; 0
-     954:	0e c0       	rjmp	.+28     	; 0x972 <AppDisplay.isra.0+0x44>
+     96e:	82 e0       	ldi	r24, 0x02	; 2
+     970:	90 e0       	ldi	r25, 0x00	; 0
+     972:	0e c0       	rjmp	.+28     	; 0x990 <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(EMPTY_WAREHOUSE, SSD_0HZ, SSD_RED);
-     956:	83 e0       	ldi	r24, 0x03	; 3
-     958:	90 e0       	ldi	r25, 0x00	; 0
-     95a:	0b c0       	rjmp	.+22     	; 0x972 <AppDisplay.isra.0+0x44>
+     974:	83 e0       	ldi	r24, 0x03	; 3
+     976:	90 e0       	ldi	r25, 0x00	; 0
+     978:	0b c0       	rjmp	.+22     	; 0x990 <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(ALARM_H_PERCENT, SSD_0HZ, SSD_RED);
-     95c:	84 e0       	ldi	r24, 0x04	; 4
-     95e:	90 e0       	ldi	r25, 0x00	; 0
-     960:	08 c0       	rjmp	.+16     	; 0x972 <AppDisplay.isra.0+0x44>
+     97a:	84 e0       	ldi	r24, 0x04	; 4
+     97c:	90 e0       	ldi	r25, 0x00	; 0
+     97e:	08 c0       	rjmp	.+16     	; 0x990 <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(ALARM_L_PERCENT, SSD_0HZ, SSD_RED);
-     962:	85 e0       	ldi	r24, 0x05	; 5
-     964:	90 e0       	ldi	r25, 0x00	; 0
-     966:	05 c0       	rjmp	.+10     	; 0x972 <AppDisplay.isra.0+0x44>
+     980:	85 e0       	ldi	r24, 0x05	; 5
+     982:	90 e0       	ldi	r25, 0x00	; 0
+     984:	05 c0       	rjmp	.+10     	; 0x990 <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(RESPONSE_TIME, SSD_0HZ, SSD_RED);
-     968:	86 e0       	ldi	r24, 0x06	; 6
-     96a:	90 e0       	ldi	r25, 0x00	; 0
-     96c:	02 c0       	rjmp	.+4      	; 0x972 <AppDisplay.isra.0+0x44>
+     986:	86 e0       	ldi	r24, 0x06	; 6
+     988:	90 e0       	ldi	r25, 0x00	; 0
+     98a:	02 c0       	rjmp	.+4      	; 0x990 <AppDisplay.isra.0+0x44>
 			}
 			else	/* setting mode */
 			{
 
 			}
 			SSDDisplayDec(REMOTE_ADDR, SSD_0HZ, SSD_RED);
-     96e:	87 e0       	ldi	r24, 0x07	; 7
-     970:	90 e0       	ldi	r25, 0x00	; 0
-     972:	0c 94 21 07 	jmp	0xe42	; 0xe42 <SSDDisplayDec>
-     976:	08 95       	ret
+     98c:	87 e0       	ldi	r24, 0x07	; 7
+     98e:	90 e0       	ldi	r25, 0x00	; 0
+     990:	0c 94 30 07 	jmp	0xe60	; 0xe60 <SSDDisplayDec>
+     994:	08 95       	ret
 
-00000978 <ApplInit>:
+00000996 <ApplInit>:
 *********************************************************************************************************
 */
 
 void ApplInit(void)
 {
 	ButtonInit();
-     978:	0e 94 d0 07 	call	0xfa0	; 0xfa0 <ButtonInit>
+     996:	0e 94 df 07 	call	0xfbe	; 0xfbe <ButtonInit>
 	LEDInit();
-     97c:	0e 94 73 06 	call	0xce6	; 0xce6 <LEDInit>
+     99a:	0e 94 82 06 	call	0xd04	; 0xd04 <LEDInit>
 	SSDInit();
-     980:	0e 94 c1 07 	call	0xf82	; 0xf82 <SSDInit>
+     99e:	0e 94 d0 07 	call	0xfa0	; 0xfa0 <SSDInit>
 */
 
 void ApplDataInit(void)
 {
 	/* Following for initial power on display steps */
 	appl.workMode = PWR_ON;
-     984:	e6 e1       	ldi	r30, 0x16	; 22
-     986:	f1 e0       	ldi	r31, 0x01	; 1
-     988:	15 86       	std	Z+13, r1	; 0x0d
+     9a2:	e7 e1       	ldi	r30, 0x17	; 23
+     9a4:	f1 e0       	ldi	r31, 0x01	; 1
+     9a6:	15 86       	std	Z+13, r1	; 0x0d
 	appl.CurEvent = NULL_EVENT;
-     98a:	16 86       	std	Z+14, r1	; 0x0e
+     9a8:	16 86       	std	Z+14, r1	; 0x0e
 	appl.LastEvent = NULL_EVENT;
-     98c:	17 86       	std	Z+15, r1	; 0x0f
+     9aa:	17 86       	std	Z+15, r1	; 0x0f
 	appl.second = 0;
-     98e:	10 8a       	std	Z+16, r1	; 0x10
+     9ac:	10 8a       	std	Z+16, r1	; 0x10
 	appl.ModeTimer = TIME_SWITCH_TOTAL;
-     990:	80 ee       	ldi	r24, 0xE0	; 224
-     992:	91 e0       	ldi	r25, 0x01	; 1
-     994:	94 8b       	std	Z+20, r25	; 0x14
-     996:	83 8b       	std	Z+19, r24	; 0x13
+     9ae:	80 ee       	ldi	r24, 0xE0	; 224
+     9b0:	91 e0       	ldi	r25, 0x01	; 1
+     9b2:	94 8b       	std	Z+20, r25	; 0x14
+     9b4:	83 8b       	std	Z+19, r24	; 0x13
 	appl.DispCode= START_CHAR;
-     998:	15 8a       	std	Z+21, r1	; 0x15
+     9b6:	15 8a       	std	Z+21, r1	; 0x15
 	appl.PwrOnSteps = DISP_START;
-     99a:	16 8a       	std	Z+22, r1	; 0x16
+     9b8:	16 8a       	std	Z+22, r1	; 0x16
 	ButtonInit();
 	LEDInit();
 	SSDInit();
 	ApplDataInit();
 	
 	rprintf("Main board here!\n" );	
-     99c:	89 e1       	ldi	r24, 0x19	; 25
-     99e:	91 e0       	ldi	r25, 0x01	; 1
-     9a0:	9f 93       	push	r25
-     9a2:	8f 93       	push	r24
-     9a4:	81 e0       	ldi	r24, 0x01	; 1
-     9a6:	8f 93       	push	r24
-     9a8:	0e 94 23 01 	call	0x246	; 0x246 <rprintf1RamRom>
+     9ba:	89 e1       	ldi	r24, 0x19	; 25
+     9bc:	91 e0       	ldi	r25, 0x01	; 1
+     9be:	9f 93       	push	r25
+     9c0:	8f 93       	push	r24
+     9c2:	81 e0       	ldi	r24, 0x01	; 1
+     9c4:	8f 93       	push	r24
+     9c6:	0e 94 32 01 	call	0x264	; 0x264 <rprintf1RamRom>
 
 	timerAttach(TIMER0OUTCOMPARE_INT, AppOutputCompare0);
-     9ac:	0f 90       	pop	r0
-     9ae:	0f 90       	pop	r0
-     9b0:	0f 90       	pop	r0
-     9b2:	6e e8       	ldi	r22, 0x8E	; 142
-     9b4:	74 e0       	ldi	r23, 0x04	; 4
-     9b6:	87 e0       	ldi	r24, 0x07	; 7
-     9b8:	0c 94 fe 01 	jmp	0x3fc	; 0x3fc <timerAttach>
+     9ca:	0f 90       	pop	r0
+     9cc:	0f 90       	pop	r0
+     9ce:	0f 90       	pop	r0
+     9d0:	6d e9       	ldi	r22, 0x9D	; 157
+     9d2:	74 e0       	ldi	r23, 0x04	; 4
+     9d4:	87 e0       	ldi	r24, 0x07	; 7
+     9d6:	0c 94 0d 02 	jmp	0x41a	; 0x41a <timerAttach>
 
-000009bc <AppCycleUpdate>:
+000009da <AppCycleUpdate>:
 *
 * Returns    : none
 *********************************************************************************************************
 */
 void AppCycleUpdate(void)
 {	
-     9bc:	cf 93       	push	r28
+     9da:	cf 93       	push	r28
 	char tempChar;
 	static uint16_t cnt;
 	cnt++;
-     9be:	80 91 f4 00 	lds	r24, 0x00F4
-     9c2:	90 91 f5 00 	lds	r25, 0x00F5
-     9c6:	01 96       	adiw	r24, 0x01	; 1
-     9c8:	90 93 f5 00 	sts	0x00F5, r25
-     9cc:	80 93 f4 00 	sts	0x00F4, r24
+     9dc:	80 91 f4 00 	lds	r24, 0x00F4
+     9e0:	90 91 f5 00 	lds	r25, 0x00F5
+     9e4:	01 96       	adiw	r24, 0x01	; 1
+     9e6:	90 93 f5 00 	sts	0x00F5, r25
+     9ea:	80 93 f4 00 	sts	0x00F4, r24
 * Returns    : none
 *********************************************************************************************************
 */
 void AppUpdateTimers(void)
 {
 	if(++appl.second > TIMER_1_SEC_60HZ) 
-     9d0:	80 91 26 01 	lds	r24, 0x0126
-     9d4:	8f 5f       	subi	r24, 0xFF	; 255
-     9d6:	8d 33       	cpi	r24, 0x3D	; 61
-     9d8:	18 f4       	brcc	.+6      	; 0x9e0 <AppCycleUpdate+0x24>
-     9da:	80 93 26 01 	sts	0x0126, r24
-     9de:	02 c0       	rjmp	.+4      	; 0x9e4 <AppCycleUpdate+0x28>
+     9ee:	80 91 27 01 	lds	r24, 0x0127
+     9f2:	8f 5f       	subi	r24, 0xFF	; 255
+     9f4:	8d 33       	cpi	r24, 0x3D	; 61
+     9f6:	18 f4       	brcc	.+6      	; 0x9fe <AppCycleUpdate+0x24>
+     9f8:	80 93 27 01 	sts	0x0127, r24
+     9fc:	02 c0       	rjmp	.+4      	; 0xa02 <AppCycleUpdate+0x28>
 	{
 		appl.second = 0;
-     9e0:	10 92 26 01 	sts	0x0126, r1
+     9fe:	10 92 27 01 	sts	0x0127, r1
 #endif
 #endif
 		
 	}
 	
 	if(appl.ModeTimer != TIMER_TIMEOUT && appl.ModeTimer != TIMER_INT_DISABLED) appl.ModeTimer--;
-     9e4:	80 91 29 01 	lds	r24, 0x0129
-     9e8:	90 91 2a 01 	lds	r25, 0x012A
-     9ec:	01 97       	sbiw	r24, 0x01	; 1
-     9ee:	8e 3f       	cpi	r24, 0xFE	; 254
-     9f0:	2f ef       	ldi	r18, 0xFF	; 255
-     9f2:	92 07       	cpc	r25, r18
-     9f4:	20 f4       	brcc	.+8      	; 0x9fe <AppCycleUpdate+0x42>
-     9f6:	90 93 2a 01 	sts	0x012A, r25
-     9fa:	80 93 29 01 	sts	0x0129, r24
+     a02:	80 91 2a 01 	lds	r24, 0x012A
+     a06:	90 91 2b 01 	lds	r25, 0x012B
+     a0a:	01 97       	sbiw	r24, 0x01	; 1
+     a0c:	8e 3f       	cpi	r24, 0xFE	; 254
+     a0e:	2f ef       	ldi	r18, 0xFF	; 255
+     a10:	92 07       	cpc	r25, r18
+     a12:	20 f4       	brcc	.+8      	; 0xa1c <AppCycleUpdate+0x42>
+     a14:	90 93 2b 01 	sts	0x012B, r25
+     a18:	80 93 2a 01 	sts	0x012A, r24
 	cnt++;
 	
 	AppUpdateTimers();
 
 	/* work mode convert according to ModeTimer and push button events */
 	switch(appl.workMode)
-     9fe:	c0 91 23 01 	lds	r28, 0x0123
-     a02:	c1 30       	cpi	r28, 0x01	; 1
-     a04:	09 f4       	brne	.+2      	; 0xa08 <AppCycleUpdate+0x4c>
-     a06:	4e c0       	rjmp	.+156    	; 0xaa4 <AppCycleUpdate+0xe8>
-     a08:	18 f0       	brcs	.+6      	; 0xa10 <AppCycleUpdate+0x54>
-     a0a:	c2 30       	cpi	r28, 0x02	; 2
-     a0c:	81 f1       	breq	.+96     	; 0xa6e <AppCycleUpdate+0xb2>
-     a0e:	ef c0       	rjmp	.+478    	; 0xbee <AppCycleUpdate+0x232>
+     a1c:	c0 91 24 01 	lds	r28, 0x0124
+     a20:	c1 30       	cpi	r28, 0x01	; 1
+     a22:	09 f4       	brne	.+2      	; 0xa26 <AppCycleUpdate+0x4c>
+     a24:	4e c0       	rjmp	.+156    	; 0xac2 <AppCycleUpdate+0xe8>
+     a26:	18 f0       	brcs	.+6      	; 0xa2e <AppCycleUpdate+0x54>
+     a28:	c2 30       	cpi	r28, 0x02	; 2
+     a2a:	81 f1       	breq	.+96     	; 0xa8c <AppCycleUpdate+0xb2>
+     a2c:	ef c0       	rjmp	.+478    	; 0xc0c <AppCycleUpdate+0x232>
 	{
 		case PWR_ON:
 			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
-     a10:	80 91 29 01 	lds	r24, 0x0129
-     a14:	90 91 2a 01 	lds	r25, 0x012A
-     a18:	9c 01       	movw	r18, r24
-     a1a:	21 50       	subi	r18, 0x01	; 1
-     a1c:	31 09       	sbc	r19, r1
-     a1e:	2e 3f       	cpi	r18, 0xFE	; 254
-     a20:	3f 4f       	sbci	r19, 0xFF	; 255
-     a22:	78 f5       	brcc	.+94     	; 0xa82 <AppCycleUpdate+0xc6>
+     a2e:	80 91 2a 01 	lds	r24, 0x012A
+     a32:	90 91 2b 01 	lds	r25, 0x012B
+     a36:	9c 01       	movw	r18, r24
+     a38:	21 50       	subi	r18, 0x01	; 1
+     a3a:	31 09       	sbc	r19, r1
+     a3c:	2e 3f       	cpi	r18, 0xFE	; 254
+     a3e:	3f 4f       	sbci	r19, 0xFF	; 255
+     a40:	78 f5       	brcc	.+94     	; 0xaa0 <AppCycleUpdate+0xc6>
 			{
 				if(appl.ModeTimer % (TIME_CONTENT_SWITCH - 1) == 0)
-     a24:	6b e3       	ldi	r22, 0x3B	; 59
-     a26:	70 e0       	ldi	r23, 0x00	; 0
-     a28:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     a2c:	89 2b       	or	r24, r25
-     a2e:	39 f4       	brne	.+14     	; 0xa3e <AppCycleUpdate+0x82>
+     a42:	6b e3       	ldi	r22, 0x3B	; 59
+     a44:	70 e0       	ldi	r23, 0x00	; 0
+     a46:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     a4a:	89 2b       	or	r24, r25
+     a4c:	39 f4       	brne	.+14     	; 0xa5c <AppCycleUpdate+0x82>
 				{
 					AppDisplay(++appl.DispCode,PWR_ON);
-     a30:	80 91 2b 01 	lds	r24, 0x012B
-     a34:	8f 5f       	subi	r24, 0xFF	; 255
-     a36:	80 93 2b 01 	sts	0x012B, r24
-     a3a:	0e 94 97 04 	call	0x92e	; 0x92e <AppDisplay.isra.0>
+     a4e:	80 91 2c 01 	lds	r24, 0x012C
+     a52:	8f 5f       	subi	r24, 0xFF	; 255
+     a54:	80 93 2c 01 	sts	0x012C, r24
+     a58:	0e 94 a6 04 	call	0x94c	; 0x94c <AppDisplay.isra.0>
 				}
 				
 				if(ButtonJMP1HeldEvent() && (ButtonGetHoldTime() == TIME_B_HELD_RST))	/* Press/Held JMP1 after power on will set to factory default */
-     a3e:	0e 94 65 06 	call	0xcca	; 0xcca <ButtonJMP1HeldEvent>
-     a42:	88 23       	and	r24, r24
-     a44:	09 f4       	brne	.+2      	; 0xa48 <AppCycleUpdate+0x8c>
-     a46:	d3 c0       	rjmp	.+422    	; 0xbee <AppCycleUpdate+0x232>
-     a48:	0e 94 19 08 	call	0x1032	; 0x1032 <ButtonGetHoldTime>
-     a4c:	cc 97       	sbiw	r24, 0x3c	; 60
-     a4e:	09 f0       	breq	.+2      	; 0xa52 <AppCycleUpdate+0x96>
-     a50:	ce c0       	rjmp	.+412    	; 0xbee <AppCycleUpdate+0x232>
+     a5c:	0e 94 74 06 	call	0xce8	; 0xce8 <ButtonJMP1HeldEvent>
+     a60:	88 23       	and	r24, r24
+     a62:	09 f4       	brne	.+2      	; 0xa66 <AppCycleUpdate+0x8c>
+     a64:	d3 c0       	rjmp	.+422    	; 0xc0c <AppCycleUpdate+0x232>
+     a66:	0e 94 28 08 	call	0x1050	; 0x1050 <ButtonGetHoldTime>
+     a6a:	cc 97       	sbiw	r24, 0x3c	; 60
+     a6c:	09 f0       	breq	.+2      	; 0xa70 <AppCycleUpdate+0x96>
+     a6e:	ce c0       	rjmp	.+412    	; 0xc0c <AppCycleUpdate+0x232>
 				{
 					/* Following for initial power on display steps */
 					appl.ModeTimer = TIME_SWITCH_TOTAL;
-     a52:	80 ee       	ldi	r24, 0xE0	; 224
-     a54:	91 e0       	ldi	r25, 0x01	; 1
-     a56:	90 93 2a 01 	sts	0x012A, r25
-     a5a:	80 93 29 01 	sts	0x0129, r24
+     a70:	80 ee       	ldi	r24, 0xE0	; 224
+     a72:	91 e0       	ldi	r25, 0x01	; 1
+     a74:	90 93 2b 01 	sts	0x012B, r25
+     a78:	80 93 2a 01 	sts	0x012A, r24
 					appl.workMode = PWR_ON;
-     a5e:	10 92 23 01 	sts	0x0123, r1
+     a7c:	10 92 24 01 	sts	0x0124, r1
 					appl.LastEvent = JP1_HELD;
-     a62:	84 e0       	ldi	r24, 0x04	; 4
-     a64:	80 93 25 01 	sts	0x0125, r24
+     a80:	84 e0       	ldi	r24, 0x04	; 4
+     a82:	80 93 26 01 	sts	0x0126, r24
 					appl.DispCode= START_CHAR;
-     a68:	10 92 2b 01 	sts	0x012B, r1
-     a6c:	c0 c0       	rjmp	.+384    	; 0xbee <AppCycleUpdate+0x232>
+     a86:	10 92 2c 01 	sts	0x012C, r1
+     a8a:	c0 c0       	rjmp	.+384    	; 0xc0c <AppCycleUpdate+0x232>
 				AppDisplay(appl.DispCode,NORMAL);
 			}
 			break;
 			
 		case SETTING:
 			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
-     a6e:	80 91 29 01 	lds	r24, 0x0129
-     a72:	90 91 2a 01 	lds	r25, 0x012A
-     a76:	9c 01       	movw	r18, r24
-     a78:	21 50       	subi	r18, 0x01	; 1
-     a7a:	31 09       	sbc	r19, r1
-     a7c:	2e 3f       	cpi	r18, 0xFE	; 254
-     a7e:	3f 4f       	sbci	r19, 0xFF	; 255
-     a80:	c0 f1       	brcs	.+112    	; 0xaf2 <AppCycleUpdate+0x136>
+     a8c:	80 91 2a 01 	lds	r24, 0x012A
+     a90:	90 91 2b 01 	lds	r25, 0x012B
+     a94:	9c 01       	movw	r18, r24
+     a96:	21 50       	subi	r18, 0x01	; 1
+     a98:	31 09       	sbc	r19, r1
+     a9a:	2e 3f       	cpi	r18, 0xFE	; 254
+     a9c:	3f 4f       	sbci	r19, 0xFF	; 255
+     a9e:	c0 f1       	brcs	.+112    	; 0xb10 <AppCycleUpdate+0x136>
 					appl.workMode = PWR_ON;
 					appl.LastEvent = JP1_HELD;
 					appl.DispCode= START_CHAR;
 				}
 			}
 			else if(appl.ModeTimer == TIMER_TIMEOUT)
-     a82:	89 2b       	or	r24, r25
-     a84:	09 f0       	breq	.+2      	; 0xa88 <AppCycleUpdate+0xcc>
-     a86:	b3 c0       	rjmp	.+358    	; 0xbee <AppCycleUpdate+0x232>
+     aa0:	89 2b       	or	r24, r25
+     aa2:	09 f0       	breq	.+2      	; 0xaa6 <AppCycleUpdate+0xcc>
+     aa4:	b3 c0       	rjmp	.+358    	; 0xc0c <AppCycleUpdate+0x232>
 			{
 				appl.ModeTimer = TIMER_INT_DISABLED;	/* Disable count */
-     a88:	8f ef       	ldi	r24, 0xFF	; 255
-     a8a:	9f ef       	ldi	r25, 0xFF	; 255
-     a8c:	90 93 2a 01 	sts	0x012A, r25
-     a90:	80 93 29 01 	sts	0x0129, r24
+     aa6:	8f ef       	ldi	r24, 0xFF	; 255
+     aa8:	9f ef       	ldi	r25, 0xFF	; 255
+     aaa:	90 93 2b 01 	sts	0x012B, r25
+     aae:	80 93 2a 01 	sts	0x012A, r24
 				appl.workMode = NORMAL;					/* convert to NORMAL */
-     a94:	81 e0       	ldi	r24, 0x01	; 1
-     a96:	80 93 23 01 	sts	0x0123, r24
+     ab2:	81 e0       	ldi	r24, 0x01	; 1
+     ab4:	80 93 24 01 	sts	0x0124, r24
 				appl.LastEvent = NULL_EVENT;			/* update  LastEvent */
-     a9a:	10 92 25 01 	sts	0x0125, r1
+     ab8:	10 92 26 01 	sts	0x0126, r1
 				appl.DispCode = CURRENT_VALUE;			/* Initial to display material value in setting mode */
-     a9e:	80 93 2b 01 	sts	0x012B, r24
-     aa2:	a5 c0       	rjmp	.+330    	; 0xbee <AppCycleUpdate+0x232>
+     abc:	80 93 2c 01 	sts	0x012C, r24
+     ac0:	a5 c0       	rjmp	.+330    	; 0xc0c <AppCycleUpdate+0x232>
 			}
 			break;
 			
 		case NORMAL:			
 			if(ButtonGetReleased())
-     aa4:	0e 94 1e 08 	call	0x103c	; 0x103c <ButtonGetReleased>
-     aa8:	88 23       	and	r24, r24
-     aaa:	99 f0       	breq	.+38     	; 0xad2 <AppCycleUpdate+0x116>
+     ac2:	0e 94 2d 08 	call	0x105a	; 0x105a <ButtonGetReleased>
+     ac6:	88 23       	and	r24, r24
+     ac8:	99 f0       	breq	.+38     	; 0xaf0 <AppCycleUpdate+0x116>
 			{
 				if(ButtonJMP2ReleasedEvent())
-     aac:	0e 94 69 06 	call	0xcd2	; 0xcd2 <ButtonJMP2ReleasedEvent>
-     ab0:	88 23       	and	r24, r24
-     ab2:	61 f0       	breq	.+24     	; 0xacc <AppCycleUpdate+0x110>
+     aca:	0e 94 78 06 	call	0xcf0	; 0xcf0 <ButtonJMP2ReleasedEvent>
+     ace:	88 23       	and	r24, r24
+     ad0:	61 f0       	breq	.+24     	; 0xaea <AppCycleUpdate+0x110>
 				{
 					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
-     ab4:	84 eb       	ldi	r24, 0xB4	; 180
-     ab6:	90 e0       	ldi	r25, 0x00	; 0
-     ab8:	90 93 2a 01 	sts	0x012A, r25
-     abc:	80 93 29 01 	sts	0x0129, r24
+     ad2:	84 eb       	ldi	r24, 0xB4	; 180
+     ad4:	90 e0       	ldi	r25, 0x00	; 0
+     ad6:	90 93 2b 01 	sts	0x012B, r25
+     ada:	80 93 2a 01 	sts	0x012A, r24
 					appl.workMode = SETTING; 			/* convert to SETTING */
-     ac0:	82 e0       	ldi	r24, 0x02	; 2
-     ac2:	80 93 23 01 	sts	0x0123, r24
+     ade:	82 e0       	ldi	r24, 0x02	; 2
+     ae0:	80 93 24 01 	sts	0x0124, r24
 					appl.LastEvent = JP2_PRESS;			/* update  LastEvent */
-     ac6:	c0 93 25 01 	sts	0x0125, r28
-     aca:	91 c0       	rjmp	.+290    	; 0xbee <AppCycleUpdate+0x232>
+     ae4:	c0 93 26 01 	sts	0x0126, r28
+     ae8:	91 c0       	rjmp	.+290    	; 0xc0c <AppCycleUpdate+0x232>
 				}
 				else if(ButtonJMP1ReleasedEvent())
-     acc:	0e 94 61 06 	call	0xcc2	; 0xcc2 <ButtonJMP1ReleasedEvent>
-     ad0:	8e c0       	rjmp	.+284    	; 0xbee <AppCycleUpdate+0x232>
+     aea:	0e 94 70 06 	call	0xce0	; 0xce0 <ButtonJMP1ReleasedEvent>
+     aee:	8e c0       	rjmp	.+284    	; 0xc0c <AppCycleUpdate+0x232>
 				{
 				}
 			}
 			else if(ButtonGetHeld())
-     ad2:	0e 94 21 08 	call	0x1042	; 0x1042 <ButtonGetHeld>
-     ad6:	88 23       	and	r24, r24
-     ad8:	39 f0       	breq	.+14     	; 0xae8 <AppCycleUpdate+0x12c>
+     af0:	0e 94 30 08 	call	0x1060	; 0x1060 <ButtonGetHeld>
+     af4:	88 23       	and	r24, r24
+     af6:	39 f0       	breq	.+14     	; 0xb06 <AppCycleUpdate+0x12c>
 			{
 				if(ButtonJMP2HeldEvent())//(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/2) == 0))
-     ada:	0e 94 6e 06 	call	0xcdc	; 0xcdc <ButtonJMP2HeldEvent>
-     ade:	81 11       	cpse	r24, r1
-     ae0:	5f c0       	rjmp	.+190    	; 0xba0 <AppCycleUpdate+0x1e4>
+     af8:	0e 94 7d 06 	call	0xcfa	; 0xcfa <ButtonJMP2HeldEvent>
+     afc:	81 11       	cpse	r24, r1
+     afe:	5f c0       	rjmp	.+190    	; 0xbbe <AppCycleUpdate+0x1e4>
 				{
 					appl.ModeTimer = TIME_D_CODE_HELD;	/* Disable count */
 					appl.workMode = SETTING; 			/* convert to SETTING */
 					appl.LastEvent = JP2_HELD;			/* update  LastEvent */
 				}
 				else if(ButtonJMP1HeldEvent())
-     ae2:	0e 94 65 06 	call	0xcca	; 0xcca <ButtonJMP1HeldEvent>
-     ae6:	83 c0       	rjmp	.+262    	; 0xbee <AppCycleUpdate+0x232>
+     b00:	0e 94 74 06 	call	0xce8	; 0xce8 <ButtonJMP1HeldEvent>
+     b04:	83 c0       	rjmp	.+262    	; 0xc0c <AppCycleUpdate+0x232>
 				}
 			}
 			else
 			{
 				/* Display current material, and display color change according to value compare with user setting */
 				AppDisplay(appl.DispCode,NORMAL);
-     ae8:	80 91 2b 01 	lds	r24, 0x012B
-     aec:	0e 94 97 04 	call	0x92e	; 0x92e <AppDisplay.isra.0>
-     af0:	7e c0       	rjmp	.+252    	; 0xbee <AppCycleUpdate+0x232>
+     b06:	80 91 2c 01 	lds	r24, 0x012C
+     b0a:	0e 94 a6 04 	call	0x94c	; 0x94c <AppDisplay.isra.0>
+     b0e:	7e c0       	rjmp	.+252    	; 0xc0c <AppCycleUpdate+0x232>
 			break;
 			
 		case SETTING:
 			if((appl.ModeTimer != TIMER_INT_DISABLED && appl.ModeTimer != TIMER_TIMEOUT))
 			{
 				if(ButtonGetReleased())
-     af2:	0e 94 1e 08 	call	0x103c	; 0x103c <ButtonGetReleased>
-     af6:	88 23       	and	r24, r24
-     af8:	b1 f1       	breq	.+108    	; 0xb66 <AppCycleUpdate+0x1aa>
+     b10:	0e 94 2d 08 	call	0x105a	; 0x105a <ButtonGetReleased>
+     b14:	88 23       	and	r24, r24
+     b16:	b1 f1       	breq	.+108    	; 0xb84 <AppCycleUpdate+0x1aa>
 				{
 					if(ButtonJMP2ReleasedEvent())
-     afa:	0e 94 69 06 	call	0xcd2	; 0xcd2 <ButtonJMP2ReleasedEvent>
-     afe:	88 23       	and	r24, r24
-     b00:	b1 f0       	breq	.+44     	; 0xb2e <AppCycleUpdate+0x172>
+     b18:	0e 94 78 06 	call	0xcf0	; 0xcf0 <ButtonJMP2ReleasedEvent>
+     b1c:	88 23       	and	r24, r24
+     b1e:	b1 f0       	breq	.+44     	; 0xb4c <AppCycleUpdate+0x172>
 					{
 						if(--appl.DispCode < CURRENT_VALUE)
-     b02:	80 91 2b 01 	lds	r24, 0x012B
-     b06:	81 50       	subi	r24, 0x01	; 1
-     b08:	09 f4       	brne	.+2      	; 0xb0c <AppCycleUpdate+0x150>
+     b20:	80 91 2c 01 	lds	r24, 0x012C
+     b24:	81 50       	subi	r24, 0x01	; 1
+     b26:	09 f4       	brne	.+2      	; 0xb2a <AppCycleUpdate+0x150>
 						{
 							appl.DispCode = REMOTE_ADDR;
-     b0a:	87 e0       	ldi	r24, 0x07	; 7
-     b0c:	80 93 2b 01 	sts	0x012B, r24
+     b28:	87 e0       	ldi	r24, 0x07	; 7
+     b2a:	80 93 2c 01 	sts	0x012C, r24
 						}
 						AppDisplay(appl.DispCode,SETTING);
-     b10:	80 91 2b 01 	lds	r24, 0x012B
-     b14:	0e 94 97 04 	call	0x92e	; 0x92e <AppDisplay.isra.0>
+     b2e:	80 91 2c 01 	lds	r24, 0x012C
+     b32:	0e 94 a6 04 	call	0x94c	; 0x94c <AppDisplay.isra.0>
 						
 						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
-     b18:	84 eb       	ldi	r24, 0xB4	; 180
-     b1a:	90 e0       	ldi	r25, 0x00	; 0
-     b1c:	90 93 2a 01 	sts	0x012A, r25
-     b20:	80 93 29 01 	sts	0x0129, r24
+     b36:	84 eb       	ldi	r24, 0xB4	; 180
+     b38:	90 e0       	ldi	r25, 0x00	; 0
+     b3a:	90 93 2b 01 	sts	0x012B, r25
+     b3e:	80 93 2a 01 	sts	0x012A, r24
 						appl.workMode = SETTING;			/* convert to SETTING */
-     b24:	82 e0       	ldi	r24, 0x02	; 2
-     b26:	80 93 23 01 	sts	0x0123, r24
+     b42:	82 e0       	ldi	r24, 0x02	; 2
+     b44:	80 93 24 01 	sts	0x0124, r24
 						appl.LastEvent = JP2_PRESS; 		/* update  LastEvent */
-     b2a:	81 e0       	ldi	r24, 0x01	; 1
-     b2c:	5e c0       	rjmp	.+188    	; 0xbea <AppCycleUpdate+0x22e>
+     b48:	81 e0       	ldi	r24, 0x01	; 1
+     b4a:	5e c0       	rjmp	.+188    	; 0xc08 <AppCycleUpdate+0x22e>
 					}
 					else if(ButtonJMP1ReleasedEvent())
-     b2e:	0e 94 61 06 	call	0xcc2	; 0xcc2 <ButtonJMP1ReleasedEvent>
-     b32:	88 23       	and	r24, r24
-     b34:	09 f4       	brne	.+2      	; 0xb38 <AppCycleUpdate+0x17c>
-     b36:	5b c0       	rjmp	.+182    	; 0xbee <AppCycleUpdate+0x232>
+     b4c:	0e 94 70 06 	call	0xce0	; 0xce0 <ButtonJMP1ReleasedEvent>
+     b50:	88 23       	and	r24, r24
+     b52:	09 f4       	brne	.+2      	; 0xb56 <AppCycleUpdate+0x17c>
+     b54:	5b c0       	rjmp	.+182    	; 0xc0c <AppCycleUpdate+0x232>
 					{
 						SSDDisplayDec(--appl.FullWarehouse, SSD_0HZ, SSD_GREEN);
-     b38:	80 91 19 01 	lds	r24, 0x0119
-     b3c:	90 91 1a 01 	lds	r25, 0x011A
-     b40:	01 97       	sbiw	r24, 0x01	; 1
-     b42:	90 93 1a 01 	sts	0x011A, r25
-     b46:	80 93 19 01 	sts	0x0119, r24
-     b4a:	41 e0       	ldi	r20, 0x01	; 1
-     b4c:	60 e0       	ldi	r22, 0x00	; 0
-     b4e:	0e 94 21 07 	call	0xe42	; 0xe42 <SSDDisplayDec>
+     b56:	80 91 1a 01 	lds	r24, 0x011A
+     b5a:	90 91 1b 01 	lds	r25, 0x011B
+     b5e:	01 97       	sbiw	r24, 0x01	; 1
+     b60:	90 93 1b 01 	sts	0x011B, r25
+     b64:	80 93 1a 01 	sts	0x011A, r24
+     b68:	41 e0       	ldi	r20, 0x01	; 1
+     b6a:	60 e0       	ldi	r22, 0x00	; 0
+     b6c:	0e 94 30 07 	call	0xe60	; 0xe60 <SSDDisplayDec>
 						
 						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
-     b52:	84 eb       	ldi	r24, 0xB4	; 180
-     b54:	90 e0       	ldi	r25, 0x00	; 0
-     b56:	90 93 2a 01 	sts	0x012A, r25
-     b5a:	80 93 29 01 	sts	0x0129, r24
+     b70:	84 eb       	ldi	r24, 0xB4	; 180
+     b72:	90 e0       	ldi	r25, 0x00	; 0
+     b74:	90 93 2b 01 	sts	0x012B, r25
+     b78:	80 93 2a 01 	sts	0x012A, r24
 						appl.workMode = SETTING;			/* convert to SETTING */
-     b5e:	c0 93 23 01 	sts	0x0123, r28
+     b7c:	c0 93 24 01 	sts	0x0124, r28
 						appl.LastEvent = JP1_PRESS;			/* update  LastEvent */
-     b62:	83 e0       	ldi	r24, 0x03	; 3
-     b64:	42 c0       	rjmp	.+132    	; 0xbea <AppCycleUpdate+0x22e>
+     b80:	83 e0       	ldi	r24, 0x03	; 3
+     b82:	42 c0       	rjmp	.+132    	; 0xc08 <AppCycleUpdate+0x22e>
 					}
 				}
 				else if(ButtonGetHeld())
-     b66:	0e 94 21 08 	call	0x1042	; 0x1042 <ButtonGetHeld>
-     b6a:	88 23       	and	r24, r24
-     b6c:	09 f4       	brne	.+2      	; 0xb70 <AppCycleUpdate+0x1b4>
-     b6e:	3f c0       	rjmp	.+126    	; 0xbee <AppCycleUpdate+0x232>
+     b84:	0e 94 30 08 	call	0x1060	; 0x1060 <ButtonGetHeld>
+     b88:	88 23       	and	r24, r24
+     b8a:	09 f4       	brne	.+2      	; 0xb8e <AppCycleUpdate+0x1b4>
+     b8c:	3f c0       	rjmp	.+126    	; 0xc0c <AppCycleUpdate+0x232>
 				{
 					if(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/6) == 0))	/* fast increase */
-     b70:	0e 94 6e 06 	call	0xcdc	; 0xcdc <ButtonJMP2HeldEvent>
-     b74:	88 23       	and	r24, r24
-     b76:	f1 f0       	breq	.+60     	; 0xbb4 <AppCycleUpdate+0x1f8>
-     b78:	0e 94 19 08 	call	0x1032	; 0x1032 <ButtonGetHoldTime>
-     b7c:	6a e0       	ldi	r22, 0x0A	; 10
-     b7e:	70 e0       	ldi	r23, 0x00	; 0
-     b80:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     b84:	89 2b       	or	r24, r25
-     b86:	b1 f4       	brne	.+44     	; 0xbb4 <AppCycleUpdate+0x1f8>
+     b8e:	0e 94 7d 06 	call	0xcfa	; 0xcfa <ButtonJMP2HeldEvent>
+     b92:	88 23       	and	r24, r24
+     b94:	f1 f0       	breq	.+60     	; 0xbd2 <AppCycleUpdate+0x1f8>
+     b96:	0e 94 28 08 	call	0x1050	; 0x1050 <ButtonGetHoldTime>
+     b9a:	6a e0       	ldi	r22, 0x0A	; 10
+     b9c:	70 e0       	ldi	r23, 0x00	; 0
+     b9e:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     ba2:	89 2b       	or	r24, r25
+     ba4:	b1 f4       	brne	.+44     	; 0xbd2 <AppCycleUpdate+0x1f8>
 					{
 						if(++appl.DispCode > REMOTE_ADDR)
-     b88:	80 91 2b 01 	lds	r24, 0x012B
-     b8c:	8f 5f       	subi	r24, 0xFF	; 255
-     b8e:	88 30       	cpi	r24, 0x08	; 8
-     b90:	08 f0       	brcs	.+2      	; 0xb94 <AppCycleUpdate+0x1d8>
+     ba6:	80 91 2c 01 	lds	r24, 0x012C
+     baa:	8f 5f       	subi	r24, 0xFF	; 255
+     bac:	88 30       	cpi	r24, 0x08	; 8
+     bae:	08 f0       	brcs	.+2      	; 0xbb2 <AppCycleUpdate+0x1d8>
 						{
 							appl.DispCode = CURRENT_VALUE;
-     b92:	81 e0       	ldi	r24, 0x01	; 1
-     b94:	80 93 2b 01 	sts	0x012B, r24
+     bb0:	81 e0       	ldi	r24, 0x01	; 1
+     bb2:	80 93 2c 01 	sts	0x012C, r24
 						}
 						AppDisplay(appl.DispCode,SETTING);
-     b98:	80 91 2b 01 	lds	r24, 0x012B
-     b9c:	0e 94 97 04 	call	0x92e	; 0x92e <AppDisplay.isra.0>
+     bb6:	80 91 2c 01 	lds	r24, 0x012C
+     bba:	0e 94 a6 04 	call	0x94c	; 0x94c <AppDisplay.isra.0>
 						
 						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
-     ba0:	84 eb       	ldi	r24, 0xB4	; 180
-     ba2:	90 e0       	ldi	r25, 0x00	; 0
-     ba4:	90 93 2a 01 	sts	0x012A, r25
-     ba8:	80 93 29 01 	sts	0x0129, r24
+     bbe:	84 eb       	ldi	r24, 0xB4	; 180
+     bc0:	90 e0       	ldi	r25, 0x00	; 0
+     bc2:	90 93 2b 01 	sts	0x012B, r25
+     bc6:	80 93 2a 01 	sts	0x012A, r24
 						appl.workMode = SETTING;			/* convert to SETTING */
-     bac:	82 e0       	ldi	r24, 0x02	; 2
-     bae:	80 93 23 01 	sts	0x0123, r24
-     bb2:	1b c0       	rjmp	.+54     	; 0xbea <AppCycleUpdate+0x22e>
+     bca:	82 e0       	ldi	r24, 0x02	; 2
+     bcc:	80 93 24 01 	sts	0x0124, r24
+     bd0:	1b c0       	rjmp	.+54     	; 0xc08 <AppCycleUpdate+0x22e>
 						appl.LastEvent = JP2_HELD;			/* update  LastEvent */
 					}
 					else if(ButtonJMP1HeldEvent())
-     bb4:	0e 94 65 06 	call	0xcca	; 0xcca <ButtonJMP1HeldEvent>
-     bb8:	88 23       	and	r24, r24
-     bba:	c9 f0       	breq	.+50     	; 0xbee <AppCycleUpdate+0x232>
+     bd2:	0e 94 74 06 	call	0xce8	; 0xce8 <ButtonJMP1HeldEvent>
+     bd6:	88 23       	and	r24, r24
+     bd8:	c9 f0       	breq	.+50     	; 0xc0c <AppCycleUpdate+0x232>
 					{
 						SSDDisplayDec(++appl.FullWarehouse, SSD_0HZ, SSD_AMBER);
-     bbc:	80 91 19 01 	lds	r24, 0x0119
-     bc0:	90 91 1a 01 	lds	r25, 0x011A
-     bc4:	01 96       	adiw	r24, 0x01	; 1
-     bc6:	90 93 1a 01 	sts	0x011A, r25
-     bca:	80 93 19 01 	sts	0x0119, r24
-     bce:	42 e0       	ldi	r20, 0x02	; 2
-     bd0:	60 e0       	ldi	r22, 0x00	; 0
-     bd2:	0e 94 21 07 	call	0xe42	; 0xe42 <SSDDisplayDec>
+     bda:	80 91 1a 01 	lds	r24, 0x011A
+     bde:	90 91 1b 01 	lds	r25, 0x011B
+     be2:	01 96       	adiw	r24, 0x01	; 1
+     be4:	90 93 1b 01 	sts	0x011B, r25
+     be8:	80 93 1a 01 	sts	0x011A, r24
+     bec:	42 e0       	ldi	r20, 0x02	; 2
+     bee:	60 e0       	ldi	r22, 0x00	; 0
+     bf0:	0e 94 30 07 	call	0xe60	; 0xe60 <SSDDisplayDec>
 						
 						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
-     bd6:	84 eb       	ldi	r24, 0xB4	; 180
-     bd8:	90 e0       	ldi	r25, 0x00	; 0
-     bda:	90 93 2a 01 	sts	0x012A, r25
-     bde:	80 93 29 01 	sts	0x0129, r24
+     bf4:	84 eb       	ldi	r24, 0xB4	; 180
+     bf6:	90 e0       	ldi	r25, 0x00	; 0
+     bf8:	90 93 2b 01 	sts	0x012B, r25
+     bfc:	80 93 2a 01 	sts	0x012A, r24
 						appl.workMode = SETTING;			/* convert to SETTING */
-     be2:	82 e0       	ldi	r24, 0x02	; 2
-     be4:	80 93 23 01 	sts	0x0123, r24
+     c00:	82 e0       	ldi	r24, 0x02	; 2
+     c02:	80 93 24 01 	sts	0x0124, r24
 						appl.LastEvent = JP1_HELD;			/* update  LastEvent */
-     be8:	84 e0       	ldi	r24, 0x04	; 4
-     bea:	80 93 25 01 	sts	0x0125, r24
+     c06:	84 e0       	ldi	r24, 0x04	; 4
+     c08:	80 93 26 01 	sts	0x0126, r24
 
 #if 1		
 #if (FOR_DEBUG==1)
 	//rprintf("wM=%d\n",appl.workMode);
 	//rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);
 	rprintf("dC=%d\n\n",appl.DispCode);
-     bee:	80 91 2b 01 	lds	r24, 0x012B
-     bf2:	1f 92       	push	r1
-     bf4:	8f 93       	push	r24
-     bf6:	81 e1       	ldi	r24, 0x11	; 17
-     bf8:	91 e0       	ldi	r25, 0x01	; 1
-     bfa:	9f 93       	push	r25
-     bfc:	8f 93       	push	r24
-     bfe:	81 e0       	ldi	r24, 0x01	; 1
-     c00:	8f 93       	push	r24
-     c02:	0e 94 23 01 	call	0x246	; 0x246 <rprintf1RamRom>
-     c06:	0f 90       	pop	r0
-     c08:	0f 90       	pop	r0
-     c0a:	0f 90       	pop	r0
-     c0c:	0f 90       	pop	r0
-     c0e:	0f 90       	pop	r0
+     c0c:	80 91 2c 01 	lds	r24, 0x012C
+     c10:	1f 92       	push	r1
+     c12:	8f 93       	push	r24
+     c14:	81 e1       	ldi	r24, 0x11	; 17
+     c16:	91 e0       	ldi	r25, 0x01	; 1
+     c18:	9f 93       	push	r25
+     c1a:	8f 93       	push	r24
+     c1c:	81 e0       	ldi	r24, 0x01	; 1
+     c1e:	8f 93       	push	r24
+     c20:	0e 94 32 01 	call	0x264	; 0x264 <rprintf1RamRom>
+     c24:	0f 90       	pop	r0
+     c26:	0f 90       	pop	r0
+     c28:	0f 90       	pop	r0
+     c2a:	0f 90       	pop	r0
+     c2c:	0f 90       	pop	r0
 			appl.PwrOnSteps = DISP_START;
 			appl.ModeTimer = TIME_SWITCH_TOTAL;
 		}
 	}
 #endif	
 }
-     c10:	cf 91       	pop	r28
-     c12:	08 95       	ret
+     c2e:	cf 91       	pop	r28
+     c30:	08 95       	ret
 
-00000c14 <AppWaitZeroCrossing>:
+00000c32 <AppWaitZeroCrossing>:
 * Returns    : true/false means failed or pass
 *********************************************************************************************************
 */
 void AppWaitZeroCrossing(void)
 {
 	while(appl.fSysPwrZC == 0);
-     c14:	80 91 16 01 	lds	r24, 0x0116
-     c18:	80 ff       	sbrs	r24, 0
-     c1a:	fc cf       	rjmp	.-8      	; 0xc14 <AppWaitZeroCrossing>
+     c32:	80 91 17 01 	lds	r24, 0x0117
+     c36:	80 ff       	sbrs	r24, 0
+     c38:	fc cf       	rjmp	.-8      	; 0xc32 <AppWaitZeroCrossing>
 	appl.fSysPwrZC = 0;
-     c1c:	80 91 16 01 	lds	r24, 0x0116
-     c20:	8e 7f       	andi	r24, 0xFE	; 254
-     c22:	80 93 16 01 	sts	0x0116, r24
+     c3a:	80 91 17 01 	lds	r24, 0x0117
+     c3e:	8e 7f       	andi	r24, 0xFE	; 254
+     c40:	80 93 17 01 	sts	0x0117, r24
 	PORTD ^= (1<<PD4);
-     c26:	92 b3       	in	r25, 0x12	; 18
-     c28:	80 e1       	ldi	r24, 0x10	; 16
-     c2a:	89 27       	eor	r24, r25
-     c2c:	82 bb       	out	0x12, r24	; 18
-     c2e:	08 95       	ret
+     c44:	92 b3       	in	r25, 0x12	; 18
+     c46:	80 e1       	ldi	r24, 0x10	; 16
+     c48:	89 27       	eor	r24, r25
+     c4a:	82 bb       	out	0x12, r24	; 18
+     c4c:	08 95       	ret
 
-00000c30 <timerTest>:
+00000c4e <timerTest>:
 	OCR0 = TCNT0 + CYCLEN_60HZ;
 	appl.fSysPwrZC = 1;
 }
 
 void timerTest(void)
 {
-     c30:	cf 93       	push	r28
+     c4e:	cf 93       	push	r28
 	// print a little intro message so we know things are working
 	rprintf("\r\n\n\nWelcome to the timer library test program!\r\n");
-     c32:	80 ee       	ldi	r24, 0xE0	; 224
-     c34:	90 e0       	ldi	r25, 0x00	; 0
-     c36:	9f 93       	push	r25
-     c38:	8f 93       	push	r24
-     c3a:	c1 e0       	ldi	r28, 0x01	; 1
-     c3c:	cf 93       	push	r28
-     c3e:	0e 94 23 01 	call	0x246	; 0x246 <rprintf1RamRom>
+     c50:	80 ee       	ldi	r24, 0xE0	; 224
+     c52:	90 e0       	ldi	r25, 0x00	; 0
+     c54:	9f 93       	push	r25
+     c56:	8f 93       	push	r24
+     c58:	c1 e0       	ldi	r28, 0x01	; 1
+     c5a:	cf 93       	push	r28
+     c5c:	0e 94 32 01 	call	0x264	; 0x264 <rprintf1RamRom>
 
 	// initialize the timer system
 	timerInit();
-     c42:	0e 94 14 02 	call	0x428	; 0x428 <timerInit>
+     c60:	0e 94 23 02 	call	0x446	; 0x446 <timerInit>
 	// to use the internal timers to produce a calibrated delay,
 	// use the timerPause() function.  timerPause takes a 16-bit
 	// integer argument in milliseconds
 
 	// example: wait for 1/2 of a second, or 500ms
 	rprintf("\r\nTest of timerPause() function\r\n");
-     c46:	8e eb       	ldi	r24, 0xBE	; 190
-     c48:	90 e0       	ldi	r25, 0x00	; 0
-     c4a:	9f 93       	push	r25
-     c4c:	8f 93       	push	r24
-     c4e:	cf 93       	push	r28
-     c50:	0e 94 23 01 	call	0x246	; 0x246 <rprintf1RamRom>
+     c64:	8e eb       	ldi	r24, 0xBE	; 190
+     c66:	90 e0       	ldi	r25, 0x00	; 0
+     c68:	9f 93       	push	r25
+     c6a:	8f 93       	push	r24
+     c6c:	cf 93       	push	r28
+     c6e:	0e 94 32 01 	call	0x264	; 0x264 <rprintf1RamRom>
 	rprintf("Here comes a 1/2-second delay...\r\n");
-     c54:	8b e9       	ldi	r24, 0x9B	; 155
-     c56:	90 e0       	ldi	r25, 0x00	; 0
-     c58:	9f 93       	push	r25
-     c5a:	8f 93       	push	r24
-     c5c:	cf 93       	push	r28
-     c5e:	0e 94 23 01 	call	0x246	; 0x246 <rprintf1RamRom>
+     c72:	8b e9       	ldi	r24, 0x9B	; 155
+     c74:	90 e0       	ldi	r25, 0x00	; 0
+     c76:	9f 93       	push	r25
+     c78:	8f 93       	push	r24
+     c7a:	cf 93       	push	r28
+     c7c:	0e 94 32 01 	call	0x264	; 0x264 <rprintf1RamRom>
 	//timerPause(500);
 	rprintf("Done!\r\n");
-     c62:	83 e9       	ldi	r24, 0x93	; 147
-     c64:	90 e0       	ldi	r25, 0x00	; 0
-     c66:	9f 93       	push	r25
-     c68:	8f 93       	push	r24
-     c6a:	cf 93       	push	r28
-     c6c:	0e 94 23 01 	call	0x246	; 0x246 <rprintf1RamRom>
+     c80:	83 e9       	ldi	r24, 0x93	; 147
+     c82:	90 e0       	ldi	r25, 0x00	; 0
+     c84:	9f 93       	push	r25
+     c86:	8f 93       	push	r24
+     c88:	cf 93       	push	r28
+     c8a:	0e 94 32 01 	call	0x264	; 0x264 <rprintf1RamRom>
 	// here's an example of using the timer library to do
 	// pulse-width modulation or PWM.  PWM signals can be created on
 	// any output compare (OCx) pin.  See your processor's data sheet
 	// for more information on which I/O pins have output compare
 	// capability.
 	rprintf("\r\nTest of timer1 PWM output\r\n");
-     c70:	85 e7       	ldi	r24, 0x75	; 117
-     c72:	90 e0       	ldi	r25, 0x00	; 0
-     c74:	9f 93       	push	r25
-     c76:	8f 93       	push	r24
-     c78:	cf 93       	push	r28
-     c7a:	0e 94 23 01 	call	0x246	; 0x246 <rprintf1RamRom>
+     c8e:	85 e7       	ldi	r24, 0x75	; 117
+     c90:	90 e0       	ldi	r25, 0x00	; 0
+     c92:	9f 93       	push	r25
+     c94:	8f 93       	push	r24
+     c96:	cf 93       	push	r28
+     c98:	0e 94 32 01 	call	0x264	; 0x264 <rprintf1RamRom>
 
 	// set the OC1x port pins to output
 	// We need to do this so we can see and use the PWM signal
 	// ** these settings are correct for most processors, but not for all
 	sbi(DDRD, PD4);
-     c7e:	8c 9a       	sbi	0x11, 4	; 17
+     c9c:	8c 9a       	sbi	0x11, 4	; 17
 	sbi(DDRD, PD5);
-     c80:	8d 9a       	sbi	0x11, 5	; 17
-     c82:	8d b7       	in	r24, 0x3d	; 61
-     c84:	9e b7       	in	r25, 0x3e	; 62
-     c86:	0f 96       	adiw	r24, 0x0f	; 15
-     c88:	0f b6       	in	r0, 0x3f	; 63
-     c8a:	f8 94       	cli
-     c8c:	9e bf       	out	0x3e, r25	; 62
-     c8e:	0f be       	out	0x3f, r0	; 63
-     c90:	8d bf       	out	0x3d, r24	; 61
+     c9e:	8d 9a       	sbi	0x11, 5	; 17
+     ca0:	8d b7       	in	r24, 0x3d	; 61
+     ca2:	9e b7       	in	r25, 0x3e	; 62
+     ca4:	0f 96       	adiw	r24, 0x0f	; 15
+     ca6:	0f b6       	in	r0, 0x3f	; 63
+     ca8:	f8 94       	cli
+     caa:	9e bf       	out	0x3e, r25	; 62
+     cac:	0f be       	out	0x3f, r0	; 63
+     cae:	8d bf       	out	0x3d, r24	; 61
 
 	// now turn off all PWM on timer1
 	rprintf("Turning off all PWM on timer1\r\n");
 	timer1PWMOff();
 #endif	
 }
-     c92:	cf 91       	pop	r28
-     c94:	08 95       	ret
+     cb0:	cf 91       	pop	r28
+     cb2:	08 95       	ret
 
-00000c96 <McuInit>:
+00000cb4 <McuInit>:
 
 void McuInit(void)
 {
 	// initialize our libraries
 	// initialize the UART (serial port)
 	uartInit();		/* sei() call in the function */
-     c96:	0e 94 d6 03 	call	0x7ac	; 0x7ac <uartInit>
+     cb4:	0e 94 e5 03 	call	0x7ca	; 0x7ca <uartInit>
 	// set the baud rate of the UART for our debug/reporting output
 	uartSetBaudRate(9600);
-     c9a:	60 e8       	ldi	r22, 0x80	; 128
-     c9c:	75 e2       	ldi	r23, 0x25	; 37
-     c9e:	80 e0       	ldi	r24, 0x00	; 0
-     ca0:	90 e0       	ldi	r25, 0x00	; 0
-     ca2:	0e 94 ec 03 	call	0x7d8	; 0x7d8 <uartSetBaudRate>
+     cb8:	60 e8       	ldi	r22, 0x80	; 128
+     cba:	75 e2       	ldi	r23, 0x25	; 37
+     cbc:	80 e0       	ldi	r24, 0x00	; 0
+     cbe:	90 e0       	ldi	r25, 0x00	; 0
+     cc0:	0e 94 fb 03 	call	0x7f6	; 0x7f6 <uartSetBaudRate>
 	// initialize rprintf system
 	rprintfInit(uartSendByte);
-     ca6:	80 e1       	ldi	r24, 0x10	; 16
-     ca8:	94 e0       	ldi	r25, 0x04	; 4
-     caa:	0e 94 05 01 	call	0x20a	; 0x20a <rprintfInit>
+     cc4:	8f e1       	ldi	r24, 0x1F	; 31
+     cc6:	94 e0       	ldi	r25, 0x04	; 4
+     cc8:	0e 94 14 01 	call	0x228	; 0x228 <rprintfInit>
 	
 	// run the test
 	timerTest();
-     cae:	0c 94 18 06 	jmp	0xc30	; 0xc30 <timerTest>
+     ccc:	0c 94 27 06 	jmp	0xc4e	; 0xc4e <timerTest>
 
-00000cb2 <ButtonInitEx>:
+00000cd0 <ButtonInitEx>:
 void ButtonInitEx(void)
 {	
 	/* 
 	Set PC1-PC0 as input, the tow IO with external pull up 10K resistor.
 	*/
 	DDRC &= ((1<<DDC1) | (1<<DDC0));
-     cb2:	84 b3       	in	r24, 0x14	; 20
-     cb4:	83 70       	andi	r24, 0x03	; 3
-     cb6:	84 bb       	out	0x14, r24	; 20
-     cb8:	08 95       	ret
+     cd0:	84 b3       	in	r24, 0x14	; 20
+     cd2:	83 70       	andi	r24, 0x03	; 3
+     cd4:	84 bb       	out	0x14, r24	; 20
+     cd6:	08 95       	ret
 
-00000cba <ButtonGetIO_StateEx>:
+00000cd8 <ButtonGetIO_StateEx>:
 */
 ButtonDataType ButtonGetIO_StateEx(void)
 {
 	ButtonDataType io_state;
 	
 	io_state = (~PINC) & ((1<<PINC1) | (1<<PINC0));	/* Get PC1-PC0 IO state */
-     cba:	83 b3       	in	r24, 0x13	; 19
-     cbc:	80 95       	com	r24
+     cd8:	83 b3       	in	r24, 0x13	; 19
+     cda:	80 95       	com	r24
 	
 	return  io_state;
 }
-     cbe:	83 70       	andi	r24, 0x03	; 3
-     cc0:	08 95       	ret
+     cdc:	83 70       	andi	r24, 0x03	; 3
+     cde:	08 95       	ret
 
-00000cc2 <ButtonJMP1ReleasedEvent>:
+00000ce0 <ButtonJMP1ReleasedEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP1ReleasedEvent(void)
 {
 	if (button.buttonsReleased.JMP1) 
-     cc2:	80 91 4f 01 	lds	r24, 0x014F
+     ce0:	80 91 50 01 	lds	r24, 0x0150
 	{
 		return true;
 	}
     
     return false;
 }
-     cc6:	81 70       	andi	r24, 0x01	; 1
-     cc8:	08 95       	ret
+     ce4:	81 70       	andi	r24, 0x01	; 1
+     ce6:	08 95       	ret
 
-00000cca <ButtonJMP1HeldEvent>:
+00000ce8 <ButtonJMP1HeldEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP1HeldEvent(void)
 {
 	if (button.buttonsHeld.JMP1) 
-     cca:	80 91 50 01 	lds	r24, 0x0150
+     ce8:	80 91 51 01 	lds	r24, 0x0151
 	{
 		return true;
 	}
     
     return false;
 }
-     cce:	81 70       	andi	r24, 0x01	; 1
-     cd0:	08 95       	ret
+     cec:	81 70       	andi	r24, 0x01	; 1
+     cee:	08 95       	ret
 
-00000cd2 <ButtonJMP2ReleasedEvent>:
+00000cf0 <ButtonJMP2ReleasedEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP2ReleasedEvent(void)
 {
 	if (button.buttonsReleased.JMP2) 
-     cd2:	80 91 4f 01 	lds	r24, 0x014F
+     cf0:	80 91 50 01 	lds	r24, 0x0150
 	{
 		return true;
 	}
     
     return false;
 }
-     cd6:	86 95       	lsr	r24
-     cd8:	81 70       	andi	r24, 0x01	; 1
-     cda:	08 95       	ret
+     cf4:	86 95       	lsr	r24
+     cf6:	81 70       	andi	r24, 0x01	; 1
+     cf8:	08 95       	ret
 
-00000cdc <ButtonJMP2HeldEvent>:
+00000cfa <ButtonJMP2HeldEvent>:
 *********************************************************************************************************
 */
 
 bool ButtonJMP2HeldEvent(void)
 {
 	if (button.buttonsHeld.JMP2) 
-     cdc:	80 91 50 01 	lds	r24, 0x0150
+     cfa:	80 91 51 01 	lds	r24, 0x0151
 	{
 		return true;
 	}
     
     return false;
 }
-     ce0:	86 95       	lsr	r24
-     ce2:	81 70       	andi	r24, 0x01	; 1
-     ce4:	08 95       	ret
+     cfe:	86 95       	lsr	r24
+     d00:	81 70       	andi	r24, 0x01	; 1
+     d02:	08 95       	ret
 
-00000ce6 <LEDInit>:
+00000d04 <LEDInit>:
 	uint8_t i;
 	
 	/* 
 	Set PB2-PB1 as output to drive to LEDs, default turn off all LEDs
 	*/
 	DDRB &= ~((1<<DDB2) | (1<<DDB1));
-     ce6:	87 b3       	in	r24, 0x17	; 23
-     ce8:	89 7f       	andi	r24, 0xF9	; 249
-     cea:	87 bb       	out	0x17, r24	; 23
+     d04:	87 b3       	in	r24, 0x17	; 23
+     d06:	89 7f       	andi	r24, 0xF9	; 249
+     d08:	87 bb       	out	0x17, r24	; 23
 	DDRB |= ((1<<DDB2) | (1<<DDB1));
-     cec:	87 b3       	in	r24, 0x17	; 23
-     cee:	86 60       	ori	r24, 0x06	; 6
-     cf0:	87 bb       	out	0x17, r24	; 23
+     d0a:	87 b3       	in	r24, 0x17	; 23
+     d0c:	86 60       	ori	r24, 0x06	; 6
+     d0e:	87 bb       	out	0x17, r24	; 23
 	PORTB |= ((1<<DDB2) | (1<<DDB1));
-     cf2:	88 b3       	in	r24, 0x18	; 24
-     cf4:	86 60       	ori	r24, 0x06	; 6
-     cf6:	88 bb       	out	0x18, r24	; 24
+     d10:	88 b3       	in	r24, 0x18	; 24
+     d12:	86 60       	ori	r24, 0x06	; 6
+     d14:	88 bb       	out	0x18, r24	; 24
 	
 	for(i = 0; i < LED_NUM; i++)
 	{
 		LEDs[i].led.LEDRate = LED_OFF;
-     cf8:	e3 e4       	ldi	r30, 0x43	; 67
-     cfa:	f1 e0       	ldi	r31, 0x01	; 1
-     cfc:	80 81       	ld	r24, Z
-     cfe:	88 7f       	andi	r24, 0xF8	; 248
+     d16:	e4 e4       	ldi	r30, 0x44	; 68
+     d18:	f1 e0       	ldi	r31, 0x01	; 1
+     d1a:	80 81       	ld	r24, Z
+     d1c:	88 7f       	andi	r24, 0xF8	; 248
 		LEDs[i].led.state = S_OFF;
-     d00:	84 60       	ori	r24, 0x04	; 4
-     d02:	88 60       	ori	r24, 0x08	; 8
-     d04:	80 83       	st	Z, r24
+     d1e:	84 60       	ori	r24, 0x04	; 4
+     d20:	88 60       	ori	r24, 0x08	; 8
+     d22:	80 83       	st	Z, r24
 		LEDs[i].flashTimer = LED_ONE_SEC;
-     d06:	9c e3       	ldi	r25, 0x3C	; 60
-     d08:	91 83       	std	Z+1, r25	; 0x01
+     d24:	9c e3       	ldi	r25, 0x3C	; 60
+     d26:	91 83       	std	Z+1, r25	; 0x01
 	DDRB |= ((1<<DDB2) | (1<<DDB1));
 	PORTB |= ((1<<DDB2) | (1<<DDB1));
 	
 	for(i = 0; i < LED_NUM; i++)
 	{
 		LEDs[i].led.LEDRate = LED_OFF;
-     d0a:	a5 e4       	ldi	r26, 0x45	; 69
-     d0c:	b1 e0       	ldi	r27, 0x01	; 1
-     d0e:	8c 91       	ld	r24, X
-     d10:	88 7f       	andi	r24, 0xF8	; 248
+     d28:	a6 e4       	ldi	r26, 0x46	; 70
+     d2a:	b1 e0       	ldi	r27, 0x01	; 1
+     d2c:	8c 91       	ld	r24, X
+     d2e:	88 7f       	andi	r24, 0xF8	; 248
 		LEDs[i].led.state = S_OFF;
-     d12:	84 60       	ori	r24, 0x04	; 4
-     d14:	88 60       	ori	r24, 0x08	; 8
-     d16:	8c 93       	st	X, r24
+     d30:	84 60       	ori	r24, 0x04	; 4
+     d32:	88 60       	ori	r24, 0x08	; 8
+     d34:	8c 93       	st	X, r24
 		LEDs[i].flashTimer = LED_ONE_SEC;
-     d18:	93 83       	std	Z+3, r25	; 0x03
-     d1a:	08 95       	ret
+     d36:	93 83       	std	Z+3, r25	; 0x03
+     d38:	08 95       	ret
 
-00000d1c <LEDCycleUpdate>:
+00000d3a <LEDCycleUpdate>:
 *
 *********************************************************************************************************
 */
 
 void LEDCycleUpdate(void)
 {
-     d1c:	a4 e4       	ldi	r26, 0x44	; 68
-     d1e:	b1 e0       	ldi	r27, 0x01	; 1
-     d20:	40 e0       	ldi	r20, 0x00	; 0
-     d22:	50 e0       	ldi	r21, 0x00	; 0
+     d3a:	a5 e4       	ldi	r26, 0x45	; 69
+     d3c:	b1 e0       	ldi	r27, 0x01	; 1
+     d3e:	40 e0       	ldi	r20, 0x00	; 0
+     d40:	50 e0       	ldi	r21, 0x00	; 0
 	uint8_t ft;				/* flash timer */
 	uint8_t i;
 
 	for(i = 0; i < LED_NUM; i++)
 	{
 		rate = LEDs[i].led.LEDRate;
-     d24:	ca 01       	movw	r24, r20
-     d26:	88 0f       	add	r24, r24
-     d28:	99 1f       	adc	r25, r25
-     d2a:	fc 01       	movw	r30, r24
-     d2c:	ed 5b       	subi	r30, 0xBD	; 189
-     d2e:	fe 4f       	sbci	r31, 0xFE	; 254
-     d30:	30 81       	ld	r19, Z
-     d32:	37 70       	andi	r19, 0x07	; 7
+     d42:	ca 01       	movw	r24, r20
+     d44:	88 0f       	add	r24, r24
+     d46:	99 1f       	adc	r25, r25
+     d48:	fc 01       	movw	r30, r24
+     d4a:	ec 5b       	subi	r30, 0xBC	; 188
+     d4c:	fe 4f       	sbci	r31, 0xFE	; 254
+     d4e:	30 81       	ld	r19, Z
+     d50:	37 70       	andi	r19, 0x07	; 7
 		ft = LEDs[i].flashTimer;
-     d34:	2c 91       	ld	r18, X
+     d52:	2c 91       	ld	r18, X
 		
 		ft += rate;
 		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
-     d36:	34 30       	cpi	r19, 0x04	; 4
-     d38:	19 f0       	breq	.+6      	; 0xd40 <LEDCycleUpdate+0x24>
+     d54:	34 30       	cpi	r19, 0x04	; 4
+     d56:	19 f0       	breq	.+6      	; 0xd5e <LEDCycleUpdate+0x24>
 	for(i = 0; i < LED_NUM; i++)
 	{
 		rate = LEDs[i].led.LEDRate;
 		ft = LEDs[i].flashTimer;
 		
 		ft += rate;
-     d3a:	23 0f       	add	r18, r19
+     d58:	23 0f       	add	r18, r19
 		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
-     d3c:	2d 33       	cpi	r18, 0x3D	; 61
-     d3e:	38 f0       	brcs	.+14     	; 0xd4e <LEDCycleUpdate+0x32>
+     d5a:	2d 33       	cpi	r18, 0x3D	; 61
+     d5c:	38 f0       	brcs	.+14     	; 0xd6c <LEDCycleUpdate+0x32>
 		{
 			ft = 0;
 			LEDs[i].led.state = S_OFF;
-     d40:	fc 01       	movw	r30, r24
-     d42:	ed 5b       	subi	r30, 0xBD	; 189
-     d44:	fe 4f       	sbci	r31, 0xFE	; 254
-     d46:	20 81       	ld	r18, Z
-     d48:	28 60       	ori	r18, 0x08	; 8
-     d4a:	20 83       	st	Z, r18
+     d5e:	fc 01       	movw	r30, r24
+     d60:	ec 5b       	subi	r30, 0xBC	; 188
+     d62:	fe 4f       	sbci	r31, 0xFE	; 254
+     d64:	20 81       	ld	r18, Z
+     d66:	28 60       	ori	r18, 0x08	; 8
+     d68:	20 83       	st	Z, r18
 		ft = LEDs[i].flashTimer;
 		
 		ft += rate;
 		if((rate == LED_OFF) || (ft > LED_ONE_SEC))
 		{
 			ft = 0;
-     d4c:	20 e0       	ldi	r18, 0x00	; 0
+     d6a:	20 e0       	ldi	r18, 0x00	; 0
 			LEDs[i].led.state = S_OFF;
 		}
 		LEDs[i].flashTimer = ft;
-     d4e:	2c 93       	st	X, r18
+     d6c:	2c 93       	st	X, r18
 		
 		if((rate == LED_0HZ) || (ft > (LED_ONE_SEC/2)))
-     d50:	33 23       	and	r19, r19
-     d52:	11 f0       	breq	.+4      	; 0xd58 <LEDCycleUpdate+0x3c>
-     d54:	2f 31       	cpi	r18, 0x1F	; 31
-     d56:	30 f0       	brcs	.+12     	; 0xd64 <LEDCycleUpdate+0x48>
+     d6e:	33 23       	and	r19, r19
+     d70:	11 f0       	breq	.+4      	; 0xd76 <LEDCycleUpdate+0x3c>
+     d72:	2f 31       	cpi	r18, 0x1F	; 31
+     d74:	30 f0       	brcs	.+12     	; 0xd82 <LEDCycleUpdate+0x48>
 		{
 			LEDs[i].led.state = S_ON;
-     d58:	fc 01       	movw	r30, r24
-     d5a:	ed 5b       	subi	r30, 0xBD	; 189
-     d5c:	fe 4f       	sbci	r31, 0xFE	; 254
-     d5e:	80 81       	ld	r24, Z
-     d60:	87 7f       	andi	r24, 0xF7	; 247
-     d62:	80 83       	st	Z, r24
-     d64:	12 96       	adiw	r26, 0x02	; 2
+     d76:	fc 01       	movw	r30, r24
+     d78:	ec 5b       	subi	r30, 0xBC	; 188
+     d7a:	fe 4f       	sbci	r31, 0xFE	; 254
+     d7c:	80 81       	ld	r24, Z
+     d7e:	87 7f       	andi	r24, 0xF7	; 247
+     d80:	80 83       	st	Z, r24
+     d82:	12 96       	adiw	r26, 0x02	; 2
 {
 	LED_RATE rate;
 	uint8_t ft;				/* flash timer */
 	uint8_t i;
 
 	for(i = 0; i < LED_NUM; i++)
-     d66:	41 30       	cpi	r20, 0x01	; 1
-     d68:	51 05       	cpc	r21, r1
-     d6a:	19 f0       	breq	.+6      	; 0xd72 <LEDCycleUpdate+0x56>
-     d6c:	41 e0       	ldi	r20, 0x01	; 1
-     d6e:	50 e0       	ldi	r21, 0x00	; 0
-     d70:	d9 cf       	rjmp	.-78     	; 0xd24 <LEDCycleUpdate+0x8>
+     d84:	41 30       	cpi	r20, 0x01	; 1
+     d86:	51 05       	cpc	r21, r1
+     d88:	19 f0       	breq	.+6      	; 0xd90 <LEDCycleUpdate+0x56>
+     d8a:	41 e0       	ldi	r20, 0x01	; 1
+     d8c:	50 e0       	ldi	r21, 0x00	; 0
+     d8e:	d9 cf       	rjmp	.-78     	; 0xd42 <LEDCycleUpdate+0x8>
 */
 void LEDUpdateState(void)
 {
 	uint8_t state = 0;		/* default is turn off LED */
 
 	if(LEDs[0].led.state == S_OFF)
-     d72:	80 91 43 01 	lds	r24, 0x0143
-     d76:	83 ff       	sbrs	r24, 3
-     d78:	02 c0       	rjmp	.+4      	; 0xd7e <LEDCycleUpdate+0x62>
+     d90:	80 91 44 01 	lds	r24, 0x0144
+     d94:	83 ff       	sbrs	r24, 3
+     d96:	02 c0       	rjmp	.+4      	; 0xd9c <LEDCycleUpdate+0x62>
 	{
 		state |= (1<<DDB1);
-     d7a:	82 e0       	ldi	r24, 0x02	; 2
-     d7c:	01 c0       	rjmp	.+2      	; 0xd80 <LEDCycleUpdate+0x64>
+     d98:	82 e0       	ldi	r24, 0x02	; 2
+     d9a:	01 c0       	rjmp	.+2      	; 0xd9e <LEDCycleUpdate+0x64>
 *
 *********************************************************************************************************
 */
 void LEDUpdateState(void)
 {
 	uint8_t state = 0;		/* default is turn off LED */
-     d7e:	80 e0       	ldi	r24, 0x00	; 0
+     d9c:	80 e0       	ldi	r24, 0x00	; 0
 	if(LEDs[0].led.state == S_OFF)
 	{
 		state |= (1<<DDB1);
 	}
 	
 	if(LEDs[1].led.state == S_OFF)
-     d80:	90 91 45 01 	lds	r25, 0x0145
-     d84:	93 fd       	sbrc	r25, 3
+     d9e:	90 91 46 01 	lds	r25, 0x0146
+     da2:	93 fd       	sbrc	r25, 3
 	{
 		state |= (1<<DDB2);
-     d86:	84 60       	ori	r24, 0x04	; 4
+     da4:	84 60       	ori	r24, 0x04	; 4
 	}
 
 	PORTB &= ~((1<<DDB2) | (1<<DDB1));
-     d88:	98 b3       	in	r25, 0x18	; 24
-     d8a:	99 7f       	andi	r25, 0xF9	; 249
-     d8c:	98 bb       	out	0x18, r25	; 24
+     da6:	98 b3       	in	r25, 0x18	; 24
+     da8:	99 7f       	andi	r25, 0xF9	; 249
+     daa:	98 bb       	out	0x18, r25	; 24
 	PORTB |= state;
-     d8e:	98 b3       	in	r25, 0x18	; 24
-     d90:	89 2b       	or	r24, r25
-     d92:	88 bb       	out	0x18, r24	; 24
-     d94:	08 95       	ret
+     dac:	98 b3       	in	r25, 0x18	; 24
+     dae:	89 2b       	or	r24, r25
+     db0:	88 bb       	out	0x18, r24	; 24
+     db2:	08 95       	ret
 
-00000d96 <main>:
+00000db4 <main>:
 int main(void)
 {	
 	/*
 	Calll all initial function
 	*/
 	McuInit();
-     d96:	0e 94 4b 06 	call	0xc96	; 0xc96 <McuInit>
+     db4:	0e 94 5a 06 	call	0xcb4	; 0xcb4 <McuInit>
 	ApplInit();
-     d9a:	0e 94 bc 04 	call	0x978	; 0x978 <ApplInit>
+     db8:	0e 94 cb 04 	call	0x996	; 0x996 <ApplInit>
 
 	while(1)
 	{
 		AppWaitZeroCrossing();
-     d9e:	0e 94 0a 06 	call	0xc14	; 0xc14 <AppWaitZeroCrossing>
+     dbc:	0e 94 19 06 	call	0xc32	; 0xc32 <AppWaitZeroCrossing>
 		ButtonCycleUpdate();
-     da2:	0e 94 d2 07 	call	0xfa4	; 0xfa4 <ButtonCycleUpdate>
+     dc0:	0e 94 e1 07 	call	0xfc2	; 0xfc2 <ButtonCycleUpdate>
 		AppCycleUpdate();
-     da6:	0e 94 de 04 	call	0x9bc	; 0x9bc <AppCycleUpdate>
+     dc4:	0e 94 ed 04 	call	0x9da	; 0x9da <AppCycleUpdate>
 		LEDCycleUpdate();
-     daa:	0e 94 8e 06 	call	0xd1c	; 0xd1c <LEDCycleUpdate>
+     dc8:	0e 94 9d 06 	call	0xd3a	; 0xd3a <LEDCycleUpdate>
 		SSDCycleUpdate();
-     dae:	0e 94 da 06 	call	0xdb4	; 0xdb4 <SSDCycleUpdate>
+     dcc:	0e 94 e9 06 	call	0xdd2	; 0xdd2 <SSDCycleUpdate>
 	}
-     db2:	f5 cf       	rjmp	.-22     	; 0xd9e <main+0x8>
+     dd0:	f5 cf       	rjmp	.-22     	; 0xdbc <main+0x8>
 
-00000db4 <SSDCycleUpdate>:
+00000dd2 <SSDCycleUpdate>:
 *
 *********************************************************************************************************
 */
 
 void SSDCycleUpdate(void)
 {
-     db4:	0f 93       	push	r16
-     db6:	1f 93       	push	r17
+     dd2:	0f 93       	push	r16
+     dd4:	1f 93       	push	r17
 */
 void SSDShitfOutData(void)
 {
 	uint8_t i;
 	uint8_t bitVal;
 	uint32_t DispValTemp = SSD.DispVal.value; 
-     db8:	40 91 49 01 	lds	r20, 0x0149
-     dbc:	50 91 4a 01 	lds	r21, 0x014A
-     dc0:	60 91 4b 01 	lds	r22, 0x014B
-     dc4:	70 91 4c 01 	lds	r23, 0x014C
-     dc8:	80 e2       	ldi	r24, 0x20	; 32
+     dd6:	40 91 4a 01 	lds	r20, 0x014A
+     dda:	50 91 4b 01 	lds	r21, 0x014B
+     dde:	60 91 4c 01 	lds	r22, 0x014C
+     de2:	70 91 4d 01 	lds	r23, 0x014D
+     de6:	80 e2       	ldi	r24, 0x20	; 32
 	
 	for(i = 0; i < 32; i++)
 	{
 		bitVal = 0;
 		if(DispValTemp & 0x80000000)
-     dca:	8a 01       	movw	r16, r20
-     dcc:	9b 01       	movw	r18, r22
+     de8:	8a 01       	movw	r16, r20
+     dea:	9b 01       	movw	r18, r22
 		{
 			bitVal = 1;
 		}
 		DispValTemp <<= 1;
-     dce:	44 0f       	add	r20, r20
-     dd0:	55 1f       	adc	r21, r21
-     dd2:	66 1f       	adc	r22, r22
-     dd4:	77 1f       	adc	r23, r23
+     dec:	44 0f       	add	r20, r20
+     dee:	55 1f       	adc	r21, r21
+     df0:	66 1f       	adc	r22, r22
+     df2:	77 1f       	adc	r23, r23
 
 		SSD_CLK_CLR();
-     dd6:	af 98       	cbi	0x15, 7	; 21
+     df4:	af 98       	cbi	0x15, 7	; 21
 		SSD_DAT_CLR();
-     dd8:	ae 98       	cbi	0x15, 6	; 21
+     df6:	ae 98       	cbi	0x15, 6	; 21
 		if(bitVal)
-     dda:	37 fd       	sbrc	r19, 7
+     df8:	37 fd       	sbrc	r19, 7
 		{
 			SSD_DAT_SET();
-     ddc:	ae 9a       	sbi	0x15, 6	; 21
+     dfa:	ae 9a       	sbi	0x15, 6	; 21
 		}
 		SSD_CLK_SET();
-     dde:	af 9a       	sbi	0x15, 7	; 21
-     de0:	81 50       	subi	r24, 0x01	; 1
+     dfc:	af 9a       	sbi	0x15, 7	; 21
+     dfe:	81 50       	subi	r24, 0x01	; 1
 {
 	uint8_t i;
 	uint8_t bitVal;
 	uint32_t DispValTemp = SSD.DispVal.value; 
 	
 	for(i = 0; i < 32; i++)
-     de2:	99 f7       	brne	.-26     	; 0xdca <SSDCycleUpdate+0x16>
+     e00:	99 f7       	brne	.-26     	; 0xde8 <SSDCycleUpdate+0x16>
 void SSDUpdateOnOff(void)
 {
 	SSD_RATE rate;
 	uint8_t ft;				/* flash timer */
 
 	rate = SSD.ssd.rate;
-     de4:	90 91 47 01 	lds	r25, 0x0147
-     de8:	97 70       	andi	r25, 0x07	; 7
+     e02:	90 91 48 01 	lds	r25, 0x0148
+     e06:	97 70       	andi	r25, 0x07	; 7
 	ft = SSD.flashTimer;
-     dea:	80 91 48 01 	lds	r24, 0x0148
+     e08:	80 91 49 01 	lds	r24, 0x0149
 	
 	ft += rate;
 	if((rate == SSD_R_OFF) || (ft > SSD_ONE_SEC))
-     dee:	94 30       	cpi	r25, 0x04	; 4
-     df0:	19 f0       	breq	.+6      	; 0xdf8 <SSDCycleUpdate+0x44>
+     e0c:	94 30       	cpi	r25, 0x04	; 4
+     e0e:	19 f0       	breq	.+6      	; 0xe16 <SSDCycleUpdate+0x44>
 	uint8_t ft;				/* flash timer */
 
 	rate = SSD.ssd.rate;
 	ft = SSD.flashTimer;
 	
 	ft += rate;
-     df2:	89 0f       	add	r24, r25
+     e10:	89 0f       	add	r24, r25
 	if((rate == SSD_R_OFF) || (ft > SSD_ONE_SEC))
-     df4:	8d 33       	cpi	r24, 0x3D	; 61
-     df6:	30 f0       	brcs	.+12     	; 0xe04 <SSDCycleUpdate+0x50>
+     e12:	8d 33       	cpi	r24, 0x3D	; 61
+     e14:	30 f0       	brcs	.+12     	; 0xe22 <SSDCycleUpdate+0x50>
 	{
 		ft = 0;
 		SSD.ssd.state = SSD_OFF;
-     df8:	80 91 47 01 	lds	r24, 0x0147
-     dfc:	8f 7d       	andi	r24, 0xDF	; 223
-     dfe:	80 93 47 01 	sts	0x0147, r24
+     e16:	80 91 48 01 	lds	r24, 0x0148
+     e1a:	8f 7d       	andi	r24, 0xDF	; 223
+     e1c:	80 93 48 01 	sts	0x0148, r24
 	ft = SSD.flashTimer;
 	
 	ft += rate;
 	if((rate == SSD_R_OFF) || (ft > SSD_ONE_SEC))
 	{
 		ft = 0;
-     e02:	80 e0       	ldi	r24, 0x00	; 0
+     e20:	80 e0       	ldi	r24, 0x00	; 0
 		SSD.ssd.state = SSD_OFF;
 	}
 	SSD.flashTimer = ft;
-     e04:	80 93 48 01 	sts	0x0148, r24
+     e22:	80 93 49 01 	sts	0x0149, r24
 	
 	if((rate == SSD_0HZ) || (ft > (SSD_ONE_SEC/2)))
-     e08:	99 23       	and	r25, r25
-     e0a:	11 f0       	breq	.+4      	; 0xe10 <SSDCycleUpdate+0x5c>
-     e0c:	8f 31       	cpi	r24, 0x1F	; 31
-     e0e:	28 f0       	brcs	.+10     	; 0xe1a <SSDCycleUpdate+0x66>
+     e26:	99 23       	and	r25, r25
+     e28:	11 f0       	breq	.+4      	; 0xe2e <SSDCycleUpdate+0x5c>
+     e2a:	8f 31       	cpi	r24, 0x1F	; 31
+     e2c:	28 f0       	brcs	.+10     	; 0xe38 <SSDCycleUpdate+0x66>
 	{
 		SSD.ssd.state = SSD_ON;
-     e10:	80 91 47 01 	lds	r24, 0x0147
-     e14:	80 62       	ori	r24, 0x20	; 32
-     e16:	80 93 47 01 	sts	0x0147, r24
+     e2e:	80 91 48 01 	lds	r24, 0x0148
+     e32:	80 62       	ori	r24, 0x20	; 32
+     e34:	80 93 48 01 	sts	0x0148, r24
 *
 *********************************************************************************************************
 */
 void SSDUpdateComPin(void)
 {
 	if(SSD.ssd.state == SSD_OFF)		/* if ssd is in off state, cut power to green and color */
-     e1a:	80 91 47 01 	lds	r24, 0x0147
-     e1e:	85 fd       	sbrc	r24, 5
-     e20:	02 c0       	rjmp	.+4      	; 0xe26 <SSDCycleUpdate+0x72>
+     e38:	80 91 48 01 	lds	r24, 0x0148
+     e3c:	85 fd       	sbrc	r24, 5
+     e3e:	02 c0       	rjmp	.+4      	; 0xe44 <SSDCycleUpdate+0x72>
 	{
 		SSD_RED_CLR();
-     e22:	ac 98       	cbi	0x15, 4	; 21
-     e24:	03 c0       	rjmp	.+6      	; 0xe2c <SSDCycleUpdate+0x78>
+     e40:	ac 98       	cbi	0x15, 4	; 21
+     e42:	03 c0       	rjmp	.+6      	; 0xe4a <SSDCycleUpdate+0x78>
 		SSD_GRN_CLR();
 	}
 	else
 	{
 		if(SSD.ssd.color == SSD_RED)		/* dispay red color */
-     e26:	88 71       	andi	r24, 0x18	; 24
-     e28:	19 f4       	brne	.+6      	; 0xe30 <SSDCycleUpdate+0x7c>
+     e44:	88 71       	andi	r24, 0x18	; 24
+     e46:	19 f4       	brne	.+6      	; 0xe4e <SSDCycleUpdate+0x7c>
 		{
 			SSD_RED_SET();	/* give power to red ssd common pin */
-     e2a:	ac 9a       	sbi	0x15, 4	; 21
+     e48:	ac 9a       	sbi	0x15, 4	; 21
 			SSD_GRN_CLR();	/* cut power to green ssd common pin */
-     e2c:	ad 98       	cbi	0x15, 5	; 21
-     e2e:	06 c0       	rjmp	.+12     	; 0xe3c <SSDCycleUpdate+0x88>
+     e4a:	ad 98       	cbi	0x15, 5	; 21
+     e4c:	06 c0       	rjmp	.+12     	; 0xe5a <SSDCycleUpdate+0x88>
 		}
 		else if(SSD.ssd.color == SSD_GREEN) /* dispay green color */
-     e30:	88 30       	cpi	r24, 0x08	; 8
-     e32:	11 f4       	brne	.+4      	; 0xe38 <SSDCycleUpdate+0x84>
+     e4e:	88 30       	cpi	r24, 0x08	; 8
+     e50:	11 f4       	brne	.+4      	; 0xe56 <SSDCycleUpdate+0x84>
 		{
 			SSD_RED_CLR();
-     e34:	ac 98       	cbi	0x15, 4	; 21
-     e36:	01 c0       	rjmp	.+2      	; 0xe3a <SSDCycleUpdate+0x86>
+     e52:	ac 98       	cbi	0x15, 4	; 21
+     e54:	01 c0       	rjmp	.+2      	; 0xe58 <SSDCycleUpdate+0x86>
 			SSD_GRN_SET();
 		}
 		else								/* dispay amber color */
 		{
 			SSD_RED_SET();
-     e38:	ac 9a       	sbi	0x15, 4	; 21
+     e56:	ac 9a       	sbi	0x15, 4	; 21
 			SSD_GRN_SET();
-     e3a:	ad 9a       	sbi	0x15, 5	; 21
+     e58:	ad 9a       	sbi	0x15, 5	; 21
 void SSDCycleUpdate(void)
 {
 	SSDShitfOutData();
 	SSDUpdateOnOff();
 	SSDUpdateComPin();
 }
-     e3c:	1f 91       	pop	r17
-     e3e:	0f 91       	pop	r16
-     e40:	08 95       	ret
+     e5a:	1f 91       	pop	r17
+     e5c:	0f 91       	pop	r16
+     e5e:	08 95       	ret
 
-00000e42 <SSDDisplayDec>:
+00000e60 <SSDDisplayDec>:
 * Notes      :none
 *
 *********************************************************************************************************
 */
 void SSDDisplayDec(uint16_t DispData,  SSD_RATE rate, SSD_COLOR color)
 {
-     e42:	0f 93       	push	r16
-     e44:	1f 93       	push	r17
-     e46:	cf 93       	push	r28
-     e48:	df 93       	push	r29
-     e4a:	8c 01       	movw	r16, r24
-     e4c:	36 2f       	mov	r19, r22
+     e60:	0f 93       	push	r16
+     e62:	1f 93       	push	r17
+     e64:	cf 93       	push	r28
+     e66:	df 93       	push	r29
+     e68:	8c 01       	movw	r16, r24
+     e6a:	36 2f       	mov	r19, r22
 uint32_t SSDHex2Dec(uint16_t hexValue)
 {
 	SSD_DISP_T dataSTR;
 	dataSTR.value = 0;
 	
 	dataSTR.thousands = hexValue/1000;
-     e4e:	68 ee       	ldi	r22, 0xE8	; 232
-     e50:	73 e0       	ldi	r23, 0x03	; 3
-     e52:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     e56:	c6 2f       	mov	r28, r22
+     e6c:	68 ee       	ldi	r22, 0xE8	; 232
+     e6e:	73 e0       	ldi	r23, 0x03	; 3
+     e70:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     e74:	c6 2f       	mov	r28, r22
 	dataSTR.hundred   = hexValue%1000/100;
-     e58:	64 e6       	ldi	r22, 0x64	; 100
-     e5a:	70 e0       	ldi	r23, 0x00	; 0
-     e5c:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     e60:	d6 2f       	mov	r29, r22
+     e76:	64 e6       	ldi	r22, 0x64	; 100
+     e78:	70 e0       	ldi	r23, 0x00	; 0
+     e7a:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     e7e:	d6 2f       	mov	r29, r22
 	dataSTR.tens      = hexValue%1000%100/10;
-     e62:	6a e0       	ldi	r22, 0x0A	; 10
-     e64:	70 e0       	ldi	r23, 0x00	; 0
-     e66:	0e 94 24 08 	call	0x1048	; 0x1048 <__udivmodhi4>
-     e6a:	56 2f       	mov	r21, r22
+     e80:	6a e0       	ldi	r22, 0x0A	; 10
+     e82:	70 e0       	ldi	r23, 0x00	; 0
+     e84:	0e 94 33 08 	call	0x1066	; 0x1066 <__udivmodhi4>
+     e88:	56 2f       	mov	r21, r22
 {
 	SSD_DISP_T ValueCopy;
 	
 	SSD.DispVal.value = SSDHex2Dec(DispData);
 	ValueCopy.value = SSD.DispVal.value;
 	SSD.ssd.rate = rate;
-     e6c:	37 70       	andi	r19, 0x07	; 7
-     e6e:	60 91 47 01 	lds	r22, 0x0147
-     e72:	60 7e       	andi	r22, 0xE0	; 224
+     e8a:	37 70       	andi	r19, 0x07	; 7
+     e8c:	60 91 48 01 	lds	r22, 0x0148
+     e90:	60 7e       	andi	r22, 0xE0	; 224
 	SSD.ssd.color = color;
-     e74:	43 70       	andi	r20, 0x03	; 3
-     e76:	94 2f       	mov	r25, r20
-     e78:	99 0f       	add	r25, r25
-     e7a:	99 0f       	add	r25, r25
-     e7c:	99 0f       	add	r25, r25
-     e7e:	46 2f       	mov	r20, r22
-     e80:	43 2b       	or	r20, r19
-     e82:	49 2b       	or	r20, r25
-     e84:	40 93 47 01 	sts	0x0147, r20
+     e92:	43 70       	andi	r20, 0x03	; 3
+     e94:	94 2f       	mov	r25, r20
+     e96:	99 0f       	add	r25, r25
+     e98:	99 0f       	add	r25, r25
+     e9a:	99 0f       	add	r25, r25
+     e9c:	46 2f       	mov	r20, r22
+     e9e:	43 2b       	or	r20, r19
+     ea0:	49 2b       	or	r20, r25
+     ea2:	40 93 48 01 	sts	0x0148, r20
 	
 	/* Set display null for all 4 seven segment displays */
 	SSD.DispVal.thousands = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
-     e88:	eb e3       	ldi	r30, 0x3B	; 59
-     e8a:	f1 e0       	ldi	r31, 0x01	; 1
-     e8c:	94 91       	lpm	r25, Z
-     e8e:	90 93 4c 01 	sts	0x014C, r25
+     ea6:	eb e3       	ldi	r30, 0x3B	; 59
+     ea8:	f1 e0       	ldi	r31, 0x01	; 1
+     eaa:	94 91       	lpm	r25, Z
+     eac:	90 93 4d 01 	sts	0x014D, r25
 	SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
-     e92:	94 91       	lpm	r25, Z
-     e94:	90 93 4b 01 	sts	0x014B, r25
+     eb0:	94 91       	lpm	r25, Z
+     eb2:	90 93 4c 01 	sts	0x014C, r25
 	SSD.DispVal.tens      = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
-     e98:	94 91       	lpm	r25, Z
-     e9a:	90 93 4a 01 	sts	0x014A, r25
+     eb6:	94 91       	lpm	r25, Z
+     eb8:	90 93 4b 01 	sts	0x014B, r25
 	SSD.DispVal.units     = pgm_read_byte(&ssdCharTble[SSD_DISP_NULL]);
-     e9e:	e4 91       	lpm	r30, Z
-     ea0:	28 2f       	mov	r18, r24
-     ea2:	30 e0       	ldi	r19, 0x00	; 0
+     ebc:	e4 91       	lpm	r30, Z
+     ebe:	28 2f       	mov	r18, r24
+     ec0:	30 e0       	ldi	r19, 0x00	; 0
 
 	/* Set display remove zero before number */
 	if(DispData > 1000)
-     ea4:	09 3e       	cpi	r16, 0xE9	; 233
-     ea6:	83 e0       	ldi	r24, 0x03	; 3
-     ea8:	18 07       	cpc	r17, r24
-     eaa:	78 f0       	brcs	.+30     	; 0xeca <SSDDisplayDec+0x88>
+     ec2:	09 3e       	cpi	r16, 0xE9	; 233
+     ec4:	83 e0       	ldi	r24, 0x03	; 3
+     ec6:	18 07       	cpc	r17, r24
+     ec8:	78 f0       	brcs	.+30     	; 0xee8 <SSDDisplayDec+0x88>
 	{
 		SSD.DispVal.thousands = pgm_read_byte(&ssdCharTble[ValueCopy.thousands]);
-     eac:	ec 2f       	mov	r30, r28
-     eae:	f0 e0       	ldi	r31, 0x00	; 0
-     eb0:	e5 5d       	subi	r30, 0xD5	; 213
-     eb2:	fe 4f       	sbci	r31, 0xFE	; 254
-     eb4:	84 91       	lpm	r24, Z
-     eb6:	80 93 4c 01 	sts	0x014C, r24
+     eca:	ec 2f       	mov	r30, r28
+     ecc:	f0 e0       	ldi	r31, 0x00	; 0
+     ece:	e5 5d       	subi	r30, 0xD5	; 213
+     ed0:	fe 4f       	sbci	r31, 0xFE	; 254
+     ed2:	84 91       	lpm	r24, Z
+     ed4:	80 93 4d 01 	sts	0x014D, r24
 		SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[ValueCopy.hundred]);
-     eba:	ed 2f       	mov	r30, r29
-     ebc:	f0 e0       	ldi	r31, 0x00	; 0
-     ebe:	e5 5d       	subi	r30, 0xD5	; 213
-     ec0:	fe 4f       	sbci	r31, 0xFE	; 254
-     ec2:	e4 91       	lpm	r30, Z
-     ec4:	e0 93 4b 01 	sts	0x014B, r30
-     ec8:	0e c0       	rjmp	.+28     	; 0xee6 <SSDDisplayDec+0xa4>
+     ed8:	ed 2f       	mov	r30, r29
+     eda:	f0 e0       	ldi	r31, 0x00	; 0
+     edc:	e5 5d       	subi	r30, 0xD5	; 213
+     ede:	fe 4f       	sbci	r31, 0xFE	; 254
+     ee0:	e4 91       	lpm	r30, Z
+     ee2:	e0 93 4c 01 	sts	0x014C, r30
+     ee6:	0e c0       	rjmp	.+28     	; 0xf04 <SSDDisplayDec+0xa4>
 		SSD.DispVal.tens	  = pgm_read_byte(&ssdCharTble[ValueCopy.tens]);
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
 	}
 	else if(DispData > 100)
-     eca:	05 36       	cpi	r16, 0x65	; 101
-     ecc:	11 05       	cpc	r17, r1
-     ece:	40 f0       	brcs	.+16     	; 0xee0 <SSDDisplayDec+0x9e>
+     ee8:	05 36       	cpi	r16, 0x65	; 101
+     eea:	11 05       	cpc	r17, r1
+     eec:	40 f0       	brcs	.+16     	; 0xefe <SSDDisplayDec+0x9e>
 	{
 		SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[ValueCopy.hundred]);
-     ed0:	ed 2f       	mov	r30, r29
-     ed2:	f0 e0       	ldi	r31, 0x00	; 0
-     ed4:	e5 5d       	subi	r30, 0xD5	; 213
-     ed6:	fe 4f       	sbci	r31, 0xFE	; 254
-     ed8:	84 91       	lpm	r24, Z
-     eda:	80 93 4b 01 	sts	0x014B, r24
-     ede:	03 c0       	rjmp	.+6      	; 0xee6 <SSDDisplayDec+0xa4>
+     eee:	ed 2f       	mov	r30, r29
+     ef0:	f0 e0       	ldi	r31, 0x00	; 0
+     ef2:	e5 5d       	subi	r30, 0xD5	; 213
+     ef4:	fe 4f       	sbci	r31, 0xFE	; 254
+     ef6:	84 91       	lpm	r24, Z
+     ef8:	80 93 4c 01 	sts	0x014C, r24
+     efc:	03 c0       	rjmp	.+6      	; 0xf04 <SSDDisplayDec+0xa4>
 		SSD.DispVal.tens	  = pgm_read_byte(&ssdCharTble[ValueCopy.tens]);
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
 	}
 	else if(DispData > 10)
-     ee0:	0b 30       	cpi	r16, 0x0B	; 11
-     ee2:	11 05       	cpc	r17, r1
-     ee4:	38 f0       	brcs	.+14     	; 0xef4 <SSDDisplayDec+0xb2>
+     efe:	0b 30       	cpi	r16, 0x0B	; 11
+     f00:	11 05       	cpc	r17, r1
+     f02:	38 f0       	brcs	.+14     	; 0xf12 <SSDDisplayDec+0xb2>
 	{
 		SSD.DispVal.tens	  = pgm_read_byte(&ssdCharTble[ValueCopy.tens]);
-     ee6:	e5 2f       	mov	r30, r21
-     ee8:	f0 e0       	ldi	r31, 0x00	; 0
-     eea:	e5 5d       	subi	r30, 0xD5	; 213
-     eec:	fe 4f       	sbci	r31, 0xFE	; 254
-     eee:	e4 91       	lpm	r30, Z
-     ef0:	e0 93 4a 01 	sts	0x014A, r30
+     f04:	e5 2f       	mov	r30, r21
+     f06:	f0 e0       	ldi	r31, 0x00	; 0
+     f08:	e5 5d       	subi	r30, 0xD5	; 213
+     f0a:	fe 4f       	sbci	r31, 0xFE	; 254
+     f0c:	e4 91       	lpm	r30, Z
+     f0e:	e0 93 4b 01 	sts	0x014B, r30
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
 	}
 	else
 	{
 		SSD.DispVal.units	  = pgm_read_byte(&ssdCharTble[ValueCopy.units]);
-     ef4:	f9 01       	movw	r30, r18
-     ef6:	e5 5d       	subi	r30, 0xD5	; 213
-     ef8:	fe 4f       	sbci	r31, 0xFE	; 254
-     efa:	e4 91       	lpm	r30, Z
-     efc:	e0 93 49 01 	sts	0x0149, r30
+     f12:	f9 01       	movw	r30, r18
+     f14:	e5 5d       	subi	r30, 0xD5	; 213
+     f16:	fe 4f       	sbci	r31, 0xFE	; 254
+     f18:	e4 91       	lpm	r30, Z
+     f1a:	e0 93 4a 01 	sts	0x014A, r30
 	}
 }
-     f00:	df 91       	pop	r29
-     f02:	cf 91       	pop	r28
-     f04:	1f 91       	pop	r17
-     f06:	0f 91       	pop	r16
-     f08:	08 95       	ret
+     f1e:	df 91       	pop	r29
+     f20:	cf 91       	pop	r28
+     f22:	1f 91       	pop	r17
+     f24:	0f 91       	pop	r16
+     f26:	08 95       	ret
 
-00000f0a <SSDDisplayHex>:
+00000f28 <SSDDisplayHex>:
 uint32_t SSDHex2Hex(uint16_t hexValue)
 {
 	SSD_DISP_T dataSTR;
 	dataSTR.value = 0;
 	
 	dataSTR.thousands = (hexValue >> 12) & 0x000f;
-     f0a:	39 2f       	mov	r19, r25
-     f0c:	32 95       	swap	r19
-     f0e:	3f 70       	andi	r19, 0x0F	; 15
+     f28:	39 2f       	mov	r19, r25
+     f2a:	32 95       	swap	r19
+     f2c:	3f 70       	andi	r19, 0x0F	; 15
 	dataSTR.hundred   = (hexValue >> 8) & 0x000f;
-     f10:	29 2f       	mov	r18, r25
-     f12:	2f 70       	andi	r18, 0x0F	; 15
+     f2e:	29 2f       	mov	r18, r25
+     f30:	2f 70       	andi	r18, 0x0F	; 15
 	dataSTR.tens      = (hexValue >> 4) & 0x000f;
-     f14:	fc 01       	movw	r30, r24
-     f16:	94 e0       	ldi	r25, 0x04	; 4
-     f18:	f6 95       	lsr	r31
-     f1a:	e7 95       	ror	r30
-     f1c:	9a 95       	dec	r25
-     f1e:	e1 f7       	brne	.-8      	; 0xf18 <SSDDisplayHex+0xe>
-     f20:	9e 2f       	mov	r25, r30
-     f22:	9f 70       	andi	r25, 0x0F	; 15
+     f32:	fc 01       	movw	r30, r24
+     f34:	94 e0       	ldi	r25, 0x04	; 4
+     f36:	f6 95       	lsr	r31
+     f38:	e7 95       	ror	r30
+     f3a:	9a 95       	dec	r25
+     f3c:	e1 f7       	brne	.-8      	; 0xf36 <SSDDisplayHex+0xe>
+     f3e:	9e 2f       	mov	r25, r30
+     f40:	9f 70       	andi	r25, 0x0F	; 15
 	dataSTR.units     = (hexValue >> 0) & 0x000f;
-     f24:	8f 70       	andi	r24, 0x0F	; 15
+     f42:	8f 70       	andi	r24, 0x0F	; 15
 *
 *********************************************************************************************************
 */
 void SSDDisplayHex(uint16_t DispData,  SSD_RATE rate, SSD_COLOR color)
 {
 	SSD.DispVal.value = SSDHex2Hex(DispData);
-     f26:	a7 e4       	ldi	r26, 0x47	; 71
-     f28:	b1 e0       	ldi	r27, 0x01	; 1
+     f44:	a8 e4       	ldi	r26, 0x48	; 72
+     f46:	b1 e0       	ldi	r27, 0x01	; 1
 	SSD.ssd.rate = rate;
-     f2a:	67 70       	andi	r22, 0x07	; 7
-     f2c:	7c 91       	ld	r23, X
-     f2e:	70 7e       	andi	r23, 0xE0	; 224
+     f48:	67 70       	andi	r22, 0x07	; 7
+     f4a:	7c 91       	ld	r23, X
+     f4c:	70 7e       	andi	r23, 0xE0	; 224
 	SSD.ssd.color = color;
-     f30:	43 70       	andi	r20, 0x03	; 3
-     f32:	54 2f       	mov	r21, r20
-     f34:	55 0f       	add	r21, r21
-     f36:	55 0f       	add	r21, r21
-     f38:	55 0f       	add	r21, r21
-     f3a:	47 2f       	mov	r20, r23
-     f3c:	46 2b       	or	r20, r22
-     f3e:	45 2b       	or	r20, r21
-     f40:	4c 93       	st	X, r20
+     f4e:	43 70       	andi	r20, 0x03	; 3
+     f50:	54 2f       	mov	r21, r20
+     f52:	55 0f       	add	r21, r21
+     f54:	55 0f       	add	r21, r21
+     f56:	55 0f       	add	r21, r21
+     f58:	47 2f       	mov	r20, r23
+     f5a:	46 2b       	or	r20, r22
+     f5c:	45 2b       	or	r20, r21
+     f5e:	4c 93       	st	X, r20
 	
 	SSD.DispVal.thousands = pgm_read_byte(&ssdCharTble[SSD.DispVal.thousands]);
-     f42:	e3 2f       	mov	r30, r19
-     f44:	f0 e0       	ldi	r31, 0x00	; 0
-     f46:	e5 5d       	subi	r30, 0xD5	; 213
-     f48:	fe 4f       	sbci	r31, 0xFE	; 254
-     f4a:	34 91       	lpm	r19, Z
-     f4c:	15 96       	adiw	r26, 0x05	; 5
-     f4e:	3c 93       	st	X, r19
-     f50:	15 97       	sbiw	r26, 0x05	; 5
+     f60:	e3 2f       	mov	r30, r19
+     f62:	f0 e0       	ldi	r31, 0x00	; 0
+     f64:	e5 5d       	subi	r30, 0xD5	; 213
+     f66:	fe 4f       	sbci	r31, 0xFE	; 254
+     f68:	34 91       	lpm	r19, Z
+     f6a:	15 96       	adiw	r26, 0x05	; 5
+     f6c:	3c 93       	st	X, r19
+     f6e:	15 97       	sbiw	r26, 0x05	; 5
 	SSD.DispVal.hundred   = pgm_read_byte(&ssdCharTble[SSD.DispVal.hundred]);
-     f52:	e2 2f       	mov	r30, r18
-     f54:	f0 e0       	ldi	r31, 0x00	; 0
-     f56:	e5 5d       	subi	r30, 0xD5	; 213
-     f58:	fe 4f       	sbci	r31, 0xFE	; 254
-     f5a:	24 91       	lpm	r18, Z
-     f5c:	14 96       	adiw	r26, 0x04	; 4
-     f5e:	2c 93       	st	X, r18
-     f60:	14 97       	sbiw	r26, 0x04	; 4
+     f70:	e2 2f       	mov	r30, r18
+     f72:	f0 e0       	ldi	r31, 0x00	; 0
+     f74:	e5 5d       	subi	r30, 0xD5	; 213
+     f76:	fe 4f       	sbci	r31, 0xFE	; 254
+     f78:	24 91       	lpm	r18, Z
+     f7a:	14 96       	adiw	r26, 0x04	; 4
+     f7c:	2c 93       	st	X, r18
+     f7e:	14 97       	sbiw	r26, 0x04	; 4
 	SSD.DispVal.tens      = pgm_read_byte(&ssdCharTble[SSD.DispVal.tens]);
-     f62:	e9 2f       	mov	r30, r25
-     f64:	f0 e0       	ldi	r31, 0x00	; 0
-     f66:	e5 5d       	subi	r30, 0xD5	; 213
-     f68:	fe 4f       	sbci	r31, 0xFE	; 254
-     f6a:	e4 91       	lpm	r30, Z
-     f6c:	13 96       	adiw	r26, 0x03	; 3
-     f6e:	ec 93       	st	X, r30
-     f70:	13 97       	sbiw	r26, 0x03	; 3
+     f80:	e9 2f       	mov	r30, r25
+     f82:	f0 e0       	ldi	r31, 0x00	; 0
+     f84:	e5 5d       	subi	r30, 0xD5	; 213
+     f86:	fe 4f       	sbci	r31, 0xFE	; 254
+     f88:	e4 91       	lpm	r30, Z
+     f8a:	13 96       	adiw	r26, 0x03	; 3
+     f8c:	ec 93       	st	X, r30
+     f8e:	13 97       	sbiw	r26, 0x03	; 3
 	SSD.DispVal.units     = pgm_read_byte(&ssdCharTble[SSD.DispVal.units]);
-     f72:	e8 2f       	mov	r30, r24
-     f74:	f0 e0       	ldi	r31, 0x00	; 0
-     f76:	e5 5d       	subi	r30, 0xD5	; 213
-     f78:	fe 4f       	sbci	r31, 0xFE	; 254
-     f7a:	e4 91       	lpm	r30, Z
-     f7c:	12 96       	adiw	r26, 0x02	; 2
-     f7e:	ec 93       	st	X, r30
-     f80:	08 95       	ret
+     f90:	e8 2f       	mov	r30, r24
+     f92:	f0 e0       	ldi	r31, 0x00	; 0
+     f94:	e5 5d       	subi	r30, 0xD5	; 213
+     f96:	fe 4f       	sbci	r31, 0xFE	; 254
+     f98:	e4 91       	lpm	r30, Z
+     f9a:	12 96       	adiw	r26, 0x02	; 2
+     f9c:	ec 93       	st	X, r30
+     f9e:	08 95       	ret
 
-00000f82 <SSDInit>:
+00000fa0 <SSDInit>:
 void SSDInit(void)
 {	
 	/* 
 	Set PB7-PB4 as output to drive seven segment display, default display turn off
 	*/
 	DDRC &= ~((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4));
-     f82:	84 b3       	in	r24, 0x14	; 20
-     f84:	8f 70       	andi	r24, 0x0F	; 15
-     f86:	84 bb       	out	0x14, r24	; 20
+     fa0:	84 b3       	in	r24, 0x14	; 20
+     fa2:	8f 70       	andi	r24, 0x0F	; 15
+     fa4:	84 bb       	out	0x14, r24	; 20
 	DDRC |= ((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4));
-     f88:	84 b3       	in	r24, 0x14	; 20
-     f8a:	80 6f       	ori	r24, 0xF0	; 240
-     f8c:	84 bb       	out	0x14, r24	; 20
+     fa6:	84 b3       	in	r24, 0x14	; 20
+     fa8:	80 6f       	ori	r24, 0xF0	; 240
+     faa:	84 bb       	out	0x14, r24	; 20
 	PORTC &= ~((1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4));
-     f8e:	85 b3       	in	r24, 0x15	; 21
-     f90:	8f 70       	andi	r24, 0x0F	; 15
-     f92:	85 bb       	out	0x15, r24	; 21
+     fac:	85 b3       	in	r24, 0x15	; 21
+     fae:	8f 70       	andi	r24, 0x0F	; 15
+     fb0:	85 bb       	out	0x15, r24	; 21
 
 	SSDDisplayHex(0, SSD_R_OFF, SSD_RED);	/* Initial turn off all SSDs */
-     f94:	40 e0       	ldi	r20, 0x00	; 0
-     f96:	64 e0       	ldi	r22, 0x04	; 4
-     f98:	80 e0       	ldi	r24, 0x00	; 0
-     f9a:	90 e0       	ldi	r25, 0x00	; 0
-     f9c:	0c 94 85 07 	jmp	0xf0a	; 0xf0a <SSDDisplayHex>
+     fb2:	40 e0       	ldi	r20, 0x00	; 0
+     fb4:	64 e0       	ldi	r22, 0x04	; 4
+     fb6:	80 e0       	ldi	r24, 0x00	; 0
+     fb8:	90 e0       	ldi	r25, 0x00	; 0
+     fba:	0c 94 94 07 	jmp	0xf28	; 0xf28 <SSDDisplayHex>
 
-00000fa0 <ButtonInit>:
+00000fbe <ButtonInit>:
 * Returns    : none
 *********************************************************************************************************
 */
 void ButtonInit(void)
 {
 	ButtonInitEx();
-     fa0:	0c 94 59 06 	jmp	0xcb2	; 0xcb2 <ButtonInitEx>
+     fbe:	0c 94 68 06 	jmp	0xcd0	; 0xcd0 <ButtonInitEx>
 
-00000fa4 <ButtonCycleUpdate>:
+00000fc2 <ButtonCycleUpdate>:
 * Notes      : None
 *
 */
 ButtonDataType ButtonGetIO_State(void)
 {
 	return  ButtonGetIO_StateEx();
-     fa4:	0e 94 5d 06 	call	0xcba	; 0xcba <ButtonGetIO_StateEx>
+     fc2:	0e 94 6c 06 	call	0xcd8	; 0xcd8 <ButtonGetIO_StateEx>
 	ButtonDataType b;											/* store last power cycle button value */
 	ButtonDataType buttons;
 	uint16_t holdTime;
 	
 	buttons = ButtonGetIO_State();
 	buttons |= button.buttonsNextCycle.bVal;			/* Add in any buttons asserted by software */	
-     fa8:	90 91 4d 01 	lds	r25, 0x014D
-     fac:	89 2b       	or	r24, r25
+     fc6:	90 91 4e 01 	lds	r25, 0x014E
+     fca:	89 2b       	or	r24, r25
 	button.buttonsNextCycle.bVal = 0;					/* and clear any that may have been set */
-     fae:	10 92 4d 01 	sts	0x014D, r1
+     fcc:	10 92 4e 01 	sts	0x014E, r1
 	b = button.buttonsLastCycle.bVal;
-     fb2:	90 91 4e 01 	lds	r25, 0x014E
+     fd0:	90 91 4f 01 	lds	r25, 0x014F
 	holdTime = button.buttonHoldTime;
-     fb6:	20 91 53 01 	lds	r18, 0x0153
-     fba:	30 91 54 01 	lds	r19, 0x0154
+     fd4:	20 91 54 01 	lds	r18, 0x0154
+     fd8:	30 91 55 01 	lds	r19, 0x0155
 	
 	if (button.buttonsReleased.bVal != 0) {		
-     fbe:	40 91 4f 01 	lds	r20, 0x014F
-     fc2:	44 23       	and	r20, r20
-     fc4:	19 f0       	breq	.+6      	; 0xfcc <ButtonCycleUpdate+0x28>
+     fdc:	40 91 50 01 	lds	r20, 0x0150
+     fe0:	44 23       	and	r20, r20
+     fe2:	19 f0       	breq	.+6      	; 0xfea <ButtonCycleUpdate+0x28>
 														/* store value of release button */
 		button.buttonsReleasedHistory.bVal = button.buttonsReleased.bVal;	
-     fc6:	40 93 51 01 	sts	0x0151, r20
-     fca:	05 c0       	rjmp	.+10     	; 0xfd6 <ButtonCycleUpdate+0x32>
+     fe4:	40 93 52 01 	sts	0x0152, r20
+     fe8:	05 c0       	rjmp	.+10     	; 0xff4 <ButtonCycleUpdate+0x32>
 	}
 	else {
 		if (holdTime > BTN_DOUBLE_TAP) {
-     fcc:	2d 33       	cpi	r18, 0x3D	; 61
-     fce:	31 05       	cpc	r19, r1
-     fd0:	10 f0       	brcs	.+4      	; 0xfd6 <ButtonCycleUpdate+0x32>
+     fea:	2d 33       	cpi	r18, 0x3D	; 61
+     fec:	31 05       	cpc	r19, r1
+     fee:	10 f0       	brcs	.+4      	; 0xff4 <ButtonCycleUpdate+0x32>
 														/* Clear history value when interval time out */
 			button.buttonsReleasedHistory.bVal = 0;	
-     fd2:	10 92 51 01 	sts	0x0151, r1
+     ff0:	10 92 52 01 	sts	0x0152, r1
 		}
 	}
 
 	button.buttonsReleased.bVal = 0;					/* Assume no buttons released this time */
-     fd6:	10 92 4f 01 	sts	0x014F, r1
+     ff4:	10 92 50 01 	sts	0x0150, r1
 	button.buttonsTwiceReleased.bVal = 0;				/* Assume no buttons twice released this time */
-     fda:	10 92 52 01 	sts	0x0152, r1
+     ff8:	10 92 53 01 	sts	0x0153, r1
   
 	if (buttons == b) {									/* If the button situation has not changed in this past cycle */ 
-     fde:	89 13       	cpse	r24, r25
-     fe0:	0f c0       	rjmp	.+30     	; 0x1000 <ButtonCycleUpdate+0x5c>
+     ffc:	89 13       	cpse	r24, r25
+     ffe:	0f c0       	rjmp	.+30     	; 0x101e <ButtonCycleUpdate+0x5c>
 		button.buttonsHeld.bVal = 0;					/* Assume no buttons held */
 		if ( ++holdTime > BTN_MIN_HOLD_60) {
-     fe2:	2f 5f       	subi	r18, 0xFF	; 255
-     fe4:	3f 4f       	sbci	r19, 0xFF	; 255
-     fe6:	24 32       	cpi	r18, 0x24	; 36
-     fe8:	31 05       	cpc	r19, r1
-     fea:	18 f4       	brcc	.+6      	; 0xff2 <ButtonCycleUpdate+0x4e>
+    1000:	2f 5f       	subi	r18, 0xFF	; 255
+    1002:	3f 4f       	sbci	r19, 0xFF	; 255
+    1004:	24 32       	cpi	r18, 0x24	; 36
+    1006:	31 05       	cpc	r19, r1
+    1008:	18 f4       	brcc	.+6      	; 0x1010 <ButtonCycleUpdate+0x4e>
 
 	button.buttonsReleased.bVal = 0;					/* Assume no buttons released this time */
 	button.buttonsTwiceReleased.bVal = 0;				/* Assume no buttons twice released this time */
   
 	if (buttons == b) {									/* If the button situation has not changed in this past cycle */ 
 		button.buttonsHeld.bVal = 0;					/* Assume no buttons held */
-     fec:	10 92 50 01 	sts	0x0150, r1
-     ff0:	02 c0       	rjmp	.+4      	; 0xff6 <ButtonCycleUpdate+0x52>
+    100a:	10 92 51 01 	sts	0x0151, r1
+    100e:	02 c0       	rjmp	.+4      	; 0x1014 <ButtonCycleUpdate+0x52>
 		if ( ++holdTime > BTN_MIN_HOLD_60) {
 			button.buttonsHeld.bVal = buttons;
-     ff2:	80 93 50 01 	sts	0x0150, r24
+    1010:	80 93 51 01 	sts	0x0151, r24
 		}	
 		button.buttonHoldTime = holdTime;
-     ff6:	30 93 54 01 	sts	0x0154, r19
-     ffa:	20 93 53 01 	sts	0x0153, r18
-     ffe:	08 95       	ret
+    1014:	30 93 55 01 	sts	0x0155, r19
+    1018:	20 93 54 01 	sts	0x0154, r18
+    101c:	08 95       	ret
 	}
 	else {
 														/* Here if the buttons have changed since last line cycle */
 		button.buttonsLastCycle.bVal = buttons;
-    1000:	80 93 4e 01 	sts	0x014E, r24
+    101e:	80 93 4f 01 	sts	0x014F, r24
 		buttons = (buttons ^ b) & b;					/* Select out only the ones that have changed */
-    1004:	80 95       	com	r24
-    1006:	89 23       	and	r24, r25
+    1022:	80 95       	com	r24
+    1024:	89 23       	and	r24, r25
 		
 		if ((buttons & button.buttonsHeld.bVal) == 0){													
-    1008:	90 91 50 01 	lds	r25, 0x0150
-    100c:	98 23       	and	r25, r24
-    100e:	81 f4       	brne	.+32     	; 0x1030 <ButtonCycleUpdate+0x8c>
+    1026:	90 91 51 01 	lds	r25, 0x0151
+    102a:	98 23       	and	r25, r24
+    102c:	81 f4       	brne	.+32     	; 0x104e <ButtonCycleUpdate+0x8c>
 			button.buttonHoldTime = 0;					/* Ignore the release of any buttons that were previously marked as held down */
-    1010:	10 92 54 01 	sts	0x0154, r1
-    1014:	10 92 53 01 	sts	0x0153, r1
+    102e:	10 92 55 01 	sts	0x0155, r1
+    1032:	10 92 54 01 	sts	0x0154, r1
 		
 			if ((holdTime < BTN_MIN_HOLD_60) && (holdTime > BTN_MIN_PRESS_60)){
-    1018:	23 50       	subi	r18, 0x03	; 3
-    101a:	31 09       	sbc	r19, r1
-    101c:	20 32       	cpi	r18, 0x20	; 32
-    101e:	31 05       	cpc	r19, r1
-    1020:	38 f4       	brcc	.+14     	; 0x1030 <ButtonCycleUpdate+0x8c>
+    1036:	23 50       	subi	r18, 0x03	; 3
+    1038:	31 09       	sbc	r19, r1
+    103a:	20 32       	cpi	r18, 0x20	; 32
+    103c:	31 05       	cpc	r19, r1
+    103e:	38 f4       	brcc	.+14     	; 0x104e <ButtonCycleUpdate+0x8c>
 				button.buttonsReleased.bVal = buttons;	
-    1022:	80 93 4f 01 	sts	0x014F, r24
+    1040:	80 93 50 01 	sts	0x0150, r24
 														/* Calculate twice release button value */
 				button.buttonsTwiceReleased.bVal =	button.buttonsReleased.bVal &   
-    1026:	90 91 51 01 	lds	r25, 0x0151
-    102a:	89 23       	and	r24, r25
-    102c:	80 93 52 01 	sts	0x0152, r24
-    1030:	08 95       	ret
+    1044:	90 91 52 01 	lds	r25, 0x0152
+    1048:	89 23       	and	r24, r25
+    104a:	80 93 53 01 	sts	0x0153, r24
+    104e:	08 95       	ret
 
-00001032 <ButtonGetHoldTime>:
+00001050 <ButtonGetHoldTime>:
 */
 
 uint16_t ButtonGetHoldTime(void)
 {
 	return button.buttonHoldTime;
 }
-    1032:	80 91 53 01 	lds	r24, 0x0153
-    1036:	90 91 54 01 	lds	r25, 0x0154
-    103a:	08 95       	ret
+    1050:	80 91 54 01 	lds	r24, 0x0154
+    1054:	90 91 55 01 	lds	r25, 0x0155
+    1058:	08 95       	ret
 
-0000103c <ButtonGetReleased>:
+0000105a <ButtonGetReleased>:
 */
 
 ButtonDataType ButtonGetReleased(void)
 {
 	return button.buttonsReleased.bVal;
 }
-    103c:	80 91 4f 01 	lds	r24, 0x014F
-    1040:	08 95       	ret
+    105a:	80 91 50 01 	lds	r24, 0x0150
+    105e:	08 95       	ret
 
-00001042 <ButtonGetHeld>:
+00001060 <ButtonGetHeld>:
 */
 
 ButtonDataType ButtonGetHeld (void)
 {
 	return button.buttonsHeld.bVal;
 }
-    1042:	80 91 50 01 	lds	r24, 0x0150
-    1046:	08 95       	ret
+    1060:	80 91 51 01 	lds	r24, 0x0151
+    1064:	08 95       	ret
 
-00001048 <__udivmodhi4>:
-    1048:	aa 1b       	sub	r26, r26
-    104a:	bb 1b       	sub	r27, r27
-    104c:	51 e1       	ldi	r21, 0x11	; 17
-    104e:	07 c0       	rjmp	.+14     	; 0x105e <__udivmodhi4_ep>
+00001066 <__udivmodhi4>:
+    1066:	aa 1b       	sub	r26, r26
+    1068:	bb 1b       	sub	r27, r27
+    106a:	51 e1       	ldi	r21, 0x11	; 17
+    106c:	07 c0       	rjmp	.+14     	; 0x107c <__udivmodhi4_ep>
 
-00001050 <__udivmodhi4_loop>:
-    1050:	aa 1f       	adc	r26, r26
-    1052:	bb 1f       	adc	r27, r27
-    1054:	a6 17       	cp	r26, r22
-    1056:	b7 07       	cpc	r27, r23
-    1058:	10 f0       	brcs	.+4      	; 0x105e <__udivmodhi4_ep>
-    105a:	a6 1b       	sub	r26, r22
-    105c:	b7 0b       	sbc	r27, r23
+0000106e <__udivmodhi4_loop>:
+    106e:	aa 1f       	adc	r26, r26
+    1070:	bb 1f       	adc	r27, r27
+    1072:	a6 17       	cp	r26, r22
+    1074:	b7 07       	cpc	r27, r23
+    1076:	10 f0       	brcs	.+4      	; 0x107c <__udivmodhi4_ep>
+    1078:	a6 1b       	sub	r26, r22
+    107a:	b7 0b       	sbc	r27, r23
 
-0000105e <__udivmodhi4_ep>:
-    105e:	88 1f       	adc	r24, r24
-    1060:	99 1f       	adc	r25, r25
-    1062:	5a 95       	dec	r21
-    1064:	a9 f7       	brne	.-22     	; 0x1050 <__udivmodhi4_loop>
-    1066:	80 95       	com	r24
-    1068:	90 95       	com	r25
-    106a:	bc 01       	movw	r22, r24
-    106c:	cd 01       	movw	r24, r26
-    106e:	08 95       	ret
+0000107c <__udivmodhi4_ep>:
+    107c:	88 1f       	adc	r24, r24
+    107e:	99 1f       	adc	r25, r25
+    1080:	5a 95       	dec	r21
+    1082:	a9 f7       	brne	.-22     	; 0x106e <__udivmodhi4_loop>
+    1084:	80 95       	com	r24
+    1086:	90 95       	com	r25
+    1088:	bc 01       	movw	r22, r24
+    108a:	cd 01       	movw	r24, r26
+    108c:	08 95       	ret
 
-00001070 <__udivmodsi4>:
-    1070:	a1 e2       	ldi	r26, 0x21	; 33
-    1072:	1a 2e       	mov	r1, r26
-    1074:	aa 1b       	sub	r26, r26
-    1076:	bb 1b       	sub	r27, r27
-    1078:	fd 01       	movw	r30, r26
-    107a:	0d c0       	rjmp	.+26     	; 0x1096 <__udivmodsi4_ep>
+0000108e <__udivmodsi4>:
+    108e:	a1 e2       	ldi	r26, 0x21	; 33
+    1090:	1a 2e       	mov	r1, r26
+    1092:	aa 1b       	sub	r26, r26
+    1094:	bb 1b       	sub	r27, r27
+    1096:	fd 01       	movw	r30, r26
+    1098:	0d c0       	rjmp	.+26     	; 0x10b4 <__udivmodsi4_ep>
 
-0000107c <__udivmodsi4_loop>:
-    107c:	aa 1f       	adc	r26, r26
-    107e:	bb 1f       	adc	r27, r27
-    1080:	ee 1f       	adc	r30, r30
-    1082:	ff 1f       	adc	r31, r31
-    1084:	a2 17       	cp	r26, r18
-    1086:	b3 07       	cpc	r27, r19
-    1088:	e4 07       	cpc	r30, r20
-    108a:	f5 07       	cpc	r31, r21
-    108c:	20 f0       	brcs	.+8      	; 0x1096 <__udivmodsi4_ep>
-    108e:	a2 1b       	sub	r26, r18
-    1090:	b3 0b       	sbc	r27, r19
-    1092:	e4 0b       	sbc	r30, r20
-    1094:	f5 0b       	sbc	r31, r21
+0000109a <__udivmodsi4_loop>:
+    109a:	aa 1f       	adc	r26, r26
+    109c:	bb 1f       	adc	r27, r27
+    109e:	ee 1f       	adc	r30, r30
+    10a0:	ff 1f       	adc	r31, r31
+    10a2:	a2 17       	cp	r26, r18
+    10a4:	b3 07       	cpc	r27, r19
+    10a6:	e4 07       	cpc	r30, r20
+    10a8:	f5 07       	cpc	r31, r21
+    10aa:	20 f0       	brcs	.+8      	; 0x10b4 <__udivmodsi4_ep>
+    10ac:	a2 1b       	sub	r26, r18
+    10ae:	b3 0b       	sbc	r27, r19
+    10b0:	e4 0b       	sbc	r30, r20
+    10b2:	f5 0b       	sbc	r31, r21
 
-00001096 <__udivmodsi4_ep>:
-    1096:	66 1f       	adc	r22, r22
-    1098:	77 1f       	adc	r23, r23
-    109a:	88 1f       	adc	r24, r24
-    109c:	99 1f       	adc	r25, r25
-    109e:	1a 94       	dec	r1
-    10a0:	69 f7       	brne	.-38     	; 0x107c <__udivmodsi4_loop>
-    10a2:	60 95       	com	r22
-    10a4:	70 95       	com	r23
-    10a6:	80 95       	com	r24
-    10a8:	90 95       	com	r25
-    10aa:	9b 01       	movw	r18, r22
-    10ac:	ac 01       	movw	r20, r24
-    10ae:	bd 01       	movw	r22, r26
-    10b0:	cf 01       	movw	r24, r30
-    10b2:	08 95       	ret
+000010b4 <__udivmodsi4_ep>:
+    10b4:	66 1f       	adc	r22, r22
+    10b6:	77 1f       	adc	r23, r23
+    10b8:	88 1f       	adc	r24, r24
+    10ba:	99 1f       	adc	r25, r25
+    10bc:	1a 94       	dec	r1
+    10be:	69 f7       	brne	.-38     	; 0x109a <__udivmodsi4_loop>
+    10c0:	60 95       	com	r22
+    10c2:	70 95       	com	r23
+    10c4:	80 95       	com	r24
+    10c6:	90 95       	com	r25
+    10c8:	9b 01       	movw	r18, r22
+    10ca:	ac 01       	movw	r20, r24
+    10cc:	bd 01       	movw	r22, r26
+    10ce:	cf 01       	movw	r24, r30
+    10d0:	08 95       	ret
 
-000010b4 <__tablejump2__>:
-    10b4:	ee 0f       	add	r30, r30
-    10b6:	ff 1f       	adc	r31, r31
-    10b8:	05 90       	lpm	r0, Z+
-    10ba:	f4 91       	lpm	r31, Z
-    10bc:	e0 2d       	mov	r30, r0
-    10be:	09 94       	ijmp
+000010d2 <__tablejump2__>:
+    10d2:	ee 0f       	add	r30, r30
+    10d4:	ff 1f       	adc	r31, r31
+    10d6:	05 90       	lpm	r0, Z+
+    10d8:	f4 91       	lpm	r31, Z
+    10da:	e0 2d       	mov	r30, r0
+    10dc:	09 94       	ijmp
 
-000010c0 <_exit>:
-    10c0:	f8 94       	cli
+000010de <_exit>:
+    10de:	f8 94       	cli
 
-000010c2 <__stop_program>:
-    10c2:	ff cf       	rjmp	.-2      	; 0x10c2 <__stop_program>
+000010e0 <__stop_program>:
+    10e0:	ff cf       	rjmp	.-2      	; 0x10e0 <__stop_program>

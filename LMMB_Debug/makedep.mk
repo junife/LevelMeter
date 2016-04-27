@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+common_avr-liberty-master_src\a2d.c
+
 common_avr-liberty-master_src\buffer.c
 
 common_avr-liberty-master_src\rprintf.c

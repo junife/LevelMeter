@@ -40,6 +40,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../common_avr-liberty-master_src/a2d.c \
 ../common_avr-liberty-master_src/buffer.c \
 ../common_avr-liberty-master_src/rprintf.c \
 ../common_avr-liberty-master_src/timer.c \
@@ -60,6 +61,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+common_avr-liberty-master_src/a2d.o \
 common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/timer.o \
@@ -73,6 +75,7 @@ LMMB_main/ssd.o \
 LM_button/button.o
 
 OBJS_AS_ARGS +=  \
+common_avr-liberty-master_src/a2d.o \
 common_avr-liberty-master_src/buffer.o \
 common_avr-liberty-master_src/rprintf.o \
 common_avr-liberty-master_src/timer.o \
@@ -86,6 +89,7 @@ LMMB_main/ssd.o \
 LM_button/button.o
 
 C_DEPS +=  \
+common_avr-liberty-master_src/a2d.d \
 common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/timer.d \
@@ -99,6 +103,7 @@ LMMB_main/ssd.d \
 LM_button/button.d
 
 C_DEPS_AS_ARGS +=  \
+common_avr-liberty-master_src/a2d.d \
 common_avr-liberty-master_src/buffer.d \
 common_avr-liberty-master_src/rprintf.d \
 common_avr-liberty-master_src/timer.d \
@@ -125,6 +130,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
