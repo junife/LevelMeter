@@ -1,6 +1,6 @@
 //----- Include Files ---------------------------------------------------------
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
-#include <util/delay.h>
+//#include <util/delay.h>
 #include "appl.h"
 #include "button.h"
 #include "led.h"
@@ -14,11 +14,10 @@ int main(void)
 	*/
 	McuInit();
 	ApplInit();
-	
+
 	while(1)
 	{
-		_delay_us(16667);
-		//_delay_ms(20);
+		AppWaitZeroCrossing();
 		ButtonCycleUpdate();
 		AppCycleUpdate();
 		LEDCycleUpdate();

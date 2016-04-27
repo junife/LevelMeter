@@ -96,7 +96,8 @@ void timer0Init()
 	timer0SetPrescaler( TIMER0PRESCALE );	// set prescaler
 	outb(TCNT0, 0);							// reset TCNT0
 	sbi(TIMSK, TOIE0);						// enable TCNT0 overflow interrupt
-
+	sbi(TIMSK, OCIE0);						// enable OCR0 Output Compare Match Interrupt
+	
 	timer0ClearOverflowCount();				// initialize time registers
 }
 
@@ -278,6 +279,7 @@ void timer1PWMInit(u08 bitRes)
 {
 	// configures timer1 for use with PWM output
 	// on OC1A and OC1B pins
+	// phase correct PWM mode, FREQpwm=F_CPU/(2*N*TOP)
 
 	// enable timer1 as 8,9,10bit PWM
 	if(bitRes == 9)

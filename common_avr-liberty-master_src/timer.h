@@ -155,8 +155,8 @@
 // default prescale settings for the timers
 // these settings are applied when you call
 // timerInit or any of the timer<x>Init
-#define TIMER0PRESCALE		TIMER_CLK_DIV8		///< timer 0 prescaler default
-#define TIMER1PRESCALE		TIMER_CLK_DIV64		///< timer 1 prescaler default
+#define TIMER0PRESCALE		TIMER_CLK_DIV1024	///< timer 0 prescaler default
+#define TIMER1PRESCALE		TIMER_CLK_DIV8		///< timer 1 prescaler default
 #define TIMER2PRESCALE		TIMERRTC_CLK_DIV64	///< timer 2 prescaler default
 
 // interrupt macros for attaching user functions to timer interrupts
