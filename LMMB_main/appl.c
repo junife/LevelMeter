@@ -13,6 +13,8 @@
 #include "ssd.h"
 #include "appl.h"
 #include "timer.h"
+#include "measure.h"
+#include "adc.h"
 
 cBuffer uartRxBuffer;				///< uart receive buffer
 char greeting[20];
@@ -59,6 +61,8 @@ void McuInit(void)
 	uartSetBaudRate(9600);
 	// initialize rprintf system
 	rprintfInit(uartSendByte);
+
+	ADCInit();
 	
 	// run the test
 	timerTest();
@@ -83,6 +87,7 @@ void ApplInit(void)
 	LEDInit();
 	SSDInit();
 	ApplDataInit();
+	MeasureInit();
 	
 	rprintf("Main board here!\n" );	
 

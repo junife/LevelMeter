@@ -5,6 +5,7 @@
 #include "button.h"
 #include "led.h"
 #include "ssd.h"
+#include "measure.h"
 
 //----- Begin Code ------------------------------------------------------------
 int main(void)
@@ -22,6 +23,7 @@ int main(void)
 		AppCycleUpdate();
 		LEDCycleUpdate();
 		SSDCycleUpdate();
+		MeasureCycleUpdate();
 	}
 	return 0;
 }
