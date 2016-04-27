@@ -4,3 +4,6 @@
 *.lss
 *.lss
 *.srec
+*.lss
+*.map
+LMMB_Debug/LevelMeterMainboard.lss
