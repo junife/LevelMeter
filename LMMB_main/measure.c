@@ -18,10 +18,14 @@ all button APIs called by core.
 #define   MEASURE_GLOBALS
 #endif
 
+#include <stdint.h>
+#include <stdbool.h>
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
 #include "measure.h"
 #include "adc.h"
 #include "timer.h"
+#include "buffer.h"
+
 #include "uart.h"		// include uart function library
 #include "rprintf.h"	// include printf function library
 
@@ -30,14 +34,19 @@ all button APIs called by core.
 *                                       VARIABLE DEFINITION
 *********************************************************************************************************
 */
-
+cBuffer Adc0Buffer;									/* buffer for ADC0 */
+static uint8_t Adc0DataArray[ADC0_BUF_SIZE];	/* buffer for ADC0 */
+MEASURE_DATA mData;
 
 /*
 *********************************************************************************************************
 *                                       FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
-static void VVVV(void);
+static void MeasureKZ1PWM(uint16_t dutyCycle);
+static void MeasureKZ2PWM(uint16_t dutyCycle);
+static void MeasureOutputCompare2(void);
+static void MeasureBufferCalc(CALC_T *calcPtr, uint8_t *ArryPtr, uint16_t size);
 
 /*
 *********************************************************************************************************
@@ -54,8 +63,11 @@ static void VVVV(void);
 */
 void MeasureInit(void)
 {
-	MeasureKZ1PWM(10);
-	MeasureKZ2PWM(255);
+	MeasureKZ1PWM(1);
+	MeasureKZ2PWM(200);
+
+	timerAttach(TIMER2OUTCOMPARE_INT, MeasureOutputCompare2);
+	bufferInit(&Adc0Buffer, (uint8_t *)Adc0DataArray, ADC0_BUF_SIZE);
 }
 
 /*
@@ -72,9 +84,19 @@ void MeasureInit(void)
 */
 void MeasureCycleUpdate(void)
 {
-	uint16_t value;
-	value = ReadADC10Bit(0);//a2dConvert10bit ReadADC10Bit
-	rprintf("a=%d\r\n",value);
+	if(bufferIsNotFull(&Adc0Buffer) == 0)			/* if buffer is full */
+	{
+		MeasureBufferCalc(&mData.calcResult[MEASURE_ADC0], (uint8_t *)Adc0DataArray, ADC0_BUF_SIZE);
+	}
+
+#if 1
+	rprintf("sa%d\n",ReadADC8Bit(MEASURE_ADC0));
+	rprintf("s%d\n",mData.calcResult[MEASURE_ADC0].sum);
+	rprintf("a%d\n",mData.calcResult[MEASURE_ADC0].avg);
+	rprintf("ma%d\n",mData.calcResult[MEASURE_ADC0].max);
+	rprintf("mi%d\r\n",mData.calcResult[MEASURE_ADC0].min);
+#endif
+
 }
 
 /*
@@ -85,7 +107,7 @@ void MeasureCycleUpdate(void)
 *
 * Arguments   : none
 *
-* Notes      : none
+* Notes      : TIMER1 PWM setting and initial see McuInit()
 *
 *********************************************************************************************************
 */
@@ -109,5 +131,91 @@ void MeasureKZ1PWM(uint16_t dutyCycle)
 void MeasureKZ2PWM(uint16_t dutyCycle)
 {
 	timer1PWMASet(dutyCycle);
+}
+
+/*
+*********************************************************************************************************
+*                                         MeasureOutputCompare2
+*
+* Description : PWM setting for KONGZH2 IO
+*
+* Arguments   : none
+*
+* Notes      : none
+*
+*********************************************************************************************************
+*/
+void MeasureOutputCompare2(void)
+{
+	uint8_t SampleValue;
+	
+	OCR2 = TCNT2 + MEASURE_OCR2;
+	
+	SampleValue = ReadADC8Bit(MEASURE_ADC0);
+	if(bufferIsNotFull(&Adc0Buffer) == 0)			/* if buffer is full */
+	{
+		bufferGetFromFront(&Adc0Buffer);
+	}
+	bufferAddToEnd(&Adc0Buffer, SampleValue);
+	
+	PORTD ^= (1<<PD4);
+}
+
+/*
+*********************************************************************************************************
+*                                         MeasureBufferCalc
+*
+* Description : calculator the buffer will generate the sum,average, maximum, minimum values.
+*
+* Arguments   : none
+*
+* Notes      : none
+*
+*********************************************************************************************************
+*/
+void MeasureBufferCalc(CALC_T *calcPtr, uint8_t *ArryPtr, uint16_t size)
+{
+	uint16_t sum = 0;
+	uint8_t avg = 0;
+	uint8_t max = 0;
+	uint8_t min = 0xff;
+	uint16_t i;
+
+	for(i=0, sum=0; i< size; i++, ArryPtr++)
+	{
+		sum += *ArryPtr;
+		if(*ArryPtr > max)
+		{
+			max = *ArryPtr;
+		}
+
+		if(*ArryPtr < min)
+		{
+			min = *ArryPtr;
+		}
+	}
+	avg = sum/size;
+	
+	calcPtr->sum = sum;
+	calcPtr->avg = avg;
+	calcPtr->max = max;
+	calcPtr->min = min;
+}
+
+/*
+*********************************************************************************************************
+*                                         MeasureGetResult
+*
+* Description : Get the measure result.
+*
+* Arguments   : none
+*
+* Notes      : none
+*
+*********************************************************************************************************
+*/
+uint16_t MeasureGetResult(void)
+{
+	return mData.calcResult[MEASURE_ADC0].avg;
 }
 
