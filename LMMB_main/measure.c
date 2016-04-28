@@ -21,6 +21,7 @@ all button APIs called by core.
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
 #include "measure.h"
 #include "adc.h"
+#include "timer.h"
 #include "uart.h"		// include uart function library
 #include "rprintf.h"	// include printf function library
 
@@ -53,7 +54,8 @@ static void VVVV(void);
 */
 void MeasureInit(void)
 {
-	//DIDR0 = 0xff;
+	MeasureKZ1PWM(10);
+	MeasureKZ2PWM(255);
 }
 
 /*
@@ -73,5 +75,39 @@ void MeasureCycleUpdate(void)
 	uint16_t value;
 	value = ReadADC10Bit(0);//a2dConvert10bit ReadADC10Bit
 	rprintf("a=%d\r\n",value);
+}
+
+/*
+*********************************************************************************************************
+*                                         MeasureKZ1PWM
+*
+* Description : PWM setting for KONGZH1 IO
+*
+* Arguments   : none
+*
+* Notes      : none
+*
+*********************************************************************************************************
+*/
+void MeasureKZ1PWM(uint16_t dutyCycle)
+{
+	timer1PWMBSet(dutyCycle);
+}
+
+/*
+*********************************************************************************************************
+*                                         MeasureKZ1PWM
+*
+* Description : PWM setting for KONGZH2 IO
+*
+* Arguments   : none
+*
+* Notes      : none
+*
+*********************************************************************************************************
+*/
+void MeasureKZ2PWM(uint16_t dutyCycle)
+{
+	timer1PWMASet(dutyCycle);
 }
 
