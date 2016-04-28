@@ -32,7 +32,8 @@
 *                                       CONST DEFINITION
 *********************************************************************************************************
 */
-#define ADC0_BUF_SIZE	0xff						/* ADC read buffer size */
+#define ADC0_BUF_SIZE	0xff						/* ADC0 read buffer size */
+#define ADC1_BUF_SIZE	ADC0_BUF_SIZE				/* ADC1 read buffer size */
 #define MEASURE_FREQ	1000						/* the frequency of Read ADC, unit is Hz */
 #define MEASURE_OCR2    (F_CPU/256/MEASURE_FREQ)	/* calculator OCR2 value */
 
@@ -81,7 +82,7 @@ typedef struct measure_data {
 MEASURE_EXT void MeasureInit(void);
 MEASURE_EXT void MeasureCycleUpdate(void);
 MEASURE_EXT void MeasureCycleUpdate(void);
-MEASURE_EXT uint16_t MeasureGetResult(void);
+MEASURE_EXT uint16_t MeasureGetResult0(void);
 
 #endif
 

@@ -353,7 +353,7 @@ void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 			}
 			else if(mode == NORMAL)
 			{
-				SSDDisplayDec(MeasureGetResult(), SSD_0HZ, SSD_RED);
+				SSDDisplayDec(MeasureGetResult0(), SSD_0HZ, SSD_RED);
 			}
 			else	/* setting mode */
 			{

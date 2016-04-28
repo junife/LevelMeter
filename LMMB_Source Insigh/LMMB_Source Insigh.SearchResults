@@ -1,5 +1,3 @@
----- MeasureGetResult Matches (4 in 3 files) ----
-Appl.c (lmmb_main):				SSDDisplayDec(MeasureGetResult(), SSD_0HZ, SSD_RED);
-Measure.c (lmmb_main):*                                         MeasureGetResult
-Measure.c (lmmb_main):uint16_t MeasureGetResult(void)
-Measure.h (lmmb_main):MEASURE_EXT uint16_t MeasureGetResult(void);
+---- DISP_START Matches (2 in 2 files) ----
+Appl.c (lmmb_main):	appl.PwrOnSteps = DISP_START;
+Appl.h (lmmb_main):	DISP_START=0,			/* Display 4 character after power on */
