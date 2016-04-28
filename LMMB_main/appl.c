@@ -33,7 +33,6 @@ APPL_DATA appl;
 *                                       FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
-static void AppSelfDet(void);
 static void AppUpdateTimers(void);
 static void ApplDataInit(void);
 static void AppDisplay(DISP_CODE DispCode, WORK_MODE mode);
@@ -118,7 +117,6 @@ void ApplDataInit(void)
 	appl.second = 0;
 	appl.ModeTimer = TIME_SWITCH_TOTAL;
 	appl.DispCode= START_CHAR;
-	appl.PwrOnSteps = DISP_START;
 }
 
 /*
@@ -227,7 +225,7 @@ void AppCycleUpdate(void)
 					}
 					else if(ButtonJMP1ReleasedEvent())
 					{
-						SSDDisplayDec(--appl.FullWarehouse, SSD_0HZ, SSD_GREEN);
+						SSDDisplayDec(--appl.config.FullWarehouse[DATA_SET], SSD_0HZ, SSD_GREEN);
 						
 						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
 						appl.workMode = SETTING;			/* convert to SETTING */
@@ -250,7 +248,7 @@ void AppCycleUpdate(void)
 					}
 					else if(ButtonJMP1HeldEvent())
 					{
-						SSDDisplayDec(++appl.FullWarehouse, SSD_0HZ, SSD_AMBER);
+						SSDDisplayDec(++appl.config.FullWarehouse[DATA_SET], SSD_0HZ, SSD_AMBER);
 						
 						appl.ModeTimer = TIME_D_CODE_HELD;	/* set the time of mantain code display */
 						appl.workMode = SETTING;			/* convert to SETTING */
@@ -464,63 +462,6 @@ void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 
 /*
 *********************************************************************************************************
-*                                         AppSelfDet
-*
-* Description : MCU self detection hardware and then set error code.
-*
-* Arguments   : none
-*
-* Returns    : none
-*********************************************************************************************************
-*/
-void AppSelfDet(void)
-{
-	appl.fSelfDetDone = true;
-	appl.fSelfDetFail = false;
-}
-
-/*
-*********************************************************************************************************
-*                                         AppSelfDetGetState
-*
-* Description : Get self detection state to check wheter finish or not.
-*
-* Arguments   : none
-*
-* Returns    : none
-*********************************************************************************************************
-*/
-bool AppSelfDetGetState(void)
-{
-	if(appl.fSelfDetDone == true)
-	{
-		return true;
-	}
-	return false;
-}
-
-/*
-*********************************************************************************************************
-*                                         AppSelfDetGetResult
-*
-* Description : Get self detection result.
-*
-* Arguments   : none
-*
-* Returns    : true/false means failed or pass
-*********************************************************************************************************
-*/
-bool AppSelfDetGetResult(void)
-{
-	if(appl.fSelfDetFail == true)
-	{
-		return true;
-	}
-	return false;
-}
-
-/*
-*********************************************************************************************************
 *                                         AppWaitZeroCrossing
 *
 * Description : simulink AC power zero crossing.Simulate zero-crossing for hardware that lacks an AC zero-cross
@@ -532,8 +473,8 @@ bool AppSelfDetGetResult(void)
 */
 void AppWaitZeroCrossing(void)
 {
-	while(appl.fSysPwrZC == 0);
-	appl.fSysPwrZC = 0;
+	while(appl.system.fSysPwrZC == 0);
+	appl.system.fSysPwrZC = 0;
 }
 
 /*
@@ -550,5 +491,5 @@ void AppWaitZeroCrossing(void)
 void AppOutputCompare0(void)
 {
 	OCR0 = TCNT0 + CYCLEN_60HZ;
-	appl.fSysPwrZC = 1;
+	appl.system.fSysPwrZC = 1;
 }
