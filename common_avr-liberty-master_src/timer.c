@@ -117,7 +117,8 @@ void timer2Init(void)
 	timer2SetPrescaler( TIMER2PRESCALE );	// set prescaler
 	outb(TCNT2, 0);							// reset TCNT2
 	sbi(TIMSK, TOIE2);						// enable TCNT2 overflow
-
+	sbi(TIMSK, OCIE2);						// enable OCR2 Output Compare Match Interrupt
+	
 	timer2ClearOverflowCount();				// initialize time registers
 }
 #endif

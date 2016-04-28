@@ -64,7 +64,7 @@ void McuInit(void)
 	/* Initial T0, T1 and T2 */
 	timerInit();
 	sbi(DDRD, PD4);		/* set PD4(OC1B) as output */
-	sbi(DDRD, PD5);		/* set PD5(OC1A) as output */	
+	sbi(DDRD, PD5);		/* set PD5(OC1A) as output */
 	timer1PWMInit(8);	/* 8 bit PWM resolution, phase correct PWM mode, FREQpwm=F_CPU/(2*N*TOP) */
 	timer1PWMAOn();		/* turn on the channel A PWM output of timer1 */
 	timer1PWMBOn();		/* turn on the channel B PWM output of timer1 */
@@ -91,9 +91,9 @@ void ApplInit(void)
 	ApplDataInit();
 	MeasureInit();
 	
-	rprintf("Main board here!\n" );	
-
 	timerAttach(TIMER0OUTCOMPARE_INT, AppOutputCompare0);
+	
+	rprintf("Main board here!\n" );	
 }
 
 /*
@@ -284,67 +284,6 @@ void AppCycleUpdate(void)
 	//rprintf("lE=%d\n\n",appl.LastEvent);
 #endif
 #endif
-
-#if 0	
-	if(AppPwrOnCtrl() == true)
-	{
-		if(ButtonGetReleased())
-		{
-			if(ButtonJMP2ReleasedEvent())
-			{
-				if(--appl.DispCode > REMOTE_ADDR)
-				{
-					appl.DispCode = REMOTE_ADDR;
-				}
-				LEDFlag1On();
-				SSDDisplayDec(appl.DispCode, SSD_0HZ, SSD_GREEN);
-			}
-			else if(ButtonJMP1ReleasedEvent())
-			{
-				//rprintf("JMP1\n");
-				//LEDFlag1Off();
-				//LEDFlag2Off();
-				//SSDDisplayHex(0x1abc, SSD_0HZ, SSD_RED);
-			}
-		}
-		else if(ButtonGetHeld())
-		{
-			if(ButtonJMP2HeldEvent() && (ButtonGetHoldTime()%(TIMER_1_SEC_60HZ/2) == 0))
-			{
-				if(++appl.DispCode > REMOTE_ADDR)
-				{
-					appl.DispCode = CURRENT_VALUE;
-				}
-				
-				LEDFlag1Off();
-				SSDDisplayDec(appl.DispCode, SSD_0HZ, SSD_RED);
-			}
-			else if(ButtonJMP1HeldEvent())
-			{
-				rprintf("H-JMP1\n");
-				LEDFlag1Flash3Hz();
-				LEDFlag2Flash3Hz();
-				//SSDDisplayHex(0x1def, SSD_3HZ, SSD_RED);
-			}
-		}
-		
-		if(uartRxBuffer.size - bufferIsNotFull(&uartRxBuffer) != 0)
-		{
-			tempChar = bufferGetFromFront(&uartRxBuffer);
-			//rprintf("char=%c\n",tempChar);
-			rprintf("Type=%c\n",tempChar);
-		}
-	}
-	else
-	{
-		if(ButtonJMP1HeldEvent() && (ButtonGetHoldTime() == TIME_B_HELD_RST))
-		{
-			/* Following for initial power on display steps */
-			appl.PwrOnSteps = DISP_START;
-			appl.ModeTimer = TIME_SWITCH_TOTAL;
-		}
-	}
-#endif	
 }
 
 /*
@@ -375,64 +314,6 @@ void AppUpdateTimers(void)
 	
 	if(appl.ModeTimer != TIMER_TIMEOUT && appl.ModeTimer != TIMER_INT_DISABLED) appl.ModeTimer--;
 }
-
-#if 0
-/*
-*********************************************************************************************************
-*                                         AppUpdateTimers
-*
-* Description : This function should be called by loop each power cycle to update timers which used by applications.
-*
-* Arguments   : none
-*
-* Returns    : true, power on control has finised. false, is processing
-*********************************************************************************************************
-*/
-void AppPwrOnCtrl(void)
-{
-	if(appl.ModeTimer % (TIME_CONTENT_SWITCH - 1) == 0)
-	{
-		switch (appl.PwrOnSteps)
-		{
-			case DISP_START:
-				SSDDisplayDec(DISP_START, SSD_0HZ, SSD_RED);
-				break;
-				
-			case DISP_RF_ADDR:
-				SSDDisplayDec(DISP_RF_ADDR, SSD_0HZ, SSD_RED);
-				break;
-				
-			case DISP_CUR_MAT:
-				SSDDisplayDec(DISP_CUR_MAT, SSD_0HZ, SSD_RED);
-				break;
-				
-			case DISP_FULL_WH:
-				SSDDisplayDec(DISP_FULL_WH, SSD_0HZ, SSD_RED);
-				break;
-				
-			case DISP_EMPTY_WH:
-				SSDDisplayDec(DISP_EMPTY_WH, SSD_0HZ, SSD_RED);
-				break;
-				
-			case DISP_H_PERCENT:
-				SSDDisplayDec(DISP_H_PERCENT, SSD_0HZ, SSD_RED);
-				break;
-				
-			case DISP_L_PERCENT:
-				SSDDisplayDec(DISP_L_PERCENT, SSD_0HZ, SSD_RED);
-				break;
-				
-			case DISP_RP_TIME:
-				SSDDisplayDec(DISP_RP_TIME, SSD_0HZ, SSD_RED);
-				break;
-				
-			default:
-				break;						
-		}
-		appl.PwrOnSteps++;
-	}
-}
-#endif
 
 /*
 *********************************************************************************************************
@@ -468,17 +349,16 @@ void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
 		case CURRENT_VALUE:
 			if(mode == PWR_ON)
 			{
-
+				SSDDisplayDec(CURRENT_VALUE, SSD_0HZ, SSD_RED);
 			}
 			else if(mode == NORMAL)
 			{
-
+				SSDDisplayDec(MeasureGetResult(), SSD_0HZ, SSD_RED);
 			}
 			else	/* setting mode */
 			{
-
+				SSDDisplayDec(CURRENT_VALUE, SSD_0HZ, SSD_RED);
 			}
-			SSDDisplayDec(CURRENT_VALUE, SSD_0HZ, SSD_RED);
 			break;
 			
 		case FULL_WAREHOUSE:
@@ -664,15 +544,11 @@ void AppWaitZeroCrossing(void)
 *
 * Arguments   : none
 *
-* Returns    : true/false means failed or pass
+* Returns    : none
 *********************************************************************************************************
 */
 void AppOutputCompare0(void)
 {
-	//PORTD ^= (1<<PD4);
 	OCR0 = TCNT0 + CYCLEN_60HZ;
 	appl.fSysPwrZC = 1;
 }
-
-
-

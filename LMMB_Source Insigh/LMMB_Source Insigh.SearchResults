@@ -1,3 +1,7 @@
----- ADEN Matches (2 in 1 files) ----
-Adc.c (lm_adc):    ADCSRA |= (1 << ADEN) | (1 << ADSC);	/* ADC enable and ADC start conversion */	
-Adc.c (lm_adc):	ADCSRA &= ~(1 << ADEN);					/* ADC disable */						
+---- AppDisplay Matches (6 in 1 files) ----
+Appl.c (lmmb_main):static void AppDisplay(DISP_CODE DispCode, WORK_MODE mode);
+Appl.c (lmmb_main):					AppDisplay(++appl.DispCode,PWR_ON);
+Appl.c (lmmb_main):				AppDisplay(appl.DispCode,NORMAL);
+Appl.c (lmmb_main):						AppDisplay(appl.DispCode,SETTING);
+Appl.c (lmmb_main):						AppDisplay(appl.DispCode,SETTING);
+Appl.c (lmmb_main):void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
