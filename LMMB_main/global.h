@@ -28,6 +28,46 @@
 // global AVRLIB types definitions
 #include "avrlibtypes.h"
 
+/*
+*********************************************************************************************************
+*                                        IO PORT BITS STRUCT
+* structure to allow bit field operations, name conversions: PORTA.0 -> PORT_A.Bit0  PORTB.7 -> PORT_B.Bit7
+*********************************************************************************************************
+*/
+
+typedef struct bits {
+	uint8_t Bit0:1;
+	uint8_t Bit1:1;
+	uint8_t Bit2:1;
+	uint8_t Bit3:1;
+	uint8_t Bit4:1;
+	uint8_t Bit5:1;
+	uint8_t Bit6:1;
+	uint8_t Bit7:1;
+} BITS;
+
+/*
+*********************************************************************************************************
+*                                        IO PORT BITS STRUCT
+* define all the ports of your microcontroller, add more ports depending on the available mcu ports
+*********************************************************************************************************
+*/
+#define PORT_A	(* (volatile BITS *) &PORTA)
+#define PIN_A	(* (volatile BITS *) &PINA)
+#define DDR_A	(* (volatile BITS *) &DDRA)
+
+#define PORT_B	(* (volatile BITS *) &PORTB)
+#define PIN_B	(* (volatile BITS *) &PINB)
+#define DDR_B	(* (volatile BITS *) &DDRB)
+
+#define PORT_C	(* (volatile BITS *) &PORTC)
+#define PIN_C	(* (volatile BITS *) &PINC)
+#define DDR_C	(* (volatile BITS *) &DDRC)
+
+#define PORT_D	(* (volatile BITS *) &PORTD)
+#define PIN_D	(* (volatile BITS *) &PIND)
+#define DDR_D	(* (volatile BITS *) &DDRD)
+
 #define FOR_DEBUG	1		/* Set generate codes for debug */
 
 // project/system dependent defines

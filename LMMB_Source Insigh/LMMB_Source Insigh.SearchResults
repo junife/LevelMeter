@@ -1,7 +1,5 @@
----- AppDisplay Matches (6 in 1 files) ----
-Appl.c (lmmb_main):static void AppDisplay(DISP_CODE DispCode, WORK_MODE mode);
-Appl.c (lmmb_main):					AppDisplay(++appl.DispCode,PWR_ON);
-Appl.c (lmmb_main):				AppDisplay(appl.DispCode,NORMAL);
-Appl.c (lmmb_main):						AppDisplay(appl.DispCode,SETTING);
-Appl.c (lmmb_main):						AppDisplay(appl.DispCode,SETTING);
-Appl.c (lmmb_main):void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
+---- MeasureGetResult Matches (4 in 3 files) ----
+Appl.c (lmmb_main):				SSDDisplayDec(MeasureGetResult(), SSD_0HZ, SSD_RED);
+Measure.c (lmmb_main):*                                         MeasureGetResult
+Measure.c (lmmb_main):uint16_t MeasureGetResult(void)
+Measure.h (lmmb_main):MEASURE_EXT uint16_t MeasureGetResult(void);

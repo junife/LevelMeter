@@ -34,7 +34,7 @@ all button APIs called by core.
 *                                       VARIABLE DEFINITION
 *********************************************************************************************************
 */
-cBuffer Adc0Buffer;									/* buffer for ADC0 */
+cBuffer Adc0Buffer;								/* buffer for ADC0 */
 static uint8_t Adc0DataArray[ADC0_BUF_SIZE];	/* buffer for ADC0 */
 MEASURE_DATA mData;
 
@@ -63,8 +63,10 @@ static void MeasureBufferCalc(CALC_T *calcPtr, uint8_t *ArryPtr, uint16_t size);
 */
 void MeasureInit(void)
 {
-	MeasureKZ1PWM(1);
-	MeasureKZ2PWM(200);
+	DDRD &= ~((1<<DDD3) | (1<<DDD2));	/* Set PD3(ioHIGHT) and PD2(ioLOW) as input */
+	
+	MeasureKZ1PWM(0);
+	MeasureKZ2PWM(255);
 
 	timerAttach(TIMER2OUTCOMPARE_INT, MeasureOutputCompare2);
 	bufferInit(&Adc0Buffer, (uint8_t *)Adc0DataArray, ADC0_BUF_SIZE);
@@ -91,12 +93,40 @@ void MeasureCycleUpdate(void)
 
 #if 1
 	rprintf("sa%d\n",ReadADC8Bit(MEASURE_ADC0));
-	rprintf("s%d\n",mData.calcResult[MEASURE_ADC0].sum);
+	//rprintf("s%d\n",mData.calcResult[MEASURE_ADC0].sum);
 	rprintf("a%d\n",mData.calcResult[MEASURE_ADC0].avg);
-	rprintf("ma%d\n",mData.calcResult[MEASURE_ADC0].max);
-	rprintf("mi%d\r\n",mData.calcResult[MEASURE_ADC0].min);
+	//rprintf("ma%d\n",mData.calcResult[MEASURE_ADC0].max);
+	//rprintf("mi%d\r\n",mData.calcResult[MEASURE_ADC0].min);
 #endif
+}
 
+/*
+*********************************************************************************************************
+*                                         MeasureOutputCompare2
+*
+* Description : PWM setting for KONGZH2 IO
+*
+* Arguments   : none
+*
+* Notes      : none
+*
+*********************************************************************************************************
+*/
+void MeasureOutputCompare2(void)
+{
+	uint8_t SampleValue;
+	
+	OCR2 = TCNT2 + MEASURE_OCR2;
+
+	//if((ioLOW == 1) && (ioHIGHT == 1))
+	{
+		SampleValue = ReadADC8Bit(MEASURE_ADC0);
+		if(bufferIsNotFull(&Adc0Buffer) == 0)			/* if buffer is full */
+		{
+			bufferGetFromFront(&Adc0Buffer);
+		}
+		bufferAddToEnd(&Adc0Buffer, SampleValue);
+	}
 }
 
 /*
@@ -124,41 +154,13 @@ void MeasureKZ1PWM(uint16_t dutyCycle)
 *
 * Arguments   : none
 *
-* Notes      : none
+* Notes      : TIMER1 PWM setting and initial see McuInit()
 *
 *********************************************************************************************************
 */
 void MeasureKZ2PWM(uint16_t dutyCycle)
 {
 	timer1PWMASet(dutyCycle);
-}
-
-/*
-*********************************************************************************************************
-*                                         MeasureOutputCompare2
-*
-* Description : PWM setting for KONGZH2 IO
-*
-* Arguments   : none
-*
-* Notes      : none
-*
-*********************************************************************************************************
-*/
-void MeasureOutputCompare2(void)
-{
-	uint8_t SampleValue;
-	
-	OCR2 = TCNT2 + MEASURE_OCR2;
-	
-	SampleValue = ReadADC8Bit(MEASURE_ADC0);
-	if(bufferIsNotFull(&Adc0Buffer) == 0)			/* if buffer is full */
-	{
-		bufferGetFromFront(&Adc0Buffer);
-	}
-	bufferAddToEnd(&Adc0Buffer, SampleValue);
-	
-	PORTD ^= (1<<PD4);
 }
 
 /*
@@ -175,8 +177,8 @@ void MeasureOutputCompare2(void)
 */
 void MeasureBufferCalc(CALC_T *calcPtr, uint8_t *ArryPtr, uint16_t size)
 {
-	uint16_t sum = 0;
-	uint8_t avg = 0;
+	uint16_t sum;
+	uint8_t avg;
 	uint8_t max = 0;
 	uint8_t min = 0xff;
 	uint16_t i;

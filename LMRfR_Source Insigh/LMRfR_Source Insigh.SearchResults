@@ -1,7 +1,4 @@
----- PWM10 Matches (6 in 2 files) ----
-Timer.c (common_avr-liberty-master_src):		cbi(TCCR1A,PWM10);
-Timer.c (common_avr-liberty-master_src):		sbi(TCCR1A,PWM10);
-Timer.c (common_avr-liberty-master_src):		sbi(TCCR1A,PWM10);
-Timer.c (common_avr-liberty-master_src):	cbi(TCCR1A,PWM10);
-Timer.h (common_avr-liberty-master_src):#ifndef PWM10
-Timer.h (common_avr-liberty-master_src):	#define PWM10	WGM10
+---- DDRD Matches (3 in 2 files) ----
+Button_dep.c (lmrfr_main):	DDRD  &= ~((1<<DDD6) | (1<<DDD5) | (1<<DDD4) | (1<<DDD3));	/* Set PD6-PD3 as input */
+Main.c (lmrfr_main):	sbi(DDRD, PD4);
+Main.c (lmrfr_main):	sbi(DDRD, PD5);
