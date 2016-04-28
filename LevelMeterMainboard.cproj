@@ -173,6 +173,7 @@
       <Value>../LMMB_main</Value>
       <Value>../LM_button</Value>
       <Value>../LM_ADC</Value>
+      <Value>../LM_common</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
