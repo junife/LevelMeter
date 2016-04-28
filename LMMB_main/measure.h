@@ -24,12 +24,15 @@
 #define  MEASURE_EXT  extern
 #endif
 
+#define ioLOW 		PIN_D.Bit2
+#define ioHIGHT   	PIN_D.Bit3
+
 /*
 *********************************************************************************************************
 *                                       CONST DEFINITION
 *********************************************************************************************************
 */
-#define ADC0_BUF_SIZE	5							/* ADC read buffer size */
+#define ADC0_BUF_SIZE	0xff						/* ADC read buffer size */
 #define MEASURE_FREQ	1000						/* the frequency of Read ADC, unit is Hz */
 #define MEASURE_OCR2    (F_CPU/256/MEASURE_FREQ)	/* calculator OCR2 value */
 
