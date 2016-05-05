@@ -1,19 +1,19 @@
----- DispCode Matches (18 in 2 files) ----
-Appl.c (lmmb_main):static void AppDisplay(DISP_CODE DispCode, WORK_MODE mode);
-Appl.c (lmmb_main):	appl.DispCode= START_CHAR;
-Appl.c (lmmb_main):					AppDisplay(++appl.DispCode,PWR_ON);
-Appl.c (lmmb_main):					appl.DispCode= START_CHAR;
-Appl.c (lmmb_main):				appl.DispCode = CURRENT_VALUE;			/* Initial to display material value in setting mode */
-Appl.c (lmmb_main):				AppDisplay(appl.DispCode,NORMAL);
-Appl.c (lmmb_main):						if(--appl.DispCode < CURRENT_VALUE)
-Appl.c (lmmb_main):							appl.DispCode = REMOTE_ADDR;
-Appl.c (lmmb_main):						AppDisplay(appl.DispCode,SETTING);
-Appl.c (lmmb_main):						if(++appl.DispCode > REMOTE_ADDR)
-Appl.c (lmmb_main):							appl.DispCode = CURRENT_VALUE;
-Appl.c (lmmb_main):						AppDisplay(appl.DispCode,SETTING);
-Appl.c (lmmb_main):				appl.DispCode = CURRENT_VALUE;			/* Initial to display material value in setting mode */
-Appl.c (lmmb_main):	rprintf("dC=%d\n\n",appl.DispCode);
-Appl.c (lmmb_main):			rprintf("dC=%d\n\n",appl.DispCode);
-Appl.c (lmmb_main):void AppDisplay(DISP_CODE DispCode, WORK_MODE mode)
-Appl.c (lmmb_main):	switch(DispCode)
-Appl.h (lmmb_main):	DISP_CODE DispCode;
+---- cBufferEx Matches (18 in 3 files) ----
+Buffer_ex.c (lm_common):void bufferInitEx(cBufferEx* buffer, BUFFER_TYPE *start, uint16_t size)
+Buffer_ex.c (lm_common):BUFFER_TYPE  bufferGetFromFrontEx(cBufferEx* buffer)
+Buffer_ex.c (lm_common):void bufferDumpFromFrontEx(cBufferEx* buffer, uint16_t numbytes)
+Buffer_ex.c (lm_common):BUFFER_TYPE bufferGetAtIndexEx(cBufferEx* buffer, uint16_t index)
+Buffer_ex.c (lm_common):uint8_t bufferAddToEndEx(cBufferEx* buffer, BUFFER_TYPE data)
+Buffer_ex.c (lm_common):uint16_t bufferIsNotFullEx(cBufferEx* buffer)
+Buffer_ex.c (lm_common):void bufferFlushEx(cBufferEx* buffer)
+Buffer_ex.h (lm_common):} cBufferEx;
+Buffer_ex.h (lm_common):void bufferInitEx(cBufferEx* buffer, BUFFER_TYPE *start, uint16_t size);
+Buffer_ex.h (lm_common):BUFFER_TYPE  bufferGetFromFrontEx(cBufferEx* buffer);
+Buffer_ex.h (lm_common):void bufferDumpFromFrontEx(cBufferEx* buffer, uint16_t numbytes);
+Buffer_ex.h (lm_common):BUFFER_TYPE bufferGetAtIndexEx(cBufferEx* buffer, uint16_t index);
+Buffer_ex.h (lm_common):uint8_t bufferAddToEndEx(cBufferEx* buffer, BUFFER_TYPE data);
+Buffer_ex.h (lm_common):uint16_t bufferIsNotFullEx(cBufferEx* buffer);
+Buffer_ex.h (lm_common):void bufferFlushEx(cBufferEx* buffer);
+Measure.c (lmmb_main):cBufferEx Adc0Buffer;								/* buffer for ADC0 */
+Measure.c (lmmb_main):cBufferEx Adc1Buffer;								/* buffer for ADC1 */
+Measure.c (lmmb_main):cBufferEx Adc0MaxBuffer;							/* buffer for ADC0 */

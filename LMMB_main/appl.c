@@ -54,7 +54,7 @@ void McuInit(void)
 {
 	/* Initial uart */
 	uartInit();	
-	uartSetBaudRate(9600);
+	uartSetBaudRate(19200);
 	rprintfInit(uartSendByte);
 
 	/* Initial ADC */
@@ -274,7 +274,7 @@ void AppCycleUpdate(void)
 			break;						
 	}
 
-#if 1		
+#if 0		
 #if (FOR_DEBUG==1)
 	//rprintf("wM=%d\n",appl.workMode);
 	//rprintf("mT=%d,0x%x\n",appl.ModeTimer,appl.ModeTimer);

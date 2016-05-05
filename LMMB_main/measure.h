@@ -32,8 +32,10 @@
 *                                       CONST DEFINITION
 *********************************************************************************************************
 */
-#define ADC0_BUF_SIZE	0xff						/* ADC0 read buffer size */
+#define ADC0_BUF_SIZE	10							/* ADC0 read buffer size 20 */
 #define ADC1_BUF_SIZE	ADC0_BUF_SIZE				/* ADC1 read buffer size */
+#define ADC0_MAX_SIZE	(10)						/* size for array store max value get from ADC0 sample datas (64*2) */
+#define ADC1_MAX_SIZE	ADC0_MAX_SIZE				/* size for array store max value get from ADC1 sample datas */
 #define MEASURE_FREQ	1000						/* the frequency of Read ADC, unit is Hz */
 #define MEASURE_OCR2    (F_CPU/256/MEASURE_FREQ)	/* calculator OCR2 value */
 
@@ -53,9 +55,9 @@
 */
 typedef struct calc_t{
 	uint16_t sum;	/* calculatro sum value */
-	uint8_t avg;	/* average */
-	uint8_t max;	/* maximum */
-	uint8_t min;	/* minimum */
+	uint16_t avg;	/* average */
+	uint16_t max;	/* maximum */
+	uint16_t min;	/* minimum */
 } CALC_T;
 
 /*
