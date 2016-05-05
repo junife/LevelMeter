@@ -36,7 +36,8 @@ SUBDIRS :=  \
 ../common_avr-liberty-master_src/ \
 ../LMMB_main/ \
 ../LM_ADC/ \
-../LM_button/
+../LM_button/ \
+../LM_common/
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
