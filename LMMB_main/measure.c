@@ -25,7 +25,7 @@ all button APIs called by core.
 #include "measure.h"
 #include "adc.h"
 #include "timer.h"
-//#include "buffer_ex.h"
+#include "buffer_ex.h"
 
 #include "uart.h"		// include uart function library
 #include "rprintf.h"	// include printf function library
@@ -35,14 +35,12 @@ all button APIs called by core.
 *                                       VARIABLE DEFINITION
 *********************************************************************************************************
 */
-#if 0
 cBufferEx Adc0Buffer;								/* buffer for ADC0 */
 static uint16_t Adc0DataArray[ADC0_BUF_SIZE];	/* buffer for ADC0 */
 cBufferEx Adc1Buffer;								/* buffer for ADC1 */
 static uint16_t Adc1DataArray[ADC1_BUF_SIZE];	/* buffer for ADC1 */
 cBufferEx Adc0MaxBuffer;							/* buffer for ADC0 */
 static uint16_t Adc0MaxArray[ADC0_MAX_SIZE];	/* buffer for ADC0 */
-#endif
 
 MEASURE_DATA mData;
 
@@ -81,12 +79,11 @@ void MeasureInit(void)
 	MeasureKZ2PWM(0);
 
 	timerAttach(TIMER2OUTCOMPARE_INT, MeasureOutputCompare2);
-#if 0	
-	bufferInit(&Adc0Buffer, (uint16_t *)Adc0DataArray, ADC0_BUF_SIZE);
-	bufferInit(&Adc1Buffer, (uint16_t *)Adc1DataArray, ADC1_BUF_SIZE);
+	
+	bufferInitEx(&Adc0Buffer, (uint16_t *)Adc0DataArray, ADC0_BUF_SIZE);
+	bufferInitEx(&Adc1Buffer, (uint16_t *)Adc1DataArray, ADC1_BUF_SIZE);
 
-	bufferInit(&Adc0MaxBuffer, (uint16_t *)Adc0MaxArray, ADC0_MAX_SIZE);
-#endif	
+	bufferInitEx(&Adc0MaxBuffer, (uint16_t *)Adc0MaxArray, ADC0_MAX_SIZE);
 }
 
 /*
@@ -104,22 +101,20 @@ void MeasureInit(void)
 void MeasureCycleUpdate(void)
 {
 	uint16_t i;
-#if 0	
-	if(bufferIsNotFull(&Adc0MaxBuffer) == 0)			/* if buffer is full */
+	if(bufferIsNotFullEx(&Adc0MaxBuffer) == 0)			/* if buffer is full */
 	{
 		arraySorting(&Adc0MaxArray[0], ADC0_MAX_SIZE); 	/* sort array Adc0MaxArray in the ascending order */
 		mData.calcResult[MEASURE_ADC0].sum = arraySum(&Adc0MaxArray[0], ADC0_MAX_SIZE/2, ADC0_MAX_SIZE);
-		bufferFlush(&Adc0MaxBuffer);					/* flush buffer prepare push new data for next data cycle */
-		
-		for(i=0; i< 10; i++)
+		bufferFlushEx(&Adc0MaxBuffer);					/* flush buffer prepare push new data for next data cycle */
+
+#if 1		
+		for(i=0; i< ADC0_MAX_SIZE; i++)
 		{
-			rprintf("a%d=%x\n",i,Adc0DataArray[i]);
+			///rprintf("a%d=%d\n",i,Adc0MaxArray[i]);
 		}
-		
-#if 0
-		rprintf("0sa%x\n",value);
-		rprintf("0su%x\n",mData.calcResult[MEASURE_ADC0].sum);
-#endif
+#endif		
+		//rprintf("v%d\n",value);
+		rprintf("s%d\n",mData.calcResult[MEASURE_ADC0].sum);
 	}
 
 #if 0
@@ -127,9 +122,6 @@ void MeasureCycleUpdate(void)
 	{
 		MeasureBufferCalc(&mData.calcResult[MEASURE_ADC1], (uint16_t *)Adc1DataArray, ADC1_BUF_SIZE);
 	}
-#endif
-
-#if 0
 	rprintf("0sa%d\n",ReadADC10Bit(MEASURE_ADC0));
 	/*
 	rprintf("0su%d\n",mData.calcResult[MEASURE_ADC0].sum);
@@ -137,16 +129,13 @@ void MeasureCycleUpdate(void)
 	rprintf("0ma%d\n",mData.calcResult[MEASURE_ADC0].max);
 	rprintf("0mi%d\r\n\r\n",mData.calcResult[MEASURE_ADC0].min);
 	*/
-#endif
-
-#if 0	
 	rprintf("1sa%d\n",ReadADC8Bit(MEASURE_ADC1));
 	rprintf("1su%d\n",mData.calcResult[MEASURE_ADC1].sum);
 	rprintf("1av%d\n",mData.calcResult[MEASURE_ADC1].avg);
 	rprintf("1ma%d\n",mData.calcResult[MEASURE_ADC1].max);
 	rprintf("1mi%d\r\n\r\n",mData.calcResult[MEASURE_ADC1].min);
 #endif
-#endif
+
 }
 
 /*
@@ -167,17 +156,18 @@ void MeasureOutputCompare2(void)
 	
 	OCR2 = TCNT2 + MEASURE_OCR2;
 
-#if 0	
 	//if((ioLOW == 1) && (ioHIGHT == 1))
 	{
-		if(bufferIsNotFull(&Adc0Buffer) == 0)					/* if buffer is full */
+		if(bufferIsNotFullEx(&Adc0Buffer) == 0)					/* if buffer is full */
 		{
 			arraySorting(&Adc0DataArray[0], ADC0_BUF_SIZE);		/* sort array Adc0DataArray in the ascending order */
-			bufferAddToEnd(&Adc0MaxBuffer, Adc0DataArray[ADC0_BUF_SIZE - 1]);		/* push max data to arrary */
-			bufferFlush(&Adc0Buffer);	/* flush buffer prepare push new data for next data cycle */
+			bufferAddToEndEx(&Adc0MaxBuffer, Adc0DataArray[ADC0_BUF_SIZE - 1]);		/* push max data to arrary */
+			bufferFlushEx(&Adc0Buffer);	/* flush buffer prepare push new data for next data cycle */
+			DDRD |= (1<<DDC7);
+			PORTD ^= (1<<PD7);
 		}
 		SampleValue = ReadADC10Bit(MEASURE_ADC0);
-		bufferAddToEnd(&Adc0Buffer, SampleValue);		/* push newest data to arrary */
+		bufferAddToEndEx(&Adc0Buffer, SampleValue);		/* push newest data to arrary */
 		value = SampleValue;
 
 #if 0		
@@ -189,8 +179,6 @@ void MeasureOutputCompare2(void)
 		bufferAddToEnd(&Adc1Buffer, SampleValue);		/* push newest data to arrary */
 #endif		
 	}
-#endif
-
 }
 
 /*
@@ -336,7 +324,7 @@ void arraySorting(uint16_t *ptr, uint16_t size)
 *********************************************************************************************************
 *                                   arraySum
 *
-* Description : calculator average value for array
+* Description : calculator sum value for array
 *
 * Arguments   : *ptr, is point to the array need to sort
 *			   start, value cut start in array

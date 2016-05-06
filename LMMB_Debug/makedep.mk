@@ -26,3 +26,5 @@ LM_ADC\adc.c
 
 LM_button\button.c
 
+LM_common\buffer_ex.c
+

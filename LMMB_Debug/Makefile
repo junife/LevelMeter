@@ -53,7 +53,8 @@ C_SRCS +=  \
 ../LMMB_main/measure.c \
 ../LMMB_main/ssd.c \
 ../LM_ADC/adc.c \
-../LM_button/button.c
+../LM_button/button.c \
+../LM_common/buffer_ex.c
 
 
 PREPROCESSING_SRCS += 
@@ -74,7 +75,8 @@ LMMB_main/main.o \
 LMMB_main/measure.o \
 LMMB_main/ssd.o \
 LM_ADC/adc.o \
-LM_button/button.o
+LM_button/button.o \
+LM_common/buffer_ex.o
 
 OBJS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.o \
@@ -88,7 +90,8 @@ LMMB_main/main.o \
 LMMB_main/measure.o \
 LMMB_main/ssd.o \
 LM_ADC/adc.o \
-LM_button/button.o
+LM_button/button.o \
+LM_common/buffer_ex.o
 
 C_DEPS +=  \
 common_avr-liberty-master_src/buffer.d \
@@ -102,7 +105,8 @@ LMMB_main/main.d \
 LMMB_main/measure.d \
 LMMB_main/ssd.d \
 LM_ADC/adc.d \
-LM_button/button.d
+LM_button/button.d \
+LM_common/buffer_ex.d
 
 C_DEPS_AS_ARGS +=  \
 common_avr-liberty-master_src/buffer.d \
@@ -116,7 +120,8 @@ LMMB_main/main.d \
 LMMB_main/measure.d \
 LMMB_main/ssd.d \
 LM_ADC/adc.d \
-LM_button/button.d
+LM_button/button.d \
+LM_common/buffer_ex.d
 
 OUTPUT_FILE_PATH +=LevelMeterMainboard.elf
 
@@ -132,6 +137,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
@@ -179,6 +186,13 @@ LM_ADC/%.o: ../LM_ADC/%.c
 	
 
 LM_button/%.o: ../LM_button/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=14745600  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include" -I"../common_avr-liberty-master_src" -I"../LMMB_main" -I"../LM_button" -I"../LM_ADC" -I"../LM_common"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega16 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega16" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+LM_common/%.o: ../LM_common/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=14745600  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include" -I"../common_avr-liberty-master_src" -I"../LMMB_main" -I"../LM_button" -I"../LM_ADC" -I"../LM_common"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega16 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega16" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

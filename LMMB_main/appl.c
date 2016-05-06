@@ -15,6 +15,7 @@
 #include "timer.h"
 #include "measure.h"
 #include "adc.h"
+#include "buffer.h"
 
 cBuffer uartRxBuffer;				///< uart receive buffer
 char greeting[20];
@@ -200,8 +201,10 @@ void AppCycleUpdate(void)
 				if(uartRxBuffer.size - bufferIsNotFull(&uartRxBuffer) != 0)
 				{
 					tempChar = bufferGetFromFront(&uartRxBuffer);
+#if 0					
 					//rprintf("char=%c\n",tempChar);
 					rprintf("Type=%c\n",tempChar);
+#endif
 				}
 			}
 			break;

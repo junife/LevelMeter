@@ -277,6 +277,12 @@
     <Compile Include="LM_button\button.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LM_common\buffer_ex.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LM_common\buffer_ex.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LM_common\common.h">
       <SubType>compile</SubType>
     </Compile>
