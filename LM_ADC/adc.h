@@ -39,7 +39,7 @@
 #define  ADC_EXT  extern
 #endif
 
-#define  ADPS2_0        ((1 << 2) | (0 << 1) | (0 << 0))    /* clock is F_CPU/16 */
+#define  ADPS2_0        ((1 << 2) | (0 << 1) | (1 << 0))    /* clock is F_CPU/32 */
 
 ADC_EXT void 	 ADCInit 	 (void);
 ADC_EXT uint16_t ReadADC10Bit(uint8_t channel);
