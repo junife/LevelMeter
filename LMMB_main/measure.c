@@ -57,6 +57,7 @@ static void MeasureOutputCompare2(void);
 static void MeasureBufferCalc(CALC_T *calcPtr, uint16_t *arrayPtr, uint16_t size);
 static void arraySorting(uint16_t *ptr, uint16_t size);
 static uint16_t arraySum(uint16_t *ptr, uint16_t start, uint16_t end);
+static uint16_t MeasureCalc(uint16_t x);
 
 /*
 *********************************************************************************************************
@@ -115,6 +116,7 @@ void MeasureCycleUpdate(void)
 #endif		
 		//rprintf("v%d\n",value);
 		rprintf("s%d\n",mData.calcResult[MEASURE_ADC0].sum);
+		rprintf("c%d\n",MeasureCalc(mData.calcResult[MEASURE_ADC0].sum));
 	}
 
 #if 0
@@ -288,6 +290,30 @@ uint16_t MeasureGetResult0(void)
 uint16_t MeasureGetResult1(void)
 {
 	return mData.calcResult[MEASURE_ADC1].avg;
+}
+
+/*
+*********************************************************************************************************
+*                                         MeasureCalc
+*
+* Description : calculator value to antoher value with a formula. reuslt = a*(x-c) + b
+*
+* Arguments   : none
+*
+* Notes      : none
+*
+*********************************************************************************************************
+*/
+uint16_t MeasureCalc(uint16_t x)
+{
+	uint16_t a = 2 ;
+	uint16_t b = 300;
+	uint16_t c = 3400;
+	uint16_t reuslt;
+
+	reuslt = a*(x-c) + b;
+
+	return reuslt;
 }
 
 /*
